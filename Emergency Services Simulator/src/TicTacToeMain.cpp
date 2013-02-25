@@ -12,11 +12,13 @@
 using namespace std;
 
 int main(int argc, char **argv) {
-	TicTacToe ttt;
+	//TicTacToe ttt;
 
-	cout << "START: ttt.nrOfMoves() = " << ttt.nrOfMoves() << endl;
-	while (ttt.notDone()) {
-		ttt.doMove();
-	};
-	cout << "END: ttt.nrOfMoves() = " << ttt.nrOfMoves() << endl;
+	//cout << "START: ttt.nrOfMoves() = " << ttt.nrOfMoves() << endl;
+	//while (ttt.notDone()) {
+		//ttt.doMove();
+	//};
+	//cout << "END: ttt.nrOfMoves() = " << ttt.nrOfMoves() << endl;
+
+	cout << "Marijke is een hoer !" << std::endl;
 }
