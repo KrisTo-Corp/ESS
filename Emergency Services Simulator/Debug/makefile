@@ -44,7 +44,7 @@ all: Emergency\ Services\ Simulator
 Emergency\ Services\ Simulator: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross G++ Linker'
-	g++ -L"/home/tom/Desktop/Software Engineering/21.02.2013/gtest-1.6.0/lib" -pthread -o "Emergency Services Simulator" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L/home/kristof/Dropbox/Software_Engineering/gtest-1.6.0/lib -pthread -o "Emergency Services Simulator" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
