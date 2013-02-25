@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<link rel="stylesheet" href="spec.css" type="text/css" media="screen, print" charset="utf-8" />
+	<title>Hulpdiensten Simulatie - SE1BAC - Ansymo 2012-2013</title>
+</head>
+<body>
+
+<h1>Hulpdiensten Simulatie</h1>
+
+<table>
+<tbody>
+	<tr>
+		<td class="heading">Documentsoort:</td>
+		<td>Behoeftespecificatie</td>
+	</tr>
+	<tr>
+		<td class="heading">Versie:</td>
+		<td class="">1.0</td>
+	</tr>
+	<tr>
+		<td class="heading">Datum:</td>
+		<td>21 februari 2013</td>
+	</tr>
+	<tr>
+		<td class="heading">Auteur:</td>
+		<td>Quinten Soetens</td>
+	</tr>
+	<tr>
+		<td class="heading">Status:</td>
+		<td class="">Opgeleverd</td>
+	</tr>
+</tbody>
+</table>
+
+
+<h2>Samenvatting</h2>
+<p>Dit document bevat de specificaties voor een informaticasysteem ter ondersteuning van een simulatie van de hulpdiensten. Het is geschreven in het kader van het vak "Inleiding software Engineering" (1ste bachelor informatica - Universiteit Antwerpen).</p>
+
+<h2>Context</h2>
+<p>De <i>Federale Overheidsdienst van Justitie</i> heeft de Universiteit Antwerpen gevraagd om informaticasysteem te ontwerpen dat het werk van de hulpdiensten kan simuleren</p>
+<p>In de eerste bachelor informatica zal onder de vakken "Computer Graphics" en "Inleiding Software Engineering" gewerkt worden aan dit project. Tijdens de practica Computer Graphics zal de visualisatie van de simulatie ontwikkeld worden, tijdens de practica Inleiding Software Engineering zal gewerkt worden aan de simulatie applicatie zelf.</p>
+
+<h2>Legende</h2>
+<p>De behoeftespecificatie is opgesteld aan de hand van zogenaamde use-cases. Elke use-case beschrijft een klein gedeelte van de gewenste functionaliteit, en het is de bedoeling dat tijdens elke fase van het project verschillende van die use cases ge&iuml;mplementeerd worden.</p>
+<p>De onderdelen van een typische use-case vind je in <a href="legendeUC.html">bijlage</a>.</p>
+
+
+<h2>Overzicht</h2>
+
+<p>Hieronder volgt een opsomming van alle use-cases
+inclusief hun prioriteit.</p>
+
+
+<table>
+<tbody>
+	<tr>
+		<td class="heading">Use-case</td>
+		<td class="heading">Prioriteit</td>
+	</tr>
+	<tr>
+		<td class="subheading" colspan="2">1: Invoer</td>
+	</tr>
+	<tr>
+		<td><a href="#uc1_1">1.1. Stad inlezen</a></td>
+		<td>VERPLICHT</td>
+	</tr>
+	<!--<tr class="todo">
+		<td><a href="#uc1_2">1.2. Scenario inlezen</a></td>
+		<td>VERPLICHT</td>
+	</tr>-->
+	<tr>
+		<td class="subheading" colspan="2">2: Uitvoer</td>
+	</tr>
+	<tr>
+		<td><a href="#uc2_1">2.1. Simpele uitvoer</a></td>
+		<td>VERPLICHT</td>
+	</tr>
+	<tr>
+		<td class="subheading" colspan="2">3: Simulatie</td>
+	</tr>
+	<tr>
+		<td><a href="#uc3_1">3.1. Brand breekt uit.</a></td>
+		<td>VERPLICHT</td>
+	</tr>
+	<tr>
+		<td><a href="#uc3_2">3.2. Brandweerwagen rijdt.</a></td>
+		<td>VERPLICHT</td>
+	</tr>
+	<tr>
+		<td><a href="#uc3_3">3.3. Brandweerwagen blust vuur.</a></td>
+		<td>VERPLICHT</td>
+	</tr>
+	<tr>
+		<td><a href="#uc3_4">3.4. Scenario uitvoeren.</a></td>
+		<td>VERPLICHT</td>
+	</tr>
+</tbody>
+</table>
+
+
+<hr/>
+
+
+<h2>Behoeftes</h2>
+
+<h3>1. Invoer</h3>
+
+<h4 id="uc1_1">1.1. Stad inlezen</h4>
+<dl>
+	<dt>Prioriteit:</dt>
+	<dd>VERPLICHT</dd>
+	<dt>Doel:</dt>
+	<dd>Inlezen van de stad (=straten, huizen, brandweerkazerne en brandweerwagens).</dd>
+	<dt>Preconditie:</dt>
+	<dd>Een ASCII bestand met daarop een beschrijving van de stad. (Zie <a  href="#app1">Appendix 1</a> voor meer informatie over het XML formaat)</dd>
+	<dt>Succesvol einde:</dt>
+	<dd>Het systeem bevat een netwerk van straten en huizen.</dd>
+	<dt>Stappen:</dt>
+	<dd>1. Open invoerbestand</dd>
+	<dd>2. Parse het bestand met (TinyXML)</dd>
+	<dd>3. WHILE Er zijn nog elementen in het geparste document </dd>
+		<dd>3.1. Herken het soort element (&eacute;&eacute;n van HUIS, STRAAT, KAZERNE)</dd>
+		<dd>3.2. Lees de verder informatie voor dit element</dd>
+		<dd>3.3. IF Verifieer de geldigheid van het element</dd>
+			<dd>3.3.1. THEN voeg element toe aan de virtuele stad</dd>
+	<dd>4. Verifieer de consistentie van de virtuele stad.</dd>
+	<dt>Uitzonderingen:</dt>
+	<dd>3.1. [Onherkenbaar element] Foutboodschap + positioneer op volgende element in het bestand =&gt; verdergaan vanaf stap 3</dd>
+	<dd>3.3. [Ongeldige informatie] Foutboodschap + positioneer op volgende element in het bestand =&gt; verdergaan vanaf stap 3</dd>
+	<dd>4. [Inconsistent virtuele stad] Foutboodschap</dd>
+	<dt>Voorbeeld:</dt>
+	<dd>Een virtuele stad met 50 huizen, 8 straten en 1 brandweerkazerne met 2 brandweerwagens (zoals op onderstaande prent) staat beschreven in volgende <a href="stad.xml">xml file</a>.</dd>
+	<dd><img src="city.png" alt="City Examle"width="50%"></dd>
+</dl>
+<!--
+<h4 id="uc1_2">1.2. Scenario inlezen</h4>
+<dl>
+	<dt>Prioriteit:</dt>
+	<dd>VERPLICHT</dd>
+	<dt>Doel:</dt>
+	<dd>Inlezen van een scenario.</dd>
+	<dt>Preconditie:</dt>
+	<dd>Een ASCII bestand met daarop een beschrijving van de stad. (Zie <a  href="#app1">Appendix 1</a> voor meer informatie over het XML formaat)</dd>
+	<dt>Succesvol einde:</dt>
+	<dd>Het systeem bevat een netwerk van straten en huizen.</dd>
+	<dt>Stappen:</dt>
+	<dd>1. Open invoerbestand</dd>
+	<dd>2. Parse het bestand met (TinyXML)</dd>
+	<dd>3. WHILE Er zijn nog elementen in het geparste document </dd>
+		<dd>3.1. Herken het soort element (&eacute;&eacute;n van HUIS, STRAAT, KAZERNE)</dd>
+		<dd>3.2. Lees de verder informatie voor dit element</dd>
+		<dd>3.3. IF Verifieer de geldigheid van het element</dd>
+			<dd>3.3.1. THEN voeg element toe aan de virtuele stad</dd>
+	<dd>4. Verifieer de consistentie van de virtuele stad.</dd>
+	<dt>Uitzonderingen:</dt>
+	<dd>3.1. [Onherkenbaar element] Foutboodschap + positioneer op volgende element in het bestand =&gt; verdergaan vanaf stap 3</dd>
+	<dd>3.3. [Ongeldige informatie] Foutboodschap + positioneer op volgende element in het bestand =&gt; verdergaan vanaf stap 3</dd>
+	<dd>4. [Inconsistent virtuele stad] Foutboodschap</dd>
+	<dt>Voorbeeld:</dt>
+	<dd>Een virtuele stad met 50 huizen, 8 straten en 1 brandweerkazerne (zoals op onderstaande prent) staat beschreven in volgende <a class="todo" href="stad.xml">xml file</a>.</dd>
+	<dd><img src="city.png" alt="City Examle"width="50%"></dd>
+</dl>-->
+
+
+<h2>2. Uitvoer</h2>
+
+<h4 id="uc2_1">2.1. Simpele uitvoer</h4>
+<dl>
+	<dt>Prioriteit:</dt>
+	<dd>VERPLICHT</dd>
+	<dt>Doel:</dt>
+	<dd>Uitvoer van informatie in de virtuele stad.</dd>
+	<dt>Preconditie:</dt>
+	<dd>Het systeem bevat een grondplan voor een virtuele stad.</dd>
+	<dt>Succesvol einde:</dt>
+	<dd>Het systeem heeft een tekstbestand (ASCII) uitgevoerd, waarin de informatie over de virtuele stad netjes is uitgeschreven.</dd>
+	<dt>Stappen:</dt>
+	<dd>1. Cre&euml;er uitvoerbestand</dd>
+	<dd>2. Open uitvoerbestand</dd>
+	<dd>3. WHILE Nog brandweerwagens onderweg.</dd>
+		<dd>3.1. Schrijf brandweerwagen gegevens uit</dd>
+	<dd>4. WHILE Nog huizen in brand</dd>
+		<dd>4.1. Schrijf de locaties van dit huis uit</dd>
+		<dd>4.2. Schrijf de resterende brandtijd van dit huis uit.</dd>
+	<dd>5. FORALL Brandweerkazernes</dd>
+		<dd>5.1. Schrijf het aantal brandweerwagens beschikbaar.</dd>
+	<dd>6. Sluit uitvoerbestand</dd>
+	<dt>Uitzonderingen:</dt>
+	<dd>1. [Creatie mislukt] Foutboodschap + schrijf naar console ipv bestand</dd>
+	<dt>Voorbeeld:</dt>
+	<dd>gegeven de input uit het voorbeeld van <a href="#uc1_1">1.1</a>, waarbij een brandweerwagen onderweg is naar een nog brandend huis.</dd>
+	<dd><pre>
+Brandende huizen:
+	Huis op locatie (3,14)
+Brandweerwagens onderweg:
+	Bw12 op locatie (7,12) in de Javastraat.
+Beschikbare brandweerwagens in brandweerkazerne BWK1337:
+	Bw34
+</pre></dd>
+</dl>
+
+<h2>3. Simulatie</h2>
+
+
+<h4 id="uc3_1">3.1: Brand breekt uit.</h4>
+<dl>
+	<dt>Prioriteit:</dt>
+	<dd>VERPLICHT</dd>
+	<dt>Doel:</dt>
+	<dd>Simuleren van het branden van gebouwen.</dd>
+	<dt>Preconditie:</dt>
+	<dd>Het systeem bevat een grondplan voor een virtuele stad en de stad bevat nog minstens 1 huis dat niet volledig is afgebrand.</dd>
+	<dt>Succesvol einde:</dt>
+	<dd>Een huis is aan het branden.</dd>
+	<dt>Stappen:</dt>
+	<dd>1. Laat in een willekeurig huis een brand uitbreken.</dd>
+	<dd>2. WHILE huis is nog niet helemaal plat gebrand</dd>
+		<dd> 2.1. Verminder de brandbaarheid van het huis (health points) met 1.		
+		<dd> 2.2. Schrijf overzicht uit</dd>
+	<dd>3. IF brandbaarheid (health points) van het huis komt op 0.</dd>
+		<dd>3.1 THEN Huis is volledig afgebrand en houdt op met branden.
+	<dt>Uitzonderingen:</dt>
+	<dd>Geen</dd>
+	<dt>Voorbeeld:</dt>
+	<dd><pre>
+In het huis op locatie (3,14) is een brand uitgebroken en heeft nog 16 health points.
+	</pre></dd>
+</dl>
+
+<h4 id="uc3_2">3.2: Brandweerwagen rijdt</h4>
+<dl>
+	<dt>Prioriteit:</dt>
+	<dd>VERPLICHT</dd>
+	<dt>Doel:</dt>
+	<dd>Het simuleren van een zich verplaatsende brandweerwagen.</dd>
+	<dt>Preconditie:</dt>
+	<dd>Het systeem bevat een grondplan voor een virtuele stad en er bevindt zich een brandweerwagen op de baan richting een brandend huis (of terug richting de brandweerkazerne).</dd>
+	<dt>Succesvol einde:</dt>
+	<dd>De brandweerwagen blijft zijn positie veranderen tot hij op zijn bestemming is.</dd>
+	<dt>Stappen:</dt>
+	<dd>1.Bepaal in welke straat het bestemming zich bevindt.</dd>
+	<dd>2. WHILE Nog niet op bestemming
+		<dd>2.1. IF bestemming bevindt zich in straat parellel met de straat waar de brandweerwagen zich in bevindt.</dd>
+			<dd> 2.1.1. THEN de brandweerwagen verplaatst zich 1 punt richting het dichtsbijzijnde kruispunt.</dd>
+		<dd>2.2. ELSE IF bestemming is in straat loodrecht op de straat waar de brandweerwagen zich in bevindt. OF de brandweerwagen bevindt zich op een kruispunt.</dd>
+			<dd> 2.2.1. THEN de brandweerwagen verplaatst zich 1 punt richting de straat waarin de bestemming zich bevindt.</dd>
+		<dd>2.3. ELSE IF de brandweerwagen staat op een kruispunt met de straat waarin de bestemming zich bevindt OF de brandweerwagen bevindt zich in dezelfde straat als de bestemming.
+			<dd> 2.3.1. THEN de brandweerwagen verplaatst zich 1 punt richting de bestemming.</dd>
+		<dd>2.4. Print informatie uit.</dd>
+		
+		
+	<dt>Uitzonderingen:</dt>
+	<dd>Geen</dd>
+	<dt>Voorbeeld:</dt>
+	<dd><pre>
+Brandweerwagen bw12 is onderweg naar het huis op locatie (3,14) en bevindt zich in de Javastraat op locatie (7,12).
+	</pre></dd>
+</dl>
+
+<h4 id="uc3_3">3.3: Brand blussen</h4>
+<dl>
+	<dt>Prioriteit:</dt>
+	<dd>VERPLICHT</dd>
+	<dt>Doel:</dt>
+	<dd>Een brandweerwagen komt aan een brandend huis en blust de brand.</dd>
+	<dt>Preconditie:</dt>
+	<dd>Het systeem bevat een grondplan voor een virtuele stad er is een huis aan het branden en er is een brandweerwagen onderweg naar dat huis.</dd>
+	<dt>Succesvol einde:</dt>
+	<dd>De brandweerwagen heeft de brand in dat huis geblust.</dd>
+	<dt>Stappen:</dt>	
+	<dd>1. De brandweerwagen komt aan aan het branded huis.</dd>
+	<dd>2. De brandweerwagen blust de brand.</dd>
+	<dd>3. Schrijf de informatie uit.
+	<dd>4. De brandweerwagen vertrekt terug richting brandweerkazerne.</dd>
+	<dt>Uitzonderingen:</dt>
+	<dd>Geen</dd>
+</dl>
+
+
+<h4 id="uc3_4">3.4: Scenario uitvoeren</h4>
+<dl>
+	<dt>Prioriteit:</dt>
+	<dd>VERPLICHT</dd>
+	<dt>Doel:</dt>
+	<dd>Een volledig scenario van een brand die uitbreekt en wordt geblust wordt uitgevoerd.</dd>
+	<dt>Preconditie:</dt>
+	<dd>Het systeem bevat een grondplan voor een virtuele stad.</dd>
+	<dt>Succesvol einde:</dt>
+	<dd>Er is een brand uitgebroken en geblust, de brandweerwagen is terug in de brandweerkazerne.</dd>
+	<dt>Stappen:</dt>	
+	<dd>1. <a href="#uc3_1">Brand breekt uit</a></dd>
+	<dd>2. <a href="#uc3_2">Brandweerwagen rijdt</a> naar branded huis.</dd>
+	<dd>3. <a href="#uc3_3">Brand blussen</a></dd>
+	<dd>4. <a href="#uc3_2">Brandweerwagen rijdt</a> naar brandweerkazerne.</dd>
+	<dt>Uitzonderingen:</dt>
+	<dd>Geen</dd>
+</dl>
+<hr/>
+
+
+
+<h2 id="app1">Appendix 1</h2>
+
+<h3 id="ongeldig">Geldige informatie</h3>
+<p>We moeten nu nog de tags en hun waarde vastleggen die gelden voor ons probleem-domein. Dit bestaat uit het vastleggen van de mogelijke tags, Attributen en de verwachte inhoud (content).</p>
+
+<p>De mogelijke tag-identifiers zijn:Huis, Locatie, Brandbaarheid, Brandweerwagen, Basis, Straat, Naam, Van, Naar, Brandweerkazerne, Ingang. 
+Coordinaten in de virtuele stad worden weergegeven met attribuut-identifiers X en Y.
+
+Tag-identifiers en attribuut-identifiers zijn niet hoofdletter gevoelig, inhouden zijn dit wel.</p>
+
+
+<table>
+<tbody>
+	<tr>
+		<td class="heading">Tags</td>
+		<td class="heading">Subtags</td>
+		<td class="heading">Attributen</td>
+		<td class="heading">Content</td>
+
+	</tr>
+	<tr>
+		<td>Huis</td>
+		<td>Locatie</td>
+		<td>X</td>
+		<td>Integer</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>Y</td>
+		<td>Integer</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>Brandbaarheid</td>
+		<td></td>
+		<td>Integer</td>
+	</tr>
+	<tr>
+
+		<td>Straat</td>
+		<td>Naam</td>
+		<td></td>
+		<td>String</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>Van</td>
+		<td>X</td>
+		<td>Integer</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>Y</td>
+		<td>Integer</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>Naar</td>
+		<td>X</td>
+		<td>Integer</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>Y</td>
+		<td>Integer</td>
+	</tr>
+	<tr>
+		<td>Brandweerkazerne</td>
+		<td>Naam</td>
+		<td></td>
+		<td>String</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>Locatie</td>
+		<td>X</td>
+		<td>Integer</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>Y</td>
+		<td>Integer</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>Ingang</td>
+		<td>X</td>
+		<td>Integer</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>Y</td>
+		<td>Integer</td>
+	</tr>
+	<tr>
+		<td>Brandweerwagen</td>
+		<td>Naam</td>
+		<td></td>
+		<td>String</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>Basis</td>
+		<td></td>
+		<td>String</td>
+	</tr>
+</tbody>
+</table>
+
+<h3 id="inconsistent">Inconsistente virtuele stad</h3>
+
+<p>Het bestand met de in te lezen stad wordt met de hand geschreven. Om de ingelezen virtuele stad te kunnen simuleren moet de informatie consistent zijn.</p>
+<p>Een virtuele stad is consistent als:</p>
+<ul>
+	<li>Straten niet overlappen met gebouwen (huizen of brandweerkazerne). Een huis neemt een plaats in van 2x2 plaatsen, de brandweerkazerne is 4x4 plaatsen. Een straat is telkens 1 plaats breed. (Zie prent in <a href="#uc1_1">Use Case 1.1</a>) De LocatieCoordinaten van een gebouw zijn telkens het punt in de linkerbovenhoek.
+	<li>Elk gebouw (huis,brandweerkazerne) grenst aan minstens 1 straat.
+	<li>Elke brandweerwagen heeft een bestaande brandweerkazerne als basis.
+</ul>
+</body>
+</html>
