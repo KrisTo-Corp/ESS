@@ -20,5 +20,5 @@ int main(int argc, char **argv) {
 	//};
 	//cout << "END: ttt.nrOfMoves() = " << ttt.nrOfMoves() << endl;
 
-	cout << "test 12 3 " << std::endl;
+	cout << "wij zijn awesomesaucebarbecue" << std::endl;
 }
