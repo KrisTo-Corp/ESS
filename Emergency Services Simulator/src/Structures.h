@@ -17,9 +17,11 @@ class Structures {
 protected:
 	const std::string name;
 	Coordinate location;
+	const int width;
+	const int length;
 public:
 	Structures();
-	Structures(int, int, const std::string);
+	Structures(int, int, const std::string, int, int);
 	virtual ~Structures();
 };
 

@@ -19,11 +19,11 @@ Structures::~Structures()
 {
 }
 
-House::House(): Structures(0, 0, "") {
+House::House(): Structures(0, 0, "", 2, 2) {
 	hitpoints = 0;
 }
 
-House::House(int x, int y, int hp, const std::string n): Structures(x, y, n) {
+House::House(int x, int y, int hp, const std::string n): Structures(x, y, n, 2, 2) {
 	hitpoints = hp;
 }
 
@@ -36,11 +36,11 @@ std::ostream& operator <<(std::ostream& stream, House& o){
 	return stream;
 }
 
-Fire_Department::Fire_Department(): Structures(0, 0, ""), entrance(0, 0)
+Fire_Department::Fire_Department(): Structures(0, 0, "", 4, 4), entrance(0, 0)
 {
 }
 
-Fire_Department::Fire_Department(int x, int y, int x_entrance, int y_entrance, const std::string n): Structures(x, y, n), entrance(x_entrance, y_entrance)
+Fire_Department::Fire_Department(int x, int y, int x_entrance, int y_entrance, const std::string n): Structures(x, y, n, 4, 4), entrance(x_entrance, y_entrance)
 {
 }
 
