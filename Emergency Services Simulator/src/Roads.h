@@ -19,7 +19,7 @@ protected:
 	const std::string name;
 public:
 	Roads();
-	Roads(const std::string);
+	Roads(const std::string, Eobjects);
 	virtual ~Roads();
 };
 

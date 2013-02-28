@@ -9,11 +9,11 @@
 
 #include "Roads.h"
 
-Roads::Roads(): name("")
+Roads::Roads(): name(""), CityObjects(none)
 {
 }
 
-Roads::Roads(const std::string n): name(n)
+Roads::Roads(const std::string n, Eobjects t): name(n), CityObjects(t)
 {
 }
 
@@ -21,11 +21,11 @@ Roads::~Roads()
 {
 }
 
-Street::Street(): Roads(""), start(0, 0), end(0, 0)
+Street::Street(): Roads("", street), start(0, 0), end(0, 0)
 {
 }
 
-Street::Street(int x_start, int y_start, int x_end, int y_end, const std::string n): Roads(n), start(x_start, y_start), end(x_end, y_end)
+Street::Street(int x_start, int y_start, int x_end, int y_end, const std::string n): Roads(n, street), start(x_start, y_start), end(x_end, y_end)
 {
 }
 
@@ -38,11 +38,11 @@ std::ostream& operator <<(std::ostream& stream, Street& o){
 	return stream;
 }
 
-Crossroad::Crossroad(): Roads(""), location(0, 0)
+Crossroad::Crossroad(): Roads("", crossroad), location(0, 0)
 {
 }
 
-Crossroad::Crossroad(int x, int y, const std::string n): Roads(n), location(x, y)
+Crossroad::Crossroad(int x, int y, const std::string n): Roads(n, crossroad), location(x, y)
 {
 }
 

@@ -8,9 +8,18 @@
 #ifndef CITYOBJECTS_H_
 #define CITYOBJECTS_H_
 
+#include <ostream>
+
+enum Eobjects {none, house, department, street, crossroad};
+
 class CityObjects {
+private:
+	const Eobjects type;
 public:
 	CityObjects();
+	CityObjects(Eobjects);
+	Eobjects getType();
+
 	virtual ~CityObjects();
 };
 

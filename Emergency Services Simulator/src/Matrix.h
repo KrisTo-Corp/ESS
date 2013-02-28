@@ -23,6 +23,7 @@ private:
 public:
 	Matrix();
 	Matrix(const int, const int);
+	void add_pointer(CityObjects*, int, int);
 	friend std::ostream& operator <<(std::ostream&, Matrix&);
 	virtual ~Matrix();
 };

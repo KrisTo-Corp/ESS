@@ -22,7 +22,7 @@ protected:
 	const int length;
 public:
 	Structures();
-	Structures(int, int, const std::string, int, int);
+	Structures(int, int, const std::string, int, int, Eobjects);
 	virtual ~Structures();
 };
 
