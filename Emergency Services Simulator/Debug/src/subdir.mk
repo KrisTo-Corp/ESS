@@ -5,16 +5,19 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/Coordinate.cpp \
+../src/Roads.cpp \
 ../src/Structures.cpp \
 ../src/test_main.cpp 
 
 OBJS += \
 ./src/Coordinate.o \
+./src/Roads.o \
 ./src/Structures.o \
 ./src/test_main.o 
 
 CPP_DEPS += \
 ./src/Coordinate.d \
+./src/Roads.d \
 ./src/Structures.d \
 ./src/test_main.d 
 
