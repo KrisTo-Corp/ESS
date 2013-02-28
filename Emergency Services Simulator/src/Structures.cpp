@@ -11,7 +11,7 @@ Structures::Structures(): name(""), location(0, 0)
 {
 }
 
-Structures::Structures(int x, int y, const std::string n): name(n), location(x, y)
+Structures::Structures(int x, int y, const std::string n, int w, int l): name(n), location(x, y), width(w), length(l)
 {
 }
 
