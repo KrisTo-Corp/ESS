@@ -12,8 +12,9 @@
 #include <ostream>
 
 #include "Coordinate.h"
+#include "CityObjects.h"
 
-class Roads {
+class Roads: public CityObjects {
 protected:
 	const std::string name;
 public:

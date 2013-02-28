@@ -7,7 +7,7 @@
 
 #include "Structures.h"
 
-Structures::Structures(): name(""), location(0, 0)
+Structures::Structures(): name(""), location(0, 0), width(0), length(0)
 {
 }
 

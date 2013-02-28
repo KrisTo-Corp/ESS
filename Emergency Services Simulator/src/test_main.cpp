@@ -12,6 +12,7 @@
 #include "Structures.h"
 #include "Roads.h"
 #include "Vehicles.h"
+#include "Matrix.h"
 
 int main(int argc, char **argv) {
 
@@ -20,6 +21,7 @@ int main(int argc, char **argv) {
 	Street street(1, 2, 3, 4, "Leo Metsstraat");
 	Crossroad cross(9, 8, "'t hoekske");
 	Firetruck truck(5, 6, "Truck 1", "Department 1");
+	Matrix m;
 
 
 	std::cout << house << std::endl;
@@ -27,5 +29,6 @@ int main(int argc, char **argv) {
 	std::cout << street << std::endl;
 	std::cout << cross << std::endl;
 	std::cout << truck << std::endl;
+	std::cout << m << std::endl;
 
 }

@@ -4,25 +4,46 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/City.cpp \
+../src/CityObjects.cpp \
 ../src/Coordinate.cpp \
+../src/Matrix.cpp \
 ../src/Roads.cpp \
 ../src/Structures.cpp \
 ../src/Vehicles.cpp \
-../src/test_main.cpp 
+../src/test_main.cpp \
+../src/tinystr.cpp \
+../src/tinyxml.cpp \
+../src/tinyxmlerror.cpp \
+../src/tinyxmlparser.cpp 
 
 OBJS += \
+./src/City.o \
+./src/CityObjects.o \
 ./src/Coordinate.o \
+./src/Matrix.o \
 ./src/Roads.o \
 ./src/Structures.o \
 ./src/Vehicles.o \
-./src/test_main.o 
+./src/test_main.o \
+./src/tinystr.o \
+./src/tinyxml.o \
+./src/tinyxmlerror.o \
+./src/tinyxmlparser.o 
 
 CPP_DEPS += \
+./src/City.d \
+./src/CityObjects.d \
 ./src/Coordinate.d \
+./src/Matrix.d \
 ./src/Roads.d \
 ./src/Structures.d \
 ./src/Vehicles.d \
-./src/test_main.d 
+./src/test_main.d \
+./src/tinystr.d \
+./src/tinyxml.d \
+./src/tinyxmlerror.d \
+./src/tinyxmlparser.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
