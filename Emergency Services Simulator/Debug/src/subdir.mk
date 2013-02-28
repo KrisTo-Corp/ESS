@@ -4,15 +4,12 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/TicTacToe.cpp \
 ../src/TicTacToeTests.cpp 
 
 OBJS += \
-./src/TicTacToe.o \
 ./src/TicTacToeTests.o 
 
 CPP_DEPS += \
-./src/TicTacToe.d \
 ./src/TicTacToeTests.d 
 
 
