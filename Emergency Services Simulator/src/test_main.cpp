@@ -28,8 +28,4 @@ int main(int argc, char **argv) {
 	std::cout << cross << std::endl;
 	std::cout << truck << std::endl;
 
-	std::cout << "kaka" << std::endl;
-
-
-
 }
