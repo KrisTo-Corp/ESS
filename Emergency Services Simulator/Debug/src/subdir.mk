@@ -7,18 +7,21 @@ CPP_SRCS += \
 ../src/Coordinate.cpp \
 ../src/Roads.cpp \
 ../src/Structures.cpp \
+../src/Vehicles.cpp \
 ../src/test_main.cpp 
 
 OBJS += \
 ./src/Coordinate.o \
 ./src/Roads.o \
 ./src/Structures.o \
+./src/Vehicles.o \
 ./src/test_main.o 
 
 CPP_DEPS += \
 ./src/Coordinate.d \
 ./src/Roads.d \
 ./src/Structures.d \
+./src/Vehicles.d \
 ./src/test_main.d 
 
 
