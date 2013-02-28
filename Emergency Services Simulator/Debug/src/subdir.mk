@@ -4,13 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/TicTacToeTests.cpp 
+../src/Coordinate.cpp \
+../src/Structures.cpp \
+../src/test_main.cpp 
 
 OBJS += \
-./src/TicTacToeTests.o 
+./src/Coordinate.o \
+./src/Structures.o \
+./src/test_main.o 
 
 CPP_DEPS += \
-./src/TicTacToeTests.d 
+./src/Coordinate.d \
+./src/Structures.d \
+./src/test_main.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

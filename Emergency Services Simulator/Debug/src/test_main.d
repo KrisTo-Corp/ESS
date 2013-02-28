@@ -1,4 +1,4 @@
-src/TicTacToeTests.d: ../src/TicTacToeTests.cpp \
+src/test_main.d: ../src/test_main.cpp \
  /home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include/gtest/gtest.h \
  /home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include/gtest/internal/gtest-internal.h \
  /home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include/gtest/internal/gtest-port.h \
@@ -16,7 +16,8 @@ src/TicTacToeTests.d: ../src/TicTacToeTests.cpp \
  /home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include/gtest/gtest_prod.h \
  /home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include/gtest/gtest-test-part.h \
  /home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include/gtest/gtest-typed-test.h \
- /home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include/gtest/gtest_pred_impl.h
+ /home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include/gtest/gtest_pred_impl.h \
+ ../src/Structures.h ../src/Coordinate.h
 
 /home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include/gtest/gtest.h:
 
@@ -53,3 +54,7 @@ src/TicTacToeTests.d: ../src/TicTacToeTests.cpp \
 /home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include/gtest/gtest-typed-test.h:
 
 /home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include/gtest/gtest_pred_impl.h:
+
+../src/Structures.h:
+
+../src/Coordinate.h:
