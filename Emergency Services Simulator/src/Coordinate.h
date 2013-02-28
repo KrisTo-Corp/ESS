@@ -9,6 +9,7 @@
 #define COORDINATE_H_
 
 #include <string>
+#include <ostream>
 
 class Coordinate {
 private:
@@ -17,8 +18,8 @@ private:
 public:
 	Coordinate();
 	Coordinate(int, int);
+	friend std::ostream& operator <<(std::ostream&, Coordinate&);
 	virtual ~Coordinate();
-	std::string print();
 };
 
 #endif /* COORDINATE_H_ */

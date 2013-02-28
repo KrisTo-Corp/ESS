@@ -7,11 +7,18 @@
 //============================================================================
 
 #include <iostream>
+#include <gtest/gtest.h>
 
-using namespace std;
+#include "Structures.h"
 
 int main(int argc, char **argv) {
 
+	House house(4, 3, 20, "House 1");
+	Fire_Department dep(5, 1, 2, 3, "Department 1");
 
-	cout << "wij zijn awesomesaucebarbecue" << std::endl;
+	std::cout << house << std::endl;
+	std::cout << dep << std::endl;
+
+
+
 }

@@ -19,10 +19,9 @@ Coordinate::Coordinate(int x_value, int y_value) {
 	y = y_value;
 }
 
-std::string Coordinate::print(){
-	std::stringstream s;
-	s << "(" << x << ", " << y << ")";
-	return s.str();
+std::ostream& operator <<(std::ostream& stream, Coordinate& o){
+	stream << "(" << o.x << ", " << o.y << ")";
+	return stream;
 }
 
 Coordinate::~Coordinate()
