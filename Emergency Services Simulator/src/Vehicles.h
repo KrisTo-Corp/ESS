@@ -12,6 +12,7 @@
 #include <ostream>
 
 #include "Coordinate.h"
+#include "Structures.h"
 
 class Vehicles {
 protected:
@@ -26,10 +27,14 @@ public:
 class Firetruck: public Vehicles {
 private:
 	const std::string basename;
+	Fire_Department* base;
 public:
 	Firetruck();
 	Firetruck(int, int, const std::string, const std::string);
 	friend std::ostream& operator <<(std::ostream&, Firetruck&);
+	void linkBase(Fire_Department*);
+	std::string getBasename()const;
+	Fire_Department* getBaseptr();
 };
 
 #endif /* VEHICLES_H_ */

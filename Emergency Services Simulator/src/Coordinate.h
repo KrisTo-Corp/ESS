@@ -18,6 +18,8 @@ private:
 public:
 	Coordinate();
 	Coordinate(const int, const int);
+	int getX()const;
+	int getY()const;
 	friend std::ostream& operator <<(std::ostream&, Coordinate&);
 	virtual ~Coordinate();
 };

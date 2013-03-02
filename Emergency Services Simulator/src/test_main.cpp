@@ -19,5 +19,5 @@
 int main(int argc, char **argv) {
 
 	City city("stad.xml");
-
+	city.print();
 }

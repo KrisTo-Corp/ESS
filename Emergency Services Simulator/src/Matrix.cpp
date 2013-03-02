@@ -10,7 +10,7 @@
 
 #include "Matrix.h"
 
-Matrix::Matrix(): rows(3), columns(3) {
+Matrix::Matrix(): rows(21), columns(15) {
 	for(int i = 0; i < columns; i++){
 		std::vector<CityObjects*> colum;
 		for (int j = 0; j < rows; j++){
@@ -30,9 +30,10 @@ Matrix::Matrix(const int r, const int c): rows(r), columns(c) {
 	}
 }
 
-void Matrix::addObject(CityObjects* c, int x, int y){
-	matrix[x][y] = c;
+void addHouses(std::list<House>&) {
+
 }
+
 
 std::ostream& operator <<(std::ostream& stream, Matrix& o){
 	for (int i = 0; i < o.rows; i++){

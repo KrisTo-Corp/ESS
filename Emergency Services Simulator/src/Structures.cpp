@@ -19,6 +19,19 @@ std::string Structures::getName() const{
 	return name;
 }
 
+Coordinate Structures::getLocation() {
+	return location;
+}
+
+
+const int Structures::getWidth()const {
+	return width;
+}
+
+const int Structures::getLength()const {
+	return length;
+}
+
 Structures::~Structures()
 {
 }

@@ -36,3 +36,17 @@ std::ostream& operator <<(std::ostream& stream, Firetruck& o){
 	return stream;
 }
 
+void Firetruck::linkBase(Fire_Department* dep_ptr) {
+	base = dep_ptr;
+}
+
+std::string Firetruck::getBasename() const {
+	return basename;
+}
+
+Fire_Department* Firetruck::getBaseptr() {
+	return base;
+}
+
+
+

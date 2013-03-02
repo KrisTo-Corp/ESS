@@ -11,6 +11,7 @@
 #include <list>
 #include <vector>
 #include <string>
+#include <iostream>
 
 #include "CityObjects.h"
 #include "Structures.h"
@@ -28,6 +29,8 @@ private:
 public:
 	City(std::string);
 	void parseCity(std::string);
+	void link_trucks_to_bases();
+	void print();
 	virtual ~City();
 };
 

@@ -24,6 +24,9 @@ public:
 	Structures();
 	Structures(const int, const int, const std::string, const int, const int, Eobjects);
 	std::string getName() const;
+	Coordinate getLocation();
+	const int getWidth()const;
+	const int getLength()const;
 	virtual ~Structures();
 };
 

@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <assert.h>
 #include <cctype>
+#include <typeinfo>
 
 #include "City.h"
 #include "CityObjects.h"
@@ -35,14 +36,14 @@ void City::parseCity(std::string filename) {
 
 	for(TiXmlElement* object = virtualCity->FirstChildElement(); object != NULL; object = object->NextSiblingElement()) {
 		std::string objectName = object->Value();
-		if (objectName == "House") {
+		if (objectName == "Huis") {
 			int x, y, hp;
 
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
 				std::string fieldName = field->Value();
 				if(fieldName == "Locatie") {
-					x = field->Attribute("X");
-					y = field->Attribute("Y");
+					x = atoi(field->Attribute("X"));
+					y = atoi(field->Attribute("Y"));
 
 					/*
 					 * Check to see if the input is valid: not negative and of type int.
@@ -61,7 +62,7 @@ void City::parseCity(std::string filename) {
 					if(text == NULL){
 						continue;
 					}
-					std::string hp_string = text;
+					std::string hp_string = text->Value();
 					hp = atoi(hp_string.c_str());
 
 					/*
@@ -77,12 +78,12 @@ void City::parseCity(std::string filename) {
 					}
 				}
 				else {
-					std::cout << "Label " << fieldName << " is not a valid field." << std::endl;
+					std::cout << "Label " << fieldName << " is not a valid field. House" << std::endl;
 					continue;
 				}
-				House house(x, y, hp, "house");
-				houses.push_back(house);
 			}
+			House house(x, y, hp, "house");
+			houses.push_back(house);
 		}
 		else if (objectName == "Straat") {
 			int x_start, y_start, x_end, y_end;
@@ -90,12 +91,12 @@ void City::parseCity(std::string filename) {
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
 				std::string fieldName = field->Value();
 				if(fieldName == "Van") {
-					x_start = field->Attribute("x");
-					y_start = field->Attribute("y");
+					x_start = atoi(field->Attribute("x"));
+					y_start = atoi(field->Attribute("y"));
 				}
-				if(fieldName == "Naar") {
-					x_end = field->Attribute("x");
-					y_end = field->Attribute("y");
+				else if(fieldName == "Naar") {
+					x_end = atoi(field->Attribute("x"));
+					y_end = atoi(field->Attribute("y"));
 				}
 				else if(fieldName == "Naam") {
 					TiXmlText* text = field->FirstChild()->ToText();
@@ -103,11 +104,11 @@ void City::parseCity(std::string filename) {
 						continue;
 					}
 					else {
-						name = text;
+						name = text->Value();
 					}
 				}
 				else {
-					std::cout << "Label " << fieldName << " is not a valid field." << std::endl;
+					std::cout << "Label " << fieldName << " is not a valid field. Street" << std::endl;
 					continue;
 				}
 				Street street(x_start, y_start, x_end, y_end, name);
@@ -117,24 +118,24 @@ void City::parseCity(std::string filename) {
 		else if (objectName == "Brandweerwagen") {
 			std::string name, base;
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
+				std::string fieldName = field->Value();
 				TiXmlText* text = field->FirstChild()->ToText();
 				if(text == NULL){
 					continue;
 				}
-				else if (text == "Naam") {
-					name = text;
+				else if (fieldName == "Naam") {
+					name = text->Value();
 				}
-				else if (text == "Basis") {
-					base = text;
+				else if (fieldName == "Basis") {
+					base = text->Value();
 				}
 				else {
-					std::cout << "Label " << text << " is not a valid field." << std::endl;
+					std::cout << "Label " << fieldName << " is not a valid field. Truck" << std::endl;
 					continue;
 				}
-				Firetruck truck(0, 0, name, base);
-				trucks.push_back(truck);
-
 			}
+			Firetruck truck(0, 0, name, base);
+			trucks.push_back(truck);
 		}
 		else if(objectName == "Brandweerkazerne") {
 			int x_building, y_building, x_entrance, y_entrance;
@@ -142,12 +143,12 @@ void City::parseCity(std::string filename) {
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
 				std::string fieldName = field->Value();
 				if(fieldName == "Locatie") {
-					x_building = field->Attribute("X");
-					y_building = field->Attribute("Y");
+					x_building = atoi(field->Attribute("X"));
+					y_building = atoi(field->Attribute("Y"));
 				}
-				if(fieldName == "Ingang") {
-					x_entrance = field->Attribute("X");
-					y_entrance  = field->Attribute("Y");
+				else if(fieldName == "Ingang") {
+					x_entrance = atoi(field->Attribute("X"));
+					y_entrance  = atoi(field->Attribute("Y"));
 				}
 				else if(fieldName == "Naam") {
 					TiXmlText* text = field->FirstChild()->ToText();
@@ -155,21 +156,21 @@ void City::parseCity(std::string filename) {
 						continue;
 					}
 					else {
-						name = text;
+						name = text->Value();
 					}
 				}
 				else {
-					std::cout << "Label " << fieldName << " is not a valid field." << std::endl;
+					std::cout << "Label " << fieldName << " is not a valid field. dep" << std::endl;
 					continue;
 
 				}
-				Fire_Department department(x_building, y_building, x_entrance, y_entrance, name);
-				departments.push_back(department);
 			}
+			Fire_Department department(x_building, y_building, x_entrance, y_entrance, name);
+			departments.push_back(department);
 		}
 		else {
 			std::cout << object << " is not a valid object." << std::endl;
+			exit(EXIT_FAILURE);
 		}
 	}
-exit(EXIT_FAILURE);
 }

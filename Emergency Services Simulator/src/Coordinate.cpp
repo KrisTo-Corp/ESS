@@ -17,6 +17,14 @@ Coordinate::Coordinate(int x_value, int y_value): x(x_value), y(y_value)
 {
 }
 
+int Coordinate::getX()const {
+	return x;
+}
+
+int Coordinate::getY()const {
+	return y;
+}
+
 std::ostream& operator <<(std::ostream& stream, Coordinate& o){
 	stream << "(" << o.x << ", " << o.y << ")";
 	return stream;

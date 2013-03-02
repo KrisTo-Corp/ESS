@@ -10,6 +10,7 @@
 
 #include <vector>
 #include <ostream>
+#include <list>
 
 #include "CityObjects.h"
 #include "Structures.h"
@@ -23,7 +24,11 @@ private:
 public:
 	Matrix();
 	Matrix(const int, const int);
-	void addObject(CityObjects*, int, int);
+	void addHouses(std::list<House>&);
+	void addFiredep(std::list<Fire_Department>&);
+	void addStreet(std::list<Street>&);
+
+
 	friend std::ostream& operator <<(std::ostream&, Matrix&);
 	virtual ~Matrix();
 };
