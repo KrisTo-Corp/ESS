@@ -15,6 +15,10 @@ Structures::Structures(int x, int y, const std::string n, int w, int l, Eobjects
 {
 }
 
+std::string Structures::getName() const{
+	return name;
+}
+
 Structures::~Structures()
 {
 }

@@ -23,6 +23,7 @@ protected:
 public:
 	Structures();
 	Structures(int, int, const std::string, int, int, Eobjects);
+	std::string getName() const;
 	virtual ~Structures();
 };
 

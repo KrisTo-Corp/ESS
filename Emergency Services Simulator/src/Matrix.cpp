@@ -10,7 +10,7 @@
 
 #include "Matrix.h"
 
-Matrix::Matrix(): rows(2), columns(2) {
+Matrix::Matrix(): rows(3), columns(3) {
 	for(int i = 0; i < columns; i++){
 		std::vector<CityObjects*> colum;
 		for (int j = 0; j < rows; j++){
@@ -37,20 +37,31 @@ void Matrix::addObject(CityObjects* c, int x, int y){
 std::ostream& operator <<(std::ostream& stream, Matrix& o){
 	for (int i = 0; i < o.rows; i++){
 		for (int j = 0; j < o.columns; j++){
-			if (o.matrix[i][j]->getType() == house){
-				stream << *dynamic_cast<House*>(o.matrix[i][j]);
+			if (o.matrix[i][j] == NULL){
+				stream << " ";
+			}
+			else if (o.matrix[i][j]->getType() == house){
+				House* ptr = dynamic_cast<House*>(o.matrix[i][j]);
+				stream << ptr->getName();
 			}
 			else if (o.matrix[i][j]->getType() == department){
-				stream << *dynamic_cast<Fire_Department*>(o.matrix[i][j]);
+				Fire_Department* ptr = dynamic_cast<Fire_Department*>(o.matrix[i][j]);
+				stream << ptr->getName();
 			}
 			else if (o.matrix[i][j]->getType() == street){
-				stream << *dynamic_cast<Street*>(o.matrix[i][j]);
+				Street* ptr = dynamic_cast<Street*>(o.matrix[i][j]);
+				stream << ptr->getName();
 			}
 			else if (o.matrix[i][j]->getType() == crossroad){
-				stream << *dynamic_cast<Crossroad*>(o.matrix[i][j]);
+				Crossroad* ptr = dynamic_cast<Crossroad*>(o.matrix[i][j]);
+				stream << ptr->getName();
 			}
-			stream << "\n";
+			else {
+				stream << " ";
+			}
+			stream << "\t";
 		}
+		stream << "\n";
 	}
 
 	return stream;

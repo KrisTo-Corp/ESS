@@ -17,6 +17,10 @@ Roads::Roads(const std::string n, Eobjects t): name(n), CityObjects(t)
 {
 }
 
+std::string Roads::getName() const{
+	return name;
+}
+
 Roads::~Roads()
 {
 }
