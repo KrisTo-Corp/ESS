@@ -24,10 +24,10 @@ int main(int argc, char **argv) {
 	Street s;
 	Crossroad c;
 
-	m.add_pointer(&house, 0, 0);
-	m.add_pointer(&dep, 0, 1);
-	m.add_pointer(&s, 1, 0);
-	m.add_pointer(&c, 1, 1);
+	m.addObject(&house, 0, 0);
+	m.addObject(&dep, 0, 1);
+	m.addObject(&s, 1, 0);
+	m.addObject(&c, 1, 1);
 
 
 	std::cout << m << std::endl;
