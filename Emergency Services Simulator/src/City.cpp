@@ -8,12 +8,8 @@
 #include "City.h"
 
 City::City(const std::string filename){
-
-
-
+	parseCity(filename);
 }
-
-void City::parseCity(std::string);
 
 City::~City() {
 	// TODO Auto-generated destructor stub

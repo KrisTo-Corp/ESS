@@ -15,7 +15,8 @@ CPP_SRCS += \
 ../src/tinystr.cpp \
 ../src/tinyxml.cpp \
 ../src/tinyxmlerror.cpp \
-../src/tinyxmlparser.cpp 
+../src/tinyxmlparser.cpp \
+../src/xmlparser.cpp 
 
 OBJS += \
 ./src/City.o \
@@ -29,7 +30,8 @@ OBJS += \
 ./src/tinystr.o \
 ./src/tinyxml.o \
 ./src/tinyxmlerror.o \
-./src/tinyxmlparser.o 
+./src/tinyxmlparser.o \
+./src/xmlparser.o 
 
 CPP_DEPS += \
 ./src/City.d \
@@ -43,7 +45,8 @@ CPP_DEPS += \
 ./src/tinystr.d \
 ./src/tinyxml.d \
 ./src/tinyxmlerror.d \
-./src/tinyxmlparser.d 
+./src/tinyxmlparser.d \
+./src/xmlparser.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
