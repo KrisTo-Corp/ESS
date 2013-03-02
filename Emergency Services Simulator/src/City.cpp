@@ -7,10 +7,13 @@
 
 #include "City.h"
 
-City::City() {
-	// TODO Auto-generated constructor stub
+City::City(const std::string filename){
+
+
 
 }
+
+void City::parseCity(std::string);
 
 City::~City() {
 	// TODO Auto-generated destructor stub

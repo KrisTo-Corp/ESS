@@ -30,7 +30,7 @@ private:
 	Coordinate end;
 public:
 	Street();
-	Street(int, int, int, int, const std::string);
+	Street(const int, const int, const int, const int, const std::string);
 	friend std::ostream& operator <<(std::ostream&, Street&);
 };
 
@@ -39,7 +39,7 @@ private:
 	Coordinate location;
 public:
 	Crossroad();
-	Crossroad(int, int, const std::string);
+	Crossroad(const int, const int, const std::string);
 	friend std::ostream& operator <<(std::ostream&, Crossroad&);
 };
 

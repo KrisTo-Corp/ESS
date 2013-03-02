@@ -23,7 +23,7 @@ Firetruck::Firetruck(): Vehicles(0, 0, ""), basename("")
 {
 }
 
-Firetruck::Firetruck(int x, int y, const std::string n, const std::string bn): Vehicles(x, y, n), basename(bn)
+Firetruck::Firetruck(const int x, const int y, const std::string n, const std::string bn): Vehicles(x, y, n), basename(bn)
 {
 }
 

@@ -22,7 +22,7 @@ protected:
 	const int length;
 public:
 	Structures();
-	Structures(int, int, const std::string, int, int, Eobjects);
+	Structures(const int, const int, const std::string, const int, const int, Eobjects);
 	std::string getName() const;
 	virtual ~Structures();
 };
@@ -32,7 +32,7 @@ private:
 	int hitpoints;
 public:
 	House();
-	House(int, int, int, const std::string);
+	House(const int, const int, int, const std::string);
 	friend std::ostream& operator <<(std::ostream&, House&);
 };
 
@@ -41,7 +41,7 @@ private:
 	Coordinate entrance;
 public:
 	Fire_Department();
-	Fire_Department(int, int, int, int, const std::string);
+	Fire_Department(const int, const int, const int, const int, const std::string);
 	friend std::ostream& operator <<(std::ostream&, Fire_Department&);
 };
 

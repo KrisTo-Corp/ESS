@@ -19,7 +19,7 @@ protected:
 	Coordinate location;
 public:
 	Vehicles();
-	Vehicles(int, int, const std::string);
+	Vehicles(const int, const int, const std::string);
 	virtual ~Vehicles();
 };
 

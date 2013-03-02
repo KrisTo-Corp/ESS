@@ -13,11 +13,11 @@
 
 class Coordinate {
 private:
-	int x;
-	int y;
+	const int x;
+	const int y;
 public:
 	Coordinate();
-	Coordinate(int, int);
+	Coordinate(const int, const int);
 	friend std::ostream& operator <<(std::ostream&, Coordinate&);
 	virtual ~Coordinate();
 };

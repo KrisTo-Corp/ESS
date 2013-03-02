@@ -1,17 +1,20 @@
 #include <iostream>
-#include "tinyxml.h"
 #include <vector>
 #include <cstdlib>
 #include <assert.h>
 #include <cctype>
 
+#include "City.h"
+#include "CityObjects.h"
+#include "tinyxml.h"
+
 #define TIXML_USE_STL
 
-int main() {
+void City::parseCity(std::string filename) {
 	TiXmlDocument doc;
-	if(!doc.LoadFile("/home/kristof/git/ESS/Emergency Services Simulator/stad.xml")) {
+	if(!doc.LoadFile(filename.c_str())) {
 		std::cerr << doc.ErrorDesc() << std::endl;
-		return 0;
+		exit(EXIT_FAILURE);
 	}
 
 	TiXmlElement* virtualCity = doc.FirstChildElement();
@@ -19,7 +22,7 @@ int main() {
 	if(virtualCity == NULL) {
 		std::cerr << "Failed to load file: No root element." << std::endl;
 		doc.Clear();
-		return 0;
+		exit(EXIT_FAILURE);
 	}
 
 	/*
@@ -33,6 +36,8 @@ int main() {
 	for(TiXmlElement* object = virtualCity->FirstChildElement(); object != NULL; object = object->NextSiblingElement()) {
 		std::string objectName = object->Value();
 		if (objectName == "House") {
+			const int x, y, hp;
+
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
 				std::string fieldName = field->Value();
 				if(fieldName == "Locatie") {
@@ -75,9 +80,7 @@ int main() {
 					std::cout << "Label " << fieldName << " is not a valid field." << std::endl;
 					continue;
 				}
-				/*
-				 *  Check + construct house
-				 */
+				House house(x, y, hp, )
 			}
 		}
 		else if (objectName == "Straat") {

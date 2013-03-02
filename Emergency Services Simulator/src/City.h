@@ -10,6 +10,7 @@
 
 #include <list>
 #include <vector>
+#include <string>
 
 #include "CityObjects.h"
 #include "Structures.h"
@@ -18,7 +19,6 @@
 
 class City {
 private:
-
 	std::list<House> houses;
 	std::list<Fire_Department> departments;
 	std::list<Street> streets;
@@ -26,7 +26,8 @@ private:
 	std::list<Firetruck> trucks;
 
 public:
-	City();
+	City(std::string);
+	void parseCity(std::string);
 	virtual ~City();
 };
 

@@ -29,7 +29,7 @@ Street::Street(): Roads("", street), start(0, 0), end(0, 0)
 {
 }
 
-Street::Street(int x_start, int y_start, int x_end, int y_end, const std::string n): Roads(n, street), start(x_start, y_start), end(x_end, y_end)
+Street::Street(const int x_start, const int y_start, const int x_end, const int y_end, const std::string n): Roads(n, street), start(x_start, y_start), end(x_end, y_end)
 {
 }
 
@@ -46,7 +46,7 @@ Crossroad::Crossroad(): Roads("", crossroad), location(0, 0)
 {
 }
 
-Crossroad::Crossroad(int x, int y, const std::string n): Roads(n, crossroad), location(x, y)
+Crossroad::Crossroad(const int x, const int y, const std::string n): Roads(n, crossroad), location(x, y)
 {
 }
 
