@@ -13,8 +13,8 @@
 
 class Coordinate {
 private:
-	const int x;
-	const int y;
+	int x;
+	int y;
 public:
 	Coordinate();
 	Coordinate(const int, const int);

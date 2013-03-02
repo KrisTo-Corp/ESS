@@ -33,6 +33,14 @@ Street::Street(const int x_start, const int y_start, const int x_end, const int 
 {
 }
 
+Coordinate Street::getStart(){
+	return start;
+}
+
+Coordinate Street::getEnd(){
+	return end;
+}
+
 std::ostream& operator <<(std::ostream& stream, Street& o){
 	stream << "Road: Street \n";
 	stream << "Name: " << o.name << "\n";
@@ -48,6 +56,10 @@ Crossroad::Crossroad(): Roads("", crossroad), location(0, 0)
 
 Crossroad::Crossroad(const int x, const int y, const std::string n): Roads(n, crossroad), location(x, y)
 {
+}
+
+Coordinate Crossroad::getLocation(){
+	return location;
 }
 
 std::ostream& operator <<(std::ostream& stream, Crossroad& o){

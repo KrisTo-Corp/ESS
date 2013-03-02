@@ -111,9 +111,9 @@ void City::parseCity(std::string filename) {
 					std::cout << "Label " << fieldName << " is not a valid field. Street" << std::endl;
 					continue;
 				}
-				Street street(x_start, y_start, x_end, y_end, name);
-				streets.push_back(street);
 			}
+			Street street(x_start, y_start, x_end, y_end, name);
+			streets.push_back(street);
 		}
 		else if (objectName == "Brandweerwagen") {
 			std::string name, base;

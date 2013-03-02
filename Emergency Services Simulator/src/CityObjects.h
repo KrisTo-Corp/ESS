@@ -14,7 +14,7 @@ enum Eobjects {none, house, department, street, crossroad};
 
 class CityObjects {
 private:
-	const Eobjects type;
+	Eobjects type;
 public:
 	CityObjects();
 	CityObjects(Eobjects);

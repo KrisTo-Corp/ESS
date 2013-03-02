@@ -16,7 +16,7 @@
 
 class Roads: public CityObjects {
 protected:
-	const std::string name;
+	std::string name;
 public:
 	Roads();
 	Roads(const std::string, Eobjects);
@@ -31,6 +31,8 @@ private:
 public:
 	Street();
 	Street(const int, const int, const int, const int, const std::string);
+	Coordinate getStart();
+	Coordinate getEnd();
 	friend std::ostream& operator <<(std::ostream&, Street&);
 };
 
@@ -40,6 +42,7 @@ private:
 public:
 	Crossroad();
 	Crossroad(const int, const int, const std::string);
+	Coordinate getLocation();
 	friend std::ostream& operator <<(std::ostream&, Crossroad&);
 };
 

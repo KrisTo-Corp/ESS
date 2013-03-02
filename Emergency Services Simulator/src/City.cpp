@@ -10,13 +10,14 @@
 City::City(const std::string filename){
 	parseCity(filename);
 	link_trucks_to_bases();
+	matrix.addHouses(houses);
+	matrix.addFiredeps(departments);
+	crossroads = matrix.addStreets(streets);
+	matrix.addCrossroads(crossroads);
 }
 
 void City::print() {
-	std::list<Firetruck>::iterator it_t;
-	for (it_t = trucks.begin(); it_t != trucks.end(); it_t++) {
-		std::cout << (it_t->getBaseptr())->getName() << std::endl;
-	}
+	std::cout << matrix << std::endl;
 }
 
 void City::link_trucks_to_bases() {

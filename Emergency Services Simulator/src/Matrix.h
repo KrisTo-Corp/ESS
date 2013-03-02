@@ -25,8 +25,10 @@ public:
 	Matrix();
 	Matrix(const int, const int);
 	void addHouses(std::list<House>&);
-	void addFiredep(std::list<Fire_Department>&);
-	void addStreet(std::list<Street>&);
+	void addFiredeps(std::list<Fire_Department>&);
+	std::list<Crossroad> addStreets(std::list<Street>&);
+	void addCrossroads(std::list<Crossroad>&);
+	void addObject(int, int, CityObjects*);
 
 
 	friend std::ostream& operator <<(std::ostream&, Matrix&);

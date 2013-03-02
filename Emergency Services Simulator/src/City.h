@@ -17,6 +17,7 @@
 #include "Structures.h"
 #include "Vehicles.h"
 #include "Roads.h"
+#include "Matrix.h"
 
 class City {
 private:
@@ -25,6 +26,8 @@ private:
 	std::list<Street> streets;
 	std::list<Crossroad> crossroads;
 	std::list<Firetruck> trucks;
+
+	Matrix matrix;
 
 public:
 	City(std::string);

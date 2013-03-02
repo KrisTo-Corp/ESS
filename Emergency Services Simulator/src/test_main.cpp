@@ -18,6 +18,24 @@
 
 int main(int argc, char **argv) {
 
-	City city("stad.xml");
-	city.print();
+	//City city("stad.xml");
+
+	//city.print();
+
+
+	Matrix m(2, 2);
+
+	House house(0, 0, 0, "house");
+	Fire_Department dep(0, 0, 0, 0, "depar");
+	Street s(0, 0, 0, 0, "stree");
+	Crossroad c(0, 0, "cross");
+
+	m.addObject(0, 0, &house);
+	m.addObject(0, 1, &dep);
+	m.addObject(1, 0, &s);
+	m.addObject(1, 1, &c);
+
+	std::cout << m << std::endl;
+
+
 }
