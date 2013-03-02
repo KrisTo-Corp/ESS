@@ -3,6 +3,7 @@
 #include <vector>
 #include <cstdlib>
 #include <assert.h>
+#include <cctype>
 
 #define TIXML_USE_STL
 
@@ -37,15 +38,37 @@ int main() {
 				if(fieldName == "Locatie") {
 					const int x = field->Attribute("X");
 					const int y = field->Attribute("Y");
+
+					/*
+					 * Check to see if the input is valid: not negative and of type int.
+					 */
+					if (x < 0 || y < 0) {
+						std::cout << "A coordinate can not be negative! Coordinate read: (" << x << "," << y << ")" << std::endl;
+						continue;
+					}
+					else if (isalpha(x) || isalpha(y) || typeid(x) != typeid(int) || typeid(y) != typeid(int)) {
+						std::cout << "A coordinate must be of type int! Coordinate read: (" << x << "," << y << ")" << std::endl;
+						continue;
+					}
 				}
 				else if(fieldName == "Brandbaarheid") {
 					TiXmlText* text = field->FirstChild()->ToText();
 					if(text == NULL){
 						continue;
 					}
-					else {
-						std::string hp_string = text;
-						int hp = atoi(hp_string.c_str());
+					std::string hp_string = text;
+					int hp = atoi(hp_string.c_str());
+
+					/*
+					 * Check to see if the input is valid: not negative and of type int.
+					 */
+					if (hp < 0) {
+						std::cout << "A house can not have a negative amount of hitpoints! Hitpoints read: " << hp << std::endl;
+						continue;
+					}
+					else if (isalpha(hp) || typeid(hp) != typeid(int)) {
+						std::cout << "Hitpoints must be of type int! Hitpoints read: " << hp << std::endl;
+						continue;
 					}
 				}
 				else {
