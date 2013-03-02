@@ -1,0 +1,62 @@
+DESIGNBYCONTRACT.H
+When working with REQUIRE/ENSURE we must check whether or not the object has been properly initialized.
+
+bool CLASSNAME::properlyInitialized() {
+	return _initCheck == this;
+}
+
+This can be used in nearly EVERY method as a require. Like this:
+REQUIRE(this->properlyInitialized) (We will probably just drop the 'this' ;) )
+
+Constructor only has an ENSURE of course.
+
+
+REQUIRE AND ENSURE have 2 parameters: one condition and a message. eg. ENSURE(COND, "message)
+
+-------------------------------------------------------------------------------------------------------
+USING GTEST
+
+Make a friend class, declare the variables our tests want to use and write tests with function name: TEST_F
+
+class TicTactToeTest: public ::testing::Test {
+protected:
+	friend class TicTacToe;
+	// You should make the members protected s.t. they can be
+	// accessed from sub-classes.
+
+	// virtual void SetUp() will be called before each test is run.  You
+	// should define it if you need to initialize the variables.
+	// Otherwise, this can be skipped.
+	virtual void SetUp() {
+	}
+
+	// virtual void TearDown() will be called after each test is run.
+	// You should define it if there is cleanup work to do.  Otherwise,
+	// you don't have to provide it.
+	virtual void TearDown() {
+	}
+
+	// Declares the variables your tests want to use.
+	TicTacToe ttt_;
+	TicTacToePlayer tttPlayer_;
+
+};
+
+// Tests the default constructor.
+TEST_F(TicTactToeTest, DefaultConstructor) {
+	EXPECT_TRUE(ttt_.properlyInitialized());
+	// verify post-condition
+	EXPECT_EQ(0, ttt_.nrOfMoves());
+	EXPECT_TRUE(ttt_.notDone());
+	char col, row;
+	for (col = minCol; col <= maxCol; col++)
+		for (row = minRow; row <= maxRow; row++) {
+			EXPECT_EQ(' ', ttt_.getMark(col, row));
+		};EXPECT_TRUE(tttPlayer_.properlyInitialized());
+	EXPECT_EQ('X', tttPlayer_.getMarker());
+}
+
+int main(int argc, char **argv) {
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}

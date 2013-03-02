@@ -27,7 +27,7 @@ int main() {
 	 */
 
 	/*
-	 * Checks when defined or at the end ?
+	 * Use DesignByContract.h here or when using the variables in the constructor?
 	 */
 
 	for(TiXmlElement* object = virtualCity->FirstChildElement(); object != NULL; object = object->NextSiblingElement()) {
