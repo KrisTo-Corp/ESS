@@ -22,6 +22,8 @@ int main(int argc, char **argv) {
 
 	city.print();
 
+	std::cout << "roekoe" << std::endl;
+
 
 /*
 	Matrix m(2, 2);
