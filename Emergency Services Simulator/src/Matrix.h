@@ -29,6 +29,7 @@ public:
 	std::list<Crossroad> addStreets(std::list<Street>&);
 	void addCrossroads(std::list<Crossroad>&);
 	void addObject(int, int, CityObjects*);
+	void printObject(int, int);
 
 
 	friend std::ostream& operator <<(std::ostream&, Matrix&);

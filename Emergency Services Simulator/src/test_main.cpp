@@ -18,11 +18,14 @@
 
 int main(int argc, char **argv) {
 
-	//City city("stad.xml");
+	City city("stad.xml");
 
-	//city.print();
+	for (int i = 0; i < 16; i++){
+		city.printObject(7, i);
+	}
 
 
+/*
 	Matrix m(2, 2);
 
 	House house(0, 0, 0, "house");
@@ -36,6 +39,7 @@ int main(int argc, char **argv) {
 	m.addObject(1, 1, &c);
 
 	std::cout << m << std::endl;
+*/
 
 
 }

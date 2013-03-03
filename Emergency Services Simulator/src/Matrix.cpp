@@ -10,7 +10,7 @@
 
 #include "Matrix.h"
 
-Matrix::Matrix(): rows(21), columns(15) {
+Matrix::Matrix(): rows(22), columns(16) {
 	for(int i = 0; i < columns; i++){
 		std::vector<CityObjects*> colum;
 		for (int j = 0; j < rows; j++){
@@ -38,10 +38,8 @@ void Matrix::addHouses(std::list<House>& list) {
 		int x_end = x_start + (it->getWidth()-1);
 		int y_end = y_start - (it->getLength()-1);
 
-		for (int i = x_start; i > x_end; i++){
-			for (int j = y_start; j > y_end; j++){
-				std::cout << "rows = " << rows << std::endl << "columns = " << columns << std::endl;
-				std::cout << "row = " << (rows - 1) -j << std::endl << "colum =" << i << std::endl << std::endl;
+		for (int i = x_start; i <= x_end; i++){
+			for (int j = y_start; j >= y_end; j--){
 				addObject(i, j, &(*it));
 			}
 		}
@@ -56,8 +54,8 @@ void Matrix::addFiredeps(std::list<Fire_Department>& list) {
 		int x_end = x_start + (it->getWidth()-1);
 		int y_end = y_start - (it->getLength()-1);
 
-		for (int i = x_start; i > x_end; i++){
-			for (int j = y_start; j > y_end; j++){
+		for (int i = x_start; i <= x_end; i++){
+			for (int j = y_start; j >= y_end; j--){
 				addObject(i, j, &(*it));
 			}
 		}
@@ -73,16 +71,14 @@ std::list<Crossroad> Matrix::addStreets(std::list<Street>& list) {
 		int x_end = it->getEnd().getX();
 		int y_end = it->getEnd().getY();
 
-		for (int i = x_start; i > x_end; i++){
-			for (int j = y_start; j > y_end; j++){
-				if (matrix[rows - j][i] != NULL){
-					std::string name = dynamic_cast<Street*>(matrix[rows-j][i])->getName();
-					name += "-" + it->getName();
-					Crossroad c(i, j, name);
-					crossroads.push_back(c);
-				}
-				std::cout << "x = " << i << std::endl;
-				std::cout << "y = " << j << std::endl;
+		for (int i = x_start; i <= x_end; i++){
+			for (int j = y_start; j >= y_end; j--){
+				//if (matrix[rows - j][i] != NULL){
+					//std::string name = dynamic_cast<Street*>(matrix[rows-j][i])->getName();
+					//name += "-" + it->getName();
+					//Crossroad c(i, j, name);
+					//crossroads.push_back(c);
+				//}
 				addObject(i, j, &(*it));
 			}
 		}
@@ -101,36 +97,61 @@ void Matrix::addCrossroads(std::list<Crossroad>& list) {
 }
 
 void Matrix::addObject(int x, int y, CityObjects* object){
-	matrix[(rows-1)-y][x] = object;
+	matrix[y][rows-1-x] = object;
+}
+
+void Matrix::printObject(int x, int y){
+	if(matrix[y][rows-1-x] == NULL){
+		std::cout << "NULL\n";
+	}
+	else if(matrix[y][rows-1-x]->getType() == house){
+		std::cout << "house\n";
+	}
+	else if(matrix[y][rows-1-x]->getType() == department){
+		std::cout << "department\n";
+	}
+	else if(matrix[y][rows-1-x]->getType() == street){
+		std::cout << "street\n";
+	}
+	else if(matrix[y][rows-1-x]->getType() == crossroad){
+		std::cout << "crossroad\n";
+	}
+	else{
+		std::cout << "unknown\n";
+	}
 }
 
 
 
 
 std::ostream& operator <<(std::ostream& stream, Matrix& o){
-	for (int i = 0; i < o.rows; i++){
-		for (int j = 0; j < o.columns; j++){
-			if (o.matrix[i][j]->getType() == house){
-				House* ptr = dynamic_cast<House*>(o.matrix[i][j]);
-				stream << ptr->getName();
+
+	for(int i = 0; i < o.rows; i++){
+		for(int j = 0; j < o.columns; j++){
+			if(o.matrix[j][i] == NULL){
+				stream << "NULL\n";
+				continue;
 			}
-			else if (o.matrix[i][j]->getType() == department){
-				Fire_Department* ptr = dynamic_cast<Fire_Department*>(o.matrix[i][j]);
-				stream << ptr->getName();
+			else if(o.matrix[j][i]->getType() == house){
+				stream << "house\n";
+				continue;
 			}
-			else if (o.matrix[i][j]->getType() == street){
-				Street* ptr = dynamic_cast<Street*>(o.matrix[i][j]);
-				stream << ptr->getName();
+			else if(o.matrix[j][i]->getType() == department){
+				stream << "department\n";
 			}
-			else if (o.matrix[i][j]->getType() == crossroad){
-				Crossroad* ptr = dynamic_cast<Crossroad*>(o.matrix[i][j]);
-				stream << ptr->getName();
+			else if(o.matrix[j][i]->getType() == street){
+				stream << "street\n";
 			}
-			stream << "\t";
+			else if(o.matrix[j][i]->getType() == crossroad){
+				stream << "crossroad\n";
+			}
+			else{
+				stream << "unknown\n";
+				continue;
+			}
 		}
 		stream << "\n";
 	}
-
 	return stream;
 }
 

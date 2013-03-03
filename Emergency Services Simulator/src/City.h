@@ -34,6 +34,7 @@ public:
 	void parseCity(std::string);
 	void link_trucks_to_bases();
 	void print();
+	void printObject(int, int);
 	virtual ~City();
 };
 

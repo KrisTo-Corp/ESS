@@ -14,12 +14,16 @@ City::City(const std::string filename){
 	matrix.addFiredeps(departments);
 	crossroads = matrix.addStreets(streets);
 	matrix.addCrossroads(crossroads);
+	std::cout << "ALL INITIALIZED" << std::endl;
 }
 
 void City::print() {
 	std::cout << matrix << std::endl;
 }
 
+void City::printObject(int x, int y) {
+	matrix.printObject(x, y);
+}
 void City::link_trucks_to_bases() {
 	std::list<Firetruck>::iterator it_t;
 	std::list<Fire_Department>::iterator it_dep;
