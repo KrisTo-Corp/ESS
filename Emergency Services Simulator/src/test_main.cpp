@@ -20,9 +20,7 @@ int main(int argc, char **argv) {
 
 	City city("stad.xml");
 
-	for (int i = 0; i < 16; i++){
-		city.printObject(0, i);
-	}
+	city.print();
 
 
 /*
