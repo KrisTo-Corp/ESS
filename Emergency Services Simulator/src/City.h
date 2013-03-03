@@ -1,10 +1,9 @@
-//============================================================================
-// Name        : City.h
-// Author      : Kristof De Middelaer & Tom Roels
-// Version     : 1.0
-// Copyright   : Project Software Engineering - BA1 Informatica - Kristof De Middelaer & Tom Roels - University of Antwerp
-// Description : City in C++, Ansi-style
-//============================================================================
+/*
+ * City.h
+ *
+ *  Created on: Feb 28, 2013
+ *      Author: tom
+ */
 
 #ifndef CITY_H_
 #define CITY_H_
@@ -13,14 +12,12 @@
 #include <vector>
 #include <string>
 #include <iostream>
-#include <typeinfo>
 
 #include "CityObjects.h"
 #include "Structures.h"
 #include "Vehicles.h"
 #include "Roads.h"
 #include "Matrix.h"
-#include "DesignByContract.h"
 
 class City {
 private:
@@ -32,22 +29,13 @@ private:
 
 	Matrix matrix;
 
-	City* _initCheck;
-
 public:
-	City(std::string filename);
-//	REQUIRE(typeid(filename) == typeid(std::string), "The city constructor requires a string as filename.");
-//	ENSURE(properlyInitialized(), "Constructor didn't end in properly initialized state.");
-
-	friend std::ostream& operator <<(std::ostream& stream, City& o);
-//	REQUIRE(o.properlyInitialized(), "The city was not properly initialized when pushing to stream.");
-
-private:
+	City(std::string);
 	void parseCity(std::string);
-
 	void link_trucks_to_bases();
-
-	bool properlyInitialized();
+	void print();
+	void printObject(int, int);
+	virtual ~City();
 };
 
 #endif /* CITY_H_ */

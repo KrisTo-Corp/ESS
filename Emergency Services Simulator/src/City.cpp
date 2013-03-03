@@ -1,37 +1,29 @@
-//============================================================================
-// Name        : City.cpp
-// Author      : Kristof De Middelaer & Tom Roels
-// Version     : 1.0
-// Copyright   : Project Software Engineering - BA1 Informatica - Kristof De Middelaer & Tom Roels - University of Antwerp
-// Description : City in C++, Ansi-style
-//============================================================================
+/*
+ * City.cpp
+ *
+ *  Created on: Feb 28, 2013
+ *      Author: tom
+ */
 
 #include "City.h"
 
 City::City(const std::string filename){
-	REQUIRE(typeid(filename) == typeid(std::string), "The city constructor requires a string as filename.");
-
-	_initCheck = this;
 	parseCity(filename);
 	link_trucks_to_bases();
 	matrix.addHouses(houses);
 	matrix.addFiredeps(departments);
 	crossroads = matrix.addStreets(streets);
 	matrix.addCrossroads(crossroads);
-
-	ENSURE(properlyInitialized(), "Constructor didn't end in properly initialized state.");
 }
 
-std::ostream& operator<<(std::ostream& stream, City& o){
-	REQUIRE(o.properlyInitialized(), "The city was not properly initialized when pushing to stream.");
-
-	stream << o.matrix << std::endl;
-	return stream;
+void City::print() {
+	std::cout << matrix << std::endl;
 }
 
+void City::printObject(int x, int y) {
+	matrix.printObject(x, y);
+}
 void City::link_trucks_to_bases() {
-	// PRIVATE METHOD DOES NOT HAVE POST OR PRE CONDITIONS.
-
 	std::list<Firetruck>::iterator it_t;
 	std::list<Fire_Department>::iterator it_dep;
 	for (it_t = trucks.begin(); it_t != trucks.end(); it_t++) {
@@ -43,15 +35,15 @@ void City::link_trucks_to_bases() {
 				it_t->linkBase(dep_ptr);
 			}
 		}
-		if (it_t->getBaseptr() == NULL){
-			std::cerr << "The basename: '" + it_t->getBasename() + "', did not exist. Truck with name: '" + it_t->getName() + "', was not linked.\n";
-		}
 	}
+
+	/*
+	 * Check if base exists
+	 */
 }
 
-bool City::properlyInitialized(){
-	// PRIVATE METHOD DOES NOT HAVE POST OR PRE CONDITIONS.
 
-	return _initCheck == this;
+City::~City() {
+	// TODO Auto-generated destructor stub
 }
 

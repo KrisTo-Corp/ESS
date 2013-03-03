@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
 	City city("stad.xml");
 
-	std::cout << city << std::endl;
+	city.print();
 
 
 /*
