@@ -1,9 +1,10 @@
-/*
- * Structures.h
- *
- *  Created on: Feb 28, 2013
- *      Author: tom
- */
+//=======================================================================================
+// Name        : Structures.h
+// Author      : Kristof De Middelaer & Tom Roels
+// Version     : 1.0
+// Copyright   : Project Software Engineering - BA1 Informatica - University of Antwerp
+// Description : Structures in C++, Ansi-style
+//=======================================================================================
 
 #ifndef STRUCTURES_H_
 #define STRUCTURES_H_
@@ -20,32 +21,44 @@ protected:
 	Coordinate location;
 	const int width;
 	const int length;
+
 public:
 	Structures();
-	Structures(const int, const int, const std::string, const int, const int, Eobjects);
+	Structures(const int x, const int y, const std::string n, const int w, const int l, Eobjects t);
+	virtual ~Structures();
+
 	std::string getName() const;
 	Coordinate getLocation();
-	const int getWidth()const;
-	const int getLength()const;
-	virtual ~Structures();
+	int getWidth()const;
+	int getLength()const;
 };
+
+
 
 class House: public Structures {
 private:
 	int hitpoints;
+
 public:
 	House();
-	House(const int, const int, int, const std::string);
-	friend std::ostream& operator <<(std::ostream&, House&);
+	House(const int x, const int y, int hp, const std::string n);
+	virtual ~House();
+
+	friend std::ostream& operator <<(std::ostream& s, House& house);
 };
+
+
 
 class Fire_Department: public Structures {
 private:
 	Coordinate entrance;
+
 public:
 	Fire_Department();
-	Fire_Department(const int, const int, const int, const int, const std::string);
-	friend std::ostream& operator <<(std::ostream&, Fire_Department&);
+	Fire_Department(const int x, const int y, const int x_entrance, const int y_entrance, const std::string n);
+	virtual ~Fire_Department();
+
+	friend std::ostream& operator <<(std::ostream& s, Fire_Department& department);
 };
 
 #endif /* STRUCTURES_H_ */

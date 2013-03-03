@@ -1,9 +1,10 @@
-/*
- * City.h
- *
- *  Created on: Feb 28, 2013
- *      Author: tom
- */
+//=======================================================================================
+// Name        : City.h
+// Author      : Kristof De Middelaer & Tom Roels
+// Version     : 1.0
+// Copyright   : Project Software Engineering - BA1 Informatica - University of Antwerp
+// Description : City in C++, Ansi-style
+//=======================================================================================
 
 #ifndef CITY_H_
 #define CITY_H_
@@ -30,12 +31,14 @@ private:
 	Matrix matrix;
 
 public:
-	City(std::string);
-	void parseCity(std::string);
-	void link_trucks_to_bases();
-	void print();
-	void printObject(int, int);
+	City(std::string filename);
 	virtual ~City();
+
+	friend std::ostream& operator <<(std::ostream& s, City& city);
+
+private:
+	void parseCity(std::string filename);
+	void link_trucks_to_bases();
 };
 
 #endif /* CITY_H_ */

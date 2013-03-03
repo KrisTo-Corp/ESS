@@ -1,9 +1,10 @@
-/*
- * CityObjects.cpp
- *
- *  Created on: Feb 28, 2013
- *      Author: tom
- */
+//=======================================================================================
+// Name        : CityObjects.cpp
+// Author      : Kristof De Middelaer & Tom Roels
+// Version     : 1.0
+// Copyright   : Project Software Engineering - BA1 Informatica - University of Antwerp
+// Description : CityObjects in C++, Ansi-style
+//=======================================================================================
 
 #include "CityObjects.h"
 
@@ -15,12 +16,11 @@ CityObjects::CityObjects(Eobjects t): type(t)
 {
 }
 
-Eobjects CityObjects::getType(){
-	return type;
-}
-
 CityObjects::~CityObjects()
 {
 }
 
+Eobjects CityObjects::getType(){
+	return type;
+}
 

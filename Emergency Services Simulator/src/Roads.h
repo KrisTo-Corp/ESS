@@ -1,9 +1,10 @@
-/*
- * Roads.h
- *
- *  Created on: Feb 28, 2013
- *      Author: tom
- */
+//=======================================================================================
+// Name        : Roads.h
+// Author      : Kristof De Middelaer & Tom Roels
+// Version     : 1.0
+// Copyright   : Project Software Engineering - BA1 Informatica - University of Antwerp
+// Description : Roads in C++, Ansi-style
+//=======================================================================================
 
 #ifndef ROADS_H_
 #define ROADS_H_
@@ -17,33 +18,45 @@
 class Roads: public CityObjects {
 protected:
 	std::string name;
+
 public:
 	Roads();
 	Roads(const std::string, Eobjects);
-	std::string getName() const;
 	virtual ~Roads();
+
+	std::string getName() const;
 };
+
+
 
 class Street: public Roads {
 private:
 	Coordinate start;
 	Coordinate end;
+
 public:
 	Street();
-	Street(const int, const int, const int, const int, const std::string);
+	Street(const int x_start, const int y_start, const int x_end, const int y_end, const std::string n);
+	virtual ~Street();
+
 	Coordinate getStart();
 	Coordinate getEnd();
-	friend std::ostream& operator <<(std::ostream&, Street&);
+	friend std::ostream& operator <<(std::ostream& s, Street& street);
 };
+
+
 
 class Crossroad: public Roads {
 private:
 	Coordinate location;
+
 public:
 	Crossroad();
-	Crossroad(const int, const int, const std::string);
+	Crossroad(const int x, const int y, const std::string n);
+	virtual ~Crossroad();
+
 	Coordinate getLocation();
-	friend std::ostream& operator <<(std::ostream&, Crossroad&);
+	friend std::ostream& operator <<(std::ostream& s, Crossroad& crossroad);
 };
 
 #endif /* ROADS_H_ */

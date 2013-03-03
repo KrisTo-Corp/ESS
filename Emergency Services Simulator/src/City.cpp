@@ -1,9 +1,10 @@
-/*
- * City.cpp
- *
- *  Created on: Feb 28, 2013
- *      Author: tom
- */
+//=======================================================================================
+// Name        : City.cpp
+// Author      : Kristof De Middelaer & Tom Roels
+// Version     : 1.0
+// Copyright   : Project Software Engineering - BA1 Informatica - University of Antwerp
+// Description : City in C++, Ansi-style
+//=======================================================================================
 
 #include "City.h"
 
@@ -16,13 +17,10 @@ City::City(const std::string filename){
 	matrix.addCrossroads(crossroads);
 }
 
-void City::print() {
-	std::cout << matrix << std::endl;
+City::~City()
+{
 }
 
-void City::printObject(int x, int y) {
-	matrix.printObject(x, y);
-}
 void City::link_trucks_to_bases() {
 	std::list<Firetruck>::iterator it_t;
 	std::list<Fire_Department>::iterator it_dep;
@@ -35,15 +33,13 @@ void City::link_trucks_to_bases() {
 				it_t->linkBase(dep_ptr);
 			}
 		}
+		if (it_t->getBaseptr() == NULL){
+			std::cerr << "Base doesn't exist -> Truck was not linked.\n";
+		}
 	}
-
-	/*
-	 * Check if base exists
-	 */
 }
 
-
-City::~City() {
-	// TODO Auto-generated destructor stub
+std::ostream& operator <<(std::ostream& s, City& city) {
+	s << city.matrix << "\n";
+	return s;
 }
-

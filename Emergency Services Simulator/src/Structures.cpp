@@ -1,21 +1,29 @@
-/*
- * Structures.cpp
- *
- *  Created on: Feb 28, 2013
- *      Author: tom
- */
-
+//=======================================================================================
+// Name        : Structures.cpp
+// Author      : Kristof De Middelaer & Tom Roels
+// Version     : 1.0
+// Copyright   : Project Software Engineering - BA1 Informatica - University of Antwerp
+// Description : Structures in C++, Ansi-style
+//=======================================================================================
 #include "Structures.h"
 
-Structures::Structures(): name(""), location(0, 0), width(0), length(0), CityObjects(none)
+//=====================
+//	CLASS STRUCTURES
+//=====================
+
+Structures::Structures(): CityObjects(none), name(""), location(0, 0), width(0), length(0)
 {
 }
 
-Structures::Structures(const int x, const int y, const std::string n, const int w, const int l, Eobjects t): name(n), location(x, y), width(w), length(l), CityObjects(t)
+Structures::Structures(const int x, const int y, const std::string n, const int w, const int l, Eobjects t): CityObjects(t), name(n), location(x, y), width(w), length(l)
 {
 }
 
-std::string Structures::getName() const{
+Structures::~Structures()
+{
+}
+
+std::string Structures::getName() const {
 	return name;
 }
 
@@ -24,17 +32,17 @@ Coordinate Structures::getLocation() {
 }
 
 
-const int Structures::getWidth()const {
+int Structures::getWidth() const {
 	return width;
 }
 
-const int Structures::getLength()const {
+int Structures::getLength() const {
 	return length;
 }
 
-Structures::~Structures()
-{
-}
+//================
+//	CLASS HOUSE
+//================
 
 House::House(): Structures(0, 0, "", 2, 2, house) {
 	hitpoints = 0;
@@ -44,14 +52,22 @@ House::House(const int x, const int y, int hp, const std::string n): Structures(
 	hitpoints = hp;
 }
 
-std::ostream& operator <<(std::ostream& stream, House& o){
-	stream << "Structure: House \n";
-	stream << "Name: " << o.name << "\n";
-	stream << "Hitpoints: " << o.hitpoints << "\n";
-	stream << "Location:" << o.location << "\n";
-
-	return stream;
+House::~House()
+{
 }
+
+std::ostream& operator <<(std::ostream& s, House& house){
+	s << "Structure: House \n";
+	s << "Name: " << house.name << "\n";
+	s << "Hitpoints: " << house.hitpoints << "\n";
+	s << "Location:" << house.location << "\n";
+
+	return s;
+}
+
+//==========================
+//	CLASS FIRE DEPARTMENTS
+//==========================
 
 Fire_Department::Fire_Department(): Structures(0, 0, "", 4, 4, department), entrance(0, 0)
 {
@@ -61,13 +77,17 @@ Fire_Department::Fire_Department(const int x, const int y, const int x_entrance,
 {
 }
 
-std::ostream& operator <<(std::ostream& stream, Fire_Department& o){
-	stream << "Structure: Fire Department \n";
-	stream << "Name: " << o.name << "\n";
-	stream << "Entrance: " << o.entrance << "\n";
-	stream << "Location: " << o.location << "\n";
+Fire_Department::~Fire_Department()
+{
+}
 
-	return stream;
+std::ostream& operator <<(std::ostream& s, Fire_Department& department){
+	s << "Structure: Fire Department \n";
+	s << "Name: " << department.name << "\n";
+	s << "Entrance: " << department.entrance << "\n";
+	s << "Location: " << department.location << "\n";
+
+	return s;
 }
 
 

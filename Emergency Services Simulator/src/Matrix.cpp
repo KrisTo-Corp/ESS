@@ -1,9 +1,10 @@
-/*
- * Matrix.cpp
- *
- *  Created on: Feb 28, 2013
- *      Author: tom
- */
+//=======================================================================================
+// Name        : Matrix.cpp
+// Author      : Kristof De Middelaer & Tom Roels
+// Version     : 1.0
+// Copyright   : Project Software Engineering - BA1 Informatica - University of Antwerp
+// Description : Matrix in C++, Ansi-style
+//=======================================================================================
 
 #include <vector>
 #include <iostream>
@@ -28,6 +29,10 @@ Matrix::Matrix(const int r, const int c): rows(r), columns(c) {
 		}
 		matrix.push_back(colum);
 	}
+}
+
+Matrix::~Matrix()
+{
 }
 
 void Matrix::addHouses(std::list<House>& list) {
@@ -100,57 +105,36 @@ void Matrix::addObject(int x, int y, CityObjects* object){
 	matrix[rows-1-y][x] = object;
 }
 
-void Matrix::printObject(int x, int y){
-	if(matrix[rows-1-x][y] == NULL){
-		std::cout << "NULL\n";
-	}
-	else if(matrix[rows-1-x][y]->getType() == house){
-		std::cout << dynamic_cast<House*>(matrix[rows-1-x][y])->getName() << "\n";
-	}
-	else if(matrix[rows-1-x][y]->getType() == department){
-		std::cout << dynamic_cast<Fire_Department*>(matrix[rows-1-x][y])->getName() << "\n";
-	}
-	else if(matrix[rows-1-x][y]->getType() == street){
-		std::cout << dynamic_cast<Street*>(matrix[rows-1-x][y])->getName() << "\n";
-	}
-	else if(matrix[rows-1-x][y]->getType() == crossroad){
-		std::cout << dynamic_cast<Crossroad*>(matrix[rows-1-x][y])->getName() << "\n";
-	}
-	else{
-		std::cout << "unknown\n";
-	}
-}
-
-std::ostream& operator <<(std::ostream& stream, Matrix& o){
-	for(int i = 0; i < o.rows; i++){
-		for(int j = 0; j < o.columns; j++){
-			if(o.matrix[i][j] == NULL){
-				stream << "NULL\n";
+std::ostream& operator <<(std::ostream& s, Matrix& m){
+	for(int i = 0; i < m.rows; i++){
+		s << m.rows-1-i << "\t[\t";
+		for(int j = 0; j < m.columns; j++){
+			if(m.matrix[i][j] == NULL){
+				s << "NULL\t";
 			}
-			else if(o.matrix[i][j]->getType() == house){
-				stream << "H\t";
+			else if(m.matrix[i][j]->getType() == house){
+				s << "H\t";
 			}
-			else if(o.matrix[i][j]->getType() == department){
-				stream << "D\t";
+			else if(m.matrix[i][j]->getType() == department){
+				s << "D\t";
 			}
-			else if(o.matrix[i][j]->getType() == street){
-				stream << "S\t";
+			else if(m.matrix[i][j]->getType() == street){
+				s << "S\t";
 			}
-			else if(o.matrix[i][j]->getType() == crossroad){
-				stream << "C\t";
+			else if(m.matrix[i][j]->getType() == crossroad){
+				s << "C\t";
 			}
 			else{
-				stream << "unknown\n";
+				s << "unknown\t";
 			}
 		}
-		stream << "\n";
+		s << "]\n";
 	}
+	s << "\n\t\t";
+	for (int i = 0; i < m.columns; i++){
+		s << i << "\t";
+	}
+	s << "\n";
 
-	return stream;
+	return s;
 }
-
-Matrix::~Matrix()
-{
-}
-
-
