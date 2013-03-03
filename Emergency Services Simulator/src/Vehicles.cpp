@@ -15,16 +15,22 @@ Vehicles::Vehicles(int x, int y, const std::string n): name(n), location(x, y)
 {
 }
 
+std::string Vehicles::getName(){
+	return name;
+}
+
 Vehicles::~Vehicles()
 {
 }
 
 Firetruck::Firetruck(): Vehicles(0, 0, ""), basename("")
 {
+	base = NULL;
 }
 
 Firetruck::Firetruck(const int x, const int y, const std::string n, const std::string bn): Vehicles(x, y, n), basename(bn)
 {
+	base = NULL;
 }
 
 std::ostream& operator <<(std::ostream& stream, Firetruck& o){

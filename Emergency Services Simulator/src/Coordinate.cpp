@@ -9,12 +9,14 @@
 
 #include "Coordinate.h"
 
-Coordinate::Coordinate(): x(0), y(0)
-{
+Coordinate::Coordinate(): x(0), y(0) {
+
+	_initCheck = this;
 }
 
-Coordinate::Coordinate(int x_value, int y_value): x(x_value), y(y_value)
-{
+Coordinate::Coordinate(int x_value, int y_value): x(x_value), y(y_value) {
+
+	_initCheck = this;
 }
 
 int Coordinate::getX()const {
@@ -30,7 +32,10 @@ std::ostream& operator <<(std::ostream& stream, Coordinate& o){
 	return stream;
 }
 
-Coordinate::~Coordinate()
-{
+bool Coordinate::properlyInitialized(){
+	// PRIVATE METHOD DOES NOT HAVE POST OR PRE CONDITIONS.
+
+	return _initCheck == this;
 }
+
 

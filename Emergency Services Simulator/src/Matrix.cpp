@@ -74,7 +74,7 @@ std::list<Crossroad> Matrix::addStreets(std::list<Street>& list) {
 		for (int i = x_start; i <= x_end; i++){
 			for (int j = y_start; j <= y_end; j++){
 				if (matrix[rows-1-j][i] != NULL){
-					std::string name = dynamic_cast<Street*>(matrix[rows-1-j][i])->getName();
+					std::string name = static_cast<Street*>(matrix[rows-1-j][i])->getName();
 					name += "-" + it->getName();
 					Crossroad c(i, j, name);
 					crossroads.push_back(c);
@@ -98,27 +98,6 @@ void Matrix::addCrossroads(std::list<Crossroad>& list) {
 
 void Matrix::addObject(int x, int y, CityObjects* object){
 	matrix[rows-1-y][x] = object;
-}
-
-void Matrix::printObject(int x, int y){
-	if(matrix[rows-1-x][y] == NULL){
-		std::cout << "NULL\n";
-	}
-	else if(matrix[rows-1-x][y]->getType() == house){
-		std::cout << dynamic_cast<House*>(matrix[rows-1-x][y])->getName() << "\n";
-	}
-	else if(matrix[rows-1-x][y]->getType() == department){
-		std::cout << dynamic_cast<Fire_Department*>(matrix[rows-1-x][y])->getName() << "\n";
-	}
-	else if(matrix[rows-1-x][y]->getType() == street){
-		std::cout << dynamic_cast<Street*>(matrix[rows-1-x][y])->getName() << "\n";
-	}
-	else if(matrix[rows-1-x][y]->getType() == crossroad){
-		std::cout << dynamic_cast<Crossroad*>(matrix[rows-1-x][y])->getName() << "\n";
-	}
-	else{
-		std::cout << "unknown\n";
-	}
 }
 
 std::ostream& operator <<(std::ostream& stream, Matrix& o){
