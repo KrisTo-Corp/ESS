@@ -14,7 +14,6 @@ City::City(const std::string filename){
 	matrix.addFiredeps(departments);
 	crossroads = matrix.addStreets(streets);
 	matrix.addCrossroads(crossroads);
-	std::cout << "ALL INITIALIZED" << std::endl;
 }
 
 void City::print() {

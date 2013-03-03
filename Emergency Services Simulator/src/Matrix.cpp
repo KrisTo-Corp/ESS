@@ -72,13 +72,13 @@ std::list<Crossroad> Matrix::addStreets(std::list<Street>& list) {
 		int y_end = it->getEnd().getY();
 
 		for (int i = x_start; i <= x_end; i++){
-			for (int j = y_start; j >= y_end; j--){
-				//if (matrix[rows - j][i] != NULL){
-					//std::string name = dynamic_cast<Street*>(matrix[rows-j][i])->getName();
-					//name += "-" + it->getName();
-					//Crossroad c(i, j, name);
-					//crossroads.push_back(c);
-				//}
+			for (int j = y_start; j <= y_end; j++){
+				if (matrix[j][rows-1-i] != NULL){
+					std::string name = dynamic_cast<Street*>(matrix[j][rows-1-i])->getName();
+					name += "-" + it->getName();
+					Crossroad c(i, j, name);
+					crossroads.push_back(c);
+				}
 				addObject(i, j, &(*it));
 			}
 		}
