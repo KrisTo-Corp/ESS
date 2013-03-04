@@ -39,6 +39,7 @@ public:
 private:
 	void parseCity(std::string filename);
 	void link_trucks_to_bases();
+	bool validCoordCheck(int x, int y);
 };
 
 #endif /* CITY_H_ */

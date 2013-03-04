@@ -27,11 +27,7 @@ void City::parseCity(std::string filename) {
 	}
 
 	/*
-	 * NOT ERROR PROOF YET.
-	 */
-
-	/*
-	 * Use DesignByContract.h here or when using the variables in the constructor?
+	 * Primitive error checking in place!
 	 */
 
 	for(TiXmlElement* object = virtualCity->FirstChildElement(); object != NULL; object = object->NextSiblingElement()) {
@@ -45,15 +41,7 @@ void City::parseCity(std::string filename) {
 					x = atoi(field->Attribute("X"));
 					y = atoi(field->Attribute("Y"));
 
-					/*
-					 * Check to see if the input is valid: not negative and of type int.
-					 */
-					if (x < 0 || y < 0) {
-						std::cout << "A coordinate can not be negative! Coordinate read: (" << x << "," << y << ")" << std::endl;
-						continue;
-					}
-					else if (isalpha(x) || isalpha(y) || typeid(x) != typeid(int) || typeid(y) != typeid(int)) {
-						std::cout << "A coordinate must be of type int! Coordinate read: (" << x << "," << y << ")" << std::endl;
+					if (!validCoordCheck(x,y)) {
 						continue;
 					}
 				}
@@ -93,10 +81,18 @@ void City::parseCity(std::string filename) {
 				if(fieldName == "Van") {
 					x_start = atoi(field->Attribute("x"));
 					y_start = atoi(field->Attribute("y"));
+
+					if (!validCoordCheck(x_start,y_start)) {
+						continue;
+					}
 				}
 				else if(fieldName == "Naar") {
 					x_end = atoi(field->Attribute("x"));
 					y_end = atoi(field->Attribute("y"));
+
+					if (!validCoordCheck(x_end,y_end)) {
+						continue;
+					}
 				}
 				else if(fieldName == "Naam") {
 					TiXmlText* text = field->FirstChild()->ToText();
@@ -145,10 +141,18 @@ void City::parseCity(std::string filename) {
 				if(fieldName == "Locatie") {
 					x_building = atoi(field->Attribute("X"));
 					y_building = atoi(field->Attribute("Y"));
+
+					if (!validCoordCheck(x_building,y_building)) {
+						continue;
+					}
 				}
 				else if(fieldName == "Ingang") {
 					x_entrance = atoi(field->Attribute("X"));
 					y_entrance  = atoi(field->Attribute("Y"));
+
+					if (!validCoordCheck(x_entrance,y_entrance)) {
+						continue;
+					}
 				}
 				else if(fieldName == "Naam") {
 					TiXmlText* text = field->FirstChild()->ToText();
@@ -174,3 +178,22 @@ void City::parseCity(std::string filename) {
 		}
 	}
 }
+
+bool City::validCoordCheck(int x, int y) {
+	/*
+	 * Check to see if the input is valid: not negative and of type int.
+	 */
+
+	if (x < 0 || y < 0) {
+		std::cout << "A coordinate can not be negative! Coordinate read: (" << x << "," << y << ")" << std::endl;
+		return false;
+	}
+	else if (isalpha(x) || isalpha(y) || typeid(x) != typeid(int) || typeid(y) != typeid(int)) {
+		std::cout << "A coordinate must be of type int! Coordinate read: (" << x << "," << y << ")" << std::endl;
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+
