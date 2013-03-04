@@ -22,3 +22,26 @@ int main(int argc, char **argv) {
 
 	std::cout << city << std::endl;
 }
+
+/*
+ * TODO: -> Find min and max coordinates in order to make our matrix of variable size depending on the XML file.
+ * 			We need to include a method that finds these coordinates and passes them to the matrix constructor...
+ * 			Maybe we could make a new Matrix object in our City constructor (Since we have parsed the city by then) and copy construct our city's matrix with the new one we made? :D
+ *
+ * TODO: -> Output
+ * 	        What we have so far is friggin' awesome. Great work with adding the coordinates!
+ * 	        What we need more:
+ *
+ * 	        Burning houses:
+ * 	        	-> House on location (x,y)
+ * 	        Firetrucks on their way:
+ * 	        	-> {FIRETRUCK NAME} on location (x,y) in Javastreet.
+ * 	        Available firetrucks in firedepartment {FIREDEPNAME}:
+ * 	        	-> {FIRETRUCK NAME}
+ *
+ * TODO: Contracts
+ *
+ * TODO: TESTS, TESTS, TESTS! We need to check whether or not our parser reacts in a proper way if we feed it wrong input.
+ *
+ *
+ */
