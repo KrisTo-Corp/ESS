@@ -19,6 +19,7 @@
 #include "Vehicles.h"
 #include "Roads.h"
 #include "Matrix.h"
+#include "DesignByContract.h"
 
 class City {
 private:
@@ -28,15 +29,21 @@ private:
 	std::list<Crossroad> crossroads;
 	std::list<Firetruck> trucks;
 
+	City* _initCheck;
+
 	Matrix matrix;
 
 public:
 	City(std::string filename);
+//	ENSURE(init(), "Object 'City' was not properly initialized.");
+
 	virtual ~City();
 
 	friend std::ostream& operator <<(std::ostream& s, City& city);
+//	REQUIRE(city.init(), "Object 'City' was not properly initialized when calling overloaded operator '<<'");
 
 private:
+	bool init();
 	void parseCity(std::string filename);
 	void link_trucks_to_bases();
 	bool validCoordCheck(int x, int y);

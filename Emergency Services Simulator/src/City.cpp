@@ -9,16 +9,28 @@
 #include "City.h"
 
 City::City(const std::string filename){
+
 	parseCity(filename);
 	link_trucks_to_bases();
 	matrix.addHouses(houses);
 	matrix.addFiredeps(departments);
 	crossroads = matrix.addStreets(streets);
 	matrix.addCrossroads(crossroads);
+
+	_initCheck = this;
+
+	ENSURE(init(), "Object 'City' was not properly initialized.");
 }
 
 City::~City()
 {
+}
+
+std::ostream& operator <<(std::ostream& s, City& city) {
+	REQUIRE(city.init(), "Object 'City' was not properly initialized when calling overloaded operator '<<'");
+
+	s << city.matrix << "\n";
+	return s;
 }
 
 void City::link_trucks_to_bases() {
@@ -39,7 +51,6 @@ void City::link_trucks_to_bases() {
 	}
 }
 
-std::ostream& operator <<(std::ostream& s, City& city) {
-	s << city.matrix << "\n";
-	return s;
+bool City::init() {
+	return _initCheck == this;
 }

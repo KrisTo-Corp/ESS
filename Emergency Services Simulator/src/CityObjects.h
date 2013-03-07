@@ -11,18 +11,30 @@
 
 #include <ostream>
 
+#include "DesignByContract.h"
+
 enum Eobjects {none, house, department, street, crossroad};
 
 class CityObjects {
 private:
 	Eobjects type;
 
+	CityObjects* _initCheck;
+
 public:
 	CityObjects();
+//	ENSURE(init(), "Object 'CityObjects' was not properly initialized.");
+
 	CityObjects(Eobjects type);
+//	ENSURE(init(), "Object 'CityObjects' was not properly initialized.");
+
 	virtual ~CityObjects();
 
 	Eobjects getType();
+//	REQUIRE(this->init(), "Object 'CityObjects' was not properly initialized when calling getType()");
+
+private:
+	bool init();
 
 };
 

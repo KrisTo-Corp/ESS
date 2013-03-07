@@ -12,19 +12,29 @@
 #include <string>
 #include <ostream>
 
+#include "DesignByContract.h"
+
 class Coordinate {
 private:
 	int x;
 	int y;
 
+	Coordinate* _initCheck;
 public:
 	Coordinate();
+//	ENSURE(init(), "Object 'CityObjects' was not properly initialized.");
+
 	Coordinate(const int x_value, const int y_value);
+//	ENSURE(init(), "Object 'CityObjects' was not properly initialized.");
+
 	virtual ~Coordinate();
 
 	int getX()const;
 	int getY()const;
 	friend std::ostream& operator <<(std::ostream& s, Coordinate& coordinate);
+
+private:
+	bool init();
 };
 
 #endif /* COORDINATE_H_ */

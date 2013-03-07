@@ -10,12 +10,16 @@
 
 #include "Coordinate.h"
 
-Coordinate::Coordinate(): x(0), y(0)
-{
+Coordinate::Coordinate(): x(0), y(0) {
+	_initCheck = this;
+
+	ENSURE(init(), "Object 'Coordinate' was not properly initialized.");
 }
 
-Coordinate::Coordinate(int x_value, int y_value): x(x_value), y(y_value)
-{
+Coordinate::Coordinate(int x_value, int y_value): x(x_value), y(y_value) {
+	_initCheck = this;
+
+	ENSURE(init(), "Object 'Coordinate' was not properly initialized.");
 }
 
 Coordinate::~Coordinate()
@@ -33,4 +37,8 @@ int Coordinate::getY() const {
 std::ostream& operator <<(std::ostream& s, Coordinate& coordinate){
 	s << "(" << coordinate.getX() << ", " << coordinate.getY() << ")";
 	return s;
+}
+
+bool Coordinate::init() {
+	return _initCheck == this;
 }
