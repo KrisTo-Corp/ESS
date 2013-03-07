@@ -19,6 +19,8 @@ Matrix::Matrix(): rows(16), columns(22) {
 		}
 		matrix.push_back(colum);
 	}
+	_initCheck = this;
+	ENSURE(init(), "Object 'Matrix' was not properly initialized.");
 }
 
 Matrix::Matrix(const int r, const int c): rows(r), columns(c) {
@@ -29,6 +31,8 @@ Matrix::Matrix(const int r, const int c): rows(r), columns(c) {
 		}
 		matrix.push_back(colum);
 	}
+	_initCheck = this;
+	ENSURE(init(), "Object 'Matrix' was not properly initialized.");
 }
 
 Matrix::~Matrix()
@@ -36,6 +40,8 @@ Matrix::~Matrix()
 }
 
 void Matrix::addHouses(std::list<House>& list) {
+	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addHouses().");
+
 	std::list<House>::iterator it;
 	for (it = list.begin(); it != list.end(); it++) {
 		int x_start = it->getLocation().getX();
@@ -52,6 +58,8 @@ void Matrix::addHouses(std::list<House>& list) {
 }
 
 void Matrix::addFiredeps(std::list<Fire_Department>& list) {
+	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addFiredeps().");
+
 	std::list<Fire_Department>::iterator it;
 	for (it = list.begin(); it != list.end(); it++) {
 		int x_start = it->getLocation().getX();
@@ -68,6 +76,8 @@ void Matrix::addFiredeps(std::list<Fire_Department>& list) {
 }
 
 std::list<Crossroad> Matrix::addStreets(std::list<Street>& list) {
+	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addStreets().");
+
 	std::list<Street>::iterator it;
 	std::list<Crossroad> crossroads;
 	for (it = list.begin(); it != list.end(); it++) {
@@ -92,6 +102,8 @@ std::list<Crossroad> Matrix::addStreets(std::list<Street>& list) {
 }
 
 void Matrix::addCrossroads(std::list<Crossroad>& list) {
+	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addCrossroads().");
+
 	std::list<Crossroad>::iterator it;
 	for (it = list.begin(); it != list.end(); it++) {
 		int x = it->getLocation().getX();
@@ -102,10 +114,23 @@ void Matrix::addCrossroads(std::list<Crossroad>& list) {
 }
 
 void Matrix::addObject(int x, int y, CityObjects* object){
+	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addObject().");
+
 	matrix[rows-1-y][x] = object;
+
+	ENSURE(getObject(x, y) == object, "A problem occured when adding 'CityObjects' to the Matrix");
+
+}
+
+CityObjects* Matrix::getObject(int x, int y) {
+	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling getObject().");
+
+	return matrix[rows-1-y][x];
 }
 
 std::ostream& operator <<(std::ostream& s, Matrix& m){
+	REQUIRE(m.init(), "Object 'Matrix' was not properly initialized when calling addHouses().");
+
 	for(int i = 0; i < m.rows; i++){
 		s << m.rows-1-i << "\t[\t";
 		for(int j = 0; j < m.columns; j++){
@@ -137,4 +162,8 @@ std::ostream& operator <<(std::ostream& s, Matrix& m){
 	s << "\n";
 
 	return s;
+}
+
+bool Matrix::init() {
+	return _initCheck == this;
 }

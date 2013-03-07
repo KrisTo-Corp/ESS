@@ -23,19 +23,42 @@ private:
 	const int columns;
 	std::vector<std::vector<CityObjects*> > matrix;
 
+	Matrix* _initCheck;
+
 public:
 	Matrix();
+//	ENSURE(init(), "Object 'Matrix' was not properly initialized.");
+
 	Matrix(const int r, const int c);
+//	ENSURE(init(), "Object 'Matrix' was not properly initialized.");
+
 	virtual ~Matrix();
 
 	void addHouses(std::list<House>& list);
+//	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addHouses().");
+
 	void addFiredeps(std::list<Fire_Department>& list);
+//	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addFiredeps().");
+
 	void addCrossroads(std::list<Crossroad>& list);
+//	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addCrossroads().");
+
 	std::list<Crossroad> addStreets(std::list<Street>& list);
+//	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addStreets().");
+
 	void addObject(int x, int y, CityObjects* object);
+//	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addObject().");
+//	ENSURE(getObject(x, y) == object, "Added object " + object + " was not added correctly.");
+
+	CityObjects* getObject(int, int);
+//	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling getObject().");
+
 
 	friend std::ostream& operator <<(std::ostream& s, Matrix& m);
+//	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addHouses().");
 
+private:
+	bool init();
 };
 
 #endif /* MATRIX_H_ */
