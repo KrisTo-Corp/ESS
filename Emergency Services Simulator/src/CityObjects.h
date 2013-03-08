@@ -33,7 +33,7 @@ public:
 	Eobjects getType();
 //	REQUIRE(this->init(), "Object 'CityObjects' was not properly initialized when calling getType()");
 
-public:
+
 	virtual bool init();
 
 };
