@@ -12,6 +12,10 @@ City::City(const std::string filename){
 
 	std::pair<int, int> maxCoords =	parseCity(filename);
 
+	/*
+	 * Program halts when adding objects to the matrix. Probably a segmentation fault.
+	 */
+
 	//matrix = Matrix (maxCoords.second + 1, maxCoords.first +1);
 	//matrix.resetInit();
 
