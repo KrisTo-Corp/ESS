@@ -8,6 +8,8 @@
 
 #include "Vehicles.h"
 
+#include <iostream>
+
 //====================
 //	CLASS VEHICLES
 //====================
@@ -31,8 +33,14 @@ Vehicles::~Vehicles()
 
 
 bool Vehicles::init() {
+
 	return _initCheck == this;
 }
+
+void Vehicles::resetInit() {
+	_initCheck = this;
+}
+
 
 //====================
 //	CLASS FIRETRUCK
@@ -40,19 +48,10 @@ bool Vehicles::init() {
 
 Firetruck::Firetruck(): Vehicles(0, 0, ""), basename("") {
 	base = NULL;
-
-	_initCheck = this;
-
-	ENSURE(init(), "Object 'Firetruck' was not properly initialized.");
-
 }
 
 Firetruck::Firetruck(const int x, const int y, const std::string n, const std::string bn): Vehicles(x, y, n), basename(bn) {
 	base = NULL;
-
-	_initCheck = this;
-
-	ENSURE(init(), "Object 'Firetruck' was not properly initialized.");
 }
 
 Firetruck::~Firetruck()
@@ -60,19 +59,19 @@ Firetruck::~Firetruck()
 }
 
 void Firetruck::linkBase(Fire_Department* dep_ptr) {
-	//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling linkBase().");
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling linkBase().");
 
 	base = dep_ptr;
 }
 
-std::string Firetruck::getBasename() const {
-	//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getBasename().");
+std::string Firetruck::getBasename() {
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getBasename().");
 
 	return basename;
 }
 
 Fire_Department* Firetruck::getBaseptr() {
-	//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getBaseptr().");
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getBaseptr().");
 
 	return base;
 }

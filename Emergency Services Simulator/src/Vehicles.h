@@ -32,6 +32,8 @@ public:
 	virtual ~Vehicles();
 
 	virtual bool init();
+
+	void resetInit();
 };
 
 
@@ -43,17 +45,15 @@ private:
 
 public:
 	Firetruck();
-	//	ENSURE(init(), "Object 'Firetruck' was not properly initialized.");
 
 	Firetruck(const int x, const int y, const std::string n, const std::string bn);
-	//	ENSURE(init(), "Object 'Firetruck' was not properly initialized.");
 
 	virtual ~Firetruck();
 
 	void linkBase(Fire_Department* dep_ptr);
 	//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling linkBase().");
 
-	std::string getBasename()const;
+	std::string getBasename();
 	//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getBasename().");
 
 	Fire_Department* getBaseptr();

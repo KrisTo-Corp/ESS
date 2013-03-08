@@ -24,13 +24,18 @@ protected:
 
 public:
 	Structures();
+	//	ENSURE(init(), "Object 'Structures' was not properly initialized.");
+
 	Structures(const int x, const int y, const std::string n, const int w, const int l, Eobjects t);
+	//	ENSURE(init(), "Object 'Structures' was not properly initialized.");
+
 	virtual ~Structures();
 
-	std::string getName() const;
+	std::string getName();
 	Coordinate getLocation();
-	int getWidth()const;
-	int getLength()const;
+	int getWidth();
+	int getLength();
+
 };
 
 
@@ -46,7 +51,6 @@ public:
 
 	friend std::ostream& operator <<(std::ostream& s, House& house);
 };
-
 
 
 class Fire_Department: public Structures {

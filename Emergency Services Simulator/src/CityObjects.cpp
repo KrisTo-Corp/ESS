@@ -29,18 +29,16 @@ CityObjects::~CityObjects()
 }
 
 Eobjects CityObjects::getType(){
-	// TODO: Fix getType() contract
-	//std::cerr << "Initcheck = " << init() << "\n";
 	REQUIRE(init(), "Object 'CityObjects' was not properly initialized when calling getType()");
 
 	return type;
 }
 
 bool CityObjects::init() {
-
-	std::cout << "addres initCheck = " << _initCheck << std::endl;
-	std::cout << "addres this = " << this << std::endl;
-
 	return _initCheck == this;
+}
+
+void CityObjects::resetInit() {
+	_initCheck = this;
 }
 

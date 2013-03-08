@@ -7,6 +7,8 @@
 //=======================================================================================
 #include "Structures.h"
 
+#include <iostream>
+
 //=====================
 //	CLASS STRUCTURES
 //=====================
@@ -19,26 +21,34 @@ Structures::Structures(const int x, const int y, const std::string n, const int 
 {
 }
 
-Structures::~Structures()
-{
+Structures::~Structures() {
 }
 
-std::string Structures::getName() const {
+std::string Structures::getName() {
+	std::cout << name << std::endl;
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+
 	return name;
 }
 
 Coordinate Structures::getLocation() {
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+
 	return location;
 }
 
+int Structures::getWidth() {
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
-int Structures::getWidth() const {
 	return width;
 }
 
-int Structures::getLength() const {
+int Structures::getLength() {
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+
 	return length;
 }
+
 
 //================
 //	CLASS HOUSE
@@ -57,6 +67,8 @@ House::~House()
 }
 
 std::ostream& operator <<(std::ostream& s, House& house){
+	REQUIRE(house.init(), "Object 'House' was not properly initialized when calling overloaded operator '<<'");
+
 	s << "Structure: House \n";
 	s << "Name: " << house.name << "\n";
 	s << "Hitpoints: " << house.hitpoints << "\n";
@@ -69,8 +81,7 @@ std::ostream& operator <<(std::ostream& s, House& house){
 //	CLASS FIRE DEPARTMENTS
 //==========================
 
-Fire_Department::Fire_Department(): Structures(0, 0, "", 4, 4, department), entrance(0, 0)
-{
+Fire_Department::Fire_Department(): Structures(0, 0, "", 4, 4, department), entrance(0, 0) {
 }
 
 Fire_Department::Fire_Department(const int x, const int y, const int x_entrance, const int y_entrance, const std::string n): Structures(x, y, n, 4, 4, department), entrance(x_entrance, y_entrance)
@@ -82,6 +93,8 @@ Fire_Department::~Fire_Department()
 }
 
 std::ostream& operator <<(std::ostream& s, Fire_Department& department){
+	REQUIRE(department.init(), "Object 'House' was not properly initialized when calling overloaded operator '<<'");
+
 	s << "Structure: Fire Department \n";
 	s << "Name: " << department.name << "\n";
 	s << "Entrance: " << department.entrance << "\n";

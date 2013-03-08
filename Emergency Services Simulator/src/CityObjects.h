@@ -35,6 +35,7 @@ public:
 
 
 	virtual bool init();
+	void resetInit();
 
 };
 

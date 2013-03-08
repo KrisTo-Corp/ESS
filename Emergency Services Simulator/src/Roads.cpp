@@ -16,15 +16,9 @@
 
 
 Roads::Roads(): CityObjects(none), name("") {
-	_initCheck = this;
-
-	ENSURE(init(), "Object 'Roads' was not properly initialized.");
 }
 
 Roads::Roads(const std::string n, Eobjects t): CityObjects(t), name(n) {
-	_initCheck = this;
-
-	ENSURE(init(), "Object 'Roads' was not properly initialized.");
 }
 
 Roads::~Roads()
@@ -32,7 +26,7 @@ Roads::~Roads()
 }
 
 std::string Roads::getName() {
-	//REQUIRE(init(), "Object 'Roads' was not properly initialized when calling getName()");
+	REQUIRE(init(), "Object 'Roads' was not properly initialized when calling getName()");
 
 	return name;
 }
