@@ -13,6 +13,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <utility>
 
 #include "CityObjects.h"
 #include "Structures.h"
@@ -46,9 +47,10 @@ public:
 
 private:
 	bool init();
-	void parseCity(std::string filename);
+	std::pair<int, int> parseCity(std::string filename);
 	void link_trucks_to_bases();
 	bool validCoordCheck(int x, int y);
+	int compareCoord(int, int);
 };
 
 #endif /* CITY_H_ */

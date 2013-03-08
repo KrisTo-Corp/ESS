@@ -11,7 +11,7 @@
 
 #define TIXML_USE_STL
 
-void City::parseCity(std::string filename) {
+std::pair<int, int> City::parseCity(std::string filename) {
 	TiXmlDocument doc;
 	if(!doc.LoadFile(filename.c_str())) {
 		std::cerr << doc.ErrorDesc() << std::endl;
@@ -25,6 +25,9 @@ void City::parseCity(std::string filename) {
 		doc.Clear();
 		exit(EXIT_FAILURE);
 	}
+
+	int maxX = 0;
+	int maxY = 0;
 
 	/*
 	 * Primitive error checking in place!
@@ -44,6 +47,9 @@ void City::parseCity(std::string filename) {
 					if (!validCoordCheck(x,y)) {
 						continue;
 					}
+
+					maxX = compareCoord(maxX, x);
+					maxY = compareCoord(maxY, y);
 				}
 				else if(fieldName == "Brandbaarheid") {
 					TiXmlText* text = field->FirstChild()->ToText();
@@ -85,6 +91,9 @@ void City::parseCity(std::string filename) {
 					if (!validCoordCheck(x_start,y_start)) {
 						continue;
 					}
+
+					maxX = compareCoord(maxX, x_start);
+					maxY = compareCoord(maxY, y_start);
 				}
 				else if(fieldName == "Naar") {
 					x_end = atoi(field->Attribute("x"));
@@ -93,6 +102,9 @@ void City::parseCity(std::string filename) {
 					if (!validCoordCheck(x_end,y_end)) {
 						continue;
 					}
+
+					maxX = compareCoord(maxX, x_end);
+					maxY = compareCoord(maxY, y_end);
 				}
 				else if(fieldName == "Naam") {
 					TiXmlText* text = field->FirstChild()->ToText();
@@ -145,6 +157,9 @@ void City::parseCity(std::string filename) {
 					if (!validCoordCheck(x_building,y_building)) {
 						continue;
 					}
+
+					maxX = compareCoord(maxX, x_building);
+					maxY = compareCoord(maxY, y_building);
 				}
 				else if(fieldName == "Ingang") {
 					x_entrance = atoi(field->Attribute("X"));
@@ -153,6 +168,9 @@ void City::parseCity(std::string filename) {
 					if (!validCoordCheck(x_entrance,y_entrance)) {
 						continue;
 					}
+
+					maxX = compareCoord(maxX, x_entrance);
+					maxY = compareCoord(maxY, y_entrance);
 				}
 				else if(fieldName == "Naam") {
 					TiXmlText* text = field->FirstChild()->ToText();
@@ -177,6 +195,8 @@ void City::parseCity(std::string filename) {
 			exit(EXIT_FAILURE);
 		}
 	}
+	std::pair<int, int> coords (maxX, maxY);
+	return coords;
 }
 
 bool City::validCoordCheck(int x, int y) {
@@ -197,3 +217,11 @@ bool City::validCoordCheck(int x, int y) {
 	}
 }
 
+int City::compareCoord(int curMax, int testVal) {
+	if (testVal > curMax) {
+		return testVal;
+	}
+	else {
+		return curMax;
+	}
+}

@@ -10,7 +10,10 @@
 
 City::City(const std::string filename){
 
-	parseCity(filename);
+	std::pair<int, int> maxCoords =	parseCity(filename);
+
+
+	std::cout << maxCoords.first << " " << maxCoords.second << std::endl;
 
 	for (std::list<Firetruck>::iterator it = trucks.begin(); it != trucks.end(); it++) {
 		it->resetInit();
