@@ -19,8 +19,8 @@
 
 class Matrix {
 private:
-	const int rows;
-	const int columns;
+	int rows;
+	int columns;
 	std::vector<std::vector<CityObjects*> > matrix;
 
 	Matrix* _initCheck;
@@ -31,7 +31,7 @@ public:
 	Matrix();
 //	ENSURE(init(), "Object 'Matrix' was not properly initialized.");
 
-	Matrix(const int r, const int c);
+	Matrix(int r, int c);
 //	ENSURE(init(), "Object 'Matrix' was not properly initialized.");
 
 	virtual ~Matrix();
@@ -58,6 +58,8 @@ public:
 
 	friend std::ostream& operator <<(std::ostream& s, Matrix& m);
 //	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addHouses().");
+
+	void resetInit();
 
 private:
 	bool init();

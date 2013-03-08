@@ -23,7 +23,7 @@ Matrix::Matrix(): rows(16), columns(22) {
 	ENSURE(init(), "Object 'Matrix' was not properly initialized.");
 }
 
-Matrix::Matrix(const int r, const int c): rows(r), columns(c) {
+Matrix::Matrix(int r, int c): rows(r), columns(c) {
 	for(int i = 0; i < columns; i++){
 		std::vector<CityObjects*> colum;
 		for (int j = 0; j < rows; j++){
@@ -175,4 +175,8 @@ std::ostream& operator <<(std::ostream& s, Matrix& m){
 
 bool Matrix::init() {
 	return _initCheck == this;
+}
+
+void Matrix::resetInit() {
+	_initCheck = this;
 }

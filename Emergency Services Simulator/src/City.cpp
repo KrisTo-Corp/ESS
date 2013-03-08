@@ -12,6 +12,8 @@ City::City(const std::string filename){
 
 	std::pair<int, int> maxCoords =	parseCity(filename);
 
+	//matrix = Matrix (maxCoords.second + 1, maxCoords.first +1);
+	//matrix.resetInit();
 
 	std::cout << maxCoords.first << " " << maxCoords.second << std::endl;
 
