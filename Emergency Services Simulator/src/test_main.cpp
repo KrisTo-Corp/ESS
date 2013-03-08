@@ -20,7 +20,9 @@ int main(int argc, char **argv) {
 
 	City city("stad.xml");
 
-	std::cout << city << std::endl;
+	std::cout << "ALL INITIALIZED" << std::endl;
+
+	std::cout << city.properlyInitialized(0, 0) << std::endl;
 }
 
 /*

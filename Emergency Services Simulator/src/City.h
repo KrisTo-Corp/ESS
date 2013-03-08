@@ -34,6 +34,8 @@ private:
 	Matrix matrix;
 
 public:
+	bool properlyInitialized(int, int);
+
 	City(std::string filename);
 //	ENSURE(init(), "Object 'City' was not properly initialized.");
 

@@ -51,7 +51,8 @@ void Matrix::addHouses(std::list<House>& list) {
 
 		for (int i = x_start; i <= x_end; i++){
 			for (int j = y_start; j >= y_end; j--){
-				addObject(i, j, &(*it));
+				CityObjects* pointer = &(*it);
+				addObject(i, j, pointer);
 			}
 		}
 	}
@@ -69,7 +70,8 @@ void Matrix::addFiredeps(std::list<Fire_Department>& list) {
 
 		for (int i = x_start; i <= x_end; i++){
 			for (int j = y_start; j >= y_end; j--){
-				addObject(i, j, &(*it));
+				CityObjects* pointer = &(*it);
+				addObject(i, j, pointer);
 			}
 		}
 	}
@@ -94,7 +96,8 @@ std::list<Crossroad> Matrix::addStreets(std::list<Street>& list) {
 					Crossroad c(i, j, name);
 					crossroads.push_back(c);
 				}
-				addObject(i, j, &(*it));
+				CityObjects* pointer = &(*it);
+				addObject(i, j, pointer);
 			}
 		}
 	}
@@ -109,11 +112,12 @@ void Matrix::addCrossroads(std::list<Crossroad>& list) {
 		int x = it->getLocation().getX();
 		int y = it->getLocation().getY();
 
-		addObject(x, y, &(*it));
+		CityObjects* pointer = &(*it);
+		addObject(x, y, pointer);
 	}
 }
 
-void Matrix::addObject(int x, int y, CityObjects* object){
+void Matrix::addObject(int x, int y, CityObjects*& object){
 	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addObject().");
 
 	matrix[rows-1-y][x] = object;
@@ -126,6 +130,10 @@ CityObjects* Matrix::getObject(int x, int y) {
 	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling getObject().");
 
 	return matrix[rows-1-y][x];
+}
+
+bool Matrix::properlyInitialized(int x, int y){
+	return matrix[rows-1-y][x]->init();
 }
 
 std::ostream& operator <<(std::ostream& s, Matrix& m){

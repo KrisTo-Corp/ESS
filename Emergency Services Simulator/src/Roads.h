@@ -21,10 +21,15 @@ protected:
 
 public:
 	Roads();
+//	ENSURE(init(), "Object 'Roads' was not properly initialized.");
+
 	Roads(const std::string, Eobjects);
+//	ENSURE(init(), "Object 'Roads' was not properly initialized.");
+
 	virtual ~Roads();
 
-	std::string getName() const;
+	std::string getName();
+//	REQUIRE(init(), "Object 'Roads' was not properly initialized when calling getName()");
 };
 
 

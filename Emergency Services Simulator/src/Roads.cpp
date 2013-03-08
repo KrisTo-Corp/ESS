@@ -15,21 +15,28 @@
 //================
 
 
-Roads::Roads(): CityObjects(none), name("")
-{
+Roads::Roads(): CityObjects(none), name("") {
+	_initCheck = this;
+
+	ENSURE(init(), "Object 'Roads' was not properly initialized.");
 }
 
-Roads::Roads(const std::string n, Eobjects t): CityObjects(t), name(n)
-{
+Roads::Roads(const std::string n, Eobjects t): CityObjects(t), name(n) {
+	_initCheck = this;
+
+	ENSURE(init(), "Object 'Roads' was not properly initialized.");
 }
 
 Roads::~Roads()
 {
 }
 
-std::string Roads::getName() const{
+std::string Roads::getName() {
+	//REQUIRE(init(), "Object 'Roads' was not properly initialized when calling getName()");
+
 	return name;
 }
+
 
 //=================
 //	CLASS STREET

@@ -26,6 +26,8 @@ private:
 	Matrix* _initCheck;
 
 public:
+	bool properlyInitialized(int, int);
+
 	Matrix();
 //	ENSURE(init(), "Object 'Matrix' was not properly initialized.");
 
@@ -46,7 +48,7 @@ public:
 	std::list<Crossroad> addStreets(std::list<Street>& list);
 //	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addStreets().");
 
-	void addObject(int x, int y, CityObjects* object);
+	void addObject(int x, int y, CityObjects*& object);
 //	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addObject().");
 //	ENSURE(getObject(x, y) == object, "Added object " + object + " was not added correctly.");
 

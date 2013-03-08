@@ -54,3 +54,7 @@ void City::link_trucks_to_bases() {
 bool City::init() {
 	return _initCheck == this;
 }
+
+bool City::properlyInitialized(int x, int y){
+	return matrix.properlyInitialized(x, y);
+}

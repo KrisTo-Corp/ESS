@@ -16,7 +16,7 @@
 enum Eobjects {none, house, department, street, crossroad};
 
 class CityObjects {
-private:
+protected:
 	Eobjects type;
 
 	CityObjects* _initCheck;
@@ -33,8 +33,8 @@ public:
 	Eobjects getType();
 //	REQUIRE(this->init(), "Object 'CityObjects' was not properly initialized when calling getType()");
 
-private:
-	bool init();
+public:
+	virtual bool init();
 
 };
 
