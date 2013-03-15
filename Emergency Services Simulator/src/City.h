@@ -54,6 +54,9 @@ private:
 	bool validCoordCheck(int x, int y);
 	int compareCoord(int, int);
 	CityObjects* setFire();
+	Coordinate getAdjecantStreet(Coordinate);
+	std::string checkOrientation(Coordinate);
+	bool checkParallel(Coordinate, Coordinate);
 };
 
 #endif /* CITY_H_ */

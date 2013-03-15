@@ -117,7 +117,6 @@ CityObjects* City::setFire(){
 }
 
 void City::update(){
-
 	bool finished = false;
 	CityObjects* ptr;
 	std::ofstream output;
@@ -168,16 +167,127 @@ void City::update(){
 	output.close();
 }
 
+Coordinate City::getAdjecantStreet(Coordinate coord) {
+
+	CityObjects* checkSide;
+
+	// Check rightside (including boundscheck)
+	if (coord.getX() + 1 <= matrix.getColumns()) {
+		checkSide = matrix.getObject(coord.getX() + 1, coord.getY());
+		if (checkSide->getType() == street) {
+			return Coordinate(coord.getX() + 1, coord.getY());
+		}
+	}
+
+	// Check leftside (including boundscheck)
+	if (coord.getX() - 1 >= 0) {
+		checkSide = matrix.getObject(coord.getX() - 1, coord.getY());
+		if (checkSide->getType() == street) {
+			return Coordinate(coord.getX() - 1, coord.getY());
+		}
+	}
+
+	// Check upside (including boundscheck)
+	if (coord.getY() + 1 <= matrix.getRows()) {
+		checkSide = matrix.getObject(coord.getX(), coord.getY() + 1);
+		if (checkSide->getType() == street) {
+			return Coordinate(coord.getX(), coord.getY() + 1);
+		}
+	}
+
+	// Check downside (including boundscheck)
+	if (coord.getY() - 1 >= 0) {
+		checkSide = matrix.getObject(coord.getX(), coord.getY() - 1);
+		if (checkSide->getType() == street) {
+			return Coordinate(coord.getX(), coord.getY() - 1);
+		}
+	}
+}
+
+std::string City::checkOrientation(Coordinate coord) {
+
+	// CONTRACT -> coord must be of type street
+
+	std::string result;
+
+	// Check if the coordinate is a crossroad
+	std::list<Crossroad>::iterator it;
+	for (it = crossroads.begin(); it != crossroads.end(); it++) {
+		Coordinate xroad = it->getLocation();
+		if (xroad.getX() == coord.getX() && xroad.getY() == coord.getY()) {
+			result = "crossroad";
+			return result;
+		}
+	}
+
+	CityObjects* checkSide;
+
+	bool left = false;
+	bool right = false;
+	bool up = false;
+	bool down = false;
+
+	// Check rightside (including boundscheck)
+		if (coord.getX() + 1 <= matrix.getColumns()) {
+			checkSide = matrix.getObject(coord.getX() + 1, coord.getY());
+			if (checkSide->getType() == street) {
+				right = true;
+			}
+		}
+
+		// Check leftside (including boundscheck)
+		if (coord.getX() - 1 >= 0) {
+			checkSide = matrix.getObject(coord.getX() - 1, coord.getY());
+			if (checkSide->getType() == street) {
+				left = true;
+			}
+		}
+
+		// Check upside (including boundscheck)
+		if (coord.getY() + 1 <= matrix.getRows()) {
+			checkSide = matrix.getObject(coord.getX(), coord.getY() + 1);
+			if (checkSide->getType() == street) {
+				up = true;
+			}
+		}
+
+		// Check downside (including boundscheck)
+		if (coord.getY() - 1 >= 0) {
+			checkSide = matrix.getObject(coord.getX(), coord.getY() - 1);
+			if (checkSide->getType() == street) {
+				down = true;
+			}
+		}
+
+		if (left && right) {
+			result = "horizontal";
+			return result;
+		}
+		if (up && down) {
+			result = "vertical";
+			return result;
+		}
+}
+
+
+
 /*
  * TODO: Implement algorithm that makes the firetrucks drive to the fire.
  */
 /*
  * Algorithm:
  * 	1. Check for an available firetruck and if there is one, get it's coordinates and streetname.
- * 	2. Get all coordinates of roads/crossroad next to the building on fire.
- * 	3. Determine what coordinate is the closest to the firetruck (min of all sqrt((pow(x2, 2) - pow(x1, 2)) + (pow(y2, 2) - pow(y1, 2))
- * 		-> Then get the streetname.
- * 	4.
+ *
+ *	2. Get road next to burning location. (get streetname)
+ *
+ *
+ * 	/*
+ * 	 *
+ * 	 *		2.1. Get all coordinates of roads/crossroad next to the building on fire.
+ * 	 *		3.1. Determine what coordinate is the closest to the firetruck (min of all sqrt((pow(x2, 2) - pow(x1, 2)) + (pow(y2, 2) - pow(y1, 2))
+ * 	 *			-> Then get the streetname.
+ *
+ * 	3.
  * 		SCENARIO 1:
  * 			Check if firetruck's street is the same as burning house.
  * 			1. Horizontal street:
