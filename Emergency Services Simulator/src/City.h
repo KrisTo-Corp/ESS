@@ -56,7 +56,8 @@ private:
 	CityObjects* setFire();
 	Coordinate getAdjecantStreet(Coordinate);
 	std::string checkOrientation(Coordinate);
-	bool checkParallel(Coordinate, Coordinate);
+	Crossroad closestCrossroad(Coordinate);
+	int calculateDistance(Coordinate, Coordinate);
 };
 
 #endif /* CITY_H_ */

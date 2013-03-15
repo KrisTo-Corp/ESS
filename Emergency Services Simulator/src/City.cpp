@@ -269,7 +269,25 @@ std::string City::checkOrientation(Coordinate coord) {
 		}
 }
 
+Crossroad City::closestCrossroad(Coordinate coord) {
+	std::list<Crossroad>::iterator it;
 
+	std::pair<Crossroad, int> closest (*(crossroads.begin()), calculateDistance(crossroads.begin()->getLocation(), coord));
+
+	for (it = crossroads.begin(); it != crossroads.end(); it++) {
+		int distance = calculateDistance(it->getLocation(), coord);
+		if (distance < closest.second) {
+			closest.first = *it;
+			closest.second = distance;
+		}
+	}
+	return closest.first;
+}
+
+int City::calculateDistance(Coordinate c1, Coordinate c2) {
+	int distance = sqrt((pow(c2.getX(), 2) - pow(c1.getX(), 2) + pow(c2.getY(), 2) - pow(c1.getY(), 2)));
+	return distance;
+}
 
 /*
  * TODO: Implement algorithm that makes the firetrucks drive to the fire.
