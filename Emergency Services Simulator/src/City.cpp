@@ -161,7 +161,43 @@ void City::update(){
 		}
 
 	}
-
 	output.close();
-
 }
+
+/*
+ * TODO: Implement algorithm that makes the firetrucks drive to the fire.
+ */
+/*
+ * Algorithm:
+ * 	1. Check for an available firetruck and if there is one, get it's coordinates and streetname.
+ * 	2. Get all coordinates of roads/crossroad next to the building on fire.
+ * 	3. Determine what coordinate is the closest to the firetruck (min of all sqrt((pow(x2, 2) - pow(x1, 2)) + (pow(y2, 2) - pow(y1, 2))
+ * 		-> Then get the streetname.
+ * 	4.
+ * 		SCENARIO 1:
+ * 			Check if firetruck's street is the same as burning house.
+ * 			1. Horizontal street:
+ * 				-> Compare X values, if Xhouse < Xtruck then move left else move right.
+ * 			2. Vertical street:
+ * 				-> Compare Y values, if Yhouse < Ytruck then move down else move up.
+ *
+ * 		SCENARIO 2:
+ * 			1. Check if firetruck's street is parallel with the destination street.
+ * 			   (This will be done by doing a neighbour check and seeing if the street has cells
+ * 				above and under OR left and right to the cell.)
+ *
+ * 			2. IF it was parallel:
+ * 				-> Move to the nearest crossroad.
+ * 					-> Compare Y values, if Yhouse < Ytruck then move down else move up.
+ * 						UNTILL firetruck reaches destination street (which is a crossroad with same Y value)
+ * 							-> Compare X values, if Xhouse < Xtruck then move left else move right.
+ * 								UNTILL firetruck reaches destination.
+ *
+ * 			   ELSE:
+ * 				-> 	Compare X values, if Xhouse < Xtruck then move left else move right.
+ * 					UNTILL firetruck reaches destination street (which is a crossroad with same X value)
+ * 						-> Compare Y values, if Yhouse < Ytruck then move down else move up.
+ * 							UNTILL firetruck reaches destination.
+ *
+ *
+ */
