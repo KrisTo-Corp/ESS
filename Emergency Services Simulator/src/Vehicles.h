@@ -15,6 +15,8 @@
 #include "Coordinate.h"
 #include "Structures.h"
 
+class Fire_Department;
+
 class Vehicles {
 protected:
 	const std::string name;
@@ -36,10 +38,9 @@ public:
 	void resetInit();
 };
 
-
-
 class Firetruck: public Vehicles {
 private:
+	Coordinate coord;
 	const std::string basename;
 	Fire_Department* base;
 
@@ -58,6 +59,10 @@ public:
 
 	Fire_Department* getBaseptr();
 	//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getBaseptr().");
+
+	void move(std::string);
+
+	void setCoord(Coordinate);
 
 	friend std::ostream& operator <<(std::ostream& s, Firetruck& truck);
 };

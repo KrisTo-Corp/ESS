@@ -18,7 +18,7 @@ src/test_main.d: ../src/test_main.cpp \
  /home/kristof/Dropbox/Software_Engineering/gtest-1.6.0/include/gtest/gtest-typed-test.h \
  /home/kristof/Dropbox/Software_Engineering/gtest-1.6.0/include/gtest/gtest_pred_impl.h \
  ../src/City.h ../src/CityObjects.h ../src/DesignByContract.h \
- ../src/Structures.h ../src/Coordinate.h ../src/Vehicles.h ../src/Roads.h \
+ ../src/Structures.h ../src/Vehicles.h ../src/Coordinate.h ../src/Roads.h \
  ../src/Matrix.h
 
 /home/kristof/Dropbox/Software_Engineering/gtest-1.6.0/include/gtest/gtest.h:
@@ -65,9 +65,9 @@ src/test_main.d: ../src/test_main.cpp \
 
 ../src/Structures.h:
 
-../src/Coordinate.h:
-
 ../src/Vehicles.h:
+
+../src/Coordinate.h:
 
 ../src/Roads.h:
 

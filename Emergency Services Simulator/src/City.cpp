@@ -72,6 +72,10 @@ void City::link_trucks_to_bases() {
 		for (it_dep = departments.begin(); it_dep != departments.end(); it_dep++) {
 			std::string dep_name = it_dep->getName();
 			if (basename == dep_name) {
+				// Add truck to the fire department.
+				it_dep->addTruck(&(*it_t));
+				// Set values in Firetruck
+				it_t->setCoord(it_dep->getEntrance());
 				Fire_Department* dep_ptr = &(*it_dep);
 				it_t->linkBase(dep_ptr);
 			}

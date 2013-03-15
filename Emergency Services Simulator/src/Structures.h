@@ -11,9 +11,13 @@
 
 #include <string>
 #include <ostream>
+#include <vector>
 
+#include "Vehicles.h"
 #include "Coordinate.h"
 #include "CityObjects.h"
+
+class Firetruck;
 
 class Structures: public CityObjects {
 protected:
@@ -38,8 +42,6 @@ public:
 
 };
 
-
-
 class House: public Structures {
 private:
 	double hitpoints;
@@ -57,11 +59,16 @@ public:
 class Fire_Department: public Structures {
 private:
 	Coordinate entrance;
+	std::vector<Firetruck*> trucks;
 
 public:
 	Fire_Department();
 	Fire_Department(const int x, const int y, const int x_entrance, const int y_entrance, const std::string n);
 	virtual ~Fire_Department();
+
+	Coordinate& getEntrance();
+	void addTruck(Firetruck*);
+	Firetruck* useTruck();
 
 	friend std::ostream& operator <<(std::ostream& s, Fire_Department& department);
 };

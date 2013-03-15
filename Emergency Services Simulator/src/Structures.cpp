@@ -99,6 +99,22 @@ Fire_Department::~Fire_Department()
 {
 }
 
+void Fire_Department::addTruck(Firetruck* t) {
+	trucks.push_back(t);
+}
+
+Firetruck* Fire_Department::useTruck() {
+	if (trucks.size() != 0) {
+		Firetruck* readyTruck = *(trucks.begin());
+		trucks.erase(trucks.begin());
+		return readyTruck;
+	}
+}
+
+Coordinate& Fire_Department::getEntrance() {
+	return entrance;
+}
+
 std::ostream& operator <<(std::ostream& s, Fire_Department& department){
 	REQUIRE(department.init(), "Object 'House' was not properly initialized when calling overloaded operator '<<'");
 

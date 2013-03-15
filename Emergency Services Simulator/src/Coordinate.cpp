@@ -34,6 +34,14 @@ int Coordinate::getY() const {
 	return y;
 }
 
+void Coordinate::setX(int val) {
+	x = val;
+}
+
+void Coordinate::setY(int val) {
+	y = val;
+}
+
 std::ostream& operator <<(std::ostream& s, Coordinate& coordinate){
 	s << "(" << coordinate.getX() << ", " << coordinate.getY() << ")";
 	return s;

@@ -76,6 +76,33 @@ Fire_Department* Firetruck::getBaseptr() {
 	return base;
 }
 
+void Firetruck::move(std::string direction) {
+	// Contract that checks if direction is legit.
+
+	int curX = coord.getX();
+	int curY = coord.getY();
+
+	if (direction == "up") {
+		coord.setY(curY + 1);
+	}
+	else if (direction == "down") {
+		coord.setY(curY - 1);
+	}
+	else if (direction == "left") {
+		coord.setX(curX - 1);
+	}
+	else if (direction == "right") {
+		coord.setX(curX + 1);
+	}
+	else {
+		std::cout << "This is not a valid direction." << std::endl;
+	}
+}
+
+void Firetruck::setCoord(Coordinate location) {
+	coord = location;
+}
+
 std::ostream& operator <<(std::ostream& s, Firetruck& truck){
 	s << "Vehicle: Firetruck \n";
 	s << "Name: " << truck.name << "\n";

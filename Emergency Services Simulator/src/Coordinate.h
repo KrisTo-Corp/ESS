@@ -31,6 +31,10 @@ public:
 
 	int getX()const;
 	int getY()const;
+
+	void setX(int);
+	void setY(int);
+
 	friend std::ostream& operator <<(std::ostream& s, Coordinate& coordinate);
 
 private:
