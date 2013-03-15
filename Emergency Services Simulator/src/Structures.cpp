@@ -25,7 +25,6 @@ Structures::~Structures() {
 }
 
 std::string Structures::getName() {
-	std::cout << name << std::endl;
 	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
 	return name;
@@ -75,6 +74,14 @@ std::ostream& operator <<(std::ostream& s, House& house){
 	s << "Location:" << house.location << "\n";
 
 	return s;
+}
+
+void House::decreaseHP(){
+	hitpoints = hitpoints - (1.0/(width*length));
+}
+
+double House::getHP(){
+	return hitpoints;
 }
 
 //==========================

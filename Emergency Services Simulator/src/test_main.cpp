@@ -18,9 +18,13 @@
 
 int main(int argc, char **argv) {
 
+	srand(time(NULL));
+
 	City city("stad.xml");
 
-	std::cout << city << std::endl;
+	city.update();
+
+	std::cout << "Finished running, biatch v1.0 shizz" << std::endl;
 }
 
 /*

@@ -8,6 +8,10 @@
 
 #include "City.h"
 
+#include <cstdlib>
+#include <fstream>
+#include <cmath>
+
 City::City(const std::string filename){
 
 	std::pair<int, int> maxCoords =	parseCity(filename);
@@ -16,10 +20,8 @@ City::City(const std::string filename){
 	 * Program halts when adding objects to the matrix. Probably a segmentation fault.
 	 */
 
-	//matrix = Matrix (maxCoords.second + 1, maxCoords.first +1);
-	//matrix.resetInit();
-
-	std::cout << maxCoords.first << " " << maxCoords.second << std::endl;
+	matrix = Matrix(maxCoords.second + 1, maxCoords.first +1);
+	matrix.resetInit();
 
 	for (std::list<Firetruck>::iterator it = trucks.begin(); it != trucks.end(); it++) {
 		it->resetInit();
@@ -86,4 +88,80 @@ bool City::init() {
 
 bool City::properlyInitialized(int x, int y){
 	return matrix.properlyInitialized(x, y);
+}
+
+CityObjects* City::setFire(){
+
+	bool succes = false;
+	CityObjects* ptr;
+
+	while (!succes){
+
+		int random_x = rand()% matrix.getRows();
+		int random_y = rand()% matrix.getColumns();
+
+		ptr = matrix.getObject(random_y, random_x);
+
+		if (ptr->getState() == normal){
+			succes = true;
+		}
+	}
+
+	ptr->setState(burning);
+
+	return ptr;
+}
+
+void City::update(){
+
+	bool finished = false;
+	CityObjects* ptr;
+	std::ofstream output;
+	output.open("output.txt");
+
+	ptr = setFire();
+	Structures* structptr = dynamic_cast<Structures*>(ptr);
+	Coordinate cur = structptr->getLocation();
+	std::string name = structptr->getName();
+	output << name << " at location " << cur << " started burning." << std::endl;
+	House* houseptr = dynamic_cast<House*>(structptr);
+	double hp = houseptr->getHP();
+	output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
+
+	while(!finished){
+		finished = true;
+
+		for (int i = 0; i < matrix.getColumns(); i++){
+			for (int j = 0; j < matrix.getRows(); j++){
+				ptr = matrix.getObject(i, j);
+
+				if (ptr->getState() == burning){
+					finished = false;
+
+					House* houseptr = dynamic_cast<House*>(ptr);
+
+					houseptr->decreaseHP();
+					double hp = houseptr->getHP();
+					if (hp/floor(hp) == 1){
+						Coordinate cur = houseptr->getLocation();
+						std::string name = houseptr->getName();
+						output << name << " at location " << cur << " is still burning." << std::endl;
+						output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
+					}
+
+					if (houseptr->getHP() <= 0){
+						houseptr->setState(destroyed);
+						Coordinate cur = houseptr->getLocation();
+						std::string name = houseptr->getName();
+						output << name << " at location " << cur << " is destroyed." << std::endl;
+						output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
+					}
+				}
+			}
+		}
+
+	}
+
+	output.close();
+
 }

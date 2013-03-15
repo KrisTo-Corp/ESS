@@ -42,13 +42,14 @@ public:
 
 class House: public Structures {
 private:
-	int hitpoints;
+	double hitpoints;
 
 public:
 	House();
 	House(const int x, const int y, int hp, const std::string n);
 	virtual ~House();
-
+	void decreaseHP();
+	double getHP();
 	friend std::ostream& operator <<(std::ostream& s, House& house);
 };
 

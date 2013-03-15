@@ -19,6 +19,13 @@ CityObjects::CityObjects(): type(none)
 
 CityObjects::CityObjects(Eobjects t): type(t)
 {
+	if (type == house){
+		state = normal;
+	}
+	else {
+		state = intouchable;
+	}
+
 	_initCheck = this;
 
 	ENSURE(init(), "Object 'CityObjects' was not properly initialized.");
@@ -32,6 +39,14 @@ Eobjects CityObjects::getType(){
 	REQUIRE(init(), "Object 'CityObjects' was not properly initialized when calling getType()");
 
 	return type;
+}
+
+Estate CityObjects::getState(){
+	return state;
+}
+
+void CityObjects::setState(Estate s){
+	state = s;
 }
 
 bool CityObjects::init() {

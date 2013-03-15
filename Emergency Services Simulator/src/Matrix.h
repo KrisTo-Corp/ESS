@@ -61,6 +61,10 @@ public:
 
 	void resetInit();
 
+	int getRows();
+
+	int getColumns();
+
 private:
 	bool init();
 };

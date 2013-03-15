@@ -11,29 +11,22 @@
 
 #include "Matrix.h"
 
-Matrix::Matrix(): rows(16), columns(22) {
-	for(int i = 0; i < rows; i++){
-		std::vector<CityObjects*> colum;
-		for (int j = 0; j < columns; j++){
-			colum.push_back(NULL);
-		}
-		matrix.push_back(colum);
-	}
+Matrix::Matrix(){
 	_initCheck = this;
 	ENSURE(init(), "Object 'Matrix' was not properly initialized.");
 }
 
 Matrix::Matrix(int r, int c): rows(r), columns(c) {
-	for(int i = 0; i < columns; i++){
-		std::vector<CityObjects*> colum;
-		for (int j = 0; j < rows; j++){
-			colum.push_back(NULL);
+	for(int i = 0; i < rows; i++){
+			std::vector<CityObjects*> colum;
+			for (int j = 0; j < columns; j++){
+				colum.push_back(NULL);
+			}
+			matrix.push_back(colum);
 		}
-		matrix.push_back(colum);
+		_initCheck = this;
+		ENSURE(init(), "Object 'Matrix' was not properly initialized.");
 	}
-	_initCheck = this;
-	ENSURE(init(), "Object 'Matrix' was not properly initialized.");
-}
 
 Matrix::~Matrix()
 {
@@ -179,4 +172,12 @@ bool Matrix::init() {
 
 void Matrix::resetInit() {
 	_initCheck = this;
+}
+
+int Matrix::getRows(){
+	return rows;
+}
+
+int Matrix::getColumns(){
+	return columns;
 }

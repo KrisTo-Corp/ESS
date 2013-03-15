@@ -45,12 +45,15 @@ public:
 	friend std::ostream& operator <<(std::ostream& s, City& city);
 //	REQUIRE(city.init(), "Object 'City' was not properly initialized when calling overloaded operator '<<'");
 
+	void update();
+
 private:
 	bool init();
 	std::pair<int, int> parseCity(std::string filename);
 	void link_trucks_to_bases();
 	bool validCoordCheck(int x, int y);
 	int compareCoord(int, int);
+	CityObjects* setFire();
 };
 
 #endif /* CITY_H_ */

@@ -14,10 +14,12 @@
 #include "DesignByContract.h"
 
 enum Eobjects {none, house, department, street, crossroad};
+enum Estate {normal, burning, destroyed, intouchable};
 
 class CityObjects {
 protected:
 	Eobjects type;
+	Estate state;
 
 	CityObjects* _initCheck;
 
@@ -33,6 +35,9 @@ public:
 	Eobjects getType();
 //	REQUIRE(this->init(), "Object 'CityObjects' was not properly initialized when calling getType()");
 
+	Estate getState();
+
+	void setState(Estate);
 
 	virtual bool init();
 	void resetInit();
