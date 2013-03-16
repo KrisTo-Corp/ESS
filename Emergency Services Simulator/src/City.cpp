@@ -131,6 +131,18 @@ void City::update(){
 	double hp = houseptr->getHP();
 	output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
 
+	// Find an available firetruck.
+	std::list<Fire_Department>::iterator it_d;
+	Firetruck* rescueTruck;
+	for (it_d = departments.begin(); it_d != departments.end(); it_d++) {
+		rescueTruck = it_d->useTruck();
+		if (rescueTruck->getBasename() != "") {
+			break;
+		}
+	}
+	// Find a road next to the burning location.
+	Coordinate destination = getAdjecantStreet(cur);
+
 	while(!finished){
 		finished = true;
 
@@ -162,8 +174,45 @@ void City::update(){
 				}
 			}
 		}
+		// rescueTruck to the rescue.
+		Coordinate truckLoc = rescueTruck->getCoord();
+		Roads* destStreet = dynamic_cast<Roads*>(matrix.getObject(destination.getX(), destination.getY()));
+		Roads* truckStreet = dynamic_cast<Roads*>(matrix.getObject(truckLoc.getX(), truckLoc.getY()));
 
+		if (truckLoc.getX() != destination.getX() || truckLoc.getY() != destination.getY()) {
+			// Scenario 1: rescueTruck is in the same street as destination.
+			output << "Firetruck " << rescueTruck->getName() << " is on its way to " << name << " on location ";
+			output << destination << ". The firetruck is at " << truckStreet->getName() << " on location " << truckLoc << std::endl << std::endl;
+			if (destStreet->getName() == truckStreet->getName()) {
+				std::string orientation = checkOrientation(destination);
+
+				if (orientation == "horizontal") {
+					if (destination.getX() < truckLoc.getX()) {
+						rescueTruck->move("left");
+					}
+					else {
+						rescueTruck->move("right");
+					}
+				}
+				else {
+					if (destination.getY() < truckLoc.getY()) {
+						rescueTruck->move("down");
+					}
+					else {
+						rescueTruck->move("up");
+					}
+				}
+			}
+		}
+		else {
+			output << "Firetruck " << rescueTruck->getName() << " has reached its destination " << name;
+			output << " at location " << destination << " and has extinguished the fire." << std::endl;
+
+			break;
+		}
 	}
+	// Return the firetruck to its department
+	std::cout << std::endl;
 	output.close();
 }
 

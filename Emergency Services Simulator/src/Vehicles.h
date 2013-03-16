@@ -33,8 +33,9 @@ public:
 
 	virtual ~Vehicles();
 
-	virtual bool init();
+	const std::string getName()const;
 
+	virtual bool init();
 	void resetInit();
 };
 
@@ -61,8 +62,8 @@ public:
 	//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getBaseptr().");
 
 	void move(std::string);
-
 	void setCoord(Coordinate);
+	Coordinate getCoord();
 
 	friend std::ostream& operator <<(std::ostream& s, Firetruck& truck);
 };

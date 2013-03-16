@@ -31,6 +31,10 @@ Vehicles::~Vehicles()
 {
 }
 
+const std::string Vehicles::getName()const {
+	return name;
+}
+
 
 bool Vehicles::init() {
 
@@ -101,6 +105,10 @@ void Firetruck::move(std::string direction) {
 
 void Firetruck::setCoord(Coordinate location) {
 	coord = location;
+}
+
+Coordinate Firetruck::getCoord() {
+	return coord;
 }
 
 std::ostream& operator <<(std::ostream& s, Firetruck& truck){
