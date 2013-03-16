@@ -48,6 +48,11 @@ City::City(const std::string filename){
 	for (std::list<Crossroad>::iterator it = crossroads.begin(); it != crossroads.end(); it++) {
 		it->resetInit();
 	}
+
+	/*
+	 * Integrity check: http://lore.ua.ac.be/Teaching/SE1BAC/project2013/spec10.html all the way down
+	 */
+
 	_initCheck = this;
 
 	ENSURE(init(), "Object 'City' was not properly initialized.");
