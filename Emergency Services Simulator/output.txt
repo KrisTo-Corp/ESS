@@ -1,27 +1,27 @@
-house at location (12, 9) started burning.
+house at location (3, 9) started burning.
 	 It has 20 hitpoints left.
 
-house at location (12, 9) is still burning.
+house at location (3, 9) is still burning.
 	 It has 19 hitpoints left.
 
-Firetruck Bw12 is on its way to house on location (12, 10). The firetruck is at Cstraat on location (8, 10)
+Firetruck Bw12 is on its way to house on location (4, 10). The firetruck is at Cstraat on location (8, 10)
 
-house at location (12, 9) is still burning.
+house at location (3, 9) is still burning.
 	 It has 18 hitpoints left.
 
-Firetruck Bw12 is on its way to house on location (12, 10). The firetruck is at Cstraat on location (9, 10)
+Firetruck Bw12 is on its way to house on location (4, 10). The firetruck is at Cstraat-Javastraat on location (7, 10)
 
-house at location (12, 9) is still burning.
+house at location (3, 9) is still burning.
 	 It has 17 hitpoints left.
 
-Firetruck Bw12 is on its way to house on location (12, 10). The firetruck is at Cstraat on location (10, 10)
+Firetruck Bw12 is on its way to house on location (4, 10). The firetruck is at Cstraat on location (6, 10)
 
-house at location (12, 9) is still burning.
+house at location (3, 9) is still burning.
 	 It has 16 hitpoints left.
 
-Firetruck Bw12 is on its way to house on location (12, 10). The firetruck is at Cstraat on location (11, 10)
+Firetruck Bw12 is on its way to house on location (4, 10). The firetruck is at Cstraat on location (5, 10)
 
-house at location (12, 9) is still burning.
+house at location (3, 9) is still burning.
 	 It has 15 hitpoints left.
 
-Firetruck Bw12 has reached its destination house at location (12, 10) and has extinguished the fire.
+Firetruck Bw12 has reached its destination house at location (4, 10) and has extinguished the fire.

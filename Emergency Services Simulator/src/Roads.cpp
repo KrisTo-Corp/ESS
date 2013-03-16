@@ -73,8 +73,10 @@ Crossroad::Crossroad(): Roads("", crossroad), location(0, 0)
 {
 }
 
-Crossroad::Crossroad(const int x, const int y, const std::string n): Roads(n, crossroad), location(x, y)
+Crossroad::Crossroad(const int x, const int y, const std::string n, const std::string street1, const std::string street2): Roads(n, crossroad), location(x, y)
 {
+	s1 = street1;
+	s2 = street2;
 }
 
 Crossroad::~Crossroad()
@@ -83,6 +85,14 @@ Crossroad::~Crossroad()
 
 Coordinate Crossroad::getLocation(){
 	return location;
+}
+
+std::string Crossroad::getStreet1() {
+	return s1;
+}
+
+std::string Crossroad::getStreet2() {
+	return s2;
 }
 
 std::ostream& operator <<(std::ostream& s, Crossroad& crossroad){

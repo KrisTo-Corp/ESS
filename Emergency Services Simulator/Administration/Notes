@@ -60,3 +60,13 @@ int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
 }
+
+
+----------------------------------------------------------------------------------------------------
+TODO list:
+
+- Contracten aanvullen
+- Tests
+	- invoer (parser)
+	- uitvoer (output.txt vergelijken)
+-  

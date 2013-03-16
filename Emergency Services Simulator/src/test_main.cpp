@@ -17,7 +17,7 @@
 #include "Matrix.h"
 
 int main(int argc, char **argv) {
-	//srand(time(NULL));
+	srand(time(NULL));
 
 	City city("stad.xml");
 

@@ -54,11 +54,11 @@ private:
 	bool validCoordCheck(int x, int y);
 	int compareCoord(int, int);
 	CityObjects* setFire();
-	Coordinate getAdjecantStreet(Coordinate);
+	Coordinate getAdjecantStreet(CityObjects*, Coordinate);
 	std::string checkOrientation(Coordinate);
 	Crossroad closestCrossroad(Coordinate);
 	int calculateDistance(Coordinate, Coordinate);
-	void driveTruck(Coordinate, Coordinate, Firetruck*, std::string dir="");
+	void driveTruck(Coordinate, Firetruck*);
 };
 
 #endif /* CITY_H_ */

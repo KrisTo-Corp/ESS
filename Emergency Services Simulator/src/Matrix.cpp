@@ -85,8 +85,9 @@ std::list<Crossroad> Matrix::addStreets(std::list<Street>& list) {
 			for (int j = y_start; j <= y_end; j++){
 				if (matrix[rows-1-j][i] != NULL){
 					std::string name = dynamic_cast<Street*>(matrix[rows-1-j][i])->getName();
+					std::string name2 = name;
 					name += "-" + it->getName();
-					Crossroad c(i, j, name);
+					Crossroad c(i, j, name, name2, it->getName());
 					crossroads.push_back(c);
 				}
 				CityObjects* pointer = &(*it);

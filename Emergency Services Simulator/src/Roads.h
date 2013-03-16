@@ -54,13 +54,17 @@ public:
 class Crossroad: public Roads {
 private:
 	Coordinate location;
+	std::string s1;
+	std::string s2;
 
 public:
 	Crossroad();
-	Crossroad(const int x, const int y, const std::string n);
+	Crossroad(const int x, const int y, const std::string n, std::string, std::string);
 	virtual ~Crossroad();
 
 	Coordinate getLocation();
+	std::string getStreet1();
+	std::string getStreet2();
 	friend std::ostream& operator <<(std::ostream& s, Crossroad& crossroad);
 };
 
