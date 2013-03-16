@@ -42,8 +42,12 @@ public:
 class Firetruck: public Vehicles {
 private:
 	Coordinate coord;
+	Coordinate tempDestination;
+	bool goToTemp;
+
 	const std::string basename;
 	Fire_Department* base;
+
 
 public:
 	Firetruck();
@@ -64,6 +68,10 @@ public:
 	void move(std::string);
 	void setCoord(Coordinate);
 	Coordinate getCoord();
+	Coordinate getTempDest();
+	void setTempDestination(Coordinate);
+	void setGoToTemp(bool);
+	bool getGoToTemp();
 
 	friend std::ostream& operator <<(std::ostream& s, Firetruck& truck);
 };

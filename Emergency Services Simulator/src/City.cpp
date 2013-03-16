@@ -419,13 +419,9 @@ void City::driveTruck(Coordinate destination,Firetruck* rescueTruck) {
 			// on crossroad but wrong streets
 			// go to other crossroad with streetname
 
-			std::cout << "HELLO KRISTOF" << std::endl;
-
 			Crossroad xRoad = closestCorrectCrossroad(cur, destStreet);
-
-			std::cout << "READY" << std::endl;
-
-			std::cout << xRoad.getLocation().getX() << " " << cur.getX() << std::endl;
+			rescueTruck->setTempDestination(xRoad.getLocation());
+			rescueTruck->setGoToTemp(true);
 
 			if (xRoad.getLocation().getX() < cur.getX()) {
 				rescueTruck->move("left");
@@ -467,26 +463,46 @@ void City::driveTruck(Coordinate destination,Firetruck* rescueTruck) {
 			}
 		}
 		else {
-			//Go to the closest crossroad
-			std::cout << "Got in our else case" << std::endl;
-			Crossroad xroad = closestCrossroad(rescueTruck->getCoord());
 			std::string orientation = checkOrientation(rescueTruck->getCoord());
-
-			if (orientation == "horizontal") {
-				if (xroad.getLocation().getX() < cur.getX()) {
-					rescueTruck->move("left");
+			if (!rescueTruck->getGoToTemp()) {
+				//Go to the closest crossroad
+				Crossroad xroad = closestCrossroad(rescueTruck->getCoord());
+				if (orientation == "horizontal") {
+					if (xroad.getLocation().getX() < cur.getX()) {
+						rescueTruck->move("left");
+					}
+					else {
+						rescueTruck->move("right");
+					}
 				}
-				else {
-					rescueTruck->move("right");
+				if (orientation == "vertical") {
+					if (xroad.getLocation().getY() < cur.getY()) {
+						rescueTruck->move("down");
+					}
+					else {
+						rescueTruck->move("up");
+					}
 				}
 			}
-			if (orientation == "vertical") {
-				if (xroad.getLocation().getY() < cur.getY()) {
-					rescueTruck->move("down");
+			else {
+				if (orientation == "horizontal") {
+					if (rescueTruck->getTempDest().getX() < cur.getX()) {
+						rescueTruck->move("left");
+					}
+					else {
+						rescueTruck->move("right");
+					}
 				}
-				else {
-					rescueTruck->move("up");
+				if (orientation == "vertical") {
+					if (rescueTruck->getTempDest().getY() < cur.getY()) {
+						rescueTruck->move("down");
+					}
+					else {
+						rescueTruck->move("up");
+					}
 				}
+
+				if (rescueTruck->getCoord().getX() == )
 			}
 		}
 	}
