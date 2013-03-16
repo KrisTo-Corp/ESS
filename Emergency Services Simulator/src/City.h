@@ -56,6 +56,7 @@ private:
 	CityObjects* setFire();
 	Coordinate getAdjecantStreet(CityObjects*, Coordinate);
 	std::string checkOrientation(Coordinate);
+	Crossroad closestCorrectCrossroad(Coordinate, Street*);
 	Crossroad closestCrossroad(Coordinate);
 	int calculateDistance(Coordinate, Coordinate);
 	void driveTruck(Coordinate, Firetruck*);
