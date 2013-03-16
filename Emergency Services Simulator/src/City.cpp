@@ -101,10 +101,10 @@ CityObjects* City::setFire(){
 
 	while (!succes){
 
-		int random_x = rand()% matrix.getRows();
-		int random_y = rand()% matrix.getColumns();
+		int random_y = rand()% matrix.getRows();
+		int random_x = rand()% matrix.getColumns();
 
-		ptr = matrix.getObject(1, 14);
+		ptr = matrix.getObject(random_x, random_y);
 
 		if (ptr->getState() == normal){
 			succes = true;
@@ -144,7 +144,6 @@ void City::update(){
 	Coordinate destination = getAdjecantStreet(houseptr, rescueTruck->getCoord());
 
 	while(!finished){
-		std::cout << "entered loop" << std::endl;
 		finished = true;
 
 		for (int i = 0; i < matrix.getColumns(); i++){
@@ -183,40 +182,7 @@ void City::update(){
 		if (truckLoc.getX() != destination.getX() || truckLoc.getY() != destination.getY()) {
 			output << "Firetruck " << rescueTruck->getName() << " is on its way to " << name << " on location ";
 			output << destination << ". The firetruck is at " << truckStreet->getName() << " on location " << truckLoc << std::endl << std::endl;
-
 			driveTruck(destination, rescueTruck);
-			// Scenario 2: truckStreet and destStreet are parallel.
-					/*	else if (checkOrientation(truckLoc) == checkOrientation(destination)) {
-							std::cout << "PARALLEL" << std::endl;
-							// Move to the nearest crossroad.
-							if ((matrix.getObject(truckLoc.getX(), truckLoc.getY()))->getType() == crossroad) {
-								if (truckLoc.getY() != destination.getY()) {
-									Coordinate correctY(truckLoc.getX(), destination.getY());
-									driveTruck(correctY, truckLoc, rescueTruck, "parallel");
-								}
-								else {
-									// Reduced to problem in case 1
-									driveTruck(destination, truckLoc, rescueTruck);
-								}
-							}
-							else {
-								// Find the closest crossroad and move to it.
-								Crossroad xroad = closestCrossroad(truckLoc);
-								driveTruck(xroad.getLocation(), truckLoc, rescueTruck, "parallel");
-							}
-						}
-		/*
-			// Scenario 3: truckStreet and destStreet are not parallel.
-			else {
-				std::cout << "LOODRECHT" << std::endl;
-				if (destination.getX() != truckLoc.getX()) {
-					Coordinate correctX(destination.getX(), truckLoc.getY());
-					driveTruck(correctX, truckLoc, rescueTruck);
-				}
-				else {
-					driveTruck(destination, truckLoc, rescueTruck);
-				}
-			}*/
 		}
 		else {
 			output << "Firetruck " << rescueTruck->getName() << " has reached its destination " << name;
@@ -226,7 +192,11 @@ void City::update(){
 		}
 	}
 	// Return the firetruck to its department
-
+	while (rescueTruck->getBaseptr()->getEntrance() != rescueTruck->getCoord()) {
+		driveTruck(rescueTruck->getBaseptr()->getEntrance(), rescueTruck);
+	}
+	Coordinate c1 = rescueTruck->getCoord();
+	std::cout << c1 << std::endl;
 	output.close();
 }
 
@@ -324,7 +294,7 @@ std::string City::checkOrientation(Coordinate coord) {
 	bool down = false;
 
 	// Check rightside (including boundscheck)
-	if (coord.getX() + 1 <= matrix.getColumns()) {
+	if (coord.getX() + 1 < matrix.getColumns()) {
 		checkSide = matrix.getObject(coord.getX() + 1, coord.getY());
 		if (checkSide->getType() == street || checkSide->getType() == crossroad) {
 			right = true;
@@ -340,7 +310,7 @@ std::string City::checkOrientation(Coordinate coord) {
 	}
 
 	// Check upside (including boundscheck)
-	if (coord.getY() + 1 <= matrix.getRows()) {
+	if (coord.getY() + 1 < matrix.getRows()) {
 		checkSide = matrix.getObject(coord.getX(), coord.getY() + 1);
 		if (checkSide->getType() == street || checkSide->getType() == crossroad) {
 			up = true;
@@ -396,8 +366,6 @@ void City::driveTruck(Coordinate destination,Firetruck* rescueTruck) {
 			std::string orientation = checkOrientation(destination);
 			if (orientation == "horizontal") {
 				if (destination.getY() == cur.getY()) {
-					std::cout << "SAME STREET" << std::endl;
-
 					if (destination.getX() < cur.getX()) {
 						rescueTruck->move("left");
 					}
@@ -420,7 +388,7 @@ void City::driveTruck(Coordinate destination,Firetruck* rescueTruck) {
 			// go to other crossroad with streetname
 
 			Crossroad xRoad = closestCorrectCrossroad(cur, destStreet);
-			rescueTruck->setTempDestination(xRoad.getLocation());
+			rescueTruck->setTempDest(xRoad.getLocation());
 			rescueTruck->setGoToTemp(true);
 
 			if (xRoad.getLocation().getX() < cur.getX()) {
@@ -443,8 +411,6 @@ void City::driveTruck(Coordinate destination,Firetruck* rescueTruck) {
 		std::string orientation = checkOrientation(destination);
 			if (orientation == "horizontal") {
 				if (destination.getY() == cur.getY()) {
-					std::cout << "SAME STREET" << std::endl;
-
 					if (destination.getX() < cur.getX()) {
 						rescueTruck->move("left");
 					}
@@ -502,7 +468,9 @@ void City::driveTruck(Coordinate destination,Firetruck* rescueTruck) {
 					}
 				}
 
-				if (rescueTruck->getCoord().getX() == )
+				if (rescueTruck->getTempDest() == rescueTruck->getCoord()) {
+					rescueTruck->setGoToTemp(false);
+				}
 			}
 		}
 	}
@@ -520,11 +488,12 @@ Crossroad City::closestCorrectCrossroad(Coordinate cur, Street* destStreet) {
 		}
 	}
 
+	std::vector<Crossroad>::iterator it_vc;
 	std::pair<Crossroad, int> closest (*(xRoads.begin()), calculateDistance(xRoads.begin()->getLocation(), cur));
-	for (it_c = crossroads.begin(); it_c != crossroads.end(); it_c++) {
-		int distance = calculateDistance(it_c->getLocation(), cur);
+	for (it_vc = xRoads.begin(); it_vc != xRoads.end(); it_vc++) {
+		int distance = calculateDistance(it_vc->getLocation(), cur);
 		if (distance < closest.second) {
-			closest.first = *it_c;
+			closest.first = *it_vc;
 			closest.second = distance;
 		}
 	}

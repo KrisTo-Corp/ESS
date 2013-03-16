@@ -69,7 +69,7 @@ public:
 	void setCoord(Coordinate);
 	Coordinate getCoord();
 	Coordinate getTempDest();
-	void setTempDestination(Coordinate);
+	void setTempDest(Coordinate);
 	void setGoToTemp(bool);
 	bool getGoToTemp();
 

@@ -36,7 +36,8 @@ public:
 	void setY(int);
 
 	friend std::ostream& operator <<(std::ostream& s, Coordinate& coordinate);
-	bool Coordinate::operator==(const Coordinate &c) const;
+	bool operator==(const Coordinate &c) const;
+	bool operator!=(const Coordinate &c) const;
 
 private:
 	bool init();

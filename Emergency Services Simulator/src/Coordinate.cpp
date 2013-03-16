@@ -47,7 +47,7 @@ std::ostream& operator <<(std::ostream& s, Coordinate& coordinate){
 	return s;
 }
 
-bool Coordinate::operator==(const Coordinate &c) const {
+bool Coordinate::operator==(const Coordinate &c) const{
 	if (this->x == c.getX() && this->y == c.getY()) {
 		return true;
 	}
@@ -55,6 +55,16 @@ bool Coordinate::operator==(const Coordinate &c) const {
 		return false;
 	}
 }
+
+bool Coordinate::operator!=(const Coordinate &c) const {
+	if (*this == c) {
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+
 
 bool Coordinate::init() {
 	return _initCheck == this;

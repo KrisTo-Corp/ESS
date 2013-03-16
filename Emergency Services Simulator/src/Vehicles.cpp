@@ -113,7 +113,7 @@ Coordinate Firetruck::getCoord() {
 	return coord;
 }
 
-void Firetruck::setTempDestination(Coordinate c) {
+void Firetruck::setTempDest(Coordinate c) {
 	tempDestination = c;
 }
 
