@@ -180,39 +180,37 @@ void City::update(){
 		Roads* truckStreet = dynamic_cast<Roads*>(matrix.getObject(truckLoc.getX(), truckLoc.getY()));
 
 		if (truckLoc.getX() != destination.getX() || truckLoc.getY() != destination.getY()) {
-			// Scenario 1: rescueTruck is in the same street as destination.
 			output << "Firetruck " << rescueTruck->getName() << " is on its way to " << name << " on location ";
 			output << destination << ". The firetruck is at " << truckStreet->getName() << " on location " << truckLoc << std::endl << std::endl;
-			if (destStreet->getName() == truckStreet->getName()) {
-				std::string orientation = checkOrientation(destination);
 
-				if (orientation == "horizontal") {
-					if (destination.getX() < truckLoc.getX()) {
-						rescueTruck->move("left");
-					}
-					else {
-						rescueTruck->move("right");
+			// Scenario 1: rescueTruck is in the same street as destination.
+			if (destStreet->getName() == truckStreet->getName()) {
+				driveTruck(destination, truckLoc, rescueTruck);
+			}
+			// Scenario 2: truckStreet and destStreet are parallel.
+			else if (checkOrientation(truckLoc) == checkOrientation(destination)) {
+				// Move to the nearest crossroad.
+				if ((matrix.getObject(truckLoc.getX(), truckLoc.getY()))->getType() == crossroad) {
+					if (truckLoc.getY() != destination.getY()) {
+
 					}
 				}
 				else {
-					if (destination.getY() < truckLoc.getY()) {
-						rescueTruck->move("down");
-					}
-					else {
-						rescueTruck->move("up");
-					}
+					// Find the closest crossroad and move to it.
+					Crossroad xroad = closestCrossroad(truckLoc);
+					driveTruck(xroad.getLocation(), truckLoc, rescueTruck, "parallel");
 				}
 			}
 		}
 		else {
 			output << "Firetruck " << rescueTruck->getName() << " has reached its destination " << name;
 			output << " at location " << destination << " and has extinguished the fire." << std::endl;
-
-			break;
+			houseptr->setState(normal);
+			finished = true;
 		}
 	}
 	// Return the firetruck to its department
-	std::cout << std::endl;
+
 	output.close();
 }
 
@@ -336,6 +334,46 @@ Crossroad City::closestCrossroad(Coordinate coord) {
 int City::calculateDistance(Coordinate c1, Coordinate c2) {
 	int distance = sqrt((pow(c2.getX(), 2) - pow(c1.getX(), 2) + pow(c2.getY(), 2) - pow(c1.getY(), 2)));
 	return distance;
+}
+
+void City::driveTruck(Coordinate destination, Coordinate truckLoc, Firetruck* rescueTruck, std::string dir) {
+	std::string orientation = checkOrientation(destination);
+
+	if (orientation == "horizontal") {
+		if (destination.getX() < truckLoc.getX()) {
+			rescueTruck->move("left");
+		}
+		else {
+			rescueTruck->move("right");
+		}
+	}
+	else if (orientation == "vertical") {
+		if (destination.getY() < truckLoc.getY()) {
+			rescueTruck->move("down");
+		}
+		else {
+			rescueTruck->move("up");
+		}
+	}
+	// crossroad
+	else {
+		if (dir == "parallel") {
+			if (destination.getY() < truckLoc.getY()) {
+					rescueTruck->move("down");
+			}
+			else {
+				rescueTruck->move("up");
+			}
+		}
+		else {
+			if (destination.getX() < truckLoc.getX()) {
+				rescueTruck->move("left");
+			}
+			else {
+				rescueTruck->move("right");
+			}
+		}
+	}
 }
 
 /*

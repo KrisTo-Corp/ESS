@@ -58,6 +58,7 @@ private:
 	std::string checkOrientation(Coordinate);
 	Crossroad closestCrossroad(Coordinate);
 	int calculateDistance(Coordinate, Coordinate);
+	void driveTruck(Coordinate, Coordinate, Firetruck*, std::string dir="");
 };
 
 #endif /* CITY_H_ */
