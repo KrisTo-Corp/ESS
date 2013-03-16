@@ -95,7 +95,6 @@ bool City::properlyInitialized(int x, int y){
 }
 
 CityObjects* City::setFire(){
-	std::cout << "entered setFire()" << std::endl;
 	bool succes = false;
 	CityObjects* ptr;
 
@@ -195,8 +194,6 @@ void City::update(){
 	while (rescueTruck->getBaseptr()->getEntrance() != rescueTruck->getCoord()) {
 		driveTruck(rescueTruck->getBaseptr()->getEntrance(), rescueTruck);
 	}
-	Coordinate c1 = rescueTruck->getCoord();
-	std::cout << c1 << std::endl;
 	output.close();
 }
 
@@ -235,7 +232,6 @@ Coordinate City::getAdjecantStreet(CityObjects* building, Coordinate truckLoc) {
 	location = Coordinate(location.getX(), location.getY()-1);
 	if (location.getY() - 1 >= 0){
 		if(matrix.getObject(location.getX(), location.getY() -1)->getType() == street){
-			std::cout << "true that" << std::endl;
 			coordinates.push_back(Coordinate(location.getX(), location.getY() -1));
 		}
 	}
