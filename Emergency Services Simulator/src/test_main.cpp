@@ -28,6 +28,7 @@ protected:
 
 class VehiclesTest: public ::testing::Test {
 protected:
+	friend class Vehicles;
 	friend class Firetruck;
 
 	Vehicles vehicle;
@@ -35,7 +36,14 @@ protected:
 };
 
 class StructuresTest: public ::testing::Test {
+protected:
+	friend class Structures;
+	friend class House;
+	friend class Fire_Department;
 
+	Structures structure;
+	House test_house;
+	Fire_Department test_department;
 };
 
 class RoadsTest: public ::testing::Test {
@@ -174,6 +182,114 @@ TEST_F(VehiclesTest, FiretruckSetFunctions){
 	EXPECT_TRUE(firetruck.getIsHome());
 }
 
+// TEST DEFAULT CONSTRUCTOR STRUCTURES
+TEST_F(StructuresTest, DefaultConstructor){
+	EXPECT_TRUE(structure.init());
+	EXPECT_EQ("", structure.getName());
+	EXPECT_EQ(Coordinate(0, 0), structure.getLocation());
+	EXPECT_EQ(0, structure.getWidth());
+	EXPECT_EQ(0, structure.getLength());
+	EXPECT_EQ(none, structure.getType());
+	EXPECT_EQ(intouchable, structure.getState());
+}
+
+// TEST SPECIFIED CONSTRUCTOR STRUCTURES
+TEST_F(StructuresTest, Constructor){
+	structure = Structures(12, 13, "structure", 9, 11, house);
+	EXPECT_TRUE(structure.init());
+	EXPECT_EQ("structure", structure.getName());
+	EXPECT_EQ(Coordinate(12, 13), structure.getLocation());
+	EXPECT_EQ(9, structure.getWidth());
+	EXPECT_EQ(11, structure.getLength());
+	EXPECT_EQ(house, structure.getType());
+	EXPECT_EQ(normal, structure.getState());
+
+}
+
+// TEST DEFAULT CONSTRUCTOR HOUSE
+TEST_F(StructuresTest, HouseDefaultConstructor){
+	EXPECT_TRUE(test_house.init());
+	EXPECT_EQ("", test_house.getName());
+	EXPECT_EQ(Coordinate(0, 0), test_house.getLocation());
+	EXPECT_EQ(2, test_house.getWidth());
+	EXPECT_EQ(2, test_house.getLength());
+	EXPECT_EQ(0, test_house.getHP());
+	EXPECT_EQ(house, test_house.getType());
+	EXPECT_EQ(normal, test_house.getState());
+}
+
+// TEST SPECIFIED CONSTRUCTOR HOUSE
+TEST_F(StructuresTest, HouseConstructor){
+	test_house = House(10, 11, 20, "house");
+	EXPECT_TRUE(test_house.init());
+	EXPECT_EQ("house", test_house.getName());
+	EXPECT_EQ(Coordinate(10, 11), test_house.getLocation());
+	EXPECT_EQ(2, test_house.getWidth());
+	EXPECT_EQ(2, test_house.getLength());
+	EXPECT_EQ(20, test_house.getHP());
+	EXPECT_EQ(house, test_house.getType());
+	EXPECT_EQ(normal, test_house.getState());
+}
+
+// TEST DECREASE HP FUNCTION
+TEST_F(StructuresTest, DecreaseHP){
+	test_house = House(0, 0, 10, "house");
+	EXPECT_EQ(10, test_house.getHP());
+	test_house.decreaseHP();
+	EXPECT_EQ(9.75, test_house.getHP());
+	test_house.decreaseHP();
+	EXPECT_EQ(9.5, test_house.getHP());
+	test_house.decreaseHP();
+	EXPECT_EQ(9.25, test_house.getHP());
+	test_house.decreaseHP();
+	EXPECT_EQ(9, test_house.getHP());
+}
+
+// TEST DEFAULT CONSTRUCTOR FIRE_DEPARTMENT
+TEST_F(StructuresTest, FireDepartmentDefaultConstructor){
+	EXPECT_TRUE(test_department.init());
+	EXPECT_EQ("", test_department.getName());
+	EXPECT_EQ(Coordinate(0, 0), test_department.getLocation());
+	EXPECT_EQ(Coordinate(0, 0), test_department.getEntrance());
+	EXPECT_EQ(4, test_department.getWidth());
+	EXPECT_EQ(4, test_department.getLength());
+	EXPECT_EQ(0, test_department.getAmountTrucks());
+	EXPECT_EQ(department, test_department.getType());
+	EXPECT_EQ(intouchable, test_department.getState());
+}
+
+// TEST SPECIFIED CONSTRUCTOR FIRE_DEPARTMENT
+TEST_F(StructuresTest, FireDepartmentConstructor){
+	test_department = Fire_Department(1, 2, 3, 4, "department");
+	EXPECT_TRUE(test_department.init());
+	EXPECT_EQ("department", test_department.getName());
+	EXPECT_EQ(Coordinate(1, 2), test_department.getLocation());
+	EXPECT_EQ(Coordinate(3, 4), test_department.getEntrance());
+	EXPECT_EQ(4, test_department.getWidth());
+	EXPECT_EQ(4, test_department.getLength());
+	EXPECT_EQ(0, test_department.getAmountTrucks());
+	EXPECT_EQ(department, test_department.getType());
+	EXPECT_EQ(intouchable, test_department.getState());
+}
+
+// TEST THE TRUCK FUNCTIONw FROM FIRE DEPARTMENT
+TEST_F(StructuresTest, FireDepartmentTruckFunctions){
+	Firetruck truck1;
+	Firetruck truck2;
+	Firetruck truck3;
+	EXPECT_EQ(0, test_department.getAmountTrucks());
+	test_department.addTruck(&truck1);
+	EXPECT_EQ(1, test_department.getAmountTrucks());
+	EXPECT_EQ(&truck1, test_department.useTruck());
+	EXPECT_EQ(0, test_department.getAmountTrucks());
+	test_department.addTruck(&truck3);
+	test_department.addTruck(&truck2);
+	EXPECT_EQ(2, test_department.getAmountTrucks());
+	EXPECT_EQ(&truck3, test_department.useTruck());
+	EXPECT_EQ(1, test_department.getAmountTrucks());
+	EXPECT_EQ(&truck2, test_department.useTruck());
+	EXPECT_EQ(0, test_department.getAmountTrucks());
+}
 
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);

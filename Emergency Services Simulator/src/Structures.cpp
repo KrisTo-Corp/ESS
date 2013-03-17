@@ -48,6 +48,19 @@ int Structures::getLength() {
 	return length;
 }
 
+Structures& Structures::operator =(const Structures& c){
+	name = c.name;
+	location = c.location;
+	width = c.width;
+	length = c.length;
+	type = c.type;
+	state = c.state;
+
+	_initCheck = this;
+
+	return *this;
+}
+
 
 //================
 //	CLASS HOUSE
@@ -74,6 +87,20 @@ std::ostream& operator <<(std::ostream& s, House& house){
 	s << "Location:" << house.location << "\n";
 
 	return s;
+}
+
+House& House::operator =(const House& c){
+	name = c.name;
+	location = c.location;
+	width = c.width;
+	length = c.length;
+	type = c.type;
+	state = c.state;
+	hitpoints = c.hitpoints;
+
+	_initCheck = this;
+
+	return *this;
 }
 
 void House::decreaseHP(){
@@ -124,6 +151,25 @@ std::ostream& operator <<(std::ostream& s, Fire_Department& department){
 	s << "Location: " << department.location << "\n";
 
 	return s;
+}
+
+int Fire_Department::getAmountTrucks(){
+	return trucks.size();
+}
+
+Fire_Department Fire_Department::operator =(const Fire_Department& c){
+	name = c.name;
+	location = c.location;
+	width = c.width;
+	length = c.length;
+	type = c.type;
+	state = c.state;
+	entrance = c.entrance;
+	trucks = c.trucks;
+
+	_initCheck = this;
+
+	return *this;
 }
 
 

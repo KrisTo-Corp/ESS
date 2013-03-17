@@ -21,10 +21,10 @@ class Firetruck;
 
 class Structures: public CityObjects {
 protected:
-	const std::string name;
+	std::string name;
 	Coordinate location;
-	const int width;
-	const int length;
+	int width;
+	int length;
 
 public:
 	Structures();
@@ -40,6 +40,8 @@ public:
 	int getWidth();
 	int getLength();
 
+	Structures& operator =(const Structures&);
+
 };
 
 class House: public Structures {
@@ -53,6 +55,7 @@ public:
 	void decreaseHP();
 	double getHP();
 	friend std::ostream& operator <<(std::ostream& s, House& house);
+	House& operator =(const House&);
 };
 
 
@@ -67,10 +70,12 @@ public:
 	virtual ~Fire_Department();
 
 	Coordinate& getEntrance();
+	int getAmountTrucks();
 	void addTruck(Firetruck*);
 	Firetruck* useTruck();
 
 	friend std::ostream& operator <<(std::ostream& s, Fire_Department& department);
+	Fire_Department operator =(const Fire_Department&);
 };
 
 #endif /* STRUCTURES_H_ */
