@@ -53,11 +53,13 @@ void Vehicles::resetInit() {
 Firetruck::Firetruck(): Vehicles(0, 0, ""), basename("") {
 	base = NULL;
 	goToTemp = false;
+	available = true;
 }
 
 Firetruck::Firetruck(const int x, const int y, const std::string n, const std::string bn): Vehicles(x, y, n), basename(bn) {
 	base = NULL;
 	goToTemp = false;
+	available = true;
 }
 
 Firetruck::~Firetruck()
@@ -125,9 +127,32 @@ void Firetruck::setGoToTemp(bool v) {
 	goToTemp = v;
 }
 
+bool Firetruck::getAvailable() {
+	return available;
+}
+
+void Firetruck::setAvailable(bool state) {
+	available = state;
+}
 
 bool Firetruck::getGoToTemp() {
 	return goToTemp;
+}
+
+void Firetruck::setDestination(Coordinate dest) {
+	destination = dest;
+}
+
+Coordinate Firetruck::getDestination() {
+	return destination;
+}
+
+Structures* Firetruck::getTarget() {
+	return target;
+}
+
+void Firetruck::setTarget(Structures* t) {
+	target = t;
 }
 
 std::ostream& operator <<(std::ostream& s, Firetruck& truck){

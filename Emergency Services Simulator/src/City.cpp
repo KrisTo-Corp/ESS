@@ -9,10 +9,10 @@
 #include "City.h"
 
 #include <cstdlib>
-#include <fstream>
+
 #include <cmath>
 
-City::City(const std::string filename){
+City::City(const std::string filename, std::string outputname): output(outputname.c_str()){
 
 	std::pair<int, int> maxCoords =	parseCity(filename);
 
@@ -50,8 +50,15 @@ City::City(const std::string filename){
 	}
 
 	/*
-	 * Integrity check: http://lore.ua.ac.be/Teaching/SE1BAC/project2013/spec10.html all the way down
+	 * Integrity check
 	 */
+
+	if (!(integrityCheck())){
+		output << "THE GENERATED CITY WAS NOT VALID !\n";
+		exit(1);
+	}
+
+	output << matrix << "\n\n\n";
 
 	_initCheck = this;
 
@@ -120,11 +127,112 @@ CityObjects* City::setFire(){
 	return ptr;
 }
 
+void City::update2() {
+	bool finished = false;
+	CityObjects* ptr;
+
+	ptr = setFire();
+	Structures* structptr = dynamic_cast<Structures*>(ptr);
+	Coordinate cur = structptr->getLocation();
+	std::string name = structptr->getName();
+	output << name << " at location " << cur << " started burning." << std::endl;
+	House* houseptr = dynamic_cast<House*>(structptr);
+	double hp = houseptr->getHP();
+	output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
+
+	// Find an available firetruck.
+	std::list<Firetruck>::iterator it_t;
+	Firetruck* rescueTruck;
+	for (it_t = trucks.begin(); it_t != trucks.end(); it_t++) {
+		if (it_t->getAvailable) {
+			it_t->setAvailable(false);
+			it_t->setDestination(getAdjecantStreet(houseptr, it_t->getCoord()));
+		}
+	}
+
+	while (!finished) {
+		// Random chance to setFire()
+		int chance = rand() % 20;
+		if (chance == 30) {
+			ptr = setFire();
+			Structures* structptr = dynamic_cast<Structures*>(ptr);
+			Coordinate cur = structptr->getLocation();
+			std::string name = structptr->getName();
+			output << name << " at location " << cur << " started burning." << std::endl;
+			House* houseptr = dynamic_cast<House*>(structptr);
+			double hp = houseptr->getHP();
+			output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
+
+			// Find an available firetruck.
+			std::list<Firetruck>::iterator it_t;
+			Firetruck* rescueTruck;
+			for (it_t = trucks.begin(); it_t != trucks.end(); it_t++) {
+				if (it_t->getAvailable) {
+					it_t->setAvailable(false);
+					it_t->setDestination(getAdjecantStreet(houseptr, it_t->getCoord()))
+
+				}
+			}
+		}
+
+		// Burn
+		for (int i = 0; i < matrix.getColumns(); i++){
+			for (int j = 0; j < matrix.getRows(); j++){
+				ptr = matrix.getObject(i, j);
+
+				if (ptr->getState() == burning){
+					finished = false;
+
+					House* houseptr = dynamic_cast<House*>(ptr);
+
+					houseptr->decreaseHP();
+					double hp = houseptr->getHP();
+					if (hp/floor(hp) == 1){
+						Coordinate cur = houseptr->getLocation();
+						std::string name = houseptr->getName();
+						output << name << " at location " << cur << " is still burning." << std::endl;
+						output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
+					}
+
+					if (houseptr->getHP() <= 0){
+						houseptr->setState(destroyed);
+						Coordinate cur = houseptr->getLocation();
+						std::string name = houseptr->getName();
+						output << name << " at location " << cur << " is destroyed." << std::endl;
+						output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
+					}
+				}
+			}
+		}
+
+		// Move
+		for (std::list<Firetruck>::iterator it = trucks.begin(); it != trucks.end(); it++) {
+			driveTruck(&(*it));
+
+			if (it->getCoord() == it->getDestination()) {
+				if (it->getAvailable() == false) {
+
+				}
+			}
+		}
+	}
+
+}
+
+/*
+ * 1. setFire to 1 house to start the simulation
+ * 2. select a truck and give its destination
+ * 					WHILE
+ * 3. random chance to setFire()
+ * 4. IF succes
+ * 		-> select a truck
+ * 5. move truck to destination
+ *
+ */
+
 void City::update(){
 	bool finished = false;
 	CityObjects* ptr;
-	std::ofstream output;
-	output.open("output.txt");
 
 	ptr = setFire();
 	Structures* structptr = dynamic_cast<Structures*>(ptr);
@@ -204,62 +312,48 @@ void City::update(){
 
 Coordinate City::getAdjecantStreet(CityObjects* building, Coordinate truckLoc) {
 
-	House* houseptr = dynamic_cast<House*>(building);
+	Structures* ptr = dynamic_cast<Structures*>(building);
 	std::vector<Coordinate> coordinates;
+	Coordinate location;
 
-	// Check adjecant points to upper left
-	Coordinate location = houseptr->getLocation();
-	if (location.getY() + 1 < matrix.getRows()){
-		if(matrix.getObject(location.getX(), location.getY() +1)->getType() == street){
-			coordinates.push_back(Coordinate(location.getX(), location.getY() +1));
-		}
-	}
-	if (location.getX() - 1 >= 0){
-		if(matrix.getObject(location.getX() -1, location.getY())->getType() == street){
-			coordinates.push_back(Coordinate(location.getX()-1, location.getY()));
-		}
-	}
+	for (int x = 0; x < ptr->getWidth(); x++){
+		for (int y = 0; y < ptr->getLength(); y++){
 
-	// Check adjecant points to upper right
-	location = Coordinate(location.getX()+1, location.getY());
-	if (location.getY() + 1 < matrix.getRows()){
-		if(matrix.getObject(location.getX(), location.getY() +1)->getType() == street){
-			coordinates.push_back(Coordinate(location.getX(), location.getY() +1));
-		}
-	}
-	if (location.getX() + 1 < matrix.getColumns()){
-		if(matrix.getObject(location.getX() +1, location.getY())->getType() == street){
-			coordinates.push_back(Coordinate(location.getX()+1, location.getY()));
-		}
-	}
+			location = ptr->getLocation();
+			location.setX(location.getX()+x);
+			location.setY(location.getY()-y);
 
-	// Check adjecant points to down left
-	location = Coordinate(location.getX(), location.getY()-1);
-	if (location.getY() - 1 >= 0){
-		if(matrix.getObject(location.getX(), location.getY() -1)->getType() == street){
-			coordinates.push_back(Coordinate(location.getX(), location.getY() -1));
-		}
-	}
-	if (location.getX() + 1 < matrix.getColumns()){
-		if(matrix.getObject(location.getX() +1, location.getY())->getType() == street){
-			coordinates.push_back(Coordinate(location.getX()+1, location.getY()));
-		}
-	}
+			if (location.getY() < matrix.getRows()-1) {
+				if(matrix.getObject(location.getX(), location.getY()+1)->getType() == street){
+					coordinates.push_back(Coordinate(location.getX(), location.getY()+1));
+				}
+			}
 
-	// Check adjecant points to down right
-	location = Coordinate(location.getX()-1, location.getY());
-	if (location.getY() - 1 >= 0){
-		if(matrix.getObject(location.getX(), location.getY() -1)->getType() == street){
-			coordinates.push_back(Coordinate(location.getX(), location.getY() -1));
-		}
-	}
-	if (location.getX() - 1 >= 0){
-		if(matrix.getObject(location.getX() -1, location.getY())->getType() == street){
-			coordinates.push_back(Coordinate(location.getX()-1, location.getY()));
+			if (location.getY() > 0){
+				if(matrix.getObject(location.getX(), location.getY()-1)->getType() == street){
+					coordinates.push_back(Coordinate(location.getX(), location.getY()-1));
+				}
+			}
+
+			if (location.getX() < matrix.getColumns()-1){
+				if(matrix.getObject(location.getX()+1, location.getY())->getType() == street){
+					coordinates.push_back(Coordinate(location.getX()+1, location.getY()));
+				}
+			}
+
+			if (location.getX() > 0){
+				if(matrix.getObject(location.getX()-1, location.getY())->getType() == street){
+					coordinates.push_back(Coordinate(location.getX()-1, location.getY()));
+				}
+			}
 		}
 	}
 
 	std::pair<double, Coordinate> closest(calculateDistance(*coordinates.begin(), truckLoc), *coordinates.begin());
+
+	if (coordinates.size() == 0){
+		return Coordinate(-1, -1);
+	}
 
 	for(std::vector<Coordinate>::iterator it = coordinates.begin(); it != coordinates.end(); it++){
 		if (calculateDistance(*it, truckLoc) < closest.first) {
@@ -356,8 +450,13 @@ int City::calculateDistance(Coordinate c1, Coordinate c2) {
 	return distance;
 }
 
-void City::driveTruck(Coordinate destination,Firetruck* rescueTruck) {
+void City::driveTruck(Firetruck* rescueTruck) {
 	Coordinate cur = rescueTruck->getCoord();
+	Coordinate destination = rescueTruck->getDestination();
+
+	if (cur == destination) {
+		return;
+	}
 
 	Street* destStreet = dynamic_cast<Street*>(matrix.getObject(destination.getX(), destination.getY()));
 	// Scenario 1: rescueTruck is in the same street as destination.
@@ -499,6 +598,169 @@ Crossroad City::closestCorrectCrossroad(Coordinate cur, Street* destStreet) {
 		}
 	}
 	return closest.first;
+}
+
+bool City::integrityCheck() {
+
+	bool integrity = true;
+
+	// No overlaps
+
+	std::vector<Coordinate> coordinates;
+
+	for (std::list<House>::iterator ith = houses.begin(); ith != houses.end(); ith++){
+		Coordinate location;
+		CityObjects* ptr = &(*ith);
+		if (getAdjecantStreet(ptr, Coordinate(0, 0)) == Coordinate(-1, -1)){
+			integrity = false;
+		}
+		for (int x = 0; x < 2; x++){
+			for (int y = 0; y < 2; y++){
+				location = ith->getLocation();
+				location.setX(location.getX()+x);
+				location.setY(location.getY()-y);
+				if (matrix.getObject(location.getX(), location.getY()) != &(*ith)){
+					integrity = false;
+				}
+				coordinates.push_back(location);
+			}
+		}
+	}
+
+	for (std::list<Fire_Department>::iterator itd = departments.begin(); itd != departments.end(); itd++){
+		Coordinate location;
+		CityObjects* ptr = &(*itd);
+		if (getAdjecantStreet(ptr, Coordinate(0, 0)) == Coordinate(-1, -1)){
+			integrity = false;
+		}
+		for (int x = 0; x < 4; x++){
+			for (int y = 0; y < 4; y++){
+				location = itd->getLocation();
+				location.setX(location.getX()+x);
+				location.setY(location.getY()-y);
+				if (matrix.getObject(location.getX(), location.getY()) != &(*itd)){
+					integrity = false;
+				}
+				coordinates.push_back(location);
+			}
+		}
+	}
+
+	for (std::list<Street>::iterator its = streets.begin(); its != streets.end(); its++){
+		Coordinate location;
+		Coordinate start = its->getStart();
+		Coordinate end = its->getEnd();
+		location = start;
+
+		if (start.getX() == end.getX()){
+			for (int y = start.getY(); y <= end.getY(); y++){
+				location.setY(y);
+				if (matrix.getObject(location.getX(), location.getY())->getType() == street){
+					coordinates.push_back(location);
+					Street* ptr = dynamic_cast<Street*>(matrix.getObject(location.getX(), location.getY()));
+					if (its->getName() != ptr->getName()){
+						integrity = false;
+					}
+					if(location.getX() == 0){
+						if (matrix.getObject(location.getX()+1, location.getY())->getType() == street){
+							integrity = false;
+						}
+					}
+					else if (location.getX() == matrix.getColumns()-1){
+						if (matrix.getObject(location.getX()-1, location.getY())->getType() == street){
+							integrity = false;
+						}
+					}
+					else {
+						if (matrix.getObject(location.getX()-1, location.getY())->getType() == street){
+							integrity = false;
+						}
+						if (matrix.getObject(location.getX()+1, location.getY())->getType() == street){
+							integrity = false;
+						}
+					}
+				}
+				else if (matrix.getObject(location.getX(), location.getY())->getType() == crossroad){
+					Crossroad* ptr = dynamic_cast<Crossroad*>(matrix.getObject(location.getX(), location.getY()));
+					if ((its->getName() != ptr->getStreet1()) && (its->getName() != ptr->getStreet2())){
+						integrity = false;
+					}
+				}
+			}
+		}
+
+		else if (start.getY() == end.getY()){
+			for (int x = start.getX(); x <= end.getX(); x++){
+				location.setX(x);
+				if (matrix.getObject(location.getX(), location.getY())->getType() == street){
+					coordinates.push_back(location);
+					Street* ptr = dynamic_cast<Street*>(matrix.getObject(location.getX(), location.getY()));
+					if (its->getName() != ptr->getName()){
+						integrity = false;
+					}
+					if(location.getY() == 0){
+						if (matrix.getObject(location.getX(), location.getY()+1)->getType() == street){
+							integrity = false;
+						}
+					}
+					else if (location.getY() == matrix.getRows()-1){
+						if (matrix.getObject(location.getX(), location.getY()-1)->getType() == street){
+							integrity = false;
+						}
+					}
+					else {
+						if (matrix.getObject(location.getX(), location.getY()-1)->getType() == street){
+							integrity = false;
+						}
+						if (matrix.getObject(location.getX(), location.getY()+1)->getType() == street){
+							integrity = false;
+						}
+					}
+				}
+				else if (matrix.getObject(location.getX(), location.getY())->getType() == crossroad){
+					Crossroad* ptr = dynamic_cast<Crossroad*>(matrix.getObject(location.getX(), location.getY()));
+					if ((its->getName() != ptr->getStreet1()) && (its->getName() != ptr->getStreet2())){
+						integrity = false;
+					}
+				}
+			}
+		}
+	}
+
+
+	for (std::list<Crossroad>::iterator itc = crossroads.begin(); itc != crossroads.end(); itc++){
+		Coordinate location = itc->getLocation();
+		if (matrix.getObject(location.getX(), location.getY()) != &(*itc)){
+			integrity = false;
+		}
+		coordinates.push_back(location);
+	}
+
+	for (int i = 0; i < coordinates.size(); i++){
+		for (int j = i+1; j < coordinates.size(); j++){
+			if (coordinates[i] == coordinates[j]){
+				integrity = false;
+			}
+		}
+	}
+
+	for (std::list<Firetruck>::iterator itt = trucks.begin(); itt != trucks.end(); itt++){
+		Fire_Department* ptr = itt->getBaseptr();
+		bool found = false;
+		for (std::list<Fire_Department>::iterator itd = departments.begin(); itd != departments.end(); itd++){
+			if (&(*itd) == ptr){
+				found = true;
+			}
+		}
+		if (found == false){
+			integrity = false;
+		}
+	}
+	return integrity;
+}
+
+void City::close(){
+	output.close();
 }
 
 

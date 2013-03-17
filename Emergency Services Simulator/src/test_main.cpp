@@ -7,6 +7,7 @@
 //=======================================================================================
 
 #include <iostream>
+#include <fstream>
 #include <gtest/gtest.h>
 
 #include "City.h"
@@ -19,11 +20,11 @@
 int main(int argc, char **argv) {
 	srand(time(NULL));
 
-	City city("stad.xml");
-
+	City city("stad.xml", "output.txt");
 	city.update();
+	city.close();
 
-	std::cout << "Finished running, biatch v1.0 shizz" << std::endl;
+	std::cout << "PROGRAM ENDED" << std::endl;
 }
 
 /*

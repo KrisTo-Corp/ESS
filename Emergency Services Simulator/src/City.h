@@ -13,6 +13,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <fstream>
 #include <utility>
 
 #include "CityObjects.h"
@@ -29,6 +30,7 @@ private:
 	std::list<Street> streets;
 	std::list<Crossroad> crossroads;
 	std::list<Firetruck> trucks;
+	std::ofstream output;
 
 	City* _initCheck;
 
@@ -37,7 +39,7 @@ private:
 public:
 	bool properlyInitialized(int, int);
 
-	City(std::string filename);
+	City(std::string filename, std::string outputname);
 //	ENSURE(init(), "Object 'City' was not properly initialized.");
 
 	virtual ~City();
@@ -46,6 +48,9 @@ public:
 //	REQUIRE(city.init(), "Object 'City' was not properly initialized when calling overloaded operator '<<'");
 
 	void update();
+	void update2();
+
+	void close();
 
 private:
 	bool init();
@@ -59,7 +64,8 @@ private:
 	Crossroad closestCorrectCrossroad(Coordinate, Street*);
 	Crossroad closestCrossroad(Coordinate);
 	int calculateDistance(Coordinate, Coordinate);
-	void driveTruck(Coordinate, Firetruck*);
+	void driveTruck(Firetruck*);
+	bool integrityCheck();
 };
 
 #endif /* CITY_H_ */
