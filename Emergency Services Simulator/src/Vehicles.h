@@ -20,29 +20,35 @@ class Fire_Department;
 
 class Vehicles {
 protected:
-	const std::string name;
-	Coordinate location;
+	std::string name;
+	Coordinate coord;
 
 	Vehicles* _initCheck;
 
 public:
 	Vehicles();
-	//	ENSURE(init(), "Object 'Vehicles' was not properly initialized.");
+	//	ENSURE(properlyInitialized(), "Object 'Vehicles' was not properly initialized.");
 
 	Vehicles(int x, int y, const std::string n);
-	//	ENSURE(init(), "Object 'Vehicles' was not properly initialized.");
+	//	ENSURE(properlyInitialized(), "Object 'Vehicles' was not properly initialized.");
 
 	virtual ~Vehicles();
 
 	const std::string getName()const;
+	Vehicles& operator =(const Vehicles&);
 
-	virtual bool init();
+	void setCoord(Coordinate);
+//	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling setCoord().");
+
+	Coordinate getCoord();
+//	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling getCoord().");
+
+	virtual bool properlyInitialized();
 	void resetInit();
 };
 
 class Firetruck: public Vehicles {
 private:
-	Coordinate coord;
 	Coordinate tempDestination;
 	Coordinate destination;
 	Structures* target;
@@ -50,7 +56,7 @@ private:
 	bool available;
 	bool atHome;
 
-	const std::string basename;
+	std::string basename;
 	Fire_Department* base;
 
 
@@ -62,67 +68,62 @@ public:
 	virtual ~Firetruck();
 
 	void linkBase(Fire_Department* dep_ptr);
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling linkBase().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling linkBase().");
 //	ENSURE((getBaseptr() == dep_ptr), "Setted base* does not match Firetruck's base*.");
 
 	std::string getBasename();
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getBasename().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getBasename().");
 
 	Fire_Department* getBaseptr();
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getBaseptr().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getBaseptr().");
 
 	void move(std::string);
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling move().");
-
-	void setCoord(Coordinate);
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setCoord().");
-
-	Coordinate getCoord();
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getCoord().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling move().");
 
 	void setTempDest(Coordinate);
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setTempDest().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling setTempDest().");
 
 	Coordinate getTempDest();
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getTempDest().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getTempDest().");
 
 	Structures* getTarget();
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getTarget().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getTarget().");
 
 	void setTarget(Structures* t);
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setTarget().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling setTarget().");
 //	ENSURE((getTarget() == t), "Setted target does not match Firetruck's target.");
 
 	void setDestination(Coordinate dest);
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setDestination().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling setDestination().");
 //	ENSURE((getDestination() == dest), "Setted destination does not match Firetruck's destination.");
 
 	Coordinate getDestination();
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getDestination().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getDestination().");
 
 	void setGoToTemp(bool v);
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setGoToTemp().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling setGoToTemp().");
 //	ENSURE((getGoToTemp() == v), "Setted GoToTemp does not match Firetruck's GoToTemp.");
 
 	bool getGoToTemp();
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getGoToTemp().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getGoToTemp().");
 
 	bool getAvailable();
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getAvailable().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getAvailable().");
 
 	void setAvailable(bool state);
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setAvailable().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling setAvailable().");
 //	ENSURE((getAvailable() == state), "Setted available does not match Firetruck's available.");
 
 	bool getIsHome();
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getIsHome().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getIsHome().");
 
 	void setIsHome(bool b);
-//	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setIsHome().");
+//	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling setIsHome().");
 //	ENSURE((getIsHome() == b), "Setted atHome does not match Firetruck's atHome.");
 
 
 	friend std::ostream& operator <<(std::ostream& s, Firetruck& truck);
+	Firetruck& operator = (const Firetruck&);
 };
 
 #endif /* VEHICLES_H_ */

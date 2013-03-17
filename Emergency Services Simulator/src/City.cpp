@@ -652,7 +652,8 @@ bool City::integrityCheck() {
 		CityObjects* ptr = &(*ith);
 		if (getAdjecantStreet(ptr, Coordinate(0, 0)) == Coordinate(-1, -1)){
 			House* houseptr = dynamic_cast<House*>(ptr);
-			output << "House at location "<< houseptr->getLocation() << " doesn't have a street linked to it.\n";
+			Coordinate houselocation = houseptr->getLocation();
+			output << "House at location "<< houselocation << " doesn't have a street linked to it.\n";
 			integrity = false;
 		}
 		for (int x = 0; x < 2; x++){
@@ -661,7 +662,8 @@ bool City::integrityCheck() {
 				location.setX(location.getX()+x);
 				location.setY(location.getY()-y);
 				if (matrix.getObject(location.getX(), location.getY()) != &(*ith)){
-					output << "House at location " << ith->getLocation() << " is supposed to be at " << location << " but is not.\n";
+					Coordinate houselocation = ith->getLocation();
+					output << "House at location " << houselocation << " is supposed to be at " << location << " but is not.\n";
 					integrity = false;
 				}
 				coordinates.push_back(location);
@@ -674,7 +676,8 @@ bool City::integrityCheck() {
 		CityObjects* ptr = &(*itd);
 		if (getAdjecantStreet(ptr, Coordinate(0, 0)) == Coordinate(-1, -1)){
 			Fire_Department* depptr = dynamic_cast<Fire_Department*>(ptr);
-			output << "Department at location "<< depptr->getLocation() << " doesn't have a street linked to it.\n";
+			Coordinate deplocation = depptr->getLocation();
+			output << "Department at location "<< deplocation << " doesn't have a street linked to it.\n";
 			integrity = false;
 		}
 		for (int x = 0; x < 4; x++){
@@ -683,7 +686,8 @@ bool City::integrityCheck() {
 				location.setX(location.getX()+x);
 				location.setY(location.getY()-y);
 				if (matrix.getObject(location.getX(), location.getY()) != &(*itd)){
-					output << "Department at location " << itd->getLocation() << " is supposed to be at " << location << " but is not.\n";
+					Coordinate deplocation = itd->getLocation();
+					output << "Department at location " << deplocation << " is supposed to be at " << location << " but is not.\n";
 					integrity = false;
 				}
 				coordinates.push_back(location);

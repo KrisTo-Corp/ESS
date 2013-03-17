@@ -14,17 +14,17 @@
 //	CLASS VEHICLES
 //====================
 
-Vehicles::Vehicles(): name(""), location(0, 0) {
+Vehicles::Vehicles(): name(""), coord(0, 0) {
 	_initCheck = this;
 
-	ENSURE(init(), "Object 'Vehicles' was not properly initialized.");
+	ENSURE(properlyInitialized(), "Object 'Vehicles' was not properly initialized.");
 
 }
 
-Vehicles::Vehicles(int x, int y, const std::string n): name(n), location(x, y) {
+Vehicles::Vehicles(int x, int y, const std::string n): name(n), coord(x, y) {
 	_initCheck = this;
 
-	ENSURE(init(), "Object 'Vehicles' was not properly initialized.");
+	ENSURE(properlyInitialized(), "Object 'Vehicles' was not properly initialized.");
 }
 
 Vehicles::~Vehicles()
@@ -36,7 +36,7 @@ const std::string Vehicles::getName()const {
 }
 
 
-bool Vehicles::init() {
+bool Vehicles::properlyInitialized() {
 
 	return _initCheck == this;
 }
@@ -45,16 +45,37 @@ void Vehicles::resetInit() {
 	_initCheck = this;
 }
 
+void Vehicles::setCoord(Coordinate location) {
+	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling setCoord().");
+
+	coord = location;
+}
+
+Coordinate Vehicles::getCoord() {
+	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling getCoord().");
+
+	return coord;
+}
+
+Vehicles& Vehicles::operator =(const Vehicles& c){
+	name = c.name;
+	coord = c.coord;
+
+	_initCheck = this;
+	return *this;
+}
+
 
 //====================
 //	CLASS FIRETRUCK
 //====================
 
-Firetruck::Firetruck(): Vehicles(0, 0, ""), basename("") {
+Firetruck::Firetruck(): Vehicles(0, 0, ""), basename(""), tempDestination(0, 0), destination(0, 0) {
 	base = NULL;
 	goToTemp = false;
 	available = true;
 	atHome = true;
+	target = NULL;
 }
 
 Firetruck::Firetruck(const int x, const int y, const std::string n, const std::string bn): Vehicles(x, y, n), basename(bn) {
@@ -62,6 +83,7 @@ Firetruck::Firetruck(const int x, const int y, const std::string n, const std::s
 	goToTemp = false;
 	available = true;
 	atHome = true;
+	target = NULL;
 }
 
 Firetruck::~Firetruck()
@@ -69,7 +91,7 @@ Firetruck::~Firetruck()
 }
 
 void Firetruck::linkBase(Fire_Department* dep_ptr) {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling linkBase().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling linkBase().");
 
 	base = dep_ptr;
 
@@ -78,19 +100,19 @@ void Firetruck::linkBase(Fire_Department* dep_ptr) {
 }
 
 std::string Firetruck::getBasename() {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getBasename().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getBasename().");
 
 	return basename;
 }
 
 Fire_Department* Firetruck::getBaseptr() {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getBaseptr().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getBaseptr().");
 
 	return base;
 }
 
 void Firetruck::move(std::string direction) {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling move().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling move().");
 
 	// Contract that checks if direction is legit.
 
@@ -114,32 +136,22 @@ void Firetruck::move(std::string direction) {
 	}
 }
 
-void Firetruck::setCoord(Coordinate location) {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setCoord().");
 
-	coord = location;
-}
-
-Coordinate Firetruck::getCoord() {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getCoord().");
-
-	return coord;
-}
 
 void Firetruck::setTempDest(Coordinate c) {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getTempDest().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getTempDest().");
 
 	tempDestination = c;
 }
 
 Coordinate Firetruck::getTempDest() {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getTempDest().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getTempDest().");
 
 	return tempDestination;
 }
 
 void Firetruck::setGoToTemp(bool v) {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setGoToTemp().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling setGoToTemp().");
 
 	goToTemp = v;
 
@@ -147,25 +159,25 @@ void Firetruck::setGoToTemp(bool v) {
 }
 
 bool Firetruck::getGoToTemp() {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getGoToTemp().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getGoToTemp().");
 
 	return goToTemp;
 }
 
 bool Firetruck::getAvailable() {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getAvailable().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getAvailable().");
 
 	return available;
 }
 
 void Firetruck::setAvailable(bool state) {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setAvailable().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling setAvailable().");
 
 	available = state;
 }
 
 void Firetruck::setDestination(Coordinate dest) {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setDestination().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling setDestination().");
 
 	destination = dest;
 
@@ -173,19 +185,19 @@ void Firetruck::setDestination(Coordinate dest) {
 }
 
 Coordinate Firetruck::getDestination() {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getDestination().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getDestination().");
 
 	return destination;
 }
 
 Structures* Firetruck::getTarget() {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getTarget().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getTarget().");
 
 	return target;
 }
 
 void Firetruck::setTarget(Structures* t) {
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setTarget().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling setTarget().");
 
 	target = t;
 
@@ -193,13 +205,13 @@ void Firetruck::setTarget(Structures* t) {
 }
 
 bool Firetruck::getIsHome(){
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getIsHome().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getIsHome().");
 
 	return atHome;
 }
 
 void Firetruck::setIsHome(bool b){
-	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setIsHome().");
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling setIsHome().");
 
 	atHome = b;
 
@@ -210,9 +222,27 @@ std::ostream& operator <<(std::ostream& s, Firetruck& truck){
 	s << "Vehicle: Firetruck \n";
 	s << "Name: " << truck.name << "\n";
 	s << "Basename: " << truck.basename << "\n";
-	s << "Location: " << truck.location << "\n";
+	s << "Location: " << truck.coord << "\n";
 
 	return s;
+}
+
+Firetruck& Firetruck::operator = (const Firetruck& c){
+	coord = c.coord;
+	tempDestination = c.tempDestination;
+	destination = c.destination;
+	target = c.target;
+	goToTemp = c.goToTemp;
+	available = c.available;
+	atHome = c.atHome;
+	basename = c.basename;
+	base = c.base;
+	name = c.name;
+
+	_initCheck = this;
+
+	return *this;
+
 }
 
 

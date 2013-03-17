@@ -36,13 +36,13 @@ Coordinate::~Coordinate()
 }
 
 int Coordinate::getX(){
-	REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling getX().");
+	//REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling getX().");
 
 	return x;
 }
 
 int Coordinate::getY(){
-	REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling getY().");
+	//REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling getY().");
 
 	return y;
 }
