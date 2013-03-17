@@ -54,12 +54,14 @@ Firetruck::Firetruck(): Vehicles(0, 0, ""), basename("") {
 	base = NULL;
 	goToTemp = false;
 	available = true;
+	atHome = true;
 }
 
 Firetruck::Firetruck(const int x, const int y, const std::string n, const std::string bn): Vehicles(x, y, n), basename(bn) {
 	base = NULL;
 	goToTemp = false;
 	available = true;
+	atHome = true;
 }
 
 Firetruck::~Firetruck()
@@ -153,6 +155,14 @@ Structures* Firetruck::getTarget() {
 
 void Firetruck::setTarget(Structures* t) {
 	target = t;
+}
+
+bool Firetruck::getIsHome(){
+	return atHome;
+}
+
+void Firetruck::setIsHome(bool b){
+	atHome = b;
 }
 
 std::ostream& operator <<(std::ostream& s, Firetruck& truck){

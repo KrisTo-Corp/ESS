@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
 	srand(time(NULL));
 
 	City city("stad.xml", "output.txt");
-	city.update();
+	city.update2();
 	city.close();
 
 	std::cout << "PROGRAM ENDED" << std::endl;

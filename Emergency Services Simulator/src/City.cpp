@@ -90,6 +90,7 @@ void City::link_trucks_to_bases() {
 				it_t->setCoord(it_dep->getEntrance());
 				Fire_Department* dep_ptr = &(*it_dep);
 				it_t->linkBase(dep_ptr);
+				it_t->setDestination(it_t->getBaseptr()->getEntrance());
 			}
 		}
 		if (it_t->getBaseptr() == NULL){
@@ -144,16 +145,19 @@ void City::update2() {
 	std::list<Firetruck>::iterator it_t;
 	Firetruck* rescueTruck;
 	for (it_t = trucks.begin(); it_t != trucks.end(); it_t++) {
-		if (it_t->getAvailable) {
+		if (it_t->getAvailable()) {
 			it_t->setAvailable(false);
 			it_t->setDestination(getAdjecantStreet(houseptr, it_t->getCoord()));
+			it_t->setTarget(houseptr);
+			it_t->setIsHome(false);
+			break;
 		}
 	}
 
 	while (!finished) {
 		// Random chance to setFire()
 		int chance = rand() % 20;
-		if (chance == 30) {
+		if (chance == 20) {
 			ptr = setFire();
 			Structures* structptr = dynamic_cast<Structures*>(ptr);
 			Coordinate cur = structptr->getLocation();
@@ -167,10 +171,12 @@ void City::update2() {
 			std::list<Firetruck>::iterator it_t;
 			Firetruck* rescueTruck;
 			for (it_t = trucks.begin(); it_t != trucks.end(); it_t++) {
-				if (it_t->getAvailable) {
+				if (it_t->getAvailable()) {
 					it_t->setAvailable(false);
-					it_t->setDestination(getAdjecantStreet(houseptr, it_t->getCoord()))
-
+					it_t->setDestination(getAdjecantStreet(houseptr, it_t->getCoord()));
+					it_t->setTarget(houseptr);
+					it_t->setIsHome(false);
+					break;
 				}
 			}
 		}
@@ -205,19 +211,54 @@ void City::update2() {
 			}
 		}
 
+		int i = 0;
+
 		// Move
 		for (std::list<Firetruck>::iterator it = trucks.begin(); it != trucks.end(); it++) {
 			driveTruck(&(*it));
-
-			if (it->getCoord() == it->getDestination()) {
+			std::cout << "driven" << std::endl;
+			Coordinate destination = it->getDestination();
+			if (it->getCoord() == destination) {
 				if (it->getAvailable() == false) {
-
+					Structures* saved = it->getTarget();
+					if (saved->getState() == burning) {
+						saved->setState(normal);
+						it->setAvailable(true);
+						it->setDestination(it->getBaseptr()->getEntrance());
+						output << "Firetruck " << it->getName() << " has reached its destination ";
+						output << " at location " << destination << " and has extinguished the fire and are returning home.\n" << std::endl;
+					}
+					else if (saved->getState() == destroyed) {
+						it->setAvailable(true);
+						it->setDestination(it->getBaseptr()->getEntrance());
+						output << "Firetruck " << it->getName() << " has reached its destination ";
+						output << " at location " << destination << " and saw that the structure was destroyed and are now returning home.\n" << std::endl;
+					}
+				}
+				else {
+					i++;
+					if (it->getIsHome() == false){
+						output << "Firetruck " << it->getName() << " has arrived at its base " << it->getBaseptr()->getName() << std::endl << std::endl;
+						it->setIsHome(true);
+					}
 				}
 			}
+			else {
+				Coordinate location = it->getCoord();
+				Roads* truckStreet = dynamic_cast<Roads*>(matrix.getObject(it->getCoord().getX(), it->getCoord().getY()));
+				output << "Firetruck " << it->getName() << " is on its way to " << name << " on location ";
+				output << destination << ". The firetruck is at " << truckStreet->getName() << " on location " << location << std::endl << std::endl;
+			}
+			std::cout << "lalala" << std::endl;
+		}
+
+		// Determine if finished
+		if (i == trucks.size()) {
+			finished = true;
 		}
 	}
-
 }
+
 
 /*
  * 1. setFire to 1 house to start the simulation
@@ -230,7 +271,7 @@ void City::update2() {
  *
  */
 
-void City::update(){
+/*void City::update(){
 	bool finished = false;
 	CityObjects* ptr;
 
@@ -308,7 +349,7 @@ void City::update(){
 		driveTruck(rescueTruck->getBaseptr()->getEntrance(), rescueTruck);
 	}
 	output.close();
-}
+}*/
 
 Coordinate City::getAdjecantStreet(CityObjects* building, Coordinate truckLoc) {
 

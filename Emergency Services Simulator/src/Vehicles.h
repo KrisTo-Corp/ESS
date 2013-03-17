@@ -15,6 +15,7 @@
 #include "Coordinate.h"
 #include "Structures.h"
 
+class Structures;
 class Fire_Department;
 
 class Vehicles {
@@ -47,6 +48,7 @@ private:
 	Structures* target;
 	bool goToTemp;
 	bool available;
+	bool atHome;
 
 	const std::string basename;
 	Fire_Department* base;
@@ -81,6 +83,8 @@ public:
 	bool getGoToTemp();
 	bool getAvailable();
 	void setAvailable(bool);
+	bool getIsHome();
+	void setIsHome(bool);
 
 	friend std::ostream& operator <<(std::ostream& s, Firetruck& truck);
 };
