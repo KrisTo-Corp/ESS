@@ -34,6 +34,30 @@ protected:
 	Firetruck firetruck;
 };
 
+class StructuresTest: public ::testing::Test {
+
+};
+
+class RoadsTest: public ::testing::Test {
+
+};
+
+class CityObjectsTest: public ::testing::Test {
+
+};
+
+class CityTest: public ::testing::Test {
+
+};
+
+class MatrixTest: public ::testing::Test {
+
+};
+
+class SimulationTest: public ::testing::Test {
+
+};
+
 // TEST THE DEFAULT COORDINATE CONSTRUCTOR.
 TEST_F(CoordinateTest, DefaultConstructor){
 	EXPECT_TRUE(coordinate.properlyInitialized());
