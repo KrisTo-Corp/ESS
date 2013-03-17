@@ -72,6 +72,9 @@ void Firetruck::linkBase(Fire_Department* dep_ptr) {
 	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling linkBase().");
 
 	base = dep_ptr;
+
+	ENSURE((getBaseptr() == dep_ptr), "Setted base* does not match Firetruck's base*.");
+
 }
 
 std::string Firetruck::getBasename() {
@@ -87,6 +90,8 @@ Fire_Department* Firetruck::getBaseptr() {
 }
 
 void Firetruck::move(std::string direction) {
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling move().");
+
 	// Contract that checks if direction is legit.
 
 	int curX = coord.getX();
@@ -110,59 +115,95 @@ void Firetruck::move(std::string direction) {
 }
 
 void Firetruck::setCoord(Coordinate location) {
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setCoord().");
+
 	coord = location;
 }
 
 Coordinate Firetruck::getCoord() {
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getCoord().");
+
 	return coord;
 }
 
 void Firetruck::setTempDest(Coordinate c) {
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getTempDest().");
+
 	tempDestination = c;
 }
 
 Coordinate Firetruck::getTempDest() {
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getTempDest().");
+
 	return tempDestination;
 }
 
 void Firetruck::setGoToTemp(bool v) {
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setGoToTemp().");
+
 	goToTemp = v;
+
+	ENSURE((getGoToTemp() == v), "Setted GoToTemp does not match Firetruck's GoToTemp.");
+}
+
+bool Firetruck::getGoToTemp() {
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getGoToTemp().");
+
+	return goToTemp;
 }
 
 bool Firetruck::getAvailable() {
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getAvailable().");
+
 	return available;
 }
 
 void Firetruck::setAvailable(bool state) {
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setAvailable().");
+
 	available = state;
 }
 
-bool Firetruck::getGoToTemp() {
-	return goToTemp;
-}
-
 void Firetruck::setDestination(Coordinate dest) {
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setDestination().");
+
 	destination = dest;
+
+	ENSURE((getDestination() == dest), "Setted destination does not match Firetruck's destination.");
 }
 
 Coordinate Firetruck::getDestination() {
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getDestination().");
+
 	return destination;
 }
 
 Structures* Firetruck::getTarget() {
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getTarget().");
+
 	return target;
 }
 
 void Firetruck::setTarget(Structures* t) {
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setTarget().");
+
 	target = t;
+
+	ENSURE((getTarget() == t), "Setted target does not match Firetruck's target.");
 }
 
 bool Firetruck::getIsHome(){
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling getIsHome().");
+
 	return atHome;
 }
 
 void Firetruck::setIsHome(bool b){
+	REQUIRE(init(), "Object 'Firetruck' was not properly initialized when calling setIsHome().");
+
 	atHome = b;
+
+	ENSURE((getIsHome() == b), "Setted atHome does not match Firetruck's atHome.");
 }
 
 std::ostream& operator <<(std::ostream& s, Firetruck& truck){
