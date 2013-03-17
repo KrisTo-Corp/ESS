@@ -20,27 +20,36 @@ private:
 	int y;
 
 	Coordinate* _initCheck;
+
 public:
 	Coordinate();
-//	ENSURE(init(), "Object 'CityObjects' was not properly initialized.");
+//	ENSURE(properlyInitialized(), "Object 'Coordinate' was not properly initialized.");
 
 	Coordinate(const int x_value, const int y_value);
-//	ENSURE(init(), "Object 'CityObjects' was not properly initialized.");
+//	ENSURE(properlyInitialized(), "Object 'Coordinate' was not properly initialized.");
 
-	virtual ~Coordinate();
+	int getX();
+//	REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling getX().");
 
-	int getX()const;
-	int getY()const;
+	int getY();
+//	REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling getY().");
 
-	void setX(int);
-	void setY(int);
+	void setX(int val);
+//	REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling setX().");
+//	ENSURE((getX() == val), "Coordinate's x didn't match setted x.");
+
+	void setY(int val);
+//	REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling setY().");
+//	ENSURE((getY() == val), "Coordinate's y didn't match setted y.");
 
 	friend std::ostream& operator <<(std::ostream& s, Coordinate& coordinate);
 	bool operator==(const Coordinate &c) const;
 	bool operator!=(const Coordinate &c) const;
+	Coordinate& operator= (const Coordinate &cSource);
 
-private:
-	bool init();
+	bool properlyInitialized();
+
+	virtual ~Coordinate();
 };
 
 #endif /* COORDINATE_H_ */

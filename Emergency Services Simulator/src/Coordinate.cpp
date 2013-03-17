@@ -7,39 +7,60 @@
 //=======================================================================================
 
 #include <sstream>
+#include <iostream>
 
 #include "Coordinate.h"
 
 Coordinate::Coordinate(): x(0), y(0) {
 	_initCheck = this;
 
-	ENSURE(init(), "Object 'Coordinate' was not properly initialized.");
+	ENSURE(properlyInitialized(), "Object 'Coordinate' was not properly initialized.");
 }
 
 Coordinate::Coordinate(int x_value, int y_value): x(x_value), y(y_value) {
 	_initCheck = this;
 
-	ENSURE(init(), "Object 'Coordinate' was not properly initialized.");
+	ENSURE(properlyInitialized(), "Object 'Coordinate' was not properly initialized.");
+}
+
+Coordinate& Coordinate::operator= (const Coordinate &cSource){
+	x = cSource.x;
+	y = cSource.y;
+	_initCheck = this;
+
+	return *this;
 }
 
 Coordinate::~Coordinate()
 {
 }
 
-int Coordinate::getX() const {
+int Coordinate::getX(){
+	REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling getX().");
+
 	return x;
 }
 
-int Coordinate::getY() const {
+int Coordinate::getY(){
+	REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling getY().");
+
 	return y;
 }
 
 void Coordinate::setX(int val) {
+	REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling setX().");
+
 	x = val;
+
+	ENSURE((getX() == val), "Coordinate's x didn't match setted x.");
 }
 
 void Coordinate::setY(int val) {
+	REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling setY().");
+
 	y = val;
+
+	ENSURE((getY() == val), "Coordinate's y didn't match setted y.");
 }
 
 std::ostream& operator <<(std::ostream& s, Coordinate& coordinate){
@@ -48,7 +69,8 @@ std::ostream& operator <<(std::ostream& s, Coordinate& coordinate){
 }
 
 bool Coordinate::operator==(const Coordinate &c) const{
-	if (this->x == c.getX() && this->y == c.getY()) {
+	Coordinate comp = c;
+	if (this->x == comp.getX() && this->y == comp.getY()) {
 		return true;
 	}
 	else {
@@ -56,7 +78,7 @@ bool Coordinate::operator==(const Coordinate &c) const{
 	}
 }
 
-bool Coordinate::operator!=(const Coordinate &c) const {
+bool Coordinate::operator!=(const Coordinate &c) const{
 	if (*this == c) {
 		return false;
 	}
@@ -66,6 +88,6 @@ bool Coordinate::operator!=(const Coordinate &c) const {
 }
 
 
-bool Coordinate::init() {
+bool Coordinate::properlyInitialized(){
 	return _initCheck == this;
 }
