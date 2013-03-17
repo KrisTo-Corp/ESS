@@ -30,6 +30,8 @@ public:
 
 	std::string getName();
 //	REQUIRE(init(), "Object 'Roads' was not properly initialized when calling getName()");
+
+	Roads& operator = (const Roads&);
 };
 
 
@@ -47,6 +49,7 @@ public:
 	Coordinate getStart();
 	Coordinate getEnd();
 	friend std::ostream& operator <<(std::ostream& s, Street& street);
+	Street& operator = (const Street&);
 };
 
 
@@ -66,6 +69,7 @@ public:
 	std::string getStreet1();
 	std::string getStreet2();
 	friend std::ostream& operator <<(std::ostream& s, Crossroad& crossroad);
+	Crossroad& operator = (const Crossroad&);
 };
 
 #endif /* ROADS_H_ */

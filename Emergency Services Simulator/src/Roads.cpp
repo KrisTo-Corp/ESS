@@ -31,6 +31,15 @@ std::string Roads::getName() {
 	return name;
 }
 
+Roads& Roads::operator = (const Roads& r) {
+	name = r.name;
+	this->type = r.type;
+	this->state = r.state;
+
+	_initCheck = this;
+	return *this;
+}
+
 
 //=================
 //	CLASS STREET
@@ -65,12 +74,26 @@ std::ostream& operator <<(std::ostream& s, Street& street){
 	return s;
 }
 
+Street& Street::operator = (const Street& s) {
+	name = s.name;
+	type = s.type;
+	state = s.state;
+
+	start = s.start;
+	end = s.end;
+
+	_initCheck = this;
+	return *this;
+}
+
 //===================
 //	CLASS CROSSROAD
 //===================
 
 Crossroad::Crossroad(): Roads("", crossroad), location(0, 0)
 {
+	s1 = "";
+	s2 = "";
 }
 
 Crossroad::Crossroad(const int x, const int y, const std::string n, const std::string street1, const std::string street2): Roads(n, crossroad), location(x, y)
@@ -101,5 +124,18 @@ std::ostream& operator <<(std::ostream& s, Crossroad& crossroad){
 	s << "Location: " << crossroad.location << "\n";
 
 	return s;
+}
+
+Crossroad& Crossroad::operator = (const Crossroad& c) {
+	name = c.name;
+	type = c.type;
+	state = c.state;
+
+	location = c.location;
+	s1 = c.s1;
+	s2 = c.s2;
+
+	_initCheck = this;
+	return *this;
 }
 
