@@ -40,6 +40,8 @@ Matrix::~Matrix()
 }
 
 int Matrix::getTotalLength(){
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getTotalLength().");
+
 	if (matrix.size() == 0){
 		return 0;
 	}
@@ -133,7 +135,6 @@ void Matrix::addObject(int x, int y, CityObjects*& object){
 	matrix[rows-1-y][x] = object;
 
 	ENSURE(getObject(x, y) == object, "A problem occured when adding 'CityObjects' to the Matrix");
-
 }
 
 CityObjects* Matrix::getObject(int x, int y) {
@@ -192,10 +193,14 @@ void Matrix::resetInit() {
 }
 
 int Matrix::getRows(){
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getRows().");
+
 	return rows;
 }
 
 int Matrix::getColumns(){
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getColumns().");
+
 	return columns;
 }
 

@@ -29,6 +29,7 @@ public:
 	bool properlyInitialized(int, int);
 
 	int getTotalLength();
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getTotalLength().");
 
 	Matrix();
 //	ENSURE(properlyInitialized(), "Object 'Matrix' was not properly initialized.");
@@ -66,8 +67,11 @@ public:
 	void resetInit();
 
 	int getRows();
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getRows().");
 
 	int getColumns();
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getColumns().");
+
 
 	bool properlyInitialized();
 };
