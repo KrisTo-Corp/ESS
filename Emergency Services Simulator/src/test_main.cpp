@@ -853,10 +853,75 @@ TEST_F(CityTest, DriveTruck){
 }
 
 // TEST CITY PARSER WITH SYNTAX ERROR
+
 TEST_F(SimulationTest, InputSyntaxError){
 	City c("stad_syntax_error.xml", "syntax_error_output.txt");
+	c.update_test();
 	c.close();
+	EXPECT_TRUE(FileCompare("syntax_error_output.txt", "expected_syntax_error_output.txt"));
 }
+
+// TEST CITY PARSER WITH NON EXISTING OBJECT
+
+TEST_F(SimulationTest, InputObjectNotFound){
+	City c("object_not_found.xml", "object_not_found_output.txt");
+	c.update_test();
+	c.close();
+	EXPECT_TRUE(FileCompare("object_not_found_output.txt", "expected_object_not_found_output.txt"));
+}
+
+// TEST THE PARSER WITH NEGATIVE COORDINATES
+/*
+TEST_F(SimulationTest, NegativeCoordinate){
+	City c("negative_coordinate.xml", "negative_coordinate_output.txt");
+	c.update_test();
+	c.close();
+}*/
+
+// TEST THE PARSER WITH NO ROOT OBJECT
+TEST_F(SimulationTest, NoRootObject){
+	City c("no_root.xml", "no_root_output.txt");
+	c.update_test();
+	c.close();
+	EXPECT_TRUE(FileCompare("no_root_output.txt", "expected_no_root_output.txt"));
+}
+
+// TEST THE PARSER WITH INVALID CITY EMPTY SPOTS
+
+/*TEST_F(SimulationTest, InvalidCityEmptySpots){
+	City c("empty_spots.xml", "empty_spots_output.txt");
+	c.update_test();
+	c.close();
+}*/
+
+// TEST THE PARSER WITH OVERLAP
+
+TEST_F(SimulationTest, Overlap){
+	City c("overlap.xml", "overlap_output.txt");
+	c.update_test();
+	c.close();
+	EXPECT_TRUE(FileCompare("overlap_output.txt", "expected_overlap_output.txt"));
+}
+
+// TEST WITH UNLINKED TRUCKS
+TEST_F(SimulationTest, UnlinkedTrucks){
+	City c("unlinked_trucks.xml", "unlinked_trucks_output.txt");
+	c.update_test();
+	c.close();
+	EXPECT_TRUE(FileCompare("unlinked_trucks_output.txt", "expected_unlinked_trucks_output.txt"));
+}
+
+/*
+ * NEGATIVE
+ * GEEN ROOT
+ * INCONSISTENT
+ * 	LEGE PLAATSEN
+ * 	OVERLAPPINGEN
+ * 	TRUCKS NIET GELINKED
+ * 	HUIS NIET GELINKED AAN STRAAT
+ */
+
+
 
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);

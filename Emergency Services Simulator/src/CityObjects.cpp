@@ -36,7 +36,7 @@ CityObjects::~CityObjects()
 }
 
 Eobjects CityObjects::getType(){
-	REQUIRE(init(), "Object 'CityObjects' was not properly initialized when calling getType()");
+	//REQUIRE(init(), "Object 'CityObjects' was not properly initialized when calling getType()");
 
 	return type;
 }

@@ -191,7 +191,7 @@ std::pair<int, int> City::parseCity(std::string filename) {
 			departments.push_back(department);
 		}
 		else {
-			output << object << " is not a valid object." << std::endl;
+			output << objectName << " is not a valid object." << std::endl;
 			return std::pair<int, int>(-3, -3);
 		}
 	}

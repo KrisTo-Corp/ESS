@@ -13,12 +13,35 @@
 #include <cmath>
 
 City::City(){
+	validCity = false;
 	_initCheck = this;
 }
 
 City::City(const std::string filename, std::string outputname): output(outputname.c_str()){
 
+	validCity = true;
+
+	output << "\t\tEMERGENCY SERVICES SIMULATION \n\n\n";
+
 	std::pair<int, int> maxCoords =	parseCity(filename);
+
+	if(maxCoords.first == -1 && maxCoords.second == -1){
+		output << ".XML CONTAINED SYNTAX ERRORS !\n\n";
+		validCity = false;
+		return;
+	}
+
+	else if(maxCoords.first == -2 && maxCoords.second == -2){
+		output << "THERE WAS NO ROOT FOUND IN THE XMLFILE !\n\n";
+		validCity = false;
+		return;
+	}
+
+	else if(maxCoords.first == -3 && maxCoords.second == -3){
+		output << "THERE WAS FOUND AN OBJECT THAT'S NOT SUPPORTED !\n\n";
+		validCity = false;
+		return;
+	}
 
 	matrix = Matrix(maxCoords.second + 1, maxCoords.first +1);
 	matrix.resetInit();
@@ -49,13 +72,10 @@ City::City(const std::string filename, std::string outputname): output(outputnam
 		it->resetInit();
 	}
 
-	/*
-	 * Integrity check
-	 */
-
 	if (!(integrityCheck())){
 		output << "THE GENERATED CITY WAS NOT VALID !\n";
-		exit(1);
+		validCity = false;
+		return;
 	}
 
 	output << matrix << "\n\n\n";
@@ -135,7 +155,7 @@ void City::link_trucks_to_bases() {
 			}
 		}
 		if (it_t->getBaseptr() == NULL){
-			std::cerr << "Base doesn't exist -> Truck was not linked.\n";
+			continue;
 		}
 	}
 }
@@ -185,6 +205,11 @@ CityObjects* City::setFire(int x, int y){
 }
 
 void City::update() {
+
+	if (!(validCity)){
+		return;
+	}
+
 	bool finished = false;
 	CityObjects* ptr;
 
@@ -314,6 +339,11 @@ void City::update() {
 }
 
 void City::update_test() {
+
+	if (!(validCity)){
+		return;
+	}
+
 	bool finished = false;
 	CityObjects* ptr;
 	int loopcounter = 0;
@@ -903,6 +933,8 @@ bool City::integrityCheck() {
 		coordinates.push_back(location);
 	}
 
+
+
 	for (int i = 0; i < coordinates.size(); i++){
 		for (int j = i+1; j < coordinates.size(); j++){
 			if (coordinates[i] == coordinates[j]){
@@ -910,6 +942,11 @@ bool City::integrityCheck() {
 				integrity = false;
 			}
 		}
+	}
+
+	if (coordinates.size() != matrix.getRows()*matrix.getColumns()){
+		output << "There were empty spots found in the city\n";
+		integrity = false;
 	}
 
 	for (std::list<Firetruck>::iterator itt = trucks.begin(); itt != trucks.end(); itt++){

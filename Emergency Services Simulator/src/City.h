@@ -32,6 +32,8 @@ private:
 	std::list<Firetruck> trucks;
 	std::ofstream output;
 
+	bool validCity;
+
 	City* _initCheck;
 
 	Matrix matrix;

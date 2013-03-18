@@ -1,0 +1,6 @@
+		EMERGENCY SERVICES SIMULATION 
+
+
+A coordinate can not be negative! Coordinate read: (-1,15)
+A coordinate can not be negative! Coordinate read: (0,-3)
+A coordinate can not be negative! Coordinate read: (-9,10)
