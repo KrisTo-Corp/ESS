@@ -97,18 +97,28 @@ std::ostream& operator <<(std::ostream& s, City& city) {
 }
 
 int City::getAmountHouses(){
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountHouses()");
+
 	return houses.size();
 }
 int City::getAmountDepartments(){
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountDepartments()");
+
 	return departments.size();
 }
 int City::getAmountStreets(){
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountStreets()");
+
 	return streets.size();
 }
 int City::getAmountCrossroads(){
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountCrossroads()");
+
 	return crossroads.size();
 }
 int City::getAmountTrucks(){
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountTrucks()");
+
 	return trucks.size();
 }
 
@@ -169,6 +179,8 @@ bool City::properlyInitialized(int x, int y){
 }
 
 CityObjects* City::setFire(){
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling setFire()");
+
 	bool succes = false;
 	CityObjects* ptr;
 
@@ -186,10 +198,14 @@ CityObjects* City::setFire(){
 
 	ptr->setState(burning);
 
+	ENSURE(ptr->getState() == burning, "setFire() did not correctly set fire to a house.");
+
 	return ptr;
 }
 
 CityObjects* City::setFire(int x, int y){
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling setFire()");
+
 	bool succes = false;
 	CityObjects* ptr;
 
@@ -201,10 +217,13 @@ CityObjects* City::setFire(int x, int y){
 
 	ptr->setState(burning);
 
+	ENSURE(ptr->getState() == burning, "setFire() did not correctly set fire to the given house.");
+
 	return ptr;
 }
 
 void City::update() {
+	//REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling update()");
 
 	if (!(validCity)){
 		return;
@@ -339,6 +358,7 @@ void City::update() {
 }
 
 void City::update_test() {
+	//REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling update_test()");
 
 	if (!(validCity)){
 		return;
@@ -487,6 +507,8 @@ void City::update_test() {
 
 
 Coordinate City::getAdjecantStreet(CityObjects* building, Coordinate truckLoc) {
+	// REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAdjecantStreet()");
+	//REQUIRE(truckLoc != NULL, "Argument Coordinate was not a valid Coordinate.");
 
 	Structures* ptr = dynamic_cast<Structures*>(building);
 	std::vector<Coordinate> coordinates;
@@ -553,8 +575,8 @@ Coordinate City::getAdjecantStreet(CityObjects* building, Coordinate truckLoc) {
 }
 
 std::string City::checkOrientation(Coordinate coord) {
-
-	// CONTRACT -> coord must be of type street
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling checkOrientation()");
+ 	//REQUIRE((matrix.getObject(coord.getX(), coord.getY()))->getType() == road, "I can not determine the orientation of anything non-street.");
 
 	std::string result;
 
@@ -618,6 +640,8 @@ std::string City::checkOrientation(Coordinate coord) {
 }
 
 Crossroad City::closestCrossroad(Coordinate coord) {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling closestCrossroad()");
+
 	std::list<Crossroad>::iterator it;
 
 	std::pair<Crossroad, int> closest (*(crossroads.begin()), calculateDistance(crossroads.begin()->getLocation(), coord));
@@ -633,11 +657,15 @@ Crossroad City::closestCrossroad(Coordinate coord) {
 }
 
 int City::calculateDistance(Coordinate c1, Coordinate c2) {
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling calculateDistance()");
+
 	int distance = sqrt(pow(c2.getX() - c1.getX(), 2) + pow(c2.getY() - c1.getY(), 2));
 	return distance;
 }
 
 void City::driveTruck(Firetruck* rescueTruck) {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling driveTruck()");
+
 	Coordinate cur = rescueTruck->getCoord();
 	Coordinate destination = rescueTruck->getDestination();
 
@@ -765,6 +793,8 @@ void City::driveTruck(Firetruck* rescueTruck) {
 }
 
 Crossroad City::closestCorrectCrossroad(Coordinate cur, Street* destStreet) {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling closestCrossroad()");
+
 	std::vector<Crossroad> xRoads;
 
 	Coordinate correctCrossroad;
@@ -788,6 +818,7 @@ Crossroad City::closestCorrectCrossroad(Coordinate cur, Street* destStreet) {
 }
 
 bool City::integrityCheck() {
+	//REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling integrityCheck()");
 
 	bool integrity = true;
 	std::vector<Coordinate> coordinates;
