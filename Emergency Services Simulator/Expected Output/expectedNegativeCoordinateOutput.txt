@@ -1,0 +1,18 @@
+		EMERGENCY SERVICES SIMULATION 
+
+
+A coordinate can not be negative! Coordinate read: (-1,15)
+A coordinate can not be negative! Coordinate read: (-1,15)
+A coordinate can not be negative! Coordinate read: (0,-3)
+A coordinate can not be negative! Coordinate read: (-9,10)
+A coordinate can not be negative! Coordinate read: (0,-3)
+House at location (3, 14) doesn't have a street linked to it.
+House at location (10, 14) doesn't have a street linked to it.
+House at location (12, 14) doesn't have a street linked to it.
+House at location (3, 12) doesn't have a street linked to it.
+House at location (10, 12) doesn't have a street linked to it.
+House at location (12, 12) doesn't have a street linked to it.
+House at location (3, 9) doesn't have a street linked to it.
+House at location (12, 9) doesn't have a street linked to it.
+There were empty spots found in the city
+THE GENERATED CITY WAS NOT VALID !

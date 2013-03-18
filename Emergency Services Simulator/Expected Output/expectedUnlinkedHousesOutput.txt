@@ -1,0 +1,7 @@
+		EMERGENCY SERVICES SIMULATION 
+
+
+House at location (0, 8) doesn't have a street linked to it.
+House at location (0, 1) doesn't have a street linked to it.
+House at location (7, 1) doesn't have a street linked to it.
+THE GENERATED CITY WAS NOT VALID !

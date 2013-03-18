@@ -1,0 +1,13 @@
+		EMERGENCY SERVICES SIMULATION 
+
+
+House at location (19, 2) is supposed to be at (19, 2) but is not.
+House at location (19, 2) is supposed to be at (19, 1) but is not.
+House at location (19, 2) is supposed to be at (20, 2) but is not.
+House at location (19, 2) is supposed to be at (20, 1) but is not.
+There is an overlap at location (19, 2).
+There is an overlap at location (19, 1).
+There is an overlap at location (20, 2).
+There is an overlap at location (20, 1).
+There were empty spots found in the city
+THE GENERATED CITY WAS NOT VALID !
