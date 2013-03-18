@@ -99,7 +99,6 @@ class CityTest: public ::testing::Test {
 protected:
 	friend class City;
 
-	City city;
 };
 
 class MatrixTest: public ::testing::Test {
@@ -110,7 +109,8 @@ protected:
 };
 
 class SimulationTest: public ::testing::Test {
-
+protected:
+	friend class City;
 };
 
 // TEST THE DEFAULT COORDINATE CONSTRUCTOR.
@@ -685,7 +685,7 @@ TEST_F(CityObjectsTest, setState) {
 
 // TEST THE CITY CONSTRUCTOR
 TEST_F(CityTest, Constructor){
-	city = City("stad.xml", "test_output.txt");
+	City city("stad.xml", "test_output.txt");
 	EXPECT_TRUE(city.properlyInitialized());
 	EXPECT_EQ(50, city.getAmountHouses());
 	EXPECT_EQ(1, city.getAmountDepartments());
@@ -705,7 +705,7 @@ TEST_F(CityTest, Update){
 
 // TEST IS VALID COORDINATE
 TEST_F(CityTest, ValidCoordinate){
-	City c("stad.xml", "test_output.txt");
+	City c("stad.xml", "junk.txt");
 	EXPECT_TRUE(c.validCoordCheck(15, 7));
 	EXPECT_TRUE(c.validCoordCheck(21, 0));
 	EXPECT_TRUE(c.validCoordCheck(21, 15));
@@ -720,7 +720,7 @@ TEST_F(CityTest, ValidCoordinate){
 
 // TEST THE SETFIRE FUNCTION
 TEST_F(CityTest, SetFire){
-	City c("stad.xml", "test_output.txt");
+	City c("stad.xml", "junk.txt");
 	CityObjects* burning_object = c.setFire(9, 12);
 	EXPECT_EQ(burning, burning_object->getState());
 	CityObjects* object = c.getObject(9, 12);
@@ -729,7 +729,7 @@ TEST_F(CityTest, SetFire){
 
 // TEST THE GET ADJECANTSTREET FUNCTION
 TEST_F(CityTest, AdjecantStreet){
-	City c("stad.xml", "test_output.txt");
+	City c("stad.xml", "junk.txt");
 	CityObjects* object = c.getObject(3, 13);
 	EXPECT_EQ(Coordinate(4, 15), c.getAdjecantStreet(object, Coordinate(8, 10)));
 	object = c.getObject(20, 3);
@@ -740,7 +740,7 @@ TEST_F(CityTest, AdjecantStreet){
 
 // TEST THE CHECK ORIENTATION FUNCTION
 TEST_F(CityTest, CheckOrientation){
-	City c("stad.xml", "test_output.txt");
+	City c("stad.xml", "junk.txt");
 	EXPECT_EQ("horizontal", c.checkOrientation(Coordinate(3, 0)));
 	EXPECT_EQ("horizontal", c.checkOrientation(Coordinate(11, 0)));
 	EXPECT_EQ("horizontal", c.checkOrientation(Coordinate(14, 0)));
@@ -800,38 +800,42 @@ TEST_F(CityTest, CheckOrientation){
 	EXPECT_EQ("crossroad", c.checkOrientation(Coordinate(7, 15)));
 	EXPECT_EQ("crossroad", c.checkOrientation(Coordinate(16, 15)));
 	EXPECT_EQ("crossroad", c.checkOrientation(Coordinate(21, 15)));
+	c.close();
 }
 
 // TEST THE CLOSEST CROSSROAD FUNCTION
 TEST_F(CityTest, ClosestCrossroad){
-	City c("stad.xml", "test_output.txt");
+	City c("stad.xml", "junk.txt");
 
 	EXPECT_EQ(Coordinate(0, 10), c.closestCrossroad(Coordinate(3, 10)).getLocation());
 	EXPECT_EQ(Coordinate(7, 5), c.closestCrossroad(Coordinate(11, 5)).getLocation());
 	EXPECT_EQ(Coordinate(0, 0), c.closestCrossroad(Coordinate(0, 2)).getLocation());
 	EXPECT_EQ(Coordinate(16, 15), c.closestCrossroad(Coordinate(12, 15)).getLocation());
 	EXPECT_EQ(Coordinate(7, 10), c.closestCrossroad(Coordinate(7, 10)).getLocation());
+	c.close();
 }
 
 // TEST THE CLOSEST CORRECT CROSSROAD
 TEST_F(CityTest, ClosestCorrectCrossroad){
-	City c("stad.xml", "test_output.txt");
+	City c("stad.xml", "junk.txt");
 	CityObjects* ptr = c.getObject(7,12);
 	Street* streetptr = dynamic_cast<Street*>(ptr);
 	EXPECT_EQ(Coordinate(7, 15), c.closestCorrectCrossroad(Coordinate(12, 15), streetptr).getLocation());
+	c.close();
 }
 
 // TEST CALCULATE DISTANCE
 TEST_F(CityTest, CalculateDistance){
-	City c("stad.xml", "test_output.txt");
+	City c("stad.xml", "junk.txt");
 	EXPECT_EQ(23, c.calculateDistance(Coordinate(0, 5), Coordinate(21, 15)));
 	EXPECT_EQ(15, c.calculateDistance(Coordinate(9, 0), Coordinate(9, 15)));
 	EXPECT_EQ(25, c.calculateDistance(Coordinate(0, 15), Coordinate(21, 0)));
 	EXPECT_EQ(0, c.calculateDistance(Coordinate(9, 0), Coordinate(9, 0)));
+	c.close();
 }
 // TEST DRIVE TRUCK
 TEST_F(CityTest, DriveTruck){
-	City c("stad.xml", "test_output.txt");
+	City c("stad.xml", "junk.txt");
 	Firetruck* ptr = c.getTruck(0);
 	ptr->setDestination(Coordinate(7, 13));
 	EXPECT_EQ(Coordinate(8, 10), ptr->getCoord());
@@ -845,6 +849,13 @@ TEST_F(CityTest, DriveTruck){
 	EXPECT_EQ(Coordinate(7, 13), ptr->getCoord());
 	c.driveTruck(ptr);
 	EXPECT_EQ(Coordinate(7, 13), ptr->getCoord());
+	c.close();
+}
+
+// TEST CITY PARSER WITH SYNTAX ERROR
+TEST_F(SimulationTest, InputSyntaxError){
+	City c("stad_syntax_error.xml", "syntax_error_output.txt");
+	c.close();
 }
 
 int main(int argc, char **argv) {
