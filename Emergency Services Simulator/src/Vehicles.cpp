@@ -31,14 +31,16 @@ Vehicles::~Vehicles()
 {
 }
 
-const std::string Vehicles::getName()const {
-	return name;
-}
-
 
 bool Vehicles::properlyInitialized() {
 
 	return _initCheck == this;
+}
+
+std::string Vehicles::getName() {
+	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling setCoord().");
+
+	return name;
 }
 
 void Vehicles::resetInit() {
@@ -76,6 +78,8 @@ Firetruck::Firetruck(): Vehicles(0, 0, ""), basename(""), tempDestination(0, 0),
 	available = true;
 	atHome = true;
 	target = NULL;
+
+	ENSURE(properlyInitialized(), "Object 'Firetruck' was not properly initialized.");
 }
 
 Firetruck::Firetruck(const int x, const int y, const std::string n, const std::string bn): Vehicles(x, y, n), basename(bn) {
@@ -84,6 +88,8 @@ Firetruck::Firetruck(const int x, const int y, const std::string n, const std::s
 	available = true;
 	atHome = true;
 	target = NULL;
+
+	ENSURE(properlyInitialized(), "Object 'Firetruck' was not properly initialized.");
 }
 
 Firetruck::~Firetruck()
@@ -115,6 +121,7 @@ void Firetruck::move(std::string direction) {
 	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling move().");
 
 	// Contract that checks if direction is legit.
+	Coordinate oldLocation = coord;
 
 	int curX = coord.getX();
 	int curY = coord.getY();
@@ -131,17 +138,17 @@ void Firetruck::move(std::string direction) {
 	else if (direction == "right") {
 		coord.setX(curX + 1);
 	}
-	else {
-		std::cout << "This is not a valid direction." << std::endl;
-	}
-}
 
+	ENSURE((oldLocation != coord), "Firetruck did not move properly.");
+}
 
 
 void Firetruck::setTempDest(Coordinate c) {
 	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getTempDest().");
 
 	tempDestination = c;
+
+	ENSURE(getTempDest() == c, "Setted tempDestination in Firetruck did not match Firetruck's tempDestination.");
 }
 
 Coordinate Firetruck::getTempDest() {
@@ -174,6 +181,8 @@ void Firetruck::setAvailable(bool state) {
 	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling setAvailable().");
 
 	available = state;
+
+	ENSURE(getAvailable() == state, "Setted available does not match Firetruck's available");
 }
 
 void Firetruck::setDestination(Coordinate dest) {

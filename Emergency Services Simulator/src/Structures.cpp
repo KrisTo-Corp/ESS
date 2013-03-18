@@ -15,17 +15,19 @@
 
 Structures::Structures(): CityObjects(none), name(""), location(0, 0), width(0), length(0)
 {
+	ENSURE(init(), "Object 'Structures' was not properly initialized.");
 }
 
 Structures::Structures(const int x, const int y, const std::string n, const int w, const int l, Eobjects t): CityObjects(t), name(n), location(x, y), width(w), length(l)
 {
+	ENSURE(init(), "Object 'Structures' was not properly initialized.");
 }
 
 Structures::~Structures() {
 }
 
 std::string Structures::getName() {
-	//REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
 	return name;
 }
@@ -68,10 +70,14 @@ Structures& Structures::operator =(const Structures& c){
 
 House::House(): Structures(0, 0, "", 2, 2, house) {
 	hitpoints = 0;
+
+	ENSURE(init(), "Object 'House' was not properly initialized.");
 }
 
 House::House(const int x, const int y, int hp, const std::string n): Structures(x, y, n, 2, 2, house) {
 	hitpoints = hp;
+
+	ENSURE(init(), "Object 'House' was not properly initialized.");
 }
 
 House::~House()
@@ -104,10 +110,17 @@ House& House::operator =(const House& c){
 }
 
 void House::decreaseHP(){
+	REQUIRE(init(), "Object 'House' was not properly initialized when calling decreaseHP()");
+
+	double oldHP = hitpoints;
 	hitpoints = hitpoints - (1.0/(width*length));
+
+	ENSURE(hitpoints == oldHP - (1.0/(width*length)), "HP of house was not decreased successfully.");
 }
 
 double House::getHP(){
+	REQUIRE(init(), "Object 'House' was not properly initialized when calling getHP()");
+
 	return hitpoints;
 }
 
@@ -116,10 +129,12 @@ double House::getHP(){
 //==========================
 
 Fire_Department::Fire_Department(): Structures(0, 0, "", 4, 4, department), entrance(0, 0) {
+	ENSURE(init(), "Object 'Fire_Department' was not properly initialized.");
+
 }
 
-Fire_Department::Fire_Department(const int x, const int y, const int x_entrance, const int y_entrance, const std::string n): Structures(x, y, n, 4, 4, department), entrance(x_entrance, y_entrance)
-{
+Fire_Department::Fire_Department(const int x, const int y, const int x_entrance, const int y_entrance, const std::string n): Structures(x, y, n, 4, 4, department), entrance(x_entrance, y_entrance) {
+	ENSURE(init(), "Object 'Fire_Department' was not properly initialized.");
 }
 
 Fire_Department::~Fire_Department()
@@ -127,18 +142,28 @@ Fire_Department::~Fire_Department()
 }
 
 void Fire_Department::addTruck(Firetruck* t) {
+	REQUIRE(init(), "Object 'Fire_Department' was not properly initialized when calling addTruck()");
+
 	trucks.push_back(t);
+
+	ENSURE((trucks[trucks.size()-1] == t), "Firetruck was not succesfully added to trucks Vector");
 }
 
 Firetruck* Fire_Department::useTruck() {
+	REQUIRE(init(), "Object 'Fire_Department' was not properly initialized when calling useTruck()");
+
+	int size = trucks.size();
 	if (trucks.size() != 0) {
 		Firetruck* readyTruck = *(trucks.begin());
 		trucks.erase(trucks.begin());
 		return readyTruck;
+		ENSURE((size - 1 == trucks.size()), "Firetruck was not succesfully added to trucks Vector");
 	}
 }
 
 Coordinate& Fire_Department::getEntrance() {
+	REQUIRE(init(), "Object 'Fire_Department' was not properly initialized when calling getEntrance().");
+
 	return entrance;
 }
 
@@ -154,6 +179,8 @@ std::ostream& operator <<(std::ostream& s, Fire_Department& department){
 }
 
 int Fire_Department::getAmountTrucks(){
+	REQUIRE(init(), "Object 'Fire_Department' was not properly initialized when calling getAmountTrucks()");
+
 	return trucks.size();
 }
 

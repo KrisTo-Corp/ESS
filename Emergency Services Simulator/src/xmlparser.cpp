@@ -76,6 +76,7 @@ std::pair<int, int> City::parseCity(std::string filename) {
 					continue;
 				}
 			}
+			// validcoordcheck here
 			House house(x, y, hp, "house");
 			houses.push_back(house);
 		}

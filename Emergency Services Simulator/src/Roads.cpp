@@ -16,9 +16,12 @@
 
 
 Roads::Roads(): CityObjects(none), name("") {
+	ENSURE(init(), "Object 'Roads' was not properly initialized.");
+
 }
 
 Roads::Roads(const std::string n, Eobjects t): CityObjects(t), name(n) {
+	ENSURE(init(), "Object 'Roads' was not properly initialized.");
 }
 
 Roads::~Roads()
@@ -47,10 +50,12 @@ Roads& Roads::operator = (const Roads& r) {
 
 Street::Street(): Roads("", street), start(0, 0), end(0, 0)
 {
+	ENSURE(init(), "Object 'Street' was not properly initialized.");
 }
 
 Street::Street(const int x_start, const int y_start, const int x_end, const int y_end, const std::string n): Roads(n, street), start(x_start, y_start), end(x_end, y_end)
 {
+	ENSURE(init(), "Object 'Street' was not properly initialized.");
 }
 
 Street::~Street()
@@ -58,10 +63,14 @@ Street::~Street()
 }
 
 Coordinate Street::getStart(){
+	//REQUIRE(init(), "Object 'Street' was not properly initialized when calling getStart()");
+
 	return start;
 }
 
 Coordinate Street::getEnd(){
+	//REQUIRE(init(), "Object 'Street' was not properly initialized when calling getEnd()");
+
 	return end;
 }
 
@@ -94,12 +103,16 @@ Crossroad::Crossroad(): Roads("", crossroad), location(0, 0)
 {
 	s1 = "";
 	s2 = "";
+
+	ENSURE(init(), "Object 'Crossroad' was not properly initialized.");
 }
 
 Crossroad::Crossroad(const int x, const int y, const std::string n, const std::string street1, const std::string street2): Roads(n, crossroad), location(x, y)
 {
 	s1 = street1;
 	s2 = street2;
+
+	ENSURE(init(), "Object 'Crossroad' was not properly initialized.");
 }
 
 Crossroad::~Crossroad()
@@ -107,14 +120,20 @@ Crossroad::~Crossroad()
 }
 
 Coordinate Crossroad::getLocation(){
+	//REQUIRE(init(), "Object 'Crossroad' was not properly initialized when calling getLocation()");
+
 	return location;
 }
 
 std::string Crossroad::getStreet1() {
+	//REQUIRE(init(), "Object 'Crossroad' was not properly initialized when calling getStreet1()");
+
 	return s1;
 }
 
 std::string Crossroad::getStreet2() {
+	//REQUIRE(init(), "Object 'Crossroad' was not properly initialized when calling getStreet2()");
+
 	return s2;
 }
 

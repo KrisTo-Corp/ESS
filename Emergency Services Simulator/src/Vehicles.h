@@ -27,14 +27,16 @@ protected:
 
 public:
 	Vehicles();
-	//	ENSURE(properlyInitialized(), "Object 'Vehicles' was not properly initialized.");
+//	ENSURE(properlyInitialized(), "Object 'Vehicles' was not properly initialized.");
 
 	Vehicles(int x, int y, const std::string n);
-	//	ENSURE(properlyInitialized(), "Object 'Vehicles' was not properly initialized.");
+//	ENSURE(properlyInitialized(), "Object 'Vehicles' was not properly initialized.");
 
 	virtual ~Vehicles();
 
-	const std::string getName()const;
+	std::string getName();
+//	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling setCoord().");
+
 	Vehicles& operator =(const Vehicles&);
 
 	void setCoord(Coordinate);
@@ -62,8 +64,10 @@ private:
 
 public:
 	Firetruck();
+//	ENSURE(properlyInitialized(), "Object 'Firetruck' was not properly initialized.");
 
 	Firetruck(const int x, const int y, const std::string n, const std::string bn);
+//	ENSURE(properlyInitialized(), "Object 'Firetruck' was not properly initialized.");
 
 	virtual ~Firetruck();
 
@@ -79,9 +83,11 @@ public:
 
 	void move(std::string);
 //	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling move().");
+//	ENSURE((oldLocation != coord), "Firetruck did not move properly.");
 
 	void setTempDest(Coordinate);
 //	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling setTempDest().");
+//	ENSURE(getTempDest() == c, "Setted tempDestination in Firetruck did not match Firetruck's tempDestination.");
 
 	Coordinate getTempDest();
 //	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling getTempDest().");
