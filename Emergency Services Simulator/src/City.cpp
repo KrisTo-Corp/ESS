@@ -18,8 +18,6 @@ City::City(){
 
 City::City(const std::string filename, std::string outputname): output(outputname.c_str()){
 
-	output << "\t EMERGENCY SERVICES SIMULATION \n\n\n";
-
 	std::pair<int, int> maxCoords =	parseCity(filename);
 
 	matrix = Matrix(maxCoords.second + 1, maxCoords.first +1);

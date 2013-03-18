@@ -15,7 +15,7 @@ std::pair<int, int> City::parseCity(std::string filename) {
 	TiXmlDocument doc;
 	if(!doc.LoadFile(filename.c_str())) {
 		output << doc.ErrorDesc() << std::endl;
-		exit(EXIT_FAILURE);
+		return std::pair<int, int>(-1, -1);
 	}
 
 	TiXmlElement* virtualCity = doc.FirstChildElement();
@@ -23,7 +23,7 @@ std::pair<int, int> City::parseCity(std::string filename) {
 	if(virtualCity == NULL) {
 		output << "Failed to load file: No root element." << std::endl;
 		doc.Clear();
-		exit(EXIT_FAILURE);
+		return std::pair<int, int>(-2, -2);
 	}
 
 	int maxX = 0;
@@ -192,7 +192,7 @@ std::pair<int, int> City::parseCity(std::string filename) {
 		}
 		else {
 			output << object << " is not a valid object." << std::endl;
-			exit(EXIT_FAILURE);
+			return std::pair<int, int>(-3, -3);
 		}
 	}
 	std::pair<int, int> coords (maxX, maxY);
