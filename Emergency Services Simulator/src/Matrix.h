@@ -28,36 +28,40 @@ private:
 public:
 	bool properlyInitialized(int, int);
 
+	int getTotalLength();
+
 	Matrix();
-//	ENSURE(init(), "Object 'Matrix' was not properly initialized.");
+//	ENSURE(properlyInitialized(), "Object 'Matrix' was not properly initialized.");
 
 	Matrix(int r, int c);
-//	ENSURE(init(), "Object 'Matrix' was not properly initialized.");
+//	ENSURE(properlyInitialized(), "Object 'Matrix' was not properly initialized.");
 
 	virtual ~Matrix();
 
 	void addHouses(std::list<House>& list);
-//	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addHouses().");
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addHouses().");
 
 	void addFiredeps(std::list<Fire_Department>& list);
-//	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addFiredeps().");
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addFiredeps().");
 
 	void addCrossroads(std::list<Crossroad>& list);
-//	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addCrossroads().");
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addCrossroads().");
 
 	std::list<Crossroad> addStreets(std::list<Street>& list);
-//	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addStreets().");
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addStreets().");
 
 	void addObject(int x, int y, CityObjects*& object);
-//	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addObject().");
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addObject().");
 //	ENSURE(getObject(x, y) == object, "Added object " + object + " was not added correctly.");
 
 	CityObjects* getObject(int, int);
-//	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling getObject().");
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getObject().");
 
 
 	friend std::ostream& operator <<(std::ostream& s, Matrix& m);
-//	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addHouses().");
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addHouses().");
+
+	Matrix& operator =(const Matrix&);
 
 	void resetInit();
 
@@ -65,8 +69,7 @@ public:
 
 	int getColumns();
 
-private:
-	bool init();
+	bool properlyInitialized();
 };
 
 #endif /* MATRIX_H_ */

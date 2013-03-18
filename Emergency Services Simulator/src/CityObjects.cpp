@@ -10,7 +10,7 @@
 
 #include <iostream>
 
-CityObjects::CityObjects(): type(none)
+CityObjects::CityObjects(): type(none), state(intouchable)
 {
 	_initCheck = this;
 
@@ -42,11 +42,17 @@ Eobjects CityObjects::getType(){
 }
 
 Estate CityObjects::getState(){
+	REQUIRE(init(), "Object 'CityObjects' was not properly initialized when calling getState()");
+
 	return state;
 }
 
 void CityObjects::setState(Estate s){
+	REQUIRE(init(), "Object 'CityObjects' was not properly initialized when calling setState()");
+
 	state = s;
+
+	ENSURE((getState() == s), "Setted state does not match object's state.");
 }
 
 bool CityObjects::init() {
@@ -56,4 +62,10 @@ bool CityObjects::init() {
 void CityObjects::resetInit() {
 	_initCheck = this;
 }
+
+CityObjects& CityObjects::operator = (const CityObjects& c) {
+	type = c.type;
+	state = c.state;
+}
+
 

@@ -11,29 +11,45 @@
 
 #include "Matrix.h"
 
-Matrix::Matrix(){
+Matrix::Matrix(): rows(10), columns(5){
+	for(int i = 0; i < rows; i++){
+		std::vector<CityObjects*> colum;
+		for (int j = 0; j < columns; j++){
+			colum.push_back(NULL);
+		}
+		matrix.push_back(colum);
+	}
 	_initCheck = this;
-	ENSURE(init(), "Object 'Matrix' was not properly initialized.");
+	ENSURE(properlyInitialized(), "Object 'Matrix' was not properly initialized.");
 }
 
 Matrix::Matrix(int r, int c): rows(r), columns(c) {
 	for(int i = 0; i < rows; i++){
-			std::vector<CityObjects*> colum;
-			for (int j = 0; j < columns; j++){
-				colum.push_back(NULL);
-			}
-			matrix.push_back(colum);
+		std::vector<CityObjects*> colum;
+		for (int j = 0; j < columns; j++){
+			colum.push_back(NULL);
 		}
-		_initCheck = this;
-		ENSURE(init(), "Object 'Matrix' was not properly initialized.");
+		matrix.push_back(colum);
 	}
+	_initCheck = this;
+	ENSURE(properlyInitialized(), "Object 'Matrix' was not properly initialized.");
+}
 
 Matrix::~Matrix()
 {
 }
 
+int Matrix::getTotalLength(){
+	if (matrix.size() == 0){
+		return 0;
+	}
+	else {
+		return matrix.size()*matrix[0].size();
+	}
+}
+
 void Matrix::addHouses(std::list<House>& list) {
-	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addHouses().");
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addHouses().");
 
 	std::list<House>::iterator it;
 	for (it = list.begin(); it != list.end(); it++) {
@@ -52,7 +68,7 @@ void Matrix::addHouses(std::list<House>& list) {
 }
 
 void Matrix::addFiredeps(std::list<Fire_Department>& list) {
-	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addFiredeps().");
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addFiredeps().");
 
 	std::list<Fire_Department>::iterator it;
 	for (it = list.begin(); it != list.end(); it++) {
@@ -71,7 +87,7 @@ void Matrix::addFiredeps(std::list<Fire_Department>& list) {
 }
 
 std::list<Crossroad> Matrix::addStreets(std::list<Street>& list) {
-	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addStreets().");
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addStreets().");
 
 	std::list<Street>::iterator it;
 	std::list<Crossroad> crossroads;
@@ -99,7 +115,7 @@ std::list<Crossroad> Matrix::addStreets(std::list<Street>& list) {
 }
 
 void Matrix::addCrossroads(std::list<Crossroad>& list) {
-	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addCrossroads().");
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addCrossroads().");
 
 	std::list<Crossroad>::iterator it;
 	for (it = list.begin(); it != list.end(); it++) {
@@ -112,7 +128,7 @@ void Matrix::addCrossroads(std::list<Crossroad>& list) {
 }
 
 void Matrix::addObject(int x, int y, CityObjects*& object){
-	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling addObject().");
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addObject().");
 
 	matrix[rows-1-y][x] = object;
 
@@ -121,7 +137,7 @@ void Matrix::addObject(int x, int y, CityObjects*& object){
 }
 
 CityObjects* Matrix::getObject(int x, int y) {
-	REQUIRE(init(), "Object 'Matrix' was not properly initialized when calling getObject().");
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getObject().");
 	//TODO: arbitrary size of matrix
 
 	return matrix[rows-1-y][x];
@@ -132,7 +148,7 @@ bool Matrix::properlyInitialized(int x, int y){
 }
 
 std::ostream& operator <<(std::ostream& s, Matrix& m){
-	REQUIRE(m.init(), "Object 'Matrix' was not properly initialized when calling addHouses().");
+	REQUIRE(m.properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addHouses().");
 
 	for(int i = 0; i < m.rows; i++){
 		s << m.rows-1-i << "\t[\t";
@@ -167,7 +183,7 @@ std::ostream& operator <<(std::ostream& s, Matrix& m){
 	return s;
 }
 
-bool Matrix::init() {
+bool Matrix::properlyInitialized() {
 	return _initCheck == this;
 }
 
@@ -181,4 +197,14 @@ int Matrix::getRows(){
 
 int Matrix::getColumns(){
 	return columns;
+}
+
+Matrix& Matrix::operator = (const Matrix& c){
+	rows = c.rows;
+	columns = c.columns;
+	matrix = c.matrix;
+
+	_initCheck = this;
+
+	return *this;
 }

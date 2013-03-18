@@ -36,11 +36,16 @@ public:
 //	REQUIRE(this->init(), "Object 'CityObjects' was not properly initialized when calling getType()");
 
 	Estate getState();
+//	REQUIRE(init(), "Object 'CityObjects' was not properly initialized when calling getState()");
 
 	void setState(Estate);
+// 	REQUIRE(init(), "Object 'CityObjects' was not properly initialized when calling setState()");
+// 	ENSURE((getState() == s), "Setted state does not match object's state.");
 
 	virtual bool init();
 	void resetInit();
+
+	CityObjects& operator = (const CityObjects& c);
 
 };
 

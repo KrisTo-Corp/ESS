@@ -39,6 +39,8 @@ private:
 public:
 	bool properlyInitialized(int, int);
 
+	City();
+
 	City(std::string filename, std::string outputname);
 //	ENSURE(init(), "Object 'City' was not properly initialized.");
 
@@ -47,18 +49,28 @@ public:
 	friend std::ostream& operator <<(std::ostream& s, City& city);
 //	REQUIRE(city.init(), "Object 'City' was not properly initialized when calling overloaded operator '<<'");
 
+	int getAmountHouses();
+	int getAmountDepartments();
+	int getAmountStreets();
+	int getAmountCrossroads();
+	int getAmountTrucks();
+	CityObjects* getObject(int, int);
+	Firetruck* getTruck(int);
+
+	City& operator =(const City&);
+
 	void update();
-	void update2();
+	void update_test();
 
 	void close();
 
-private:
-	bool init();
+	bool properlyInitialized();
 	std::pair<int, int> parseCity(std::string filename);
 	void link_trucks_to_bases();
 	bool validCoordCheck(int x, int y);
 	int compareCoord(int, int);
 	CityObjects* setFire();
+	CityObjects* setFire(int, int);
 	Coordinate getAdjecantStreet(CityObjects*, Coordinate);
 	std::string checkOrientation(Coordinate);
 	Crossroad closestCorrectCrossroad(Coordinate, Street*);

@@ -25,25 +25,25 @@ Structures::~Structures() {
 }
 
 std::string Structures::getName() {
-	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+	//REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
 	return name;
 }
 
 Coordinate Structures::getLocation() {
-	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+	//REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
 	return location;
 }
 
 int Structures::getWidth() {
-	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+	//REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
 	return width;
 }
 
 int Structures::getLength() {
-	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+	//REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
 	return length;
 }
