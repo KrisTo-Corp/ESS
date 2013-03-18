@@ -685,7 +685,7 @@ TEST_F(CityObjectsTest, setState) {
 
 // TEST THE CITY CONSTRUCTOR
 TEST_F(CityTest, Constructor){
-	City city("stad.xml", "test_output.txt");
+	City city("XML Files/stad.xml", "Output files/unusedOutput.txt");
 	EXPECT_TRUE(city.properlyInitialized());
 	EXPECT_EQ(50, city.getAmountHouses());
 	EXPECT_EQ(1, city.getAmountDepartments());
@@ -696,16 +696,16 @@ TEST_F(CityTest, Constructor){
 
 // TEST A UPDATE FUNCTION
 TEST_F(CityTest, Update){
-	City c("stad.xml", "test_output.txt");
+	City c("XML Files/stad.xml", "Output files/updateTest.txt");
 	c.update_test();
 	c.close();
 
-	EXPECT_TRUE(FileCompare("expected_test_output.txt", "test_output.txt"));
+	EXPECT_TRUE(FileCompare("Output files/updateTest.txt", "Expected Output/expectedUpdateTest.txt"));
 }
 
 // TEST IS VALID COORDINATE
 TEST_F(CityTest, ValidCoordinate){
-	City c("stad.xml", "junk.txt");
+	City c("XML Files/stad.xml", "Output files/unusedOutput.txt");
 	EXPECT_TRUE(c.validCoordCheck(15, 7));
 	EXPECT_TRUE(c.validCoordCheck(21, 0));
 	EXPECT_TRUE(c.validCoordCheck(21, 15));
@@ -720,7 +720,7 @@ TEST_F(CityTest, ValidCoordinate){
 
 // TEST THE SETFIRE FUNCTION
 TEST_F(CityTest, SetFire){
-	City c("stad.xml", "junk.txt");
+	City c("XML Files/stad.xml", "Output files/unusedOutput.txt");
 	CityObjects* burning_object = c.setFire(9, 12);
 	EXPECT_EQ(burning, burning_object->getState());
 	CityObjects* object = c.getObject(9, 12);
@@ -729,7 +729,7 @@ TEST_F(CityTest, SetFire){
 
 // TEST THE GET ADJECANTSTREET FUNCTION
 TEST_F(CityTest, AdjecantStreet){
-	City c("stad.xml", "junk.txt");
+	City c("XML Files/stad.xml", "Output files/unusedOutput.txt");
 	CityObjects* object = c.getObject(3, 13);
 	EXPECT_EQ(Coordinate(4, 15), c.getAdjecantStreet(object, Coordinate(8, 10)));
 	object = c.getObject(20, 3);
@@ -740,7 +740,7 @@ TEST_F(CityTest, AdjecantStreet){
 
 // TEST THE CHECK ORIENTATION FUNCTION
 TEST_F(CityTest, CheckOrientation){
-	City c("stad.xml", "junk.txt");
+	City c("XML Files/stad.xml", "Output files/unusedOutput.txt");
 	EXPECT_EQ("horizontal", c.checkOrientation(Coordinate(3, 0)));
 	EXPECT_EQ("horizontal", c.checkOrientation(Coordinate(11, 0)));
 	EXPECT_EQ("horizontal", c.checkOrientation(Coordinate(14, 0)));
@@ -805,7 +805,7 @@ TEST_F(CityTest, CheckOrientation){
 
 // TEST THE CLOSEST CROSSROAD FUNCTION
 TEST_F(CityTest, ClosestCrossroad){
-	City c("stad.xml", "junk.txt");
+	City c("XML Files/stad.xml", "Output files/unusedOutput.txt");
 
 	EXPECT_EQ(Coordinate(0, 10), c.closestCrossroad(Coordinate(3, 10)).getLocation());
 	EXPECT_EQ(Coordinate(7, 5), c.closestCrossroad(Coordinate(11, 5)).getLocation());
@@ -817,7 +817,7 @@ TEST_F(CityTest, ClosestCrossroad){
 
 // TEST THE CLOSEST CORRECT CROSSROAD
 TEST_F(CityTest, ClosestCorrectCrossroad){
-	City c("stad.xml", "junk.txt");
+	City c("XML Files/stad.xml", "Output files/unusedOutput.txt");
 	CityObjects* ptr = c.getObject(7,12);
 	Street* streetptr = dynamic_cast<Street*>(ptr);
 	EXPECT_EQ(Coordinate(7, 15), c.closestCorrectCrossroad(Coordinate(12, 15), streetptr).getLocation());
@@ -826,7 +826,7 @@ TEST_F(CityTest, ClosestCorrectCrossroad){
 
 // TEST CALCULATE DISTANCE
 TEST_F(CityTest, CalculateDistance){
-	City c("stad.xml", "junk.txt");
+	City c("XML Files/stad.xml", "Output files/unusedOutput.txt");
 	EXPECT_EQ(23, c.calculateDistance(Coordinate(0, 5), Coordinate(21, 15)));
 	EXPECT_EQ(15, c.calculateDistance(Coordinate(9, 0), Coordinate(9, 15)));
 	EXPECT_EQ(25, c.calculateDistance(Coordinate(0, 15), Coordinate(21, 0)));
@@ -835,7 +835,7 @@ TEST_F(CityTest, CalculateDistance){
 }
 // TEST DRIVE TRUCK
 TEST_F(CityTest, DriveTruck){
-	City c("stad.xml", "junk.txt");
+	City c("XML Files/stad.xml", "Output files/unusedOutput.txt");
 	Firetruck* ptr = c.getTruck(0);
 	ptr->setDestination(Coordinate(7, 13));
 	EXPECT_EQ(Coordinate(8, 10), ptr->getCoord());
@@ -855,98 +855,81 @@ TEST_F(CityTest, DriveTruck){
 // TEST CITY PARSER WITH SYNTAX ERROR
 
 TEST_F(SimulationTest, InputSyntaxError){
-	City c("stad_syntax_error.xml", "syntax_error_output.txt");
+	City c("XML Files/syntaxError.xml", "Output files/syntaxErrorOutput.txt");
 	c.update_test();
 	c.close();
-	EXPECT_TRUE(FileCompare("syntax_error_output.txt", "expected_syntax_error_output.txt"));
+	EXPECT_TRUE(FileCompare("Output files/syntaxErrorOutput.txt", "Expected Output/expectedSyntaxErrorOutput.txt"));
 }
 
 // TEST CITY PARSER WITH NON EXISTING OBJECT
 
 TEST_F(SimulationTest, InputObjectNotFound){
-	City c("object_not_found.xml", "object_not_found_output.txt");
+	City c("XML Files/invalidObject.xml", "Output files/invalidObjectOutput.txt");
 	c.update_test();
 	c.close();
-	EXPECT_TRUE(FileCompare("object_not_found_output.txt", "expected_object_not_found_output.txt"));
+	EXPECT_TRUE(FileCompare("Output files/invalidObjectOutput.txt", "Expected Output/expectedInvalidObjectOutput.txt"));
 }
 
 // TEST THE PARSER WITH NEGATIVE COORDINATES
-/*
+
 TEST_F(SimulationTest, NegativeCoordinate){
-	City c("negative_coordinate.xml", "negative_coordinate_output.txt");
+	City c("XML Files/negativeCoordinate.xml", "Output files/negativeCoordinateOutput.txt");
 	c.update_test();
 	c.close();
-}*/
+	EXPECT_TRUE(FileCompare("Output files/negativeCoordinateOutput.txt", "Expected Output/expectedNegativeCoordinateOutput.txt"));
+}
 
 // TEST THE PARSER WITH NO ROOT OBJECT
 TEST_F(SimulationTest, NoRootObject){
-	City c("no_root.xml", "no_root_output.txt");
+	City c("XML Files/noRoot.xml", "Output files/noRootOutput.txt");
 	c.update_test();
 	c.close();
-	EXPECT_TRUE(FileCompare("no_root_output.txt", "expected_no_root_output.txt"));
+	EXPECT_TRUE(FileCompare("Output files/noRootOutput.txt", "Expected Output/expectedNoRootOutput.txt"));
 }
 
 // TEST THE PARSER WITH INVALID CITY EMPTY SPOTS
 
-/*TEST_F(SimulationTest, InvalidCityEmptySpots){
-	City c("empty_spots.xml", "empty_spots_output.txt");
+TEST_F(SimulationTest, InvalidCityEmptySpots){
+	City c("XML Files/emptySpots.xml", "Output files/emptySpotsOutput.txt");
 	c.update_test();
 	c.close();
-}*/
+	EXPECT_TRUE(FileCompare("Output files/emptySpotsOutput.txt", "Expected Output/expectedEmptySpotsOutput.txt"));
+}
 
 // TEST THE PARSER WITH OVERLAP
 
 TEST_F(SimulationTest, Overlap){
-	City c("overlap.xml", "overlap_output.txt");
+	City c("XML Files/overlap.xml", "Output files/overlapOutput.txt");
 	c.update_test();
 	c.close();
-	EXPECT_TRUE(FileCompare("overlap_output.txt", "expected_overlap_output.txt"));
+	EXPECT_TRUE(FileCompare("Output files/overlapOutput.txt", "Expected Output/expectedOverlapOutput.txt"));
 }
 
 // TEST WITH UNLINKED TRUCKS
 TEST_F(SimulationTest, UnlinkedTrucks){
-	City c("unlinked_trucks.xml", "unlinked_trucks_output.txt");
+	City c("XML Files/unlinkedTrucks.xml", "Output files/unlinkedTrucksOutput.txt");
 	c.update_test();
 	c.close();
-	EXPECT_TRUE(FileCompare("unlinked_trucks_output.txt", "expected_unlinked_trucks_output.txt"));
+	EXPECT_TRUE(FileCompare("Output files/unlinkedTrucksOutput.txt", "Expected Output/expectedUnlinkedTrucksOutput.txt"));
 }
 
-/*
- * NEGATIVE
- * GEEN ROOT
- * INCONSISTENT
- * 	LEGE PLAATSEN
- * 	OVERLAPPINGEN
- * 	TRUCKS NIET GELINKED
- * 	HUIS NIET GELINKED AAN STRAAT
- */
+// HOUSES NOT LINKED TO STREET
+TEST_F(SimulationTest, UnlinkedHouses){
+	City c("XML Files/unlinkedStreets.xml", "Output files/unlinkedHousesOutput.txt");
+	c.update_test();
+	c.close();
+	EXPECT_TRUE(FileCompare("Output files/unlinkedHousesOutput.txt", "Expected Output/expectedUnlinkedHousesOutput.txt"));
+}
 
-
+// TEST A NORMAL SIMULATION
+TEST_F(SimulationTest, NormalSimulation){
+	City c("XML Files/stad.xml", "Output files/normalOutput.txt");
+	c.update_test();
+	c.close();
+	EXPECT_TRUE(FileCompare("Output files/normalOutput.txt", "Expected Output/expectedNormalOutput.txt"));
+}
 
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
 }
-
-/*
- * TODO: -> Find min and max coordinates in order to make our matrix of variable size depending on the XML file.
- * 			We need to include a method that finds these coordinates and passes them to the matrix constructor...
- * 			Maybe we could make a new Matrix object in our City constructor (Since we have parsed the city by then) and copy construct our city's matrix with the new one we made? :D
- *
- * TODO: -> Output
- * 	        What we have so far is friggin' awesome. Great work with adding the coordinates!
- * 	        What we need more:
- *
- * 	        Burning houses:
- * 	        	-> House on location (x,y)
- * 	        Firetrucks on their way:
- * 	        	-> {FIRETRUCK NAME} on location (x,y) in Javastreet.
- * 	        Available firetrucks in firedepartment {FIREDEPNAME}:
- * 	        	-> {FIRETRUCK NAME}
- *
- * TODO: Contracts
- *
- * TODO: TESTS, TESTS, TESTS! We need to check whether or not our parser reacts in a proper way if we feed it wrong input.
- *
- *
- */

@@ -1,6 +1,0 @@
-		EMERGENCY SERVICES SIMULATION 
-
-
-Failed to load file: No root element.
-THERE WAS NO ROOT FOUND IN THE XMLFILE !
-

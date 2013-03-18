@@ -1,6 +1,0 @@
-		EMERGENCY SERVICES SIMULATION 
-
-
-Error reading Attributes.
-.XML CONTAINED SYNTAX ERRORS !
-
