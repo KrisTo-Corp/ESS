@@ -500,25 +500,36 @@ Coordinate City::getAdjecantStreet(CityObjects* building, Coordinate truckLoc) {
 			location.setY(location.getY()-y);
 
 			if (location.getY() < matrix.getRows()-1) {
-				if(matrix.getObject(location.getX(), location.getY()+1)->getType() == street){
+				if (matrix.getObject(location.getX(), location.getY()+1) == NULL) {
+					continue;
+				}
+				else if(matrix.getObject(location.getX(), location.getY()+1)->getType() == street){
 					coordinates.push_back(Coordinate(location.getX(), location.getY()+1));
 				}
 			}
 
 			if (location.getY() > 0){
-				if(matrix.getObject(location.getX(), location.getY()-1)->getType() == street){
+				if (matrix.getObject(location.getX(), location.getY()-1) == NULL) {
+					continue;
+				}
+				else if(matrix.getObject(location.getX(), location.getY()-1)->getType() == street){
 					coordinates.push_back(Coordinate(location.getX(), location.getY()-1));
 				}
 			}
 
 			if (location.getX() < matrix.getColumns()-1){
-				if(matrix.getObject(location.getX()+1, location.getY())->getType() == street){
+				if (matrix.getObject(location.getX()+1, location.getY()) == NULL) {
+					continue;
+				}
+				else if (matrix.getObject(location.getX()+1, location.getY())->getType() == street){
 					coordinates.push_back(Coordinate(location.getX()+1, location.getY()));
 				}
 			}
-
 			if (location.getX() > 0){
-				if(matrix.getObject(location.getX()-1, location.getY())->getType() == street){
+				if (matrix.getObject(location.getX()-1, location.getY()) == NULL) {
+					continue;
+				}
+				else if(matrix.getObject(location.getX()-1, location.getY())->getType() == street){
 					coordinates.push_back(Coordinate(location.getX()-1, location.getY()));
 				}
 			}
@@ -806,6 +817,7 @@ bool City::integrityCheck() {
 		}
 	}
 
+
 	for (std::list<Fire_Department>::iterator itd = departments.begin(); itd != departments.end(); itd++){
 		Coordinate location;
 		CityObjects* ptr = &(*itd);
@@ -829,6 +841,7 @@ bool City::integrityCheck() {
 			}
 		}
 	}
+	std::cout << "deps checked" << std::endl;
 
 	for (std::list<Street>::iterator its = streets.begin(); its != streets.end(); its++){
 		Coordinate location;
@@ -839,6 +852,9 @@ bool City::integrityCheck() {
 		if (start.getX() == end.getX()){
 			for (int y = start.getY(); y <= end.getY(); y++){
 				location.setY(y);
+				if (matrix.getObject(location.getX(), location.getY()) == NULL) {
+					continue;
+				}
 				if (matrix.getObject(location.getX(), location.getY())->getType() == street){
 					coordinates.push_back(location);
 					Street* ptr = dynamic_cast<Street*>(matrix.getObject(location.getX(), location.getY()));
@@ -847,21 +863,33 @@ bool City::integrityCheck() {
 						integrity = false;
 					}
 					if(location.getX() == 0){
+						if (matrix.getObject(location.getX()+1, location.getY()) == NULL) {
+							continue;
+						}
 						if (matrix.getObject(location.getX()+1, location.getY())->getType() == street){
 							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
 							integrity = false;
 						}
 					}
 					else if (location.getX() == matrix.getColumns()-1){
+						if (matrix.getObject(location.getX()-1, location.getY()) == NULL) {
+							continue;
+						}
 						if (matrix.getObject(location.getX()-1, location.getY())->getType() == street){
 							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
 							integrity = false;
 						}
 					}
 					else {
+						if (matrix.getObject(location.getX()-1, location.getY()) == NULL) {
+							continue;
+						}
 						if (matrix.getObject(location.getX()-1, location.getY())->getType() == street){
 							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
 							integrity = false;
+						}
+						if (matrix.getObject(location.getX()+1, location.getY()) == NULL) {
+							continue;
 						}
 						if (matrix.getObject(location.getX()+1, location.getY())->getType() == street){
 							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
@@ -882,6 +910,9 @@ bool City::integrityCheck() {
 		else if (start.getY() == end.getY()){
 			for (int x = start.getX(); x <= end.getX(); x++){
 				location.setX(x);
+				if (matrix.getObject(location.getX(), location.getY()) == NULL) {
+					continue;
+				}
 				if (matrix.getObject(location.getX(), location.getY())->getType() == street){
 					coordinates.push_back(location);
 					Street* ptr = dynamic_cast<Street*>(matrix.getObject(location.getX(), location.getY()));
@@ -890,21 +921,33 @@ bool City::integrityCheck() {
 						integrity = false;
 					}
 					if(location.getY() == 0){
+						if (matrix.getObject(location.getX(), location.getY()+1) == NULL) {
+							continue;
+						}
 						if (matrix.getObject(location.getX(), location.getY()+1)->getType() == street){
 							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
 							integrity = false;
 						}
 					}
 					else if (location.getY() == matrix.getRows()-1){
+						if (matrix.getObject(location.getX(), location.getY()-1) == NULL) {
+							continue;
+						}
 						if (matrix.getObject(location.getX(), location.getY()-1)->getType() == street){
 							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
 							integrity = false;
 						}
 					}
 					else {
+						if (matrix.getObject(location.getX(), location.getY()-1) == NULL) {
+							continue;
+						}
 						if (matrix.getObject(location.getX(), location.getY()-1)->getType() == street){
 							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
 							integrity = false;
+						}
+						if (matrix.getObject(location.getX(), location.getY()+1) == NULL) {
+							continue;
 						}
 						if (matrix.getObject(location.getX(), location.getY()+1)->getType() == street){
 							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
@@ -923,6 +966,7 @@ bool City::integrityCheck() {
 		}
 	}
 
+	std::cout << "streets fucked" << std::endl;
 
 	for (std::list<Crossroad>::iterator itc = crossroads.begin(); itc != crossroads.end(); itc++){
 		Coordinate location = itc->getLocation();
