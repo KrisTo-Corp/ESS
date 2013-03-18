@@ -76,6 +76,9 @@ std::pair<int, int> City::parseCity(std::string filename) {
 					continue;
 				}
 			}
+			if (!validCoordCheck(x,y)) {
+					continue;
+			}
 			// validcoordcheck here
 			House house(x, y, hp, "house");
 			houses.push_back(house);
@@ -121,6 +124,15 @@ std::pair<int, int> City::parseCity(std::string filename) {
 					continue;
 				}
 			}
+
+			if (!validCoordCheck(x_start,y_start)) {
+				continue;
+			}
+
+			if (!validCoordCheck(x_end,y_end)) {
+				continue;
+			}
+
 			Street street(x_start, y_start, x_end, y_end, name);
 			streets.push_back(street);
 		}
@@ -188,6 +200,15 @@ std::pair<int, int> City::parseCity(std::string filename) {
 
 				}
 			}
+
+			if (!validCoordCheck(x_building,y_building)) {
+				continue;
+			}
+
+			if (!validCoordCheck(x_entrance,y_entrance)) {
+				continue;
+			}
+
 			Fire_Department department(x_building, y_building, x_entrance, y_entrance, name);
 			departments.push_back(department);
 		}

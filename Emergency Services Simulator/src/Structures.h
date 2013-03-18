@@ -51,6 +51,7 @@ public:
 
 };
 
+
 class House: public Structures {
 private:
 	double hitpoints;

@@ -15,6 +15,7 @@
 #include "Coordinate.h"
 #include "Structures.h"
 
+
 class Structures;
 class Fire_Department;
 

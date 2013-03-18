@@ -536,11 +536,11 @@ Coordinate City::getAdjecantStreet(CityObjects* building, Coordinate truckLoc) {
 		}
 	}
 
-	std::pair<double, Coordinate> closest(calculateDistance(*coordinates.begin(), truckLoc), *coordinates.begin());
-
 	if (coordinates.size() == 0){
 		return Coordinate(-1, -1);
 	}
+
+	std::pair<double, Coordinate> closest(calculateDistance(*coordinates.begin(), truckLoc), *coordinates.begin());
 
 	for(std::vector<Coordinate>::iterator it = coordinates.begin(); it != coordinates.end(); it++){
 		if (calculateDistance(*it, truckLoc) < closest.first) {
@@ -790,7 +790,6 @@ Crossroad City::closestCorrectCrossroad(Coordinate cur, Street* destStreet) {
 bool City::integrityCheck() {
 
 	bool integrity = true;
-
 	std::vector<Coordinate> coordinates;
 
 	for (std::list<House>::iterator ith = houses.begin(); ith != houses.end(); ith++){
@@ -817,7 +816,6 @@ bool City::integrityCheck() {
 		}
 	}
 
-
 	for (std::list<Fire_Department>::iterator itd = departments.begin(); itd != departments.end(); itd++){
 		Coordinate location;
 		CityObjects* ptr = &(*itd);
@@ -841,7 +839,6 @@ bool City::integrityCheck() {
 			}
 		}
 	}
-	std::cout << "deps checked" << std::endl;
 
 	for (std::list<Street>::iterator its = streets.begin(); its != streets.end(); its++){
 		Coordinate location;
@@ -965,8 +962,6 @@ bool City::integrityCheck() {
 			}
 		}
 	}
-
-	std::cout << "streets fucked" << std::endl;
 
 	for (std::list<Crossroad>::iterator itc = crossroads.begin(); itc != crossroads.end(); itc++){
 		Coordinate location = itc->getLocation();

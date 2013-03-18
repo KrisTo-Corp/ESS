@@ -15,6 +15,7 @@
 #include "Coordinate.h"
 #include "CityObjects.h"
 
+
 class Roads: public CityObjects {
 protected:
 	std::string name;

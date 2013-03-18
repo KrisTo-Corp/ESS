@@ -10,6 +10,7 @@
 
 #include "Roads.h"
 
+
 //================
 //	CLASS ROADS
 //================
@@ -94,6 +95,7 @@ Street& Street::operator = (const Street& s) {
 	_initCheck = this;
 	return *this;
 }
+
 
 //===================
 //	CLASS CROSSROAD

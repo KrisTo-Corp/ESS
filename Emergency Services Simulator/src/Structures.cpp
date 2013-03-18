@@ -9,6 +9,7 @@
 
 #include <iostream>
 
+
 //=====================
 //	CLASS STRUCTURES
 //=====================
@@ -62,6 +63,7 @@ Structures& Structures::operator =(const Structures& c){
 
 	return *this;
 }
+
 
 
 //================
@@ -123,6 +125,7 @@ double House::getHP(){
 
 	return hitpoints;
 }
+
 
 //==========================
 //	CLASS FIRE DEPARTMENTS
