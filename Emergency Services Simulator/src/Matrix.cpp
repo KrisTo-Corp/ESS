@@ -151,11 +151,13 @@ bool Matrix::properlyInitialized(int x, int y){
 std::ostream& operator <<(std::ostream& s, Matrix& m){
 	REQUIRE(m.properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addHouses().");
 
+	s << "\nMAP: \n";
+	s << "----\n";
 	for(int i = 0; i < m.rows; i++){
 		s << m.rows-1-i << "\t[\t";
 		for(int j = 0; j < m.columns; j++){
 			if(m.matrix[i][j] == NULL){
-				s << "NULL\t";
+				s << "?\t";
 			}
 			else if(m.matrix[i][j]->getType() == house){
 				s << "H\t";
@@ -170,7 +172,7 @@ std::ostream& operator <<(std::ostream& s, Matrix& m){
 				s << "C\t";
 			}
 			else{
-				s << "unknown\t";
+				s << "?\t";
 			}
 		}
 		s << "]\n";
@@ -179,7 +181,7 @@ std::ostream& operator <<(std::ostream& s, Matrix& m){
 	for (int i = 0; i < m.columns; i++){
 		s << i << "\t";
 	}
-	s << "\n";
+	s << "\n\n\t\tH = HOUSE\t D = FIRE DEPARTMENT\t S = STREET\t C = CROSSROAD\t ? = UNKNOWN\n\n";
 
 	return s;
 }
