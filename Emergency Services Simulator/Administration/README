@@ -1,0 +1,5 @@
+Download gtest1.6 zip
+cmake CMakeLists.txt
+make
+
+make lib folder with .a
