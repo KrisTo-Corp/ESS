@@ -152,7 +152,7 @@ std::ostream& operator <<(std::ostream& s, Matrix& m){
 	REQUIRE(m.properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addHouses().");
 
 	s << "\nMAP: \n";
-	s << "----\n";
+	s << "====\n\n";
 	for(int i = 0; i < m.rows; i++){
 		s << m.rows-1-i << "\t[\t";
 		for(int j = 0; j < m.columns; j++){
@@ -181,7 +181,7 @@ std::ostream& operator <<(std::ostream& s, Matrix& m){
 	for (int i = 0; i < m.columns; i++){
 		s << i << "\t";
 	}
-	s << "\n\n\t\tH = HOUSE\t D = FIRE DEPARTMENT\t S = STREET\t C = CROSSROAD\t ? = UNKNOWN\n\n";
+	s << "\n\n\t\tH = HOUSE\t D = FIRE DEPARTMENT\t S = STREET\t C = CROSSROAD\t ? = UNKNOWN\n";
 
 	return s;
 }

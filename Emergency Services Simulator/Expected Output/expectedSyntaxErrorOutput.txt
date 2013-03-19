@@ -1,6 +1,13 @@
-		EMERGENCY SERVICES SIMULATION 
-
+								EMERGENCY SERVICES SIMULATION 
+								============================= 
 
 Error reading Attributes.
-.XML CONTAINED SYNTAX ERRORS !
+ERROR: .XML CONTAINED SYNTAX ERRORS !
+
+
+SIMULATION:
+==========
+
+
+	 CITY WAS NOT VALID
 

@@ -4,3 +4,10 @@
 Failed to load file: No root element.
 ERROR: THERE WAS NO ROOT FOUND IN THE XMLFILE !
 
+
+SIMULATION:
+==========
+
+
+	 CITY WAS NOT VALID
+

@@ -4,3 +4,10 @@
 Error reading Attributes.
 ERROR: .XML CONTAINED SYNTAX ERRORS !
 
+
+SIMULATION:
+==========
+
+
+	 CITY WAS NOT VALID
+

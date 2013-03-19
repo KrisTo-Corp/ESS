@@ -4,3 +4,10 @@
 Chalet is not a valid object.
 ERROR: THERE WAS FOUND AN OBJECT THAT'S NOT SUPPORTED !
 
+
+SIMULATION:
+==========
+
+
+	 CITY WAS NOT VALID
+

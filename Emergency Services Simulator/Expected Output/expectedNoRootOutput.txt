@@ -1,6 +1,13 @@
-		EMERGENCY SERVICES SIMULATION 
-
+								EMERGENCY SERVICES SIMULATION 
+								============================= 
 
 Failed to load file: No root element.
-THERE WAS NO ROOT FOUND IN THE XMLFILE !
+ERROR: THERE WAS NO ROOT FOUND IN THE XMLFILE !
+
+
+SIMULATION:
+==========
+
+
+	 CITY WAS NOT VALID
 

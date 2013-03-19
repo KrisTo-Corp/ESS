@@ -3,7 +3,8 @@
 
 
 MAP: 
-----
+====
+
 8	[	H	H	H	H	S	D	D	D	D	]
 7	[	H	H	H	H	S	D	D	D	D	]
 6	[	H	H	H	H	S	D	D	D	D	]
@@ -19,11 +20,15 @@ MAP:
 		H = HOUSE	 D = FIRE DEPARTMENT	 S = STREET	 C = CROSSROAD	 ? = UNKNOWN
 
 
+INTEGRITYCHECK: 
+===============
+	ERROR: House at location (0, 8) doesn't have a street linked to it.
+	ERROR: House at location (0, 1) doesn't have a street linked to it.
+	ERROR: House at location (7, 1) doesn't have a street linked to it.
+
+SIMULATION:
+==========
 
 
-ERROR: House at location (0, 8) doesn't have a street linked to it.
-ERROR: House at location (0, 1) doesn't have a street linked to it.
-ERROR: House at location (7, 1) doesn't have a street linked to it.
+	 CITY WAS NOT VALID
 
-
-THE GENERATED CITY WAS NOT VALID !

@@ -3,7 +3,8 @@
 
 
 MAP: 
-----
+====
+
 15	[	C	S	S	S	S	S	S	C	S	S	S	S	S	S	S	S	C	S	S	S	S	C	]
 14	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
 13	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
@@ -26,9 +27,13 @@ MAP:
 		H = HOUSE	 D = FIRE DEPARTMENT	 S = STREET	 C = CROSSROAD	 ? = UNKNOWN
 
 
+INTEGRITYCHECK: 
+===============
+	ERROR: Empty spots were found in the city.
+
+SIMULATION:
+==========
 
 
-ERROR: Empty spots were found in the city.
+	 CITY WAS NOT VALID
 
-
-THE GENERATED CITY WAS NOT VALID !

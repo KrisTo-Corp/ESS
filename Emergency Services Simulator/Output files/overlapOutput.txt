@@ -3,7 +3,8 @@
 
 
 MAP: 
-----
+====
+
 15	[	C	S	S	S	S	S	S	C	S	S	S	S	S	S	S	S	C	S	S	S	S	C	]
 14	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
 13	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
@@ -26,17 +27,21 @@ MAP:
 		H = HOUSE	 D = FIRE DEPARTMENT	 S = STREET	 C = CROSSROAD	 ? = UNKNOWN
 
 
+INTEGRITYCHECK: 
+===============
+	ERROR: House at location (19, 2) is supposed to be at (19, 2) but is not.
+	ERROR: House at location (19, 2) is supposed to be at (19, 1) but is not.
+	ERROR: House at location (19, 2) is supposed to be at (20, 2) but is not.
+	ERROR: House at location (19, 2) is supposed to be at (20, 1) but is not.
+	ERROR: Overlap found at location (19, 2).
+	ERROR: Overlap found at location (19, 1).
+	ERROR: Overlap found at location (20, 2).
+	ERROR: Overlap found at location (20, 1).
+	ERROR: Empty spots were found in the city.
+
+SIMULATION:
+==========
 
 
-ERROR: House at location (19, 2) is supposed to be at (19, 2) but is not.
-ERROR: House at location (19, 2) is supposed to be at (19, 1) but is not.
-ERROR: House at location (19, 2) is supposed to be at (20, 2) but is not.
-ERROR: House at location (19, 2) is supposed to be at (20, 1) but is not.
-ERROR: Overlap found at location (19, 2).
-ERROR: Overlap found at location (19, 1).
-ERROR: Overlap found at location (20, 2).
-ERROR: Overlap found at location (20, 1).
-ERROR: Empty spots were found in the city.
+	 CITY WAS NOT VALID
 
-
-THE GENERATED CITY WAS NOT VALID !
