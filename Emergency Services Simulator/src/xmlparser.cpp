@@ -1,3 +1,11 @@
+//=======================================================================================
+// Name        : xmlparser.cpp
+// Author      : Kristof De Middelaer & Tom Roels
+// Version     : 1.0
+// Copyright   : Project Software Engineering - BA1 Informatica - University of Antwerp
+// Description : City in C++, Ansi-style
+//=======================================================================================
+
 #include <iostream>
 #include <vector>
 #include <cstdlib>
