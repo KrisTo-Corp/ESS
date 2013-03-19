@@ -21,24 +21,25 @@ City::City(const std::string filename, std::string outputname): output(outputnam
 
 	validCity = true;
 
-	output << "\t\tEMERGENCY SERVICES SIMULATION \n\n\n";
+	output << "\t\t\t\t\t\t\t\tEMERGENCY SERVICES SIMULATION \n";
+	output << "\t\t\t\t\t\t\t\t============================= \n\n";
 
 	std::pair<int, int> maxCoords =	parseCity(filename);
 
 	if(maxCoords.first == -1 && maxCoords.second == -1){
-		output << ".XML CONTAINED SYNTAX ERRORS !\n\n";
+		output << "ERROR: .XML CONTAINED SYNTAX ERRORS !\n\n";
 		validCity = false;
 		return;
 	}
 
 	else if(maxCoords.first == -2 && maxCoords.second == -2){
-		output << "THERE WAS NO ROOT FOUND IN THE XMLFILE !\n\n";
+		output << "ERROR: THERE WAS NO ROOT FOUND IN THE XMLFILE !\n\n";
 		validCity = false;
 		return;
 	}
 
 	else if(maxCoords.first == -3 && maxCoords.second == -3){
-		output << "THERE WAS FOUND AN OBJECT THAT'S NOT SUPPORTED !\n\n";
+		output << "ERROR: THERE WAS FOUND AN OBJECT THAT'S NOT SUPPORTED !\n\n";
 		validCity = false;
 		return;
 	}
@@ -72,13 +73,13 @@ City::City(const std::string filename, std::string outputname): output(outputnam
 		it->resetInit();
 	}
 
+	output << matrix << "\n\n\n";
+
 	if (!(integrityCheck())){
-		output << "THE GENERATED CITY WAS NOT VALID !\n";
+		output << "\n\nTHE GENERATED CITY WAS NOT VALID !\n";
 		validCity = false;
 		return;
 	}
-
-	output << matrix << "\n\n\n";
 
 	_initCheck = this;
 
@@ -829,7 +830,7 @@ bool City::integrityCheck() {
 		if (getAdjecantStreet(ptr, Coordinate(0, 0)) == Coordinate(-1, -1)){
 			House* houseptr = dynamic_cast<House*>(ptr);
 			Coordinate houselocation = houseptr->getLocation();
-			output << "House at location "<< houselocation << " doesn't have a street linked to it.\n";
+			output << "ERROR: House at location "<< houselocation << " doesn't have a street linked to it.\n";
 			integrity = false;
 		}
 		for (int x = 0; x < 2; x++){
@@ -839,7 +840,7 @@ bool City::integrityCheck() {
 				location.setY(location.getY()-y);
 				if (matrix.getObject(location.getX(), location.getY()) != &(*ith)){
 					Coordinate houselocation = ith->getLocation();
-					output << "House at location " << houselocation << " is supposed to be at " << location << " but is not.\n";
+					output << "ERROR: House at location " << houselocation << " is supposed to be at " << location << " but is not.\n";
 					integrity = false;
 				}
 				coordinates.push_back(location);
@@ -853,7 +854,7 @@ bool City::integrityCheck() {
 		if (getAdjecantStreet(ptr, Coordinate(0, 0)) == Coordinate(-1, -1)){
 			Fire_Department* depptr = dynamic_cast<Fire_Department*>(ptr);
 			Coordinate deplocation = depptr->getLocation();
-			output << "Department at location "<< deplocation << " doesn't have a street linked to it.\n";
+			output << "ERROR: Department at location "<< deplocation << " doesn't have a street linked to it.\n";
 			integrity = false;
 		}
 		for (int x = 0; x < 4; x++){
@@ -863,7 +864,7 @@ bool City::integrityCheck() {
 				location.setY(location.getY()-y);
 				if (matrix.getObject(location.getX(), location.getY()) != &(*itd)){
 					Coordinate deplocation = itd->getLocation();
-					output << "Department at location " << deplocation << " is supposed to be at " << location << " but is not.\n";
+					output << "ERROR: Department at location " << deplocation << " is supposed to be at " << location << " but is not.\n";
 					integrity = false;
 				}
 				coordinates.push_back(location);
@@ -887,7 +888,7 @@ bool City::integrityCheck() {
 					coordinates.push_back(location);
 					Street* ptr = dynamic_cast<Street*>(matrix.getObject(location.getX(), location.getY()));
 					if (its->getName() != ptr->getName()){
-						output << "Street " << its->getName() << " was supposed to be found on location " << location << " but is not.\n";
+						output << "ERROR: Street " << its->getName() << " was supposed to be found on location " << location << " but is not.\n";
 						integrity = false;
 					}
 					if(location.getX() == 0){
@@ -895,7 +896,7 @@ bool City::integrityCheck() {
 							continue;
 						}
 						if (matrix.getObject(location.getX()+1, location.getY())->getType() == street){
-							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
+							output << "ERROR: Street " << its->getName() << " on location " << location << " was more than one wide.\n";
 							integrity = false;
 						}
 					}
@@ -904,7 +905,7 @@ bool City::integrityCheck() {
 							continue;
 						}
 						if (matrix.getObject(location.getX()-1, location.getY())->getType() == street){
-							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
+							output << "ERROR: Street " << its->getName() << " on location " << location << " was more than one wide.\n";
 							integrity = false;
 						}
 					}
@@ -913,14 +914,14 @@ bool City::integrityCheck() {
 							continue;
 						}
 						if (matrix.getObject(location.getX()-1, location.getY())->getType() == street){
-							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
+							output << "ERROR: Street " << its->getName() << " on location " << location << " was more than one wide.\n";
 							integrity = false;
 						}
 						if (matrix.getObject(location.getX()+1, location.getY()) == NULL) {
 							continue;
 						}
 						if (matrix.getObject(location.getX()+1, location.getY())->getType() == street){
-							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
+							output << "ERROR: Street " << its->getName() << " on location " << location << " was more than one wide.\n";
 							integrity = false;
 						}
 					}
@@ -928,7 +929,7 @@ bool City::integrityCheck() {
 				else if (matrix.getObject(location.getX(), location.getY())->getType() == crossroad){
 					Crossroad* ptr = dynamic_cast<Crossroad*>(matrix.getObject(location.getX(), location.getY()));
 					if ((its->getName() != ptr->getStreet1()) && (its->getName() != ptr->getStreet2())){
-						output << "Street " << its->getName() << " was supposed to be found on location " << location << " but is not. (as a crossroad)\n";
+						output << "ERROR: Street " << its->getName() << " was supposed to be found on location " << location << " but is not. (as a crossroad)\n";
 						integrity = false;
 					}
 				}
@@ -945,7 +946,7 @@ bool City::integrityCheck() {
 					coordinates.push_back(location);
 					Street* ptr = dynamic_cast<Street*>(matrix.getObject(location.getX(), location.getY()));
 					if (its->getName() != ptr->getName()){
-						output << "Street " << its->getName() << " was supposed to be found on location " << location << " but is not.\n";
+						output << "ERROR: Street " << its->getName() << " was supposed to be found on location " << location << " but is not.\n";
 						integrity = false;
 					}
 					if(location.getY() == 0){
@@ -953,7 +954,7 @@ bool City::integrityCheck() {
 							continue;
 						}
 						if (matrix.getObject(location.getX(), location.getY()+1)->getType() == street){
-							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
+							output << "ERROR: Street " << its->getName() << " on location " << location << " was more than one wide.\n";
 							integrity = false;
 						}
 					}
@@ -962,7 +963,7 @@ bool City::integrityCheck() {
 							continue;
 						}
 						if (matrix.getObject(location.getX(), location.getY()-1)->getType() == street){
-							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
+							output << "ERROR: Street " << its->getName() << " on location " << location << " was more than one wide.\n";
 							integrity = false;
 						}
 					}
@@ -971,14 +972,14 @@ bool City::integrityCheck() {
 							continue;
 						}
 						if (matrix.getObject(location.getX(), location.getY()-1)->getType() == street){
-							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
+							output << "ERROR: Street " << its->getName() << " on location " << location << " was more than one wide.\n";
 							integrity = false;
 						}
 						if (matrix.getObject(location.getX(), location.getY()+1) == NULL) {
 							continue;
 						}
 						if (matrix.getObject(location.getX(), location.getY()+1)->getType() == street){
-							output << "Street " << its->getName() << " on location " << location << " was more than one wide.\n";
+							output << "ERROR: Street " << its->getName() << " on location " << location << " was more than one wide.\n";
 							integrity = false;
 						}
 					}
@@ -986,7 +987,7 @@ bool City::integrityCheck() {
 				else if (matrix.getObject(location.getX(), location.getY())->getType() == crossroad){
 					Crossroad* ptr = dynamic_cast<Crossroad*>(matrix.getObject(location.getX(), location.getY()));
 					if ((its->getName() != ptr->getStreet1()) && (its->getName() != ptr->getStreet2())){
-						output << "Street " << its->getName() << " was supposed to be found on location " << location << " but is not. (as a crossroad)\n";
+						output << "ERROR: Street " << its->getName() << " was supposed to be found on location " << location << " but is not. (as a crossroad)\n";
 						integrity = false;
 					}
 				}
@@ -997,7 +998,7 @@ bool City::integrityCheck() {
 	for (std::list<Crossroad>::iterator itc = crossroads.begin(); itc != crossroads.end(); itc++){
 		Coordinate location = itc->getLocation();
 		if (matrix.getObject(location.getX(), location.getY()) != &(*itc)){
-			output << "Crossroad " << itc->getName() << " was supposed to be found on location " << location << " but is not.\n";
+			output << "ERROR: Crossroad " << itc->getName() << " was supposed to be found on location " << location << " but is not.\n";
 			integrity = false;
 		}
 		coordinates.push_back(location);
@@ -1008,14 +1009,14 @@ bool City::integrityCheck() {
 	for (int i = 0; i < coordinates.size(); i++){
 		for (int j = i+1; j < coordinates.size(); j++){
 			if (coordinates[i] == coordinates[j]){
-				output << "There is an overlap at location " << coordinates[i] << ".\n";
+				output << "ERROR: Overlap found at location " << coordinates[i] << ".\n";
 				integrity = false;
 			}
 		}
 	}
 
 	if (coordinates.size() != matrix.getRows()*matrix.getColumns()){
-		output << "There were empty spots found in the city\n";
+		output << "ERROR: Empty spots were found in the city.\n";
 		integrity = false;
 	}
 
@@ -1028,7 +1029,7 @@ bool City::integrityCheck() {
 			}
 		}
 		if (found == false){
-			output << "Truck with name " << itt->getName() << " was not linked to a base.\n";
+			output << "ERROR: Truck with name " << itt->getName() << " was not linked to a base.\n";
 			integrity = false;
 		}
 	}

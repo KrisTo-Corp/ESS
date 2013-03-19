@@ -1,18 +1,47 @@
-		EMERGENCY SERVICES SIMULATION 
-
+								EMERGENCY SERVICES SIMULATION 
+								============================= 
 
 A coordinate can not be negative! Coordinate read: (-1,15)
 A coordinate can not be negative! Coordinate read: (-1,15)
 A coordinate can not be negative! Coordinate read: (0,-3)
 A coordinate can not be negative! Coordinate read: (-9,10)
 A coordinate can not be negative! Coordinate read: (0,-3)
-House at location (3, 14) doesn't have a street linked to it.
-House at location (10, 14) doesn't have a street linked to it.
-House at location (12, 14) doesn't have a street linked to it.
-House at location (3, 12) doesn't have a street linked to it.
-House at location (10, 12) doesn't have a street linked to it.
-House at location (12, 12) doesn't have a street linked to it.
-House at location (3, 9) doesn't have a street linked to it.
-House at location (12, 9) doesn't have a street linked to it.
-There were empty spots found in the city
+
+MAP: 
+----
+15	[	S	?	?	?	?	?	?	S	?	?	?	?	?	?	?	?	S	?	?	?	?	S	]
+14	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+13	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+12	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+11	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+10	[	S	?	?	?	?	?	?	S	?	?	?	?	?	?	?	?	S	?	?	?	?	S	]
+9	[	S	H	H	H	H	H	H	S	D	D	D	D	H	H	H	H	S	H	H	H	H	S	]
+8	[	S	H	H	H	H	H	H	S	D	D	D	D	H	H	H	H	S	H	H	H	H	S	]
+7	[	S	H	H	H	H	H	H	S	D	D	D	D	H	H	H	H	S	H	H	H	H	S	]
+6	[	S	H	H	H	H	H	H	S	D	D	D	D	H	H	H	H	S	H	H	H	H	S	]
+5	[	C	S	S	S	S	S	S	C	S	S	S	S	S	S	S	S	C	S	S	S	S	C	]
+4	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+3	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+2	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+1	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+0	[	C	S	S	S	S	S	S	C	S	S	S	S	S	S	S	S	C	S	S	S	S	C	]
+
+		0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STREET	 C = CROSSROAD	 ? = UNKNOWN
+
+
+
+
+ERROR: House at location (3, 14) doesn't have a street linked to it.
+ERROR: House at location (10, 14) doesn't have a street linked to it.
+ERROR: House at location (12, 14) doesn't have a street linked to it.
+ERROR: House at location (3, 12) doesn't have a street linked to it.
+ERROR: House at location (10, 12) doesn't have a street linked to it.
+ERROR: House at location (12, 12) doesn't have a street linked to it.
+ERROR: House at location (3, 9) doesn't have a street linked to it.
+ERROR: House at location (12, 9) doesn't have a street linked to it.
+ERROR: Empty spots were found in the city.
+
+
 THE GENERATED CITY WAS NOT VALID !
