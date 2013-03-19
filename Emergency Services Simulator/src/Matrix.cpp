@@ -139,7 +139,7 @@ void Matrix::addObject(int x, int y, CityObjects*& object){
 
 CityObjects* Matrix::getObject(int x, int y) {
 	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getObject().");
-	//TODO: arbitrary size of matrix
+	REQUIRE(x >= 0 && x < getColumns() && y >= 0 && y < getRows(), "Parameters x and/or y are wrong!");
 
 	return matrix[rows-1-y][x];
 }

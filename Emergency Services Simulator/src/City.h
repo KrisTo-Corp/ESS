@@ -39,14 +39,10 @@ private:
 	Matrix matrix;
 
 public:
-	bool properlyInitialized(int, int);
-
 	City();
 
 	City(std::string filename, std::string outputname);
 //	ENSURE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized.");
-
-	virtual ~City();
 
 	friend std::ostream& operator <<(std::ostream& s, City& city);
 //	REQUIRE(city.properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling overloaded operator '<<'");
@@ -67,7 +63,10 @@ public:
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountTrucks()");
 
 	CityObjects* getObject(int, int);
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountTrucks()");
+
 	Firetruck* getTruck(int);
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountTrucks()");
 
 	City& operator =(const City&);
 
@@ -79,20 +78,13 @@ public:
 
 	void close();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling close()");
-//	ENSURE(!is_open, "File did not close properly when calling close()");
-
-	bool properlyInitialized();
+//	ENSURE(!(output.is_open()), "File did not close properly when calling close()");
 
 	std::pair<int, int> parseCity(std::string filename);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling parseCity()");
-//	ENSURE(returnVal != NULL, "parseCity() did not return a pair.");
-
-	void link_trucks_to_bases();
 
 	bool validCoordCheck(int x, int y);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling validCoordCheck()");
-
-	int compareCoord(int, int);
 
 	CityObjects* setFire();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling setFire()");
@@ -104,27 +96,19 @@ public:
 
 	Coordinate getAdjecantStreet(CityObjects*, Coordinate);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAdjecantStreet()");
-//	REQUIRE(Coordinate != NULL, "Argument Coordinate was not a valid Coordinate.");
-//	ENSURE(returnValue != NULL, "getAdjecantStreet() did not return a valid Coordinate.");
 
 	std::string checkOrientation(Coordinate);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling checkOrientation()");
-// 	REQUIRE(matrix.getObject(coord.getX(), coord.getY())->getType() == roads, "I can not determine the orientation of anything non-street.");
-//	REQUIRE(Coordinate != NULL, "Argument Coordinate was not a valid Coordinate.");
+//	REQUIRE((matrix.getObject(coord.getX(), coord.getY()))->getType() == street || (matrix.getObject(coord.getX(), coord.getY()))->getType() == crossroad, "I can not determine the orientation of anything non-street.");
 
 	Crossroad closestCorrectCrossroad(Coordinate, Street*);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling closestCorrectCrossroad()");
-//	REQUIRE(Coordinate != NULL, "Argument Coordinate was not a valid Coordinate.");
-//	ENSURE(returnValue != NULL, "closestCorrectCrossroad() did not return a valid Coordinate.");
 
 	Crossroad closestCrossroad(Coordinate);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling closestCrossroad()");
-//	REQUIRE(Coordinate != NULL, "Argument Coordinate was not a valid Coordinate.");
-//	ENSURE(returnValue != NULL, "closestCrossroad() did not return a valid Coordinate.");
 
 	int calculateDistance(Coordinate, Coordinate);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling calculateDistance()");
-//	REQUIRE(Coordinate != NULL, "Coordinate arguments were not valid Coordinates.");
 
 	void driveTruck(Firetruck*);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling driveTruck()");
@@ -132,6 +116,15 @@ public:
 	bool integrityCheck();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling integrityCheck()");
 
+	int compareCoord(int, int);
+
+	void link_trucks_to_bases();
+
+	bool properlyInitialized(int, int);
+
+	bool properlyInitialized();
+
+	virtual ~City();
 };
 
 #endif /* CITY_H_ */

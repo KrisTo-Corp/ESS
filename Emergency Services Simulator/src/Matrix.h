@@ -26,7 +26,6 @@ private:
 	Matrix* _initCheck;
 
 public:
-	bool properlyInitialized(int, int);
 
 	int getTotalLength();
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getTotalLength().");
@@ -36,8 +35,6 @@ public:
 
 	Matrix(int r, int c);
 //	ENSURE(properlyInitialized(), "Object 'Matrix' was not properly initialized.");
-
-	virtual ~Matrix();
 
 	void addHouses(std::list<House>& list);
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addHouses().");
@@ -55,16 +52,12 @@ public:
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addObject().");
 //	ENSURE(getObject(x, y) == object, "Added object " + object + " was not added correctly.");
 
-	CityObjects* getObject(int, int);
+	CityObjects* getObject(int x, int y);
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getObject().");
-
+//	REQUIRE(x >= 0 && x < getColumns() && y >= 0 && y < getRows(), "Parameters x and/or y are wrong!");
 
 	friend std::ostream& operator <<(std::ostream& s, Matrix& m);
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addHouses().");
-
-	Matrix& operator =(const Matrix&);
-
-	void resetInit();
 
 	int getRows();
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getRows().");
@@ -72,8 +65,15 @@ public:
 	int getColumns();
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getColumns().");
 
+	Matrix& operator =(const Matrix&);
+
+	void resetInit();
 
 	bool properlyInitialized();
+
+	bool properlyInitialized(int, int);
+
+	virtual ~Matrix();
 };
 
 #endif /* MATRIX_H_ */

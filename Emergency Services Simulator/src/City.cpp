@@ -20,6 +20,7 @@ City::City(){
 City::City(const std::string filename, std::string outputname): output(outputname.c_str()){
 
 	validCity = true;
+	_initCheck = this;
 
 	output << "\t\t\t\t\t\t\t\tEMERGENCY SERVICES SIMULATION \n";
 	output << "\t\t\t\t\t\t\t\t============================= \n\n";
@@ -85,7 +86,6 @@ City::City(const std::string filename, std::string outputname): output(outputnam
 		output << "\tPASSED\n\n";
 	}
 
-	_initCheck = this;
 
 	ENSURE(properlyInitialized(), "Object 'City' was not properly initialized.");
 }
@@ -128,10 +128,14 @@ int City::getAmountTrucks(){
 }
 
 CityObjects* City::getObject(int x, int y){
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getObject()");
+
 	return matrix.getObject(x, y);
 }
 
 Firetruck* City::getTruck(int loop){
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getTruck()");
+
 	std::list<Firetruck>::iterator it = trucks.begin();
 	for (int i = 0; i < loop; i++){
 		it++;
@@ -228,7 +232,7 @@ CityObjects* City::setFire(int x, int y){
 }
 
 void City::update() {
-	//REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling update()");
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling update()");
 
 	output << "\nSIMULATION:";
 	output << "\n==========\n\n";
@@ -372,7 +376,7 @@ void City::update() {
 }
 
 void City::update_test() {
-	//REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling update_test()");
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling update_test()");
 
 	output << "\nSIMULATION:";
 	output << "\n==========\n\n";
@@ -532,8 +536,7 @@ void City::update_test() {
 
 
 Coordinate City::getAdjecantStreet(CityObjects* building, Coordinate truckLoc) {
-	// REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAdjecantStreet()");
-	//REQUIRE(truckLoc != NULL, "Argument Coordinate was not a valid Coordinate.");
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAdjecantStreet()");
 
 	Structures* ptr = dynamic_cast<Structures*>(building);
 	std::vector<Coordinate> coordinates;
@@ -601,7 +604,7 @@ Coordinate City::getAdjecantStreet(CityObjects* building, Coordinate truckLoc) {
 
 std::string City::checkOrientation(Coordinate coord) {
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling checkOrientation()");
- 	//REQUIRE((matrix.getObject(coord.getX(), coord.getY()))->getType() == road, "I can not determine the orientation of anything non-street.");
+	REQUIRE((matrix.getObject(coord.getX(), coord.getY()))->getType() == street || (matrix.getObject(coord.getX(), coord.getY()))->getType() == crossroad, "I can not determine the orientation of anything non-street.");
 
 	std::string result;
 
@@ -682,7 +685,7 @@ Crossroad City::closestCrossroad(Coordinate coord) {
 }
 
 int City::calculateDistance(Coordinate c1, Coordinate c2) {
-//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling calculateDistance()");
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling calculateDistance()");
 
 	int distance = sqrt(pow(c2.getX() - c1.getX(), 2) + pow(c2.getY() - c1.getY(), 2));
 	return distance;
@@ -699,7 +702,6 @@ void City::driveTruck(Firetruck* rescueTruck) {
 	}
 
 	Street* destStreet = dynamic_cast<Street*>(matrix.getObject(destination.getX(), destination.getY()));
-	// Scenario 1: rescueTruck is in the same street as destination.
 	if (checkOrientation(rescueTruck->getCoord()) == "crossroad") {
 		Crossroad* truckCross = dynamic_cast<Crossroad*>(matrix.getObject(rescueTruck->getCoord().getX(), rescueTruck->getCoord().getY()));
 		if (truckCross->getStreet1() == destStreet->getName() || truckCross->getStreet2() == destStreet->getName()) {
@@ -843,7 +845,7 @@ Crossroad City::closestCorrectCrossroad(Coordinate cur, Street* destStreet) {
 }
 
 bool City::integrityCheck() {
-	//REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling integrityCheck()");
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling integrityCheck()");
 
 	bool integrity = true;
 	std::vector<Coordinate> coordinates;
@@ -1061,7 +1063,11 @@ bool City::integrityCheck() {
 }
 
 void City::close(){
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling close()");
+
 	output.close();
+
+	ENSURE(!(output.is_open()), "File did not close properly when calling close()");
 }
 
 

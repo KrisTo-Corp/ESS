@@ -43,8 +43,11 @@ public:
 //	ENSURE((getY() == val), "Coordinate's y didn't match setted y.");
 
 	friend std::ostream& operator <<(std::ostream& s, Coordinate& coordinate);
+
 	bool operator==(const Coordinate &c) const;
+
 	bool operator!=(const Coordinate &c) const;
+
 	Coordinate& operator= (const Coordinate &cSource);
 
 	bool properlyInitialized();

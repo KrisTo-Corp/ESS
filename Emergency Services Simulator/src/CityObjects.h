@@ -30,8 +30,6 @@ public:
 	CityObjects(Eobjects type);
 //	ENSURE(init(), "Object 'CityObjects' was not properly initialized.");
 
-	virtual ~CityObjects();
-
 	Eobjects getType();
 //	REQUIRE(this->init(), "Object 'CityObjects' was not properly initialized when calling getType()");
 
@@ -42,7 +40,10 @@ public:
 // 	REQUIRE(init(), "Object 'CityObjects' was not properly initialized when calling setState()");
 // 	ENSURE((getState() == s), "Setted state does not match object's state.");
 
+	virtual ~CityObjects();
+
 	virtual bool init();
+
 	void resetInit();
 
 	CityObjects& operator = (const CityObjects& c);

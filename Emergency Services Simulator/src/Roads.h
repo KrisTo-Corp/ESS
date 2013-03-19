@@ -27,12 +27,12 @@ public:
 	Roads(const std::string, Eobjects);
 //	ENSURE(init(), "Object 'Roads' was not properly initialized.");
 
-	virtual ~Roads();
-
 	std::string getName();
 //	REQUIRE(init(), "Object 'Roads' was not properly initialized when calling getName()");
 
 	Roads& operator = (const Roads&);
+
+	virtual ~Roads();
 };
 
 
@@ -49,8 +49,6 @@ public:
 	Street(const int x_start, const int y_start, const int x_end, const int y_end, const std::string n);
 //	ENSURE(init(), "Object 'Street' was not properly initialized.");
 
-	virtual ~Street();
-
 	Coordinate getStart();
 //	REQUIRE(init(), "Object 'Street' was not properly initialized when calling getStart()");
 
@@ -58,7 +56,10 @@ public:
 //	REQUIRE(init(), "Object 'Street' was not properly initialized when calling getEnd()");
 
 	friend std::ostream& operator <<(std::ostream& s, Street& street);
+
 	Street& operator = (const Street&);
+
+	virtual ~Street();
 };
 
 
@@ -76,8 +77,6 @@ public:
 	Crossroad(const int x, const int y, const std::string n, std::string, std::string);
 //	ENSURE(init(), "Object 'Crossroad' was not properly initialized.");
 
-	virtual ~Crossroad();
-
 	Coordinate getLocation();
 //	REQUIRE(init(), "Object 'Crossroad' was not properly initialized when calling getLocation()");
 
@@ -90,6 +89,8 @@ public:
 	friend std::ostream& operator <<(std::ostream& s, Crossroad& crossroad);
 
 	Crossroad& operator = (const Crossroad&);
+
+	virtual ~Crossroad();
 };
 
 #endif /* ROADS_H_ */

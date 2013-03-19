@@ -64,13 +64,13 @@ Street::~Street()
 }
 
 Coordinate Street::getStart(){
-	//REQUIRE(init(), "Object 'Street' was not properly initialized when calling getStart()");
+	REQUIRE(init(), "Object 'Street' was not properly initialized when calling getStart()");
 
 	return start;
 }
 
 Coordinate Street::getEnd(){
-	//REQUIRE(init(), "Object 'Street' was not properly initialized when calling getEnd()");
+	REQUIRE(init(), "Object 'Street' was not properly initialized when calling getEnd()");
 
 	return end;
 }
@@ -134,7 +134,7 @@ std::string Crossroad::getStreet1() {
 }
 
 std::string Crossroad::getStreet2() {
-	//REQUIRE(init(), "Object 'Crossroad' was not properly initialized when calling getStreet2()");
+	REQUIRE(init(), "Object 'Crossroad' was not properly initialized when calling getStreet2()");
 
 	return s2;
 }
@@ -156,7 +156,7 @@ Crossroad& Crossroad::operator = (const Crossroad& c) {
 	s1 = c.s1;
 	s2 = c.s2;
 
-	_initCheck = this;
+	//_initCheck = this;
 	return *this;
 }
 

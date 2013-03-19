@@ -120,8 +120,8 @@ Fire_Department* Firetruck::getBaseptr() {
 
 void Firetruck::move(std::string direction) {
 	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling move().");
+	ENSURE(direction == "up" || direction == "down" || direction == "left" || direction == "right", "An invalid direction was passed as an argument to move() in object 'Firetruck'");
 
-	// Contract that checks if direction is legit.
 	Coordinate oldLocation = coord;
 
 	int curX = coord.getX();

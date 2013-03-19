@@ -113,6 +113,7 @@ protected:
 	friend class City;
 };
 
+
 // TEST THE DEFAULT COORDINATE CONSTRUCTOR.
 TEST_F(CoordinateTest, DefaultConstructor){
 	EXPECT_TRUE(coordinate.properlyInitialized());
@@ -590,6 +591,9 @@ TEST_F(MatrixTest, AddStreets){
 	streets.push_back(street2);
 	streets.push_back(street3);
 	streets.push_back(street4);
+	for (std::list<Street>::iterator it = streets.begin(); it != streets.end(); it++) {
+		it->resetInit();
+	}
 	std::list<Street>::iterator it = streets.begin();
 	Street* ptr1 = &(*it);
 	it++;
@@ -627,6 +631,9 @@ TEST_F(MatrixTest, AddCrossroads){
 	crossroads.push_back(crossroad2);
 	crossroads.push_back(crossroad3);
 	crossroads.push_back(crossroad4);
+	for (std::list<Crossroad>::iterator it = crossroads.begin(); it != crossroads.end(); it++) {
+		it->resetInit();
+	}
 	std::list<Crossroad>::iterator it = crossroads.begin();
 	Crossroad* ptr1 = &(*it);
 	it++;

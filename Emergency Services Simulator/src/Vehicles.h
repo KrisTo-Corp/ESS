@@ -84,6 +84,7 @@ public:
 
 	void move(std::string);
 //	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling move().");
+//	ENSURE(direction == "up" || direction == "down" || direction == "left" || direction == "right", "An invalid direction was passed as an argument to move() in object 'Firetruck'");
 //	ENSURE((oldLocation != coord), "Firetruck did not move properly.");
 
 	void setTempDest(Coordinate);
