@@ -65,7 +65,6 @@ City::City(const std::string filename, std::string outputname): output(outputnam
 		output << "\tPASSED\n\n";
 	}
 
-
 	ENSURE(properlyInitialized(), "Object 'City' was not properly initialized.");
 }
 
@@ -139,20 +138,21 @@ void City::link_trucks_to_bases() {
 	std::list<Firetruck>::iterator it_t;
 	std::list<Fire_Department>::iterator it_dep;
 	for (it_t = trucks.begin(); it_t != trucks.end(); it_t++) {
-		std::string basename = it_t->getBasename();
+		Firetruck* truckptr = &(*it_t);
+		std::string basename = truckptr->getBasename();
 		for (it_dep = departments.begin(); it_dep != departments.end(); it_dep++) {
-			std::string dep_name = it_dep->getName();
+			Fire_Department* depptr = &(*it_dep);
+			std::string dep_name = depptr->getName();
 			if (basename == dep_name) {
 				// Add truck to the fire department.
-				it_dep->addTruck(&(*it_t));
+				depptr->addTruck(truckptr);
 				// Set values in Firetruck
-				it_t->setCoord(it_dep->getEntrance());
-				Fire_Department* dep_ptr = &(*it_dep);
-				it_t->linkBase(dep_ptr);
-				it_t->setDestination(it_t->getBaseptr()->getEntrance());
+				truckptr->setCoord(depptr->getEntrance());
+				truckptr->linkBase(depptr);
+				truckptr->setDestination(depptr->getEntrance());
 			}
 		}
-		if (it_t->getBaseptr() == NULL){
+		if (truckptr->getBaseptr() == NULL){
 			continue;
 		}
 	}

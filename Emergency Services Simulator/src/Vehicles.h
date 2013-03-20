@@ -49,6 +49,7 @@ public:
 	Vehicles& operator =(const Vehicles&);
 
 	virtual bool properlyInitialized();
+
 };
 
 class Firetruck: public Vehicles {
