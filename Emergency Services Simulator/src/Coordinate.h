@@ -48,6 +48,8 @@ public:
 
 	bool operator!=(const Coordinate &c) const;
 
+	Coordinate(const Coordinate &cSource);
+
 	Coordinate& operator= (const Coordinate &cSource);
 
 	bool properlyInitialized();

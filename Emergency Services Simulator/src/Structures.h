@@ -39,16 +39,17 @@ public:
 //	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
 	Coordinate getLocation();
-//REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+//	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
 	int getWidth();
-//REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+//	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
 	int getLength();
-//REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+//	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+
+	Structures(const Structures& c);
 
 	Structures& operator =(const Structures&);
-
 };
 
 
@@ -72,6 +73,9 @@ public:
 //	REQUIRE(init(), "Object 'House' was not properly initialized when calling getHP()");
 
 	friend std::ostream& operator <<(std::ostream& s, House& house);
+
+	House(const House& c);
+
 	House& operator =(const House&);
 };
 
@@ -106,7 +110,11 @@ public:
 
 
 	friend std::ostream& operator <<(std::ostream& s, Fire_Department& department);
+
 	Fire_Department operator =(const Fire_Department&);
+
+	Fire_Department(const Fire_Department& c);
+
 };
 
 #endif /* STRUCTURES_H_ */

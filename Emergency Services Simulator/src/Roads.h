@@ -30,6 +30,8 @@ public:
 	std::string getName();
 //	REQUIRE(init(), "Object 'Roads' was not properly initialized when calling getName()");
 
+	Roads (const Roads& r);
+
 	Roads& operator = (const Roads&);
 
 	virtual ~Roads();
@@ -56,6 +58,8 @@ public:
 //	REQUIRE(init(), "Object 'Street' was not properly initialized when calling getEnd()");
 
 	friend std::ostream& operator <<(std::ostream& s, Street& street);
+
+	Street (const Street& s);
 
 	Street& operator = (const Street&);
 
@@ -87,6 +91,8 @@ public:
 //	REQUIRE(init(), "Object 'Crossroad' was not properly initialized when calling getStreet1()");
 
 	friend std::ostream& operator <<(std::ostream& s, Crossroad& crossroad);
+
+	Crossroad (const Crossroad& c);
 
 	Crossroad& operator = (const Crossroad&);
 

@@ -67,7 +67,7 @@ public:
 
 	Matrix& operator =(const Matrix&);
 
-	void resetInit();
+	Matrix(const Matrix& c);
 
 	bool properlyInitialized();
 

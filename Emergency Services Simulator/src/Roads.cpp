@@ -35,6 +35,14 @@ std::string Roads::getName() {
 	return name;
 }
 
+Roads::Roads (const Roads& r) {
+	name = r.name;
+	this->type = r.type;
+	this->state = r.state;
+
+	_initCheck = this;
+}
+
 Roads& Roads::operator = (const Roads& r) {
 	name = r.name;
 	this->type = r.type;
@@ -84,6 +92,17 @@ std::ostream& operator <<(std::ostream& s, Street& street){
 	return s;
 }
 
+Street::Street (const Street& s) {
+	name = s.name;
+	type = s.type;
+	state = s.state;
+
+	start = s.start;
+	end = s.end;
+
+	_initCheck = this;
+}
+
 Street& Street::operator = (const Street& s) {
 	name = s.name;
 	type = s.type;
@@ -122,7 +141,7 @@ Crossroad::~Crossroad()
 }
 
 Coordinate Crossroad::getLocation(){
-	//REQUIRE(init(), "Object 'Crossroad' was not properly initialized when calling getLocation()");
+	REQUIRE(init(), "Object 'Crossroad' was not properly initialized when calling getLocation()");
 
 	return location;
 }
@@ -147,6 +166,18 @@ std::ostream& operator <<(std::ostream& s, Crossroad& crossroad){
 	return s;
 }
 
+Crossroad::Crossroad (const Crossroad& c) {
+	name = c.name;
+	type = c.type;
+	state = c.state;
+
+	location = c.location;
+	s1 = c.s1;
+	s2 = c.s2;
+
+	_initCheck = this;
+}
+
 Crossroad& Crossroad::operator = (const Crossroad& c) {
 	name = c.name;
 	type = c.type;
@@ -156,7 +187,7 @@ Crossroad& Crossroad::operator = (const Crossroad& c) {
 	s1 = c.s1;
 	s2 = c.s2;
 
-	//_initCheck = this;
+	_initCheck = this;
 	return *this;
 }
 

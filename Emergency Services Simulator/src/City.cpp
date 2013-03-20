@@ -46,33 +46,12 @@ City::City(const std::string filename, std::string outputname): output(outputnam
 	}
 
 	matrix = Matrix(maxCoords.second + 1, maxCoords.first +1);
-	matrix.resetInit();
-
-	for (std::list<Firetruck>::iterator it = trucks.begin(); it != trucks.end(); it++) {
-		it->resetInit();
-	}
-
-	for (std::list<House>::iterator it = houses.begin(); it != houses.end(); it++) {
-		it->resetInit();
-	}
-
-	for (std::list<Fire_Department>::iterator it = departments.begin(); it != departments.end(); it++) {
-		it->resetInit();
-	}
-
-	for (std::list<Street>::iterator it = streets.begin(); it != streets.end(); it++) {
-		it->resetInit();
-	}
 
 	link_trucks_to_bases();
 	matrix.addHouses(houses);
 	matrix.addFiredeps(departments);
 	crossroads = matrix.addStreets(streets);
 	matrix.addCrossroads(crossroads);
-
-	for (std::list<Crossroad>::iterator it = crossroads.begin(); it != crossroads.end(); it++) {
-		it->resetInit();
-	}
 
 	output << matrix << "\n";
 

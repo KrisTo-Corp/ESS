@@ -38,16 +38,17 @@ public:
 	std::string getName();
 //	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling setCoord().");
 
-	Vehicles& operator =(const Vehicles&);
-
 	void setCoord(Coordinate);
 //	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling setCoord().");
 
 	Coordinate getCoord();
 //	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling getCoord().");
 
+	Vehicles(const Vehicles& c);
+
+	Vehicles& operator =(const Vehicles&);
+
 	virtual bool properlyInitialized();
-	void resetInit();
 };
 
 class Firetruck: public Vehicles {
@@ -129,8 +130,10 @@ public:
 //	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling setIsHome().");
 //	ENSURE((getIsHome() == b), "Setted atHome does not match Firetruck's atHome.");
 
-
 	friend std::ostream& operator <<(std::ostream& s, Firetruck& truck);
+
+	Firetruck(const Firetruck& c);
+
 	Firetruck& operator = (const Firetruck&);
 };
 

@@ -44,10 +44,6 @@ std::string Vehicles::getName() {
 	return name;
 }
 
-void Vehicles::resetInit() {
-	_initCheck = this;
-}
-
 void Vehicles::setCoord(Coordinate location) {
 	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling setCoord().");
 
@@ -58,6 +54,13 @@ Coordinate Vehicles::getCoord() {
 	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling getCoord().");
 
 	return coord;
+}
+
+Vehicles::Vehicles(const Vehicles& c){
+	name = c.name;
+	coord = c.coord;
+
+	_initCheck = this;
 }
 
 Vehicles& Vehicles::operator =(const Vehicles& c){
@@ -235,6 +238,21 @@ std::ostream& operator <<(std::ostream& s, Firetruck& truck){
 	s << "Location: " << truck.coord << "\n";
 
 	return s;
+}
+
+Firetruck::Firetruck(const Firetruck& c){
+	coord = c.coord;
+	tempDestination = c.tempDestination;
+	destination = c.destination;
+	target = c.target;
+	goToTemp = c.goToTemp;
+	available = c.available;
+	atHome = c.atHome;
+	basename = c.basename;
+	base = c.base;
+	name = c.name;
+
+	_initCheck = this;
 }
 
 Firetruck& Firetruck::operator = (const Firetruck& c){

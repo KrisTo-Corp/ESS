@@ -44,7 +44,7 @@ public:
 
 	virtual bool init();
 
-	void resetInit();
+	CityObjects(const CityObjects& c);
 
 	CityObjects& operator = (const CityObjects& c);
 

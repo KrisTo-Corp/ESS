@@ -36,7 +36,7 @@ CityObjects::~CityObjects()
 }
 
 Eobjects CityObjects::getType(){
-	//REQUIRE(init(), "Object 'CityObjects' was not properly initialized when calling getType()");
+	REQUIRE(init(), "Object 'CityObjects' was not properly initialized when calling getType()");
 
 	return type;
 }
@@ -59,13 +59,18 @@ bool CityObjects::init() {
 	return _initCheck == this;
 }
 
-void CityObjects::resetInit() {
+CityObjects::CityObjects(const CityObjects& c) {
+	type = c.type;
+	state = c.state;
 	_initCheck = this;
 }
 
 CityObjects& CityObjects::operator = (const CityObjects& c) {
 	type = c.type;
 	state = c.state;
+
+	_initCheck = this;
+	return *this;
 }
 
 

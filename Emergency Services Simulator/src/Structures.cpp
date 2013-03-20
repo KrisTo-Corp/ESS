@@ -34,21 +34,32 @@ std::string Structures::getName() {
 }
 
 Coordinate Structures::getLocation() {
-	//REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
 	return location;
 }
 
 int Structures::getWidth() {
-	//REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
 	return width;
 }
 
 int Structures::getLength() {
-	//REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
 	return length;
+}
+
+Structures::Structures(const Structures& c){
+	name = c.name;
+	location = c.location;
+	width = c.width;
+	length = c.length;
+	type = c.type;
+	state = c.state;
+
+	_initCheck = this;
 }
 
 Structures& Structures::operator =(const Structures& c){
@@ -95,6 +106,18 @@ std::ostream& operator <<(std::ostream& s, House& house){
 	s << "Location:" << house.location << "\n";
 
 	return s;
+}
+
+House::House(const House& c){
+	name = c.name;
+	location = c.location;
+	width = c.width;
+	length = c.length;
+	type = c.type;
+	state = c.state;
+	hitpoints = c.hitpoints;
+
+	_initCheck = this;
 }
 
 House& House::operator =(const House& c){
@@ -185,6 +208,19 @@ int Fire_Department::getAmountTrucks(){
 	REQUIRE(init(), "Object 'Fire_Department' was not properly initialized when calling getAmountTrucks()");
 
 	return trucks.size();
+}
+
+Fire_Department::Fire_Department(const Fire_Department& c){
+	name = c.name;
+	location = c.location;
+	width = c.width;
+	length = c.length;
+	type = c.type;
+	state = c.state;
+	entrance = c.entrance;
+	trucks = c.trucks;
+
+	_initCheck = this;
 }
 
 Fire_Department Fire_Department::operator =(const Fire_Department& c){

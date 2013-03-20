@@ -190,10 +190,6 @@ bool Matrix::properlyInitialized() {
 	return _initCheck == this;
 }
 
-void Matrix::resetInit() {
-	_initCheck = this;
-}
-
 int Matrix::getRows(){
 	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getRows().");
 
@@ -204,6 +200,14 @@ int Matrix::getColumns(){
 	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getColumns().");
 
 	return columns;
+}
+
+Matrix::Matrix(const Matrix& c){
+	rows = c.rows;
+	columns = c.columns;
+	matrix = c.matrix;
+
+	_initCheck = this;
 }
 
 Matrix& Matrix::operator = (const Matrix& c){

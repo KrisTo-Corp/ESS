@@ -23,6 +23,12 @@ Coordinate::Coordinate(int x_value, int y_value): x(x_value), y(y_value) {
 	ENSURE(properlyInitialized(), "Object 'Coordinate' was not properly initialized.");
 }
 
+Coordinate::Coordinate(const Coordinate &cSource){
+	x = cSource.x;
+	y = cSource.y;
+	_initCheck = this;
+}
+
 Coordinate& Coordinate::operator= (const Coordinate &cSource){
 	x = cSource.x;
 	y = cSource.y;
@@ -36,13 +42,13 @@ Coordinate::~Coordinate()
 }
 
 int Coordinate::getX(){
-	//REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling getX().");
+	REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling getX().");
 
 	return x;
 }
 
 int Coordinate::getY(){
-	//REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling getY().");
+	REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling getY().");
 
 	return y;
 }
@@ -86,7 +92,6 @@ bool Coordinate::operator!=(const Coordinate &c) const{
 		return true;
 	}
 }
-
 
 bool Coordinate::properlyInitialized(){
 	return _initCheck == this;
