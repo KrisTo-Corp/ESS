@@ -37,10 +37,6 @@ std::pair<int, int> City::parseCity(std::string filename) {
 	int maxX = 0;
 	int maxY = 0;
 
-	/*
-	 * Primitive error checking in place!
-	 */
-
 	for(TiXmlElement* object = virtualCity->FirstChildElement(); object != NULL; object = object->NextSiblingElement()) {
 		std::string objectName = object->Value();
 		if (objectName == "Huis") {
