@@ -7,9 +7,9 @@
 //=======================================================================================
 
 #include "City.h"
+#include "xmlparser.h"
 
 #include <cstdlib>
-
 #include <cmath>
 
 City::City(){
@@ -25,7 +25,9 @@ City::City(const std::string filename, std::string outputname): output(outputnam
 	output << "\t\t\t\t\t\t\t\tEMERGENCY SERVICES SIMULATION \n";
 	output << "\t\t\t\t\t\t\t\t============================= \n\n";
 
-	std::pair<int, int> maxCoords =	parseCity(filename);
+	XmlParser parser(this);
+	parser.parseCity(filename);
+	std::pair<int, int> maxCoords =	parser.getMaxValues();
 
 	if(maxCoords.first == -1 && maxCoords.second == -1){
 		output << "ERROR: .XML CONTAINED SYNTAX ERRORS !\n\n";
@@ -67,6 +69,61 @@ City::City(const std::string filename, std::string outputname): output(outputnam
 
 	ENSURE(properlyInitialized(), "Object 'City' was not properly initialized.");
 }
+
+/* City::City(const std::string filename, std::ofstream stream) {
+
+	validCity = true;
+	_initCheck = this;
+
+	output = stream;
+
+	output << "\t\t\t\t\t\t\t\tEMERGENCY SERVICES SIMULATION \n";
+	output << "\t\t\t\t\t\t\t\t============================= \n\n";
+
+	XmlParser parser(this);
+	parser.parseCity(filename);
+	std::pair<int, int> maxCoords =	parser.getMaxValues();
+
+	if(maxCoords.first == -1 && maxCoords.second == -1){
+		output << "ERROR: .XML CONTAINED SYNTAX ERRORS !\n\n";
+		validCity = false;
+		return;
+	}
+
+	else if(maxCoords.first == -2 && maxCoords.second == -2){
+		output << "ERROR: THERE WAS NO ROOT FOUND IN THE XMLFILE !\n\n";
+		validCity = false;
+		return;
+	}
+
+	else if(maxCoords.first == -3 && maxCoords.second == -3){
+		output << "ERROR: THERE WAS FOUND AN OBJECT THAT'S NOT SUPPORTED !\n\n";
+		validCity = false;
+		return;
+	}
+
+	matrix = Matrix(maxCoords.second + 1, maxCoords.first +1);
+
+	link_trucks_to_bases();
+	matrix.addHouses(houses);
+	matrix.addFiredeps(departments);
+	crossroads = matrix.addStreets(streets);
+	matrix.addCrossroads(crossroads);
+
+	output << matrix << "\n";
+
+	output << "\nINTEGRITYCHECK: \n";
+	output << "===============\n";
+	if (!(integrityCheck())){
+		validCity = false;
+		return;
+	}
+	else {
+		output << "\tPASSED\n\n";
+	}
+
+	ENSURE(properlyInitialized(), "Object 'City' was not properly initialized.");
+} */
 
 City::~City()
 {
@@ -209,310 +266,6 @@ CityObjects* City::setFire(int x, int y){
 
 	return ptr;
 }
-
-void City::update() {
-	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling update()");
-
-	output << "\nSIMULATION:";
-	output << "\n==========\n\n";
-
-	if (!(validCity)){
-		output << "\n\t CITY WAS NOT VALID\n\n";
-		return;
-	}
-
-	bool finished = false;
-	CityObjects* ptr;
-
-	ptr = setFire();
-	Structures* structptr = dynamic_cast<Structures*>(ptr);
-	Coordinate cur = structptr->getLocation();
-	std::string name = structptr->getName();
-	output << name << " at location " << cur << " started burning." << std::endl;
-	House* houseptr = dynamic_cast<House*>(structptr);
-	double hp = houseptr->getHP();
-	output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
-
-	// Find an available firetruck.
-	std::list<Firetruck>::iterator it_t;
-	Firetruck* rescueTruck;
-	for (it_t = trucks.begin(); it_t != trucks.end(); it_t++) {
-		if (it_t->getAvailable()) {
-			it_t->setAvailable(false);
-			it_t->setDestination(getAdjecantStreet(houseptr, it_t->getCoord()));
-			it_t->setTarget(houseptr);
-			it_t->setIsHome(false);
-			break;
-		}
-	}
-
-	while (!finished) {
-		// Random chance to setFire()
-		int chance = rand() % 20;
-		if (chance == 20) {
-			ptr = setFire();
-			Structures* structptr = dynamic_cast<Structures*>(ptr);
-			Coordinate cur = structptr->getLocation();
-			std::string name = structptr->getName();
-			output << name << " at location " << cur << " started burning." << std::endl;
-			House* houseptr = dynamic_cast<House*>(structptr);
-			double hp = houseptr->getHP();
-			output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
-
-			// Find an available firetruck.
-			std::list<Firetruck>::iterator it_t;
-			Firetruck* rescueTruck;
-			for (it_t = trucks.begin(); it_t != trucks.end(); it_t++) {
-				if (it_t->getAvailable()) {
-					it_t->setAvailable(false);
-					it_t->setDestination(getAdjecantStreet(houseptr, it_t->getCoord()));
-					it_t->setTarget(houseptr);
-					it_t->setIsHome(false);
-					break;
-				}
-			}
-		}
-
-		// Burn
-		for (int i = 0; i < matrix.getColumns(); i++){
-			for (int j = 0; j < matrix.getRows(); j++){
-				ptr = matrix.getObject(i, j);
-
-				if (ptr->getState() == burning){
-					finished = false;
-
-					House* houseptr = dynamic_cast<House*>(ptr);
-
-					houseptr->decreaseHP();
-					double hp = houseptr->getHP();
-					if (hp/floor(hp) == 1){
-						Coordinate cur = houseptr->getLocation();
-						std::string name = houseptr->getName();
-						output << name << " at location " << cur << " is still burning." << std::endl;
-						output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
-					}
-
-					if (houseptr->getHP() <= 0){
-						houseptr->setState(destroyed);
-						Coordinate cur = houseptr->getLocation();
-						std::string name = houseptr->getName();
-						output << name << " at location " << cur << " is destroyed." << std::endl;
-						output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
-					}
-				}
-			}
-		}
-
-		int i = 0;
-
-		// Move
-		for (std::list<Firetruck>::iterator it = trucks.begin(); it != trucks.end(); it++) {
-			driveTruck(&(*it));
-			Coordinate destination = it->getDestination();
-			if (it->getCoord() == destination) {
-				if (it->getAvailable() == false) {
-					Structures* saved = it->getTarget();
-					if (saved->getState() == burning) {
-						saved->setState(normal);
-						it->setAvailable(true);
-						it->setDestination(it->getBaseptr()->getEntrance());
-						it->setTarget(it->getBaseptr());
-						output << "Firetruck " << it->getName() << " has reached its destination ";
-						output << " at location " << destination << " and has extinguished the fire and are returning home.\n" << std::endl;
-					}
-					else if (saved->getState() == destroyed) {
-						it->setAvailable(true);
-						it->setDestination(it->getBaseptr()->getEntrance());
-						it->setTarget(it->getBaseptr());
-						output << "Firetruck " << it->getName() << " has reached its destination ";
-						output << " at location " << destination << " and saw that the structure was destroyed and are now returning home.\n" << std::endl;
-					}
-				}
-				else {
-					i++;
-					if (it->getIsHome() == false){
-						output << "Firetruck " << it->getName() << " has arrived at its base " << it->getBaseptr()->getName() << std::endl << std::endl;
-						it->setIsHome(true);
-					}
-				}
-			}
-			else {
-				Coordinate location = it->getCoord();
-				Roads* truckStreet = dynamic_cast<Roads*>(matrix.getObject(it->getCoord().getX(), it->getCoord().getY()));
-				output << "Firetruck " << it->getName() << " is on its way to " << it->getTarget()->getName() << " on location ";
-				output << destination << ". The firetruck is at " << truckStreet->getName() << " on location " << location << std::endl << std::endl;
-			}
-		}
-
-		if (i == trucks.size()) {
-			finished = true;
-			output << "\n================================================================================================================================";
-		}
-		else {
-			output << "\n--------------------------------------------------------------------------------------------------------------------------------\n\n";
-		}
-	}
-}
-
-void City::update_test() {
-	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling update_test()");
-
-	output << "\nSIMULATION:";
-	output << "\n==========\n\n";
-
-	if (!(validCity)){
-		output << "\n\t CITY WAS NOT VALID\n\n";
-		return;
-	}
-
-
-	bool finished = false;
-	CityObjects* ptr;
-	int loopcounter = 0;
-
-	ptr = setFire(4, 14);
-	Structures* structptr = dynamic_cast<Structures*>(ptr);
-	Coordinate cur = structptr->getLocation();
-	std::string name = structptr->getName();
-	output << name << " at location " << cur << " started burning." << std::endl;
-	House* houseptr = dynamic_cast<House*>(structptr);
-	double hp = houseptr->getHP();
-	output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
-
-	// Find an available firetruck.
-	std::list<Firetruck>::iterator it_t;
-	Firetruck* rescueTruck;
-	for (it_t = trucks.begin(); it_t != trucks.end(); it_t++) {
-		if (it_t->getAvailable()) {
-			it_t->setAvailable(false);
-			it_t->setDestination(getAdjecantStreet(houseptr, it_t->getCoord()));
-			it_t->setTarget(houseptr);
-			it_t->setIsHome(false);
-			break;
-		}
-	}
-
-	while (!finished) {
-
-		if (loopcounter == 5) {
-			ptr = setFire(15, 1);
-			Structures* structptr = dynamic_cast<Structures*>(ptr);
-			Coordinate cur = structptr->getLocation();
-			std::string name = structptr->getName();
-			output << name << " at location " << cur << " started burning." << std::endl;
-			House* houseptr = dynamic_cast<House*>(structptr);
-			double hp = houseptr->getHP();
-			output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
-
-			// Find an available firetruck.
-			std::list<Firetruck>::iterator it_t;
-			Firetruck* rescueTruck;
-			for (it_t = trucks.begin(); it_t != trucks.end(); it_t++) {
-				if (it_t->getAvailable()) {
-					it_t->setAvailable(false);
-					it_t->setDestination(getAdjecantStreet(houseptr, it_t->getCoord()));
-					it_t->setTarget(houseptr);
-					it_t->setIsHome(false);
-					break;
-				}
-			}
-		}
-
-		// Burn
-		for (int i = 0; i < matrix.getColumns(); i++){
-			for (int j = 0; j < matrix.getRows(); j++){
-				ptr = matrix.getObject(i, j);
-
-				if (ptr->getState() == burning){
-					finished = false;
-
-					House* houseptr = dynamic_cast<House*>(ptr);
-
-					houseptr->decreaseHP();
-					double hp = houseptr->getHP();
-					if (hp/floor(hp) == 1){
-						Coordinate cur = houseptr->getLocation();
-						std::string name = houseptr->getName();
-						output << name << " at location " << cur << " is still burning." << std::endl;
-						output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
-					}
-
-					if (houseptr->getHP() <= 0){
-						houseptr->setState(destroyed);
-						Coordinate cur = houseptr->getLocation();
-						std::string name = houseptr->getName();
-						output << name << " at location " << cur << " is destroyed." << std::endl;
-						output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
-					}
-				}
-			}
-		}
-
-		int i = 0;
-
-		// Move
-		for (std::list<Firetruck>::iterator it = trucks.begin(); it != trucks.end(); it++) {
-			driveTruck(&(*it));
-			Coordinate destination = it->getDestination();
-			if (it->getCoord() == destination) {
-				if (it->getAvailable() == false) {
-					Structures* saved = it->getTarget();
-					if (saved->getState() == burning) {
-						saved->setState(normal);
-						it->setAvailable(true);
-						it->setDestination(it->getBaseptr()->getEntrance());
-						it->setTarget(it->getBaseptr());
-						output << "Firetruck " << it->getName() << " has reached its destination ";
-						output << " at location " << destination << " and has extinguished the fire and are returning home.\n" << std::endl;
-					}
-					else if (saved->getState() == destroyed) {
-						it->setAvailable(true);
-						it->setDestination(it->getBaseptr()->getEntrance());
-						it->setTarget(it->getBaseptr());
-						output << "Firetruck " << it->getName() << " has reached its destination ";
-						output << " at location " << destination << " and saw that the structure was destroyed and are now returning home.\n" << std::endl;
-					}
-				}
-				else {
-					i++;
-					if (it->getIsHome() == false){
-						output << "Firetruck " << it->getName() << " has arrived at its base " << it->getBaseptr()->getName() << std::endl << std::endl;
-						it->setIsHome(true);
-					}
-				}
-			}
-			else {
-				Coordinate location = it->getCoord();
-				Roads* truckStreet = dynamic_cast<Roads*>(matrix.getObject(it->getCoord().getX(), it->getCoord().getY()));
-				output << "Firetruck " << it->getName() << " is on its way to " << it->getTarget()->getName() << " on location ";
-				output << destination << ". The firetruck is at " << truckStreet->getName() << " on location " << location << std::endl << std::endl;
-			}
-		}
-
-		// Determine if finished
-		if (i == trucks.size()) {
-			finished = true;
-			output << "\n================================================================================================================================";
-		}
-		else {
-			output << "\n--------------------------------------------------------------------------------------------------------------------------------\n\n";
-		}
-		loopcounter++;
-	}
-}
-
-
-/*
- * 1. setFire to 1 house to start the simulation
- * 2. select a truck and give its destination
- * 					WHILE
- * 3. random chance to setFire()
- * 4. IF succes
- * 		-> select a truck
- * 5. move truck to destination
- *
- */
-
 
 Coordinate City::getAdjecantStreet(CityObjects* building, Coordinate truckLoc) {
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAdjecantStreet()");
@@ -1047,4 +800,39 @@ void City::close(){
 	output.close();
 
 	ENSURE(!(output.is_open()), "File did not close properly when calling close()");
+}
+
+std::list<Firetruck>* City::getTruckList() {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getTruckList()");
+
+	return &trucks;
+}
+
+std::list<House>* City::getHouseList() {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getHouseList()");
+
+	return &houses;
+}
+
+std::list<Fire_Department>* City::getDepList() {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getDepList()");
+
+	return &departments;
+}
+
+
+std::list<Street>* City::getStreetsList() {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getStreetList()");
+
+	return &streets;
+}
+
+Matrix* City::getMatrix() {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getMatrix()");
+
+	return &matrix;
+}
+
+bool City::getValidCity() {
+	return validCity;
 }

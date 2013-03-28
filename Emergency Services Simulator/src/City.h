@@ -30,7 +30,6 @@ private:
 	std::list<Street> streets;
 	std::list<Crossroad> crossroads;
 	std::list<Firetruck> trucks;
-	std::ofstream output;
 
 	bool validCity;
 
@@ -41,8 +40,13 @@ private:
 public:
 	City();
 
+	std::ofstream output;
+
 	City(std::string filename, std::string outputname);
 //	ENSURE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized.");
+
+	//City(const std::string filename, std::ofstream stream);
+
 
 	friend std::ostream& operator <<(std::ostream& s, City& city);
 //	REQUIRE(city.properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling overloaded operator '<<'");
@@ -123,6 +127,23 @@ public:
 	bool properlyInitialized(int, int);
 
 	bool properlyInitialized();
+
+	std::list<Firetruck>* getTruckList();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getTruckList()");
+
+	std::list<House>* getHouseList();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getHouseList()");
+
+	std::list<Fire_Department>* getDepList();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getDepList()");
+
+	std::list<Street>* getStreetsList();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getStreetList()");
+
+	Matrix* getMatrix();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getMatrix()");
+
+	bool getValidCity();
 
 	virtual ~City();
 };

@@ -18,6 +18,7 @@
 #include "Matrix.h"
 #include <sys/stat.h>
 #include <gtest/gtest.h>
+#include "Simulator.h"
 
 bool FileCompare(const char *leftFileName, const char *rightFileName) {
 	std::ifstream leftFile, rightFile;
@@ -698,13 +699,13 @@ TEST_F(CityTest, Constructor){
 // TEST A UPDATE FUNCTION
 TEST_F(CityTest, Update){
 	City c("XML Files/stad.xml", "Output files/updateTest.txt");
-	c.update_test();
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
 	c.close();
 
 	EXPECT_TRUE(FileCompare("Output files/updateTest.txt", "Expected Output/expectedUpdateTest.txt"));
 }
 
-// TEST IS VALID COORDINATE
+/*// TEST IS VALID COORDINATE
 TEST_F(CityTest, ValidCoordinate){
 	City c("XML Files/stad.xml", "Output files/unusedOutput.txt");
 	EXPECT_TRUE(c.validCoordCheck(15, 7));
@@ -717,7 +718,7 @@ TEST_F(CityTest, ValidCoordinate){
 	EXPECT_FALSE(c.validCoordCheck(0, -1));
 	EXPECT_FALSE(c.validCoordCheck('a', 9));
 	EXPECT_FALSE(c.validCoordCheck(15, 'b'));
-}
+}*/
 
 // TEST THE SETFIRE FUNCTION
 TEST_F(CityTest, SetFire){
@@ -857,7 +858,7 @@ TEST_F(CityTest, DriveTruck){
 
 TEST_F(SimulationTest, InputSyntaxError){
 	City c("XML Files/syntaxError.xml", "Output files/syntaxErrorOutput.txt");
-	c.update_test();
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
 	c.close();
 	EXPECT_TRUE(FileCompare("Output files/syntaxErrorOutput.txt", "Expected Output/expectedSyntaxErrorOutput.txt"));
 }
@@ -866,7 +867,7 @@ TEST_F(SimulationTest, InputSyntaxError){
 
 TEST_F(SimulationTest, InputObjectNotFound){
 	City c("XML Files/invalidObject.xml", "Output files/invalidObjectOutput.txt");
-	c.update_test();
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
 	c.close();
 	EXPECT_TRUE(FileCompare("Output files/invalidObjectOutput.txt", "Expected Output/expectedInvalidObjectOutput.txt"));
 }
@@ -875,7 +876,7 @@ TEST_F(SimulationTest, InputObjectNotFound){
 
 TEST_F(SimulationTest, NegativeCoordinate){
 	City c("XML Files/negativeCoordinate.xml", "Output files/negativeCoordinateOutput.txt");
-	c.update_test();
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
 	c.close();
 	EXPECT_TRUE(FileCompare("Output files/negativeCoordinateOutput.txt", "Expected Output/expectedNegativeCoordinateOutput.txt"));
 }
@@ -883,7 +884,7 @@ TEST_F(SimulationTest, NegativeCoordinate){
 // TEST THE PARSER WITH NO ROOT OBJECT
 TEST_F(SimulationTest, NoRootObject){
 	City c("XML Files/noRoot.xml", "Output files/noRootOutput.txt");
-	c.update_test();
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
 	c.close();
 	EXPECT_TRUE(FileCompare("Output files/noRootOutput.txt", "Expected Output/expectedNoRootOutput.txt"));
 }
@@ -892,7 +893,7 @@ TEST_F(SimulationTest, NoRootObject){
 
 TEST_F(SimulationTest, InvalidCityEmptySpots){
 	City c("XML Files/emptySpots.xml", "Output files/emptySpotsOutput.txt");
-	c.update_test();
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
 	c.close();
 	EXPECT_TRUE(FileCompare("Output files/emptySpotsOutput.txt", "Expected Output/expectedEmptySpotsOutput.txt"));
 }
@@ -901,7 +902,7 @@ TEST_F(SimulationTest, InvalidCityEmptySpots){
 
 TEST_F(SimulationTest, Overlap){
 	City c("XML Files/overlap.xml", "Output files/overlapOutput.txt");
-	c.update_test();
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
 	c.close();
 	EXPECT_TRUE(FileCompare("Output files/overlapOutput.txt", "Expected Output/expectedOverlapOutput.txt"));
 }
@@ -909,7 +910,7 @@ TEST_F(SimulationTest, Overlap){
 // TEST WITH UNLINKED TRUCKS
 TEST_F(SimulationTest, UnlinkedTrucks){
 	City c("XML Files/unlinkedTrucks.xml", "Output files/unlinkedTrucksOutput.txt");
-	c.update_test();
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
 	c.close();
 	EXPECT_TRUE(FileCompare("Output files/unlinkedTrucksOutput.txt", "Expected Output/expectedUnlinkedTrucksOutput.txt"));
 }
@@ -917,7 +918,7 @@ TEST_F(SimulationTest, UnlinkedTrucks){
 // HOUSES NOT LINKED TO STREET
 TEST_F(SimulationTest, UnlinkedHouses){
 	City c("XML Files/unlinkedStreets.xml", "Output files/unlinkedHousesOutput.txt");
-	c.update_test();
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
 	c.close();
 	EXPECT_TRUE(FileCompare("Output files/unlinkedHousesOutput.txt", "Expected Output/expectedUnlinkedHousesOutput.txt"));
 }
@@ -925,9 +926,23 @@ TEST_F(SimulationTest, UnlinkedHouses){
 // TEST A NORMAL SIMULATION
 TEST_F(SimulationTest, NormalSimulation){
 	City c("XML Files/stad.xml", "Output files/normalOutput.txt");
-	c.update_test();
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
 	c.close();
 	EXPECT_TRUE(FileCompare("Output files/normalOutput.txt", "Expected Output/expectedNormalOutput.txt"));
+}
+
+TEST_F(SimulationTest, NormalSimulation2){
+	City c("XML Files/stad.xml", "Output files/normalOutput2.txt");
+	simulateCity_Test(c, Coordinate(3, 1), Coordinate(20, 1));
+	c.close();
+	EXPECT_TRUE(FileCompare("Output files/normalOutput2.txt", "Expected Output/expectedNormalOutput2.txt"));
+}
+
+TEST_F(SimulationTest, NormalSimulation3){
+	City c("XML Files/stad.xml", "Output files/normalOutput3.txt");
+	simulateCity_Test(c, Coordinate(4, 11), Coordinate(12, 11));
+	c.close();
+	EXPECT_TRUE(FileCompare("Output files/normalOutput3.txt", "Expected Output/expectedNormalOutput3.txt"));
 }
 
 int main(int argc, char **argv) {

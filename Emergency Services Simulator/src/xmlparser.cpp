@@ -6,32 +6,30 @@
 // Description : City in C++, Ansi-style
 //=======================================================================================
 
-#include <iostream>
-#include <vector>
-#include <cstdlib>
-#include <assert.h>
-#include <cctype>
-#include <typeinfo>
-
-#include "City.h"
-#include "CityObjects.h"
-#include "tinyxml.h"
+#include "xmlparser.h"
 
 #define TIXML_USE_STL
 
-std::pair<int, int> City::parseCity(std::string filename) {
+XmlParser::XmlParser(City* inputCity) {
+	city = inputCity;
+	maxValues = std::pair<int, int>(0, 0);
+}
+
+void XmlParser::parseCity(std::string filename) {
 	TiXmlDocument doc;
 	if(!doc.LoadFile(filename.c_str())) {
-		output << doc.ErrorDesc() << std::endl;
-		return std::pair<int, int>(-1, -1);
+		city->output << doc.ErrorDesc() << std::endl;
+		maxValues = std::pair<int, int>(-1, -1);
+		return;
 	}
 
 	TiXmlElement* virtualCity = doc.FirstChildElement();
 
 	if(virtualCity == NULL) {
-		output << "Failed to load file: No root element." << std::endl;
+		city->output << "Failed to load file: No root element." << std::endl;
 		doc.Clear();
-		return std::pair<int, int>(-2, -2);
+		maxValues =  std::pair<int, int>(-2, -2);
+		return;
 	}
 
 	int maxX = 0;
@@ -67,16 +65,16 @@ std::pair<int, int> City::parseCity(std::string filename) {
 					 * Check to see if the input is valid: not negative and of type int.
 					 */
 					if (hp < 0) {
-						output << "A house can not have a negative amount of hitpoints! Hitpoints read: " << hp << std::endl;
+						city->output << "A house can not have a negative amount of hitpoints! Hitpoints read: " << hp << std::endl;
 						continue;
 					}
 					else if (isalpha(hp) || typeid(hp) != typeid(int)) {
-						output << "Hitpoints must be of type int! Hitpoints read: " << hp << std::endl;
+						city->output << "Hitpoints must be of type int! Hitpoints read: " << hp << std::endl;
 						continue;
 					}
 				}
 				else {
-					output << "Label " << fieldName << " is not a valid field. House" << std::endl;
+					city->output << "Label " << fieldName << " is not a valid field. House" << std::endl;
 					continue;
 				}
 			}
@@ -85,7 +83,7 @@ std::pair<int, int> City::parseCity(std::string filename) {
 			}
 			// validcoordcheck here
 			House house(x, y, hp, "house");
-			houses.push_back(house);
+			city->getHouseList()->push_back(house);
 		}
 		else if (objectName == "Straat") {
 			int x_start, y_start, x_end, y_end;
@@ -124,7 +122,7 @@ std::pair<int, int> City::parseCity(std::string filename) {
 					}
 				}
 				else {
-					output << "Label " << fieldName << " is not a valid field. Street" << std::endl;
+					city->output << "Label " << fieldName << " is not a valid field. Street" << std::endl;
 					continue;
 				}
 			}
@@ -138,7 +136,7 @@ std::pair<int, int> City::parseCity(std::string filename) {
 			}
 
 			Street street(x_start, y_start, x_end, y_end, name);
-			streets.push_back(street);
+			city->getStreetsList()->push_back(street);
 		}
 		else if (objectName == "Brandweerwagen") {
 			std::string name, base;
@@ -155,12 +153,12 @@ std::pair<int, int> City::parseCity(std::string filename) {
 					base = text->Value();
 				}
 				else {
-					output << "Label " << fieldName << " is not a valid field. Truck" << std::endl;
+					city->output << "Label " << fieldName << " is not a valid field. Truck" << std::endl;
 					continue;
 				}
 			}
 			Firetruck truck(0, 0, name, base);
-			trucks.push_back(truck);
+			city->getTruckList()->push_back(truck);
 		}
 		else if(objectName == "Brandweerkazerne") {
 			int x_building, y_building, x_entrance, y_entrance;
@@ -199,7 +197,7 @@ std::pair<int, int> City::parseCity(std::string filename) {
 					}
 				}
 				else {
-					output << "Label " << fieldName << " is not a valid field. dep" << std::endl;
+					city->output << "Label " << fieldName << " is not a valid field. dep" << std::endl;
 					continue;
 
 				}
@@ -214,28 +212,29 @@ std::pair<int, int> City::parseCity(std::string filename) {
 			}
 
 			Fire_Department department(x_building, y_building, x_entrance, y_entrance, name);
-			departments.push_back(department);
+			city->getDepList()->push_back(department);
 		}
 		else {
-			output << objectName << " is not a valid object." << std::endl;
-			return std::pair<int, int>(-3, -3);
+			city->output << objectName << " is not a valid object." << std::endl;
+			maxValues = std::pair<int, int>(-3, -3);
+			return;
 		}
 	}
-	std::pair<int, int> coords (maxX, maxY);
-	return coords;
+
+	maxValues = std::pair<int, int>(maxX, maxY);
 }
 
-bool City::validCoordCheck(int x, int y) {
+bool XmlParser::validCoordCheck(int x, int y) {
 	/*
 	 * Check to see if the input is valid: not negative and of type int.
 	 */
 
 	if (x < 0 || y < 0) {
-		output << "A coordinate can not be negative! Coordinate read: (" << x << "," << y << ")" << std::endl;
+		city->output << "A coordinate can not be negative! Coordinate read: (" << x << "," << y << ")" << std::endl;
 		return false;
 	}
 	else if (isalpha(x) || isalpha(y) || typeid(x) != typeid(int) || typeid(y) != typeid(int)) {
-		output << "A coordinate must be of type int! Coordinate read: (" << x << "," << y << ")" << std::endl;
+		city->output << "A coordinate must be of type int! Coordinate read: (" << x << "," << y << ")" << std::endl;
 		return false;
 	}
 	else {
@@ -243,11 +242,15 @@ bool City::validCoordCheck(int x, int y) {
 	}
 }
 
-int City::compareCoord(int curMax, int testVal) {
+int XmlParser::compareCoord(int curMax, int testVal) {
 	if (testVal > curMax) {
 		return testVal;
 	}
 	else {
 		return curMax;
 	}
+}
+
+std::pair<int, int> XmlParser::getMaxValues() {
+	return maxValues;
 }

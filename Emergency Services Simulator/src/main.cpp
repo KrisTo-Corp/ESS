@@ -8,8 +8,9 @@
 
 #include <iostream>
 #include <cstdlib>
-#include "City.h"
 
+#include "City.h"
+#include "Simulator.h"
 
 int main(int argc, char **argv) {
 
@@ -20,13 +21,13 @@ int main(int argc, char **argv) {
 	}
 	else if (argc == 2) {
 		City city(argv[1], "output.txt");
-		city.update();
+		simulateCity(city);
 		city.close();
 		std::cout << "output was written to \"output.txt\"" << std::endl;
 	}
 	else{
 		City city(argv[1], argv[2]);
-		city.update();
+		simulateCity(city);
 		city.close();
 		std::cout << "output was written to " << argv[2] << std::endl;
 	}
