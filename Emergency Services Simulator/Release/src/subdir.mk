@@ -9,6 +9,7 @@ CPP_SRCS += \
 ../src/Coordinate.cpp \
 ../src/Matrix.cpp \
 ../src/Roads.cpp \
+../src/Simulator.cpp \
 ../src/Structures.cpp \
 ../src/Vehicles.cpp \
 ../src/main.cpp \
@@ -24,6 +25,7 @@ OBJS += \
 ./src/Coordinate.o \
 ./src/Matrix.o \
 ./src/Roads.o \
+./src/Simulator.o \
 ./src/Structures.o \
 ./src/Vehicles.o \
 ./src/main.o \
@@ -39,6 +41,7 @@ CPP_DEPS += \
 ./src/Coordinate.d \
 ./src/Matrix.d \
 ./src/Roads.d \
+./src/Simulator.d \
 ./src/Structures.d \
 ./src/Vehicles.d \
 ./src/main.d \
