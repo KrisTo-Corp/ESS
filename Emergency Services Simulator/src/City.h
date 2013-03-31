@@ -78,10 +78,6 @@ public:
 	void update_test();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling update_test()");
 
-	void close();
-//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling close()");
-//	ENSURE(!(output.is_open()), "File did not close properly when calling close()");
-
 	std::pair<int, int> parseCity(std::string filename);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling parseCity()");
 

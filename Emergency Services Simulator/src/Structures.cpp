@@ -239,4 +239,40 @@ Fire_Department Fire_Department::operator =(const Fire_Department& c){
 }
 
 
+//==========================
+//	CLASS STORE
+//==========================
 
+Store::Store(): Structures(0, 0, "", 4, 4, store) {
+
+	hp = 0;
+	rp = 0;
+
+	ENSURE(init(), "Object 'Store' was not properly initialized.");
+}
+
+Store::Store(const int x, const int y, int hitpoints, int robberyPoints, const std::string n, const int width, const int length) : Structures(x, y, n, width, length, store) {
+
+	hp = hitpoints;
+	rp = robberyPoints;
+
+	ENSURE(init(), "Object 'Store' was not properly initialized.");
+}
+
+//==========================
+//	CLASS POLICESTATION
+//==========================
+
+PoliceStation::PoliceStation() : Structures(0, 0, "", 0, 0, policeStation), entrance(0, 0) {
+
+	hp = 0;
+
+	ENSURE(init(), "Object 'policeStation' was not properly initialized.");
+}
+
+PoliceStation::PoliceStation(const int x, const int y, const int x_entrance, const int y_entrance, int hitpoints, const std::string n, const int width, const int length) : Structures(x, y, n, width, length, policeStation), entrance(x_entrance, y_entrance) {
+
+	hp = hitpoints;
+
+	ENSURE(init(), "Object 'policeStation' was not properly initialized.");
+}

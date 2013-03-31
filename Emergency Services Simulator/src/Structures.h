@@ -117,4 +117,41 @@ public:
 
 };
 
+class Store : public Structures {
+private:
+	double hp;
+	double rp;
+
+public:
+	Store();
+//	ENSURE(init(), "Object 'Store' was not properly initialized.");
+
+	Store(const int x, const int y, int hitpoints, int robberyPoints, const std::string n, const int width, const int length);
+//	ENSURE(init(), "Object 'Store' was not properly initialized.");
+};
+
+class PoliceStation : public Structures {
+private:
+	Coordinate entrance;
+	double hp;
+
+public:
+	PoliceStation();
+//	ENSURE(init(), "Object 'policeStation' was not properly initialized.");
+
+	PoliceStation(const int x, const int y, const int x_entrance, const int y_entrance, int hitpoints, const std::string n, const int width, const int length);
+//	ENSURE(init(), "Object 'policeStation' was not properly initialized.");
+
+};
+
+class Hospital : public Structures {
+private:
+
+public:
+	Hospital();
+
+	Hospital(const int x, const int y, const int x_entrance, const int y_entrance, int hp, const std::string n, const int width, const int length);
+
+};
+
 #endif /* STRUCTURES_H_ */

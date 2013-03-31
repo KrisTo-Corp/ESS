@@ -740,14 +740,6 @@ bool City::integrityCheck() {
 	return integrity;
 }
 
-/*void City::close(){
-	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling close()");
-
-	output.close();
-
-	ENSURE(!(output.is_open()), "File did not close properly when calling close()");
-}*/
-
 std::list<Firetruck>* City::getTruckList() {
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getTruckList()");
 
