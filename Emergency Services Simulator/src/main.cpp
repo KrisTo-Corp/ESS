@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
 		std::ofstream filestream("output.txt");
 		City city(argv[1], filestream);
 		simulateCity(city);
-		//city.close();
+		filestream.close();
 		std::cout << "output was written to \"output.txt\"" << std::endl;
 	}
 	else{
@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
 			std::ofstream filestream(argv[2]);
 			City city(argv[1], filestream);
 			simulateCity(city);
-			//city.close();
+			filestream.close();
 			std::cout << "output was written to " << argv[2] << std::endl;
 		}
 	}

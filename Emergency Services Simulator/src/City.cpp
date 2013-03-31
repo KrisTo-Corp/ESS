@@ -70,60 +70,6 @@ City::City(const std::string filename, std::ostream& stream) : output(stream) {
 	ENSURE(properlyInitialized(), "Object 'City' was not properly initialized.");
 }
 
- City::City(const std::string filename, std::ofstream stream) : output(stream) {
-
-	validCity = true;
-	_initCheck = this;
-
-	//output = stream;
-
-	output << "\t\t\t\t\t\t\t\tEMERGENCY SERVICES SIMULATION \n";
-	output << "\t\t\t\t\t\t\t\t============================= \n\n";
-
-	XmlParser parser(this);
-	parser.parseCity(filename);
-	std::pair<int, int> maxCoords =	parser.getMaxValues();
-
-	if(maxCoords.first == -1 && maxCoords.second == -1){
-		output << "ERROR: .XML CONTAINED SYNTAX ERRORS !\n\n";
-		validCity = false;
-		return;
-	}
-
-	else if(maxCoords.first == -2 && maxCoords.second == -2){
-		output << "ERROR: THERE WAS NO ROOT FOUND IN THE XMLFILE !\n\n";
-		validCity = false;
-		return;
-	}
-
-	else if(maxCoords.first == -3 && maxCoords.second == -3){
-		output << "ERROR: THERE WAS FOUND AN OBJECT THAT'S NOT SUPPORTED !\n\n";
-		validCity = false;
-		return;
-	}
-
-	matrix = Matrix(maxCoords.second + 1, maxCoords.first +1);
-
-	link_trucks_to_bases();
-	matrix.addHouses(houses);
-	matrix.addFiredeps(departments);
-	crossroads = matrix.addStreets(streets);
-	matrix.addCrossroads(crossroads);
-
-	output << matrix << "\n";
-
-	output << "\nINTEGRITYCHECK: \n";
-	output << "===============\n";
-	if (!(integrityCheck())){
-		validCity = false;
-		return;
-	}
-	else {
-		output << "\tPASSED\n\n";
-	}
-
-	ENSURE(properlyInitialized(), "Object 'City' was not properly initialized.");
-}
 
 City::~City()
 {

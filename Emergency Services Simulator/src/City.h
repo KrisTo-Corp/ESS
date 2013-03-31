@@ -46,8 +46,6 @@ public:
 	City(std::string filename, std::ostream&);
 //	ENSURE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized.");
 
-	City(const std::string filename, std::ofstream stream);
-
 	friend std::ostream& operator <<(std::ostream& s, City& city);
 //	REQUIRE(city.properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling overloaded operator '<<'");
 
