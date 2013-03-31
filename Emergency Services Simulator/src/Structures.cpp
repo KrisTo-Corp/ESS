@@ -259,6 +259,34 @@ Store::Store(const int x, const int y, int hitpoints, int robberyPoints, const s
 	ENSURE(init(), "Object 'Store' was not properly initialized.");
 }
 
+Store::Store(const Store& c){
+	name = c.name;
+	location = c.location;
+	width = c.width;
+	length = c.length;
+	type = c.type;
+	state = c.state;
+	rp = c.rp;
+	hp = c.hp;
+
+	_initCheck = this;
+}
+
+Store& Store::operator =(const Store& c){
+	name = c.name;
+	location = c.location;
+	width = c.width;
+	length = c.length;
+	type = c.type;
+	state = c.state;
+	rp = c.rp;
+	hp = c.hp;
+
+	_initCheck = this;
+
+	return *this;
+}
+
 //==========================
 //	CLASS POLICESTATION
 //==========================
@@ -275,4 +303,78 @@ PoliceStation::PoliceStation(const int x, const int y, const int x_entrance, con
 	hp = hitpoints;
 
 	ENSURE(init(), "Object 'policeStation' was not properly initialized.");
+}
+
+PoliceStation::PoliceStation(const PoliceStation& c){
+	name = c.name;
+	location = c.location;
+	width = c.width;
+	length = c.length;
+	type = c.type;
+	state = c.state;
+	entrance = c.entrance;
+	hp = c.hp;
+
+	_initCheck = this;
+}
+
+PoliceStation& PoliceStation::operator =(const PoliceStation& c){
+	name = c.name;
+	location = c.location;
+	width = c.width;
+	length = c.length;
+	type = c.type;
+	state = c.state;
+	entrance = c.entrance;
+	hp = c.hp;
+
+	_initCheck = this;
+
+	return *this;
+}
+
+//==========================
+//	CLASS HOSPITAL
+//==========================
+
+Hospital::Hospital() : Structures(0, 0, "", 0, 0, hospital), entrance(0, 0) {
+
+	hp = 0;
+
+	ENSURE(init(), "Object 'Hospital' was not properly initialized.");
+}
+
+Hospital::Hospital(const int x, const int y, const int x_entrance, const int y_entrance, int hitpoints, const std::string n, const int width, const int length) : Structures(x, y, n, width, length, hospital), entrance(x_entrance, y_entrance) {
+
+	hp = hitpoints;
+
+	ENSURE(init(), "Object 'Hospital' was not properly initialized.");
+}
+
+Hospital::Hospital(const Hospital& c){
+	name = c.name;
+	location = c.location;
+	width = c.width;
+	length = c.length;
+	type = c.type;
+	state = c.state;
+	entrance = c.entrance;
+	hp = c.hp;
+
+	_initCheck = this;
+}
+
+Hospital& Hospital::operator =(const Hospital& c){
+	name = c.name;
+	location = c.location;
+	width = c.width;
+	length = c.length;
+	type = c.type;
+	state = c.state;
+	entrance = c.entrance;
+	hp = c.hp;
+
+	_initCheck = this;
+
+	return *this;
 }

@@ -1,0 +1,13 @@
+								EMERGENCY SERVICES SIMULATION 
+								============================= 
+
+Failed to open file
+ERROR: .XML CONTAINED SYNTAX ERRORS !
+
+
+SIMULATION:
+==========
+
+
+	 CITY WAS NOT VALID
+

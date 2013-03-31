@@ -27,7 +27,8 @@ int main(int argc, char **argv) {
 		std::cout << "output was written to \"output.txt\"" << std::endl;
 	}
 	else{
-		if (argv[2] == "cout") {
+		std::string argv2 = argv[2];
+		if (argv2 == "cout") {
 			City city(argv[1], std::cout);
 			simulateCity(city);
 		}
@@ -36,7 +37,7 @@ int main(int argc, char **argv) {
 			City city(argv[1], filestream);
 			simulateCity(city);
 			filestream.close();
-			std::cout << "output was written to " << argv[2] << std::endl;
+			std::cout << "output was written to " << argv2 << std::endl;
 		}
 	}
 }

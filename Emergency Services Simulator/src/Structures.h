@@ -128,6 +128,10 @@ public:
 
 	Store(const int x, const int y, int hitpoints, int robberyPoints, const std::string n, const int width, const int length);
 //	ENSURE(init(), "Object 'Store' was not properly initialized.");
+
+	Store(const Store& c);
+
+	Store& operator =(const Store&);
 };
 
 class PoliceStation : public Structures {
@@ -142,16 +146,26 @@ public:
 	PoliceStation(const int x, const int y, const int x_entrance, const int y_entrance, int hitpoints, const std::string n, const int width, const int length);
 //	ENSURE(init(), "Object 'policeStation' was not properly initialized.");
 
+	PoliceStation(const PoliceStation& c);
+
+	PoliceStation& operator =(const PoliceStation&);
 };
 
 class Hospital : public Structures {
 private:
+	Coordinate entrance;
+	double hp;
 
 public:
 	Hospital();
+//	ENSURE(init(), "Object 'Hospital' was not properly initialized.");
 
-	Hospital(const int x, const int y, const int x_entrance, const int y_entrance, int hp, const std::string n, const int width, const int length);
+	Hospital(const int x, const int y, const int x_entrance, const int y_entrance, int hitpoints, const std::string n, const int width, const int length);
+//	ENSURE(init(), "Object 'Hospital' was not properly initialized.");
 
+	Hospital(const Hospital& c);
+
+	Hospital& operator =(const Hospital&);
 };
 
 #endif /* STRUCTURES_H_ */
