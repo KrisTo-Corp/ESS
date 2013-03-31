@@ -26,7 +26,9 @@ City::City(const std::string filename, std::ostream& stream) : output(stream) {
 	output << "\t\t\t\t\t\t\t\t============================= \n\n";
 
 	XmlParser parser(this);
+	std::cout << "1" << std::endl;
 	parser.parseCity(filename);
+	std::cout << "2" << std::endl;
 	std::pair<int, int> maxCoords =	parser.getMaxValues();
 
 	if(maxCoords.first == -1 && maxCoords.second == -1){
@@ -763,6 +765,24 @@ std::list<Street>* City::getStreetsList() {
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getStreetList()");
 
 	return &streets;
+}
+
+std::list<Store>* City::getStoresList() {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getStoresList()");
+
+	return &stores;
+}
+
+std::list<Hospital>* City::getHospitalsList() {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getHospitalsList()");
+
+	return &hospitals;
+}
+
+std::list<PoliceStation>* City::getPoliStatsList() {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getPolStatsList()");
+
+	return &poliStats;
 }
 
 Matrix* City::getMatrix() {

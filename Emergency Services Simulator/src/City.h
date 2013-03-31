@@ -31,6 +31,9 @@ private:
 	std::list<Street> streets;
 	std::list<Crossroad> crossroads;
 	std::list<Firetruck> trucks;
+	std::list<Store> stores;
+	std::list<Hospital> hospitals;
+	std::list<PoliceStation> poliStats;
 
 	bool validCity;
 
@@ -69,8 +72,6 @@ public:
 
 	Firetruck* getTruck(int);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountTrucks()");
-
-	City& operator =(const City&);
 
 	void update();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling update()");
@@ -114,14 +115,6 @@ public:
 	bool integrityCheck();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling integrityCheck()");
 
-	int compareCoord(int, int);
-
-	void link_trucks_to_bases();
-
-	bool properlyInitialized(int, int);
-
-	bool properlyInitialized();
-
 	std::list<Firetruck>* getTruckList();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getTruckList()");
 
@@ -134,10 +127,27 @@ public:
 	std::list<Street>* getStreetsList();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getStreetList()");
 
+	std::list<Store>* getStoresList();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getStoresList()");
+
+	std::list<Hospital>* getHospitalsList();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getHospitalsList()");
+
+	std::list<PoliceStation>* getPoliStatsList();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getPolStatsList()");
+
 	Matrix* getMatrix();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getMatrix()");
 
 	bool getValidCity();
+
+	void link_trucks_to_bases();
+
+	bool properlyInitialized(int, int);
+
+	bool properlyInitialized();
+
+	City& operator =(const City&);
 
 	virtual ~City();
 };

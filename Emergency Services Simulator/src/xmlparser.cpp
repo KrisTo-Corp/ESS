@@ -214,6 +214,234 @@ void XmlParser::parseCity(std::string filename) {
 			Fire_Department department(x_building, y_building, x_entrance, y_entrance, name);
 			city->getDepList()->push_back(department);
 		}
+		else if (objectName == "Winkel") {
+			int x_building, y_building, width, length, hp, rp;
+			std::string name;
+			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
+				std::string fieldName = field->Value();
+				if(fieldName == "Locatie") {
+					x_building = atoi(field->Attribute("X"));
+					y_building = atoi(field->Attribute("Y"));
+
+					if (!validCoordCheck(x_building,y_building)) {
+						continue;
+					}
+
+					maxX = compareCoord(maxX, x_building);
+					maxY = compareCoord(maxY, y_building);
+				}
+				else if (fieldName == "Grootte") {
+					width = atoi(field->Attribute("Breedtje"));
+					length = atoi(field->Attribute("Hoogte"));
+
+					/*
+					 * Check to see if the input is valid: not negative and of type int.
+					 */
+					if (width < 0 || length < 0) {
+						city->output << "A Store can't have negative dimensions! Dimensions read: " << width << " " << length << std::endl;
+						continue;
+					}
+					else if (isalpha(width) || typeid(width) != typeid(int) || isalpha(length) || typeid(length) != typeid(int)) {
+						city->output << "Dimensions must be of type int! Dimensions read: " << width << " " << length << std::endl;
+						continue;
+					}
+				}
+				else if(fieldName == "Brandbaarheid") {
+					TiXmlText* text = field->FirstChild()->ToText();
+					if(text == NULL){
+						continue;
+					}
+					std::string hp_string = text->Value();
+					hp = atoi(hp_string.c_str());
+
+					/*
+					 * Check to see if the input is valid: not negative and of type int.
+					 */
+					if (hp < 0) {
+						city->output << "A house can not have a negative amount of hitpoints! Hitpoints read: " << hp << std::endl;
+						continue;
+					}
+					else if (isalpha(hp) || typeid(hp) != typeid(int)) {
+						city->output << "Hitpoints must be of type int! Hitpoints read: " << hp << std::endl;
+						continue;
+					}
+				}
+				else if(fieldName == "Overvalbaarheid") {
+					TiXmlText* text = field->FirstChild()->ToText();
+					if(text == NULL){
+						continue;
+					}
+					std::string rp_string = text->Value();
+					rp = atoi(rp_string.c_str());
+
+					/*
+					 * Check to see if the input is valid: not negative and of type int.
+					 */
+					if (rp < 0) {
+						city->output << "A house can not have a negative amount of robbery points! Robbery points read: " << rp << std::endl;
+						continue;
+					}
+					else if (isalpha(rp) || typeid(rp) != typeid(int)) {
+						city->output << "Robbery points must be of type int! Robbery points read: " << hp << std::endl;
+						continue;
+					}
+				}
+			}
+			Store newStore(x_building, y_building, hp, rp, "Store", width, length);
+			city->getStoresList()->push_back(newStore);
+		}
+		else if (objectName == "Ziekenhuis") {
+			int x_building, y_building, x_entrance, y_entrance, width, length, hp;
+			std::string name;
+			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
+				std::string fieldName = field->Value();
+				if(fieldName == "Naam") {
+					TiXmlText* text = field->FirstChild()->ToText();
+					if(text == NULL){
+						continue;
+					}
+					else {
+						name = text->Value();
+					}
+				}
+				else if(fieldName == "Locatie") {
+					x_building = atoi(field->Attribute("X"));
+					y_building = atoi(field->Attribute("Y"));
+
+					if (!validCoordCheck(x_building,y_building)) {
+						continue;
+					}
+
+					maxX = compareCoord(maxX, x_building);
+					maxY = compareCoord(maxY, y_building);
+				}
+				else if (fieldName == "Grootte") {
+					width = atoi(field->Attribute("Breedtje"));
+					length = atoi(field->Attribute("Hoogte"));
+
+					/*
+					 * Check to see if the input is valid: not negative and of type int.
+					 */
+					if (width < 0 || length < 0) {
+						city->output << "A Store can't have negative dimensions! Dimensions read: " << width << " " << length << std::endl;
+						continue;
+					}
+					else if (isalpha(width) || typeid(width) != typeid(int) || isalpha(length) || typeid(length) != typeid(int)) {
+						city->output << "Dimensions must be of type int! Dimensions read: " << width << " " << length << std::endl;
+						continue;
+					}
+				}
+				else if(fieldName == "Ingang") {
+					x_entrance = atoi(field->Attribute("X"));
+					y_entrance  = atoi(field->Attribute("Y"));
+
+					if (!validCoordCheck(x_entrance,y_entrance)) {
+						continue;
+					}
+
+					maxX = compareCoord(maxX, x_entrance);
+					maxY = compareCoord(maxY, y_entrance);
+				}
+				else if(fieldName == "Brandbaarheid") {
+					TiXmlText* text = field->FirstChild()->ToText();
+					if(text == NULL){
+						continue;
+					}
+					std::string hp_string = text->Value();
+					hp = atoi(hp_string.c_str());
+
+					/*
+					 * Check to see if the input is valid: not negative and of type int.
+					 */
+					if (hp < 0) {
+						city->output << "A hospital can not have a negative amount of hitpoints! Hitpoints read: " << hp << std::endl;
+						continue;
+					}
+					else if (isalpha(hp) || typeid(hp) != typeid(int)) {
+						city->output << "Hitpoints must be of type int! Hitpoints read: " << hp << std::endl;
+						continue;
+					}
+				}
+			}
+			Hospital newHospital(x_building, y_building, x_entrance, y_entrance, hp, name, width, length);
+			city->getHospitalsList()->push_back(newHospital);
+		}
+		else if (objectName == "PolitieBureau") {
+			int x_building, y_building, x_entrance, y_entrance, width, length, hp;
+			std::string name;
+			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
+				std::string fieldName = field->Value();
+				if(fieldName == "Naam") {
+					TiXmlText* text = field->FirstChild()->ToText();
+					if(text == NULL){
+						continue;
+					}
+					else {
+						name = text->Value();
+					}
+				}
+				else if(fieldName == "Locatie") {
+					x_building = atoi(field->Attribute("X"));
+					y_building = atoi(field->Attribute("Y"));
+
+					if (!validCoordCheck(x_building,y_building)) {
+						continue;
+					}
+
+					maxX = compareCoord(maxX, x_building);
+					maxY = compareCoord(maxY, y_building);
+				}
+				else if (fieldName == "Grootte") {
+					width = atoi(field->Attribute("Breedtje"));
+					length = atoi(field->Attribute("Hoogte"));
+
+					/*
+					 * Check to see if the input is valid: not negative and of type int.
+					 */
+					if (width < 0 || length < 0) {
+						city->output << "A Store can't have negative dimensions! Dimensions read: " << width << " " << length << std::endl;
+						continue;
+					}
+					else if (isalpha(width) || typeid(width) != typeid(int) || isalpha(length) || typeid(length) != typeid(int)) {
+						city->output << "Dimensions must be of type int! Dimensions read: " << width << " " << length << std::endl;
+						continue;
+					}
+				}
+				else if(fieldName == "Ingang") {
+					x_entrance = atoi(field->Attribute("X"));
+					y_entrance  = atoi(field->Attribute("Y"));
+
+					if (!validCoordCheck(x_entrance,y_entrance)) {
+						continue;
+					}
+
+					maxX = compareCoord(maxX, x_entrance);
+					maxY = compareCoord(maxY, y_entrance);
+				}
+				else if(fieldName == "Brandbaarheid") {
+					TiXmlText* text = field->FirstChild()->ToText();
+					if(text == NULL){
+						continue;
+					}
+					std::string hp_string = text->Value();
+					hp = atoi(hp_string.c_str());
+
+					/*
+					 * Check to see if the input is valid: not negative and of type int.
+					 */
+					if (hp < 0) {
+						city->output << "A house can not have a negative amount of hitpoints! Hitpoints read: " << hp << std::endl;
+						continue;
+					}
+					else if (isalpha(hp) || typeid(hp) != typeid(int)) {
+						city->output << "Hitpoints must be of type int! Hitpoints read: " << hp << std::endl;
+						continue;
+					}
+				}
+			}
+			PoliceStation newPolStation(x_building, y_building, x_entrance, y_entrance, hp, name, width, length);
+			city->getPoliStatsList()->push_back(newPolStation);
+		}
 		else {
 			city->output << objectName << " is not a valid object." << std::endl;
 			maxValues = std::pair<int, int>(-3, -3);
