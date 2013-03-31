@@ -14,6 +14,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <utility>
 
 #include "CityObjects.h"
@@ -40,13 +41,12 @@ private:
 public:
 	City();
 
-	std::ofstream output;
+	std::ostream& output;
 
-	City(std::string filename, std::string outputname);
+	City(std::string filename, std::ostream&);
 //	ENSURE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized.");
 
-	//City(const std::string filename, std::ofstream stream);
-
+	City(const std::string filename, std::ofstream stream);
 
 	friend std::ostream& operator <<(std::ostream& s, City& city);
 //	REQUIRE(city.properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling overloaded operator '<<'");

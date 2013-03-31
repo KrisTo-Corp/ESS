@@ -20,15 +20,23 @@ int main(int argc, char **argv) {
 		std::cerr << "Usage: ./Release \"XML FILE\" \"OUTPUT FILE\"(optional)" << std::endl << std::endl;
 	}
 	else if (argc == 2) {
-		City city(argv[1], "output.txt");
+		std::ofstream filestream("output.txt");
+		City city(argv[1], filestream);
 		simulateCity(city);
-		city.close();
+		//city.close();
 		std::cout << "output was written to \"output.txt\"" << std::endl;
 	}
 	else{
-		City city(argv[1], argv[2]);
-		simulateCity(city);
-		city.close();
-		std::cout << "output was written to " << argv[2] << std::endl;
+		if (argv[2] == "cout") {
+			City city(argv[1], std::cout);
+			simulateCity(city);
+		}
+		else {
+			std::ofstream filestream(argv[2]);
+			City city(argv[1], filestream);
+			simulateCity(city);
+			//city.close();
+			std::cout << "output was written to " << argv[2] << std::endl;
+		}
 	}
 }

@@ -12,12 +12,12 @@
 #include <cstdlib>
 #include <cmath>
 
-City::City(){
+City::City() : output(std::cout){
 	validCity = false;
 	_initCheck = this;
 }
 
-City::City(const std::string filename, std::string outputname): output(outputname.c_str()){
+City::City(const std::string filename, std::ostream& stream) : output(stream) {
 
 	validCity = true;
 	_initCheck = this;
@@ -70,12 +70,12 @@ City::City(const std::string filename, std::string outputname): output(outputnam
 	ENSURE(properlyInitialized(), "Object 'City' was not properly initialized.");
 }
 
-/* City::City(const std::string filename, std::ofstream stream) {
+ City::City(const std::string filename, std::ofstream stream) : output(stream) {
 
 	validCity = true;
 	_initCheck = this;
 
-	output = stream;
+	//output = stream;
 
 	output << "\t\t\t\t\t\t\t\tEMERGENCY SERVICES SIMULATION \n";
 	output << "\t\t\t\t\t\t\t\t============================= \n\n";
@@ -123,7 +123,7 @@ City::City(const std::string filename, std::string outputname): output(outputnam
 	}
 
 	ENSURE(properlyInitialized(), "Object 'City' was not properly initialized.");
-} */
+}
 
 City::~City()
 {
@@ -794,13 +794,13 @@ bool City::integrityCheck() {
 	return integrity;
 }
 
-void City::close(){
+/*void City::close(){
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling close()");
 
 	output.close();
 
 	ENSURE(!(output.is_open()), "File did not close properly when calling close()");
-}
+}*/
 
 std::list<Firetruck>* City::getTruckList() {
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getTruckList()");
