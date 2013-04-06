@@ -138,4 +138,13 @@ public:
 	Firetruck& operator = (const Firetruck&);
 };
 
+class PoliceCar: public Vehicles {
+	// MOVE FIRETRUCK FUNCTIONS UP TO VEHICLES!
+};
+
+class Ambulance: public Vehicles {
+	// MOVE FIRETRUCK FUNCTIONS UP TO VEHICLES!
+};
+
+
 #endif /* VEHICLES_H_ */

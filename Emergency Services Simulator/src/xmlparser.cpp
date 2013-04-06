@@ -442,15 +442,59 @@ void XmlParser::parseCity(std::string filename) {
 			PoliceStation newPolStation(x_building, y_building, x_entrance, y_entrance, hp, name, width, length);
 			city->getPoliStatsList()->push_back(newPolStation);
 		}
+		else if (objectName == "Politiewagen") {
+			std::string name, base;
+			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
+				std::string fieldName = field->Value();
+				TiXmlText* text = field->FirstChild()->ToText();
+				if(text == NULL){
+					continue;
+				}
+				else if (fieldName == "Naam") {
+					name = text->Value();
+				}
+				else if (fieldName == "Basis") {
+					base = text->Value();
+				}
+				else {
+					city->output << "Label " << fieldName << " is not a valid field. Truck" << std::endl;
+					continue;
+				}
+			}
+			//PoliceCar policeCar(0, 0, name, base);
+			//city->getPoliceCarsList()->push_back(truck);
+		}
+		else if (objectName == "Politiewagen") {
+			std::string name, base;
+			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
+				std::string fieldName = field->Value();
+				TiXmlText* text = field->FirstChild()->ToText();
+				if(text == NULL){
+					continue;
+				}
+				else if (fieldName == "Naam") {
+					name = text->Value();
+				}
+				else if (fieldName == "Basis") {
+					base = text->Value();
+				}
+				else {
+					city->output << "Label " << fieldName << " is not a valid field. Truck" << std::endl;
+					continue;
+				}
+			}
+			//Ambulance policeCar(0, 0, name, base);
+			//city->getAmbulancesList()->push_back(truck);
+		}
 		else {
 			city->output << objectName << " is not a valid object." << std::endl;
 			maxValues = std::pair<int, int>(-3, -3);
 			return;
 		}
 	}
-
 	maxValues = std::pair<int, int>(maxX, maxY);
 }
+
 
 bool XmlParser::validCoordCheck(int x, int y) {
 	/*

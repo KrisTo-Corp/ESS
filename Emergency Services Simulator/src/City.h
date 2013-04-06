@@ -34,6 +34,8 @@ private:
 	std::list<Store> stores;
 	std::list<Hospital> hospitals;
 	std::list<PoliceStation> poliStats;
+	std::list<PoliceCar> policecars;
+	std::list<Ambulance> ambulances;
 
 	bool validCity;
 
@@ -141,7 +143,7 @@ public:
 
 	bool getValidCity();
 
-	void link_trucks_to_bases();
+	void link_vehicles_to_bases();
 
 	bool properlyInitialized(int, int);
 

@@ -51,7 +51,7 @@ City::City(const std::string filename, std::ostream& stream) : output(stream) {
 
 	matrix = Matrix(maxCoords.second + 1, maxCoords.first +1);
 
-	link_trucks_to_bases();
+	link_vehicles_to_bases();
 	matrix.addHouses(houses);
 	matrix.addFiredeps(departments);
 	crossroads = matrix.addStreets(streets);
@@ -139,7 +139,11 @@ City& City::operator =(const City& c){
 	return *this;
 }
 
-void City::link_trucks_to_bases() {
+void City::link_vehicles_to_bases() {
+	std::list<PoliceCar>::iterator it_p;
+	std::list<PoliceStation>::iterator it_pstation;
+	std::list<Ambulance>::iterator it_a;
+	std::list<Hospital>::iterator it_hosp;
 	std::list<Firetruck>::iterator it_t;
 	std::list<Fire_Department>::iterator it_dep;
 	for (it_t = trucks.begin(); it_t != trucks.end(); it_t++) {
