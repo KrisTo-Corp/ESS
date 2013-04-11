@@ -33,7 +33,6 @@ void simulateCity(City& city) {
 
 	// Find an available firetruck.
 	std::list<Firetruck>::iterator it_t;
-	Firetruck* rescueTruck;
 	std::list<std::pair<int, Firetruck*> > truck_distances;
 	for (it_t = city.getTruckList()->begin(); it_t != city.getTruckList()->end(); it_t++) {
 		if (it_t->getAvailable()) {
@@ -113,6 +112,10 @@ void simulateCity(City& city) {
 		}
 
 		int i = 0;
+
+		if (city.getTruckList()->size() == 0) {
+			city.output << "There are no firetrucks in this city." << std::endl;
+		}
 
 		// Move
 		for (std::list<Firetruck>::iterator it = city.getTruckList()->begin(); it != city.getTruckList()->end(); it++) {

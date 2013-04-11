@@ -17,7 +17,7 @@ City::City() : output(std::cout){
 	_initCheck = this;
 }
 
-City::City(const std::string filename, std::ostream& stream) : output(stream) {
+City::City(const std::string filename, std::ostream& stream, std::string vehiclesXML) : output(stream) {
 
 	validCity = true;
 	_initCheck = this;
@@ -26,9 +26,10 @@ City::City(const std::string filename, std::ostream& stream) : output(stream) {
 	output << "\t\t\t\t\t\t\t\t============================= \n\n";
 
 	XmlParser parser(this);
-	std::cout << "1" << std::endl;
+	if (vehiclesXML != "empty") {
+		parser.parseCity(vehiclesXML);
+	}
 	parser.parseCity(filename);
-	std::cout << "2" << std::endl;
 	std::pair<int, int> maxCoords =	parser.getMaxValues();
 
 	if(maxCoords.first == -1 && maxCoords.second == -1){
@@ -57,6 +58,8 @@ City::City(const std::string filename, std::ostream& stream) : output(stream) {
 	crossroads = matrix.addStreets(streets);
 	matrix.addCrossroads(crossroads);
 	matrix.addStores(stores);
+	matrix.addHospitals(hospitals);
+	matrix.addPolStations(poliStats);
 
 	output << matrix << "\n";
 
@@ -600,6 +603,54 @@ bool City::integrityCheck() {
 				if (matrix.getObject(location.getX(), location.getY()) != &(*itd)){
 					Coordinate storeLocation = itd->getLocation();
 					output << "\tERROR: Store at location " << storeLocation << " is supposed to be at " << location << " but is not.\n";
+					integrity = false;
+				}
+				coordinates.push_back(location);
+			}
+		}
+	}
+
+	for (std::list<Hospital>::iterator itd = hospitals.begin(); itd != hospitals.end(); itd++){
+		Coordinate location;
+		CityObjects* ptr = &(*itd);
+		Hospital* hospitalPtr = dynamic_cast<Hospital*>(ptr);
+		if (getAdjecantStreet(ptr, Coordinate(0, 0)) == Coordinate(-1, -1)){
+			Coordinate hospitalLocation = hospitalPtr->getLocation();
+			output << "\tERROR: Hospital at location "<< hospitalLocation << " doesn't have a street linked to it.\n";
+			integrity = false;
+		}
+		for (int x = 0; x < hospitalPtr->getWidth(); x++){
+			for (int y = 0; y < hospitalPtr->getLength(); y++){
+				location = itd->getLocation();
+				location.setX(location.getX()+x);
+				location.setY(location.getY()-y);
+				if (matrix.getObject(location.getX(), location.getY()) != &(*itd)){
+					Coordinate storeLocation = itd->getLocation();
+					output << "\tERROR: Hospital at location " << storeLocation << " is supposed to be at " << location << " but is not.\n";
+					integrity = false;
+				}
+				coordinates.push_back(location);
+			}
+		}
+	}
+
+	for (std::list<PoliceStation>::iterator itd = poliStats.begin(); itd != poliStats.end(); itd++){
+		Coordinate location;
+		CityObjects* ptr = &(*itd);
+		PoliceStation* polPtr = dynamic_cast<PoliceStation*>(ptr);
+		if (getAdjecantStreet(ptr, Coordinate(0, 0)) == Coordinate(-1, -1)){
+			Coordinate polLocation = polPtr->getLocation();
+			output << "\tERROR: Policestation at location "<< polLocation << " doesn't have a street linked to it.\n";
+			integrity = false;
+		}
+		for (int x = 0; x < polPtr->getWidth(); x++){
+			for (int y = 0; y < polPtr->getLength(); y++){
+				location = itd->getLocation();
+				location.setX(location.getX()+x);
+				location.setY(location.getY()-y);
+				if (matrix.getObject(location.getX(), location.getY()) != &(*itd)){
+					Coordinate polLocation = itd->getLocation();
+					output << "\tERROR: Policestation at location " << polLocation << " is supposed to be at " << location << " but is not.\n";
 					integrity = false;
 				}
 				coordinates.push_back(location);

@@ -48,6 +48,12 @@ public:
 	void addStores(std::list<Store>& list);
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addStores().");
 
+	void addHospitals(std::list<Hospital>& list);
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addHospitals().");
+
+	void addPolStations(std::list<PoliceStation>& list);
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addPolStations().");
+
 	std::list<Crossroad> addStreets(std::list<Street>& list);
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addStreets().");
 

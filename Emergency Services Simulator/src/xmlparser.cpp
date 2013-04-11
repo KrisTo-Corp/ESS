@@ -355,7 +355,7 @@ void XmlParser::parseCity(std::string filename) {
 					maxY = compareCoord(maxY, y_building);
 				}
 				else if (fieldName == "Grootte") {
-					width = atoi(field->Attribute("Breedtje"));
+					width = atoi(field->Attribute("Breedte"));
 					length = atoi(field->Attribute("Hoogte"));
 
 					/*
@@ -433,7 +433,7 @@ void XmlParser::parseCity(std::string filename) {
 					maxY = compareCoord(maxY, y_building);
 				}
 				else if (fieldName == "Grootte") {
-					width = atoi(field->Attribute("Breedtje"));
+					width = atoi(field->Attribute("Breedte"));
 					length = atoi(field->Attribute("Hoogte"));
 
 					/*

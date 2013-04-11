@@ -114,7 +114,7 @@ protected:
 	friend class City;
 };
 
-
+/*
 // TEST THE DEFAULT COORDINATE CONSTRUCTOR.
 TEST_F(CoordinateTest, DefaultConstructor){
 	EXPECT_TRUE(coordinate.properlyInitialized());
@@ -709,7 +709,7 @@ TEST_F(CityTest, Update){
 	EXPECT_TRUE(FileCompare("Output files/updateTest.txt", "Expected Output/expectedUpdateTest.txt"));
 }
 
-/*// TEST IS VALID COORDINATE
+// TEST IS VALID COORDINATE
 TEST_F(CityTest, ValidCoordinate){
 	City c("XML Files/stad.xml", "Output files/unusedOutput.txt");
 	EXPECT_TRUE(c.validCoordCheck(15, 7));
@@ -722,7 +722,7 @@ TEST_F(CityTest, ValidCoordinate){
 	EXPECT_FALSE(c.validCoordCheck(0, -1));
 	EXPECT_FALSE(c.validCoordCheck('a', 9));
 	EXPECT_FALSE(c.validCoordCheck(15, 'b'));
-}*/
+}
 
 // TEST THE SETFIRE FUNCTION
 TEST_F(CityTest, SetFire){
@@ -922,7 +922,7 @@ TEST_F(SimulationTest, Overlap){
 	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
 	stream.close();
 	EXPECT_TRUE(FileCompare("Output files/overlapOutput.txt", "Expected Output/expectedOverlapOutput.txt"));
-}
+}*/
 
 // TEST WITH UNLINKED TRUCKS
 TEST_F(SimulationTest, UnlinkedTrucks){
@@ -932,7 +932,7 @@ TEST_F(SimulationTest, UnlinkedTrucks){
 	stream.close();
 	EXPECT_TRUE(FileCompare("Output files/unlinkedTrucksOutput.txt", "Expected Output/expectedUnlinkedTrucksOutput.txt"));
 }
-
+/*
 // HOUSES NOT LINKED TO STREET
 TEST_F(SimulationTest, UnlinkedHouses){
 	std::ofstream stream("Output files/unlinkedTrucksOutput.txt");
@@ -965,7 +965,7 @@ TEST_F(SimulationTest, NormalSimulation3){
 	simulateCity_Test(c, Coordinate(4, 11), Coordinate(12, 11));
 	stream.close();
 	EXPECT_TRUE(FileCompare("Output files/normalOutput3.txt", "Expected Output/expectedNormalOutput3.txt"));
-}
+}*/
 
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);

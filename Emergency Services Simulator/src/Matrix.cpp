@@ -107,6 +107,44 @@ void Matrix::addStores(std::list<Store>& list) {
 	}
 }
 
+void Matrix::addHospitals(std::list<Hospital>& list) {
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addHospitals().");
+
+	std::list<Hospital>::iterator it;
+	for (it = list.begin(); it != list.end(); it++) {
+		int x_start = it->getLocation().getX();
+		int y_start = it->getLocation().getY();
+		int x_end = x_start + (it->getWidth()-1);
+		int y_end = y_start - (it->getLength()-1);
+
+		for (int i = x_start; i <= x_end; i++){
+			for (int j = y_start; j >= y_end; j--){
+				CityObjects* pointer = &(*it);
+				addObject(i, j, pointer);
+			}
+		}
+	}
+}
+
+void Matrix::addPolStations(std::list<PoliceStation>& list) {
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addPolStations().");
+
+	std::list<PoliceStation>::iterator it;
+	for (it = list.begin(); it != list.end(); it++) {
+		int x_start = it->getLocation().getX();
+		int y_start = it->getLocation().getY();
+		int x_end = x_start + (it->getWidth()-1);
+		int y_end = y_start - (it->getLength()-1);
+
+		for (int i = x_start; i <= x_end; i++){
+			for (int j = y_start; j >= y_end; j--){
+				CityObjects* pointer = &(*it);
+				addObject(i, j, pointer);
+			}
+		}
+	}
+}
+
 std::list<Crossroad> Matrix::addStreets(std::list<Street>& list) {
 	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addStreets().");
 
@@ -176,25 +214,31 @@ std::ostream& operator <<(std::ostream& s, Matrix& m){
 		s << m.rows-1-i << "\t[";
 		for(int j = 0; j < m.columns; j++){
 			if(m.matrix[i][j] == NULL){
-				s << "?";
+				s << "?\t";
 			}
 			else if(m.matrix[i][j]->getType() == house){
-				s << "H";
+				s << "H\t";
 			}
 			else if(m.matrix[i][j]->getType() == department){
-				s << "D";
+				s << "D\t";
 			}
 			else if(m.matrix[i][j]->getType() == street){
-				s << " ";
+				s << " \t";
 			}
 			else if(m.matrix[i][j]->getType() == crossroad){
-				s << " ";
+				s << " \t";
 			}
 			else if(m.matrix[i][j]->getType() == store){
-				s << "S";
+				s << "S\t";
+			}
+			else if(m.matrix[i][j]->getType() == policeStation){
+				s << "P\t";
+			}
+			else if(m.matrix[i][j]->getType() == hospital){
+				s << "+\t";
 			}
 			else{
-				s << "?";
+				s << "?\t";
 			}
 		}
 		s << "]\n";

@@ -48,7 +48,7 @@ public:
 
 	std::ostream& output;
 
-	City(std::string filename, std::ostream&);
+	City(std::string filename, std::ostream&, std::string vehiclesXML = "empty");
 //	ENSURE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized.");
 
 	friend std::ostream& operator <<(std::ostream& s, City& city);

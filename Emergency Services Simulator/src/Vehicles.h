@@ -24,6 +24,15 @@ protected:
 	std::string name;
 	Coordinate coord;
 
+	Coordinate tempDestination;
+	Coordinate destination;
+	Structures* target;
+	bool goToTemp;
+	bool available;
+	bool atHome;
+
+	std::string basename;
+
 	Vehicles* _initCheck;
 
 public:
