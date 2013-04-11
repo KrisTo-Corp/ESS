@@ -38,6 +38,8 @@ void XmlParser::parseCity(std::string filename) {
 	for(TiXmlElement* object = virtualCity->FirstChildElement(); object != NULL; object = object->NextSiblingElement()) {
 		std::string objectName = object->Value();
 		if (objectName == "Huis") {
+			std::cout << "house 1" << std::endl;
+
 			int x, y, hp;
 
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
@@ -84,8 +86,10 @@ void XmlParser::parseCity(std::string filename) {
 			// validcoordcheck here
 			House house(x, y, hp, "house");
 			city->getHouseList()->push_back(house);
+			std::cout << "house 1" << std::endl;
 		}
 		else if (objectName == "Straat") {
+			std::cout << "street 1" << std::endl;
 			int x_start, y_start, x_end, y_end;
 			std::string name;
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
@@ -137,6 +141,7 @@ void XmlParser::parseCity(std::string filename) {
 
 			Street street(x_start, y_start, x_end, y_end, name);
 			city->getStreetsList()->push_back(street);
+			std::cout << "street 1" << std::endl;
 		}
 		else if (objectName == "Brandweerwagen") {
 			std::string name, base;
@@ -161,6 +166,7 @@ void XmlParser::parseCity(std::string filename) {
 			city->getTruckList()->push_back(truck);
 		}
 		else if(objectName == "Brandweerkazerne") {
+			std::cout << "dep 1" << std::endl;
 			int x_building, y_building, x_entrance, y_entrance;
 			int hp = 0;
 			std::string name;
@@ -234,8 +240,11 @@ void XmlParser::parseCity(std::string filename) {
 
 			Fire_Department department(x_building, y_building, x_entrance, y_entrance, name, hp);
 			city->getDepList()->push_back(department);
+			std::cout << "dep 1" << std::endl;
 		}
 		else if (objectName == "Winkel") {
+			std::cout << "store 1" << std::endl;
+
 			int x_building, y_building, width, length, hp, rp;
 			std::string name;
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
@@ -252,7 +261,7 @@ void XmlParser::parseCity(std::string filename) {
 					maxY = compareCoord(maxY, y_building);
 				}
 				else if (fieldName == "Grootte") {
-					width = atoi(field->Attribute("Breedtje"));
+					width = atoi(field->Attribute("Breedte"));
 					length = atoi(field->Attribute("Hoogte"));
 
 					/*
@@ -307,11 +316,20 @@ void XmlParser::parseCity(std::string filename) {
 						continue;
 					}
 				}
+				else {
+					city->output << "Label " << fieldName << " is not a valid field. dep" << std::endl;
+					continue;
+
+				}
 			}
+			std::cout << "CONSTRUCTING" << std::endl;
 			Store newStore(x_building, y_building, hp, rp, "Store", width, length);
+			std::cout << "next is wrong!" << std::endl;
 			city->getStoresList()->push_back(newStore);
+			std::cout << "store 1" << std::endl;
 		}
 		else if (objectName == "Ziekenhuis") {
+			std::cout << "hospital 1" << std::endl;
 			int x_building, y_building, x_entrance, y_entrance, width, length, hp;
 			std::string name;
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
@@ -386,8 +404,10 @@ void XmlParser::parseCity(std::string filename) {
 			}
 			Hospital newHospital(x_building, y_building, x_entrance, y_entrance, hp, name, width, length);
 			city->getHospitalsList()->push_back(newHospital);
+			std::cout << "hospital 1" << std::endl;
 		}
 		else if (objectName == "PolitieBureau") {
+			std::cout << "pol 1" << std::endl;
 			int x_building, y_building, x_entrance, y_entrance, width, length, hp;
 			std::string name;
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
@@ -462,6 +482,7 @@ void XmlParser::parseCity(std::string filename) {
 			}
 			PoliceStation newPolStation(x_building, y_building, x_entrance, y_entrance, hp, name, width, length);
 			city->getPoliStatsList()->push_back(newPolStation);
+			std::cout << "pol 1" << std::endl;
 		}
 		else if (objectName == "Politiewagen") {
 			std::string name, base;

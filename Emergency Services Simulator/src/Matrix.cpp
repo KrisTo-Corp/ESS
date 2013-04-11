@@ -88,6 +88,25 @@ void Matrix::addFiredeps(std::list<Fire_Department>& list) {
 	}
 }
 
+void Matrix::addStores(std::list<Store>& list) {
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addStores().");
+
+	std::list<Store>::iterator it;
+	for (it = list.begin(); it != list.end(); it++) {
+		int x_start = it->getLocation().getX();
+		int y_start = it->getLocation().getY();
+		int x_end = x_start + (it->getWidth()-1);
+		int y_end = y_start - (it->getLength()-1);
+
+		for (int i = x_start; i <= x_end; i++){
+			for (int j = y_start; j >= y_end; j--){
+				CityObjects* pointer = &(*it);
+				addObject(i, j, pointer);
+			}
+		}
+	}
+}
+
 std::list<Crossroad> Matrix::addStreets(std::list<Street>& list) {
 	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addStreets().");
 
@@ -154,25 +173,28 @@ std::ostream& operator <<(std::ostream& s, Matrix& m){
 	s << "\nMAP: \n";
 	s << "====\n\n";
 	for(int i = 0; i < m.rows; i++){
-		s << m.rows-1-i << "\t[\t";
+		s << m.rows-1-i << "\t[";
 		for(int j = 0; j < m.columns; j++){
 			if(m.matrix[i][j] == NULL){
-				s << "?\t";
+				s << "?";
 			}
 			else if(m.matrix[i][j]->getType() == house){
-				s << "H\t";
+				s << "H";
 			}
 			else if(m.matrix[i][j]->getType() == department){
-				s << "D\t";
+				s << "D";
 			}
 			else if(m.matrix[i][j]->getType() == street){
-				s << "S\t";
+				s << " ";
 			}
 			else if(m.matrix[i][j]->getType() == crossroad){
-				s << "C\t";
+				s << " ";
+			}
+			else if(m.matrix[i][j]->getType() == store){
+				s << "S";
 			}
 			else{
-				s << "?\t";
+				s << "?";
 			}
 		}
 		s << "]\n";

@@ -45,6 +45,9 @@ public:
 	void addCrossroads(std::list<Crossroad>& list);
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addCrossroads().");
 
+	void addStores(std::list<Store>& list);
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addStores().");
+
 	std::list<Crossroad> addStreets(std::list<Street>& list);
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addStreets().");
 

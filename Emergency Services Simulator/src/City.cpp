@@ -56,6 +56,7 @@ City::City(const std::string filename, std::ostream& stream) : output(stream) {
 	matrix.addFiredeps(departments);
 	crossroads = matrix.addStreets(streets);
 	matrix.addCrossroads(crossroads);
+	matrix.addStores(stores);
 
 	output << matrix << "\n";
 
@@ -575,6 +576,30 @@ bool City::integrityCheck() {
 				if (matrix.getObject(location.getX(), location.getY()) != &(*itd)){
 					Coordinate deplocation = itd->getLocation();
 					output << "\tERROR: Department at location " << deplocation << " is supposed to be at " << location << " but is not.\n";
+					integrity = false;
+				}
+				coordinates.push_back(location);
+			}
+		}
+	}
+
+	for (std::list<Store>::iterator itd = stores.begin(); itd != stores.end(); itd++){
+		Coordinate location;
+		CityObjects* ptr = &(*itd);
+		Store* storeptr = dynamic_cast<Store*>(ptr);
+		if (getAdjecantStreet(ptr, Coordinate(0, 0)) == Coordinate(-1, -1)){
+			Coordinate storeLocation = storeptr->getLocation();
+			output << "\tERROR: Store at location "<< storeLocation << " doesn't have a street linked to it.\n";
+			integrity = false;
+		}
+		for (int x = 0; x < storeptr->getWidth(); x++){
+			for (int y = 0; y < storeptr->getLength(); y++){
+				location = itd->getLocation();
+				location.setX(location.getX()+x);
+				location.setY(location.getY()-y);
+				if (matrix.getObject(location.getX(), location.getY()) != &(*itd)){
+					Coordinate storeLocation = itd->getLocation();
+					output << "\tERROR: Store at location " << storeLocation << " is supposed to be at " << location << " but is not.\n";
 					integrity = false;
 				}
 				coordinates.push_back(location);
