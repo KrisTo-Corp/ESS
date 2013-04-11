@@ -31,8 +31,7 @@ void simulateCity(City& city) {
 	Coordinate cur = structptr->getLocation();
 	std::string name = structptr->getName();
 	city.output << name << " at location " << cur << " started burning." << std::endl;
-	House* houseptr = dynamic_cast<House*>(structptr);
-	double hp = houseptr->getHP();
+	double hp = structptr->getHP();
 	city.output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
 
 	// Find an available firetruck.
@@ -40,7 +39,7 @@ void simulateCity(City& city) {
 	std::list<std::pair<int, Firetruck*> > truck_distances;
 	for (it_t = city.getTruckList()->begin(); it_t != city.getTruckList()->end(); it_t++) {
 		if (it_t->getAvailable()) {
-			std::pair<int, Firetruck*> temp(city.calculateDistance(city.getAdjecantStreet(houseptr, it_t->getCoord()), it_t->getCoord()), &(*it_t));
+			std::pair<int, Firetruck*> temp(city.calculateDistance(city.getAdjecantStreet(structptr, it_t->getCoord()), it_t->getCoord()), &(*it_t));
 			truck_distances.push_back(temp);
 		}
 	}
@@ -48,8 +47,8 @@ void simulateCity(City& city) {
 	if (truck_distances.size() != 0){
 		Firetruck* rescueTruck = truck_distances.begin()->second;
 		rescueTruck->setAvailable(false);
-		rescueTruck->setDestination(city.getAdjecantStreet(houseptr, rescueTruck->getCoord()));
-		rescueTruck->setTarget(houseptr);
+		rescueTruck->setDestination(city.getAdjecantStreet(structptr, rescueTruck->getCoord()));
+		rescueTruck->setTarget(structptr);
 		rescueTruck->setIsHome(false);
 	}
 
@@ -79,11 +78,12 @@ void simulateCity(City& city) {
 		PoliceCar* rescueCar = car_distances.begin()->second;
 		rescueCar->setAvailable(false);
 		rescueCar->setDestination(city.getAdjecantStreet(storePtr, rescueCar->getCoord()));
-		rescueCar->setTarget(houseptr);
+		rescueCar->setTarget(storePtr);
 		rescueCar->setIsHome(false);
 	}
 
-	while (!finished) {
+	while (true) {
+		finished = true;
 		// Random chance to setFire()
 		int chance = rand() % 20;
 		if (chance == 20) {
@@ -142,6 +142,44 @@ void simulateCity(City& city) {
 						city.output << "\t It has " << hp << " hitpoints left." << std::endl << std::endl;
 					}
 				}
+				else if (ptr->getState() == beingrobbed) {
+					finished = false;
+
+					Store* storePtr = dynamic_cast<Store*>(ptr);
+
+					storePtr->decreaseRP();
+					double rp = storePtr->getRP();
+					if (rp/floor(rp) == 1){
+						Coordinate cur = storePtr->getLocation();
+						std::string name = storePtr->getName();
+						city.output << name << " at location " << cur << " is still burning." << std::endl;
+						city.output << "\t It has " << rp << " robbery points left." << std::endl << std::endl;
+					}
+
+					if (storePtr->getRP() <= 0){
+						storePtr->setState(destroyed);
+						Coordinate cur = storePtr->getLocation();
+						std::string name = storePtr->getName();
+						city.output << name << " at location " << cur << " is robbed empty." << std::endl;
+						city.output << "\t It has " << rp << " robbery points left." << std::endl << std::endl;
+					}
+				}
+				else if (ptr->getState() == normal){
+					Structures* structptr = dynamic_cast<Structures*>(ptr);
+					double hp = structptr->getHP();
+					double maxhp = structptr->getMaxHp();
+					std::cout << "HP = " << hp << "\tMAXHP = " << maxhp << std::endl;
+					if (hp < maxhp){
+						std::cout << "HP NOT EQUAL" << std::endl;
+						structptr->increaseHp();
+						if (structptr->getHP()/floor(structptr->getHP()) == 1){
+							Coordinate cur = structptr->getLocation();
+							std::string name = structptr->getName();
+							city.output << name << " at location " << cur << " is repairing." << std::endl;
+							city.output << "\t It has " << structptr->getHP() << " hitpoints left." << std::endl << std::endl;
+						}
+					}
+				}
 			}
 		}
 
@@ -196,9 +234,48 @@ void simulateCity(City& city) {
 			}
 		}
 
-		if (i == city.getAmountTrucks()) {
-			finished = true;
+		for (std::list<PoliceCar>::iterator it = city.getPoliceCarsList()->begin(); it != city.getPoliceCarsList()->end(); it++) {
+			city.driveTruck(&(*it));
+			Coordinate destination = it->getDestination();
+			if (it->getCoord() == destination) {
+				Coordinate cur_dest = it->getCoord();
+				if (it->getAvailable() == false) {
+					Structures* saved = it->getTarget();
+					if (saved->getState() == beingrobbed) {
+						saved->setState(normal);
+						it->setAvailable(true);
+						it->setDestination(it->getBaseptr()->getEntrance());
+						it->setTarget(it->getBaseptr());
+						city.output << "Policecar " << it->getName() << " has reached its destination ";
+						city.output << " at location " << destination << " and has stopped the robbery and are returning home.\n" << std::endl;
+					}
+					else if (saved->getState() == destroyed) {
+						it->setAvailable(true);
+						it->setDestination(it->getBaseptr()->getEntrance());
+						it->setTarget(it->getBaseptr());
+						city.output << "Policecar " << it->getName() << " has reached its destination ";
+						city.output << " at location " << destination << " and saw that the store was robbed empty and are now returning home.\n" << std::endl;
+					}
+				}
+				else {
+					i++;
+					if (it->getIsHome() == false){
+						city.output << "Policecar " << it->getName() << " has arrived at its base " << it->getBaseptr()->getName() << "\n\n";
+						it->setIsHome(true);
+					}
+				}
+			}
+			else {
+				Coordinate location = it->getCoord();
+				Roads* truckStreet = dynamic_cast<Roads*>(city.getMatrix()->getObject(it->getCoord().getX(), it->getCoord().getY()));
+				city.output << "Policecar " << it->getName() << " is on its way to " << it->getTarget()->getName() << " on location ";
+				city.output << destination << ". The policecar is at " << truckStreet->getName() << " on location " << location << std::endl << std::endl;
+			}
+		}
+
+		if ((i == city.getAmountTrucks()+city.getAmountCars()) && finished) {
 			city.output << "\n================================================================================================================================";
+			return;
 		}
 		else {
 			city.output << "\n--------------------------------------------------------------------------------------------------------------------------------\n\n";

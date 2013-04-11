@@ -23,6 +23,7 @@ class Ambulance;
 
 class Structures: public CityObjects {
 protected:
+	double maxhp;
 	double hp;
 	std::string name;
 	Coordinate location;
@@ -44,6 +45,17 @@ public:
 	Coordinate getLocation();
 //	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
+	void decreaseHP();
+//	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling decreaseHP()");
+//	ENSURE(hitpoints == oldHP - (1.0/(width*length)), "HP of structure was not decreased successfully.");
+
+	double getHP();
+//	REQUIRE(init(), "Object 'House' was not properly initialized when calling getHP()");
+
+	double getMaxHp();
+
+	void increaseHp();
+
 	int getWidth();
 //	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
@@ -57,8 +69,6 @@ public:
 
 
 class House: public Structures {
-private:
-	double hitpoints;
 
 public:
 	House();
@@ -68,12 +78,6 @@ public:
 //	ENSURE(init(), "Object 'House' was not properly initialized.");
 
 	virtual ~House();
-	void decreaseHP();
-//	REQUIRE(init(), "Object 'House' was not properly initialized when calling getName()");
-//	ENSURE(hitpoints == oldHP - (1.0/(width*length)), "HP of house was not decreased successfully.");
-
-	double getHP();
-//	REQUIRE(init(), "Object 'House' was not properly initialized when calling getHP()");
 
 	friend std::ostream& operator <<(std::ostream& s, House& house);
 
@@ -122,7 +126,6 @@ public:
 
 class Store : public Structures {
 private:
-	double hp;
 	double rp;
 
 public:
@@ -134,6 +137,9 @@ public:
 
 	double getRP();
 
+	void decreaseRP();
+//	REQUIRE(init(), "Object 'Store' was not properly initialized when calling decreaseRP()");
+
 	Store(const Store& c);
 
 	Store& operator =(const Store&);
@@ -142,7 +148,6 @@ public:
 class PoliceStation : public Structures {
 private:
 	Coordinate entrance;
-	double hp;
 	std::vector<PoliceCar*> cars;
 
 public:
@@ -167,7 +172,6 @@ public:
 class Hospital : public Structures {
 private:
 	Coordinate entrance;
-	double hp;
 	std::vector<Ambulance*> ambulances;
 
 public:

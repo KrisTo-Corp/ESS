@@ -69,6 +69,10 @@ public:
 	int getAmountTrucks();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountTrucks()");
 
+	int getAmountCars();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountCars()");
+
+
 	CityObjects* getObject(int, int);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountTrucks()");
 
@@ -111,7 +115,7 @@ public:
 	int calculateDistance(Coordinate, Coordinate);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling calculateDistance()");
 
-	void driveTruck(Firetruck*);
+	void driveTruck(Vehicles*);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling driveTruck()");
 
 	bool integrityCheck();

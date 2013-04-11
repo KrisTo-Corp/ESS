@@ -19,10 +19,10 @@ CityObjects::CityObjects(): type(none), state(intouchable)
 
 CityObjects::CityObjects(Eobjects t): type(t)
 {
-	if (type == house){
-		state = normal;
-	}
-	else if (type == store){
+	//if ((type == house) || (type == store) || (type == hospital) || (type == department) || (type == policeStation)){
+	//	state = normal;
+	//}
+	if ((type == house) || (type == store)){
 		state = normal;
 	}
 	else {

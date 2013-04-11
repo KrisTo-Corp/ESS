@@ -17,13 +17,17 @@
 Structures::Structures(): CityObjects(none), name(""), location(0, 0), width(0), length(0)
 {
 	hp = 0;
+	maxhp = 0;
 
 	ENSURE(init(), "Object 'Structures' was not properly initialized.");
 }
 
-Structures::Structures(const int x, const int y, const std::string n, const int w, const int l, Eobjects t, int hitpoints): CityObjects(t), name(n), location(x, y), width(w), length(l)
+Structures::Structures(const int x, const int y, const std::string n, const int w, const int l, Eobjects t, int hitp): CityObjects(t), name(n), location(x, y), width(w), length(l)
 {
-	hp = hitpoints;
+	hp = hitp;
+	maxhp = hitp;
+
+	std::cout << "THIS OBJECT MAXHP : " << maxhp << std::endl;
 
 	ENSURE(init(), "Object 'Structures' was not properly initialized.");
 }
@@ -62,6 +66,8 @@ Structures::Structures(const Structures& c){
 	length = c.length;
 	type = c.type;
 	state = c.state;
+	hp = c.hp;
+	maxhp = c.maxhp;
 
 	_initCheck = this;
 }
@@ -73,10 +79,36 @@ Structures& Structures::operator =(const Structures& c){
 	length = c.length;
 	type = c.type;
 	state = c.state;
+	maxhp = c.maxhp;
+	hp = c.hp;
 
 	_initCheck = this;
 
 	return *this;
+}
+
+void Structures::decreaseHP(){
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling decreaseHP()");
+
+	double oldHP = hp;
+	hp = hp - (1.0/(width*length));
+
+	ENSURE(hp == oldHP - (1.0/(width*length)), "HP of structure was not decreased successfully.");
+}
+
+void Structures::increaseHp(){
+	hp = hp + ((1.0/(width*length))/2);
+
+}
+
+double Structures::getHP(){
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getHP()");
+
+	return hp;
+}
+
+double Structures::getMaxHp(){
+	return maxhp;
 }
 
 
@@ -86,13 +118,11 @@ Structures& Structures::operator =(const Structures& c){
 //================
 
 House::House(): Structures(0, 0, "", 2, 2, house) {
-	hitpoints = 0;
 
 	ENSURE(init(), "Object 'House' was not properly initialized.");
 }
 
-House::House(const int x, const int y, int hp, const std::string n): Structures(x, y, n, 2, 2, house) {
-	hitpoints = hp;
+House::House(const int x, const int y, int hitp, const std::string n): Structures(x, y, n, 2, 2, house, hitp) {
 
 	ENSURE(init(), "Object 'House' was not properly initialized.");
 }
@@ -106,7 +136,7 @@ std::ostream& operator <<(std::ostream& s, House& house){
 
 	s << "Structure: House \n";
 	s << "Name: " << house.name << "\n";
-	s << "Hitpoints: " << house.hitpoints << "\n";
+	s << "hp: " << house.hp << "\n";
 	s << "Location:" << house.location << "\n";
 
 	return s;
@@ -119,7 +149,8 @@ House::House(const House& c){
 	length = c.length;
 	type = c.type;
 	state = c.state;
-	hitpoints = c.hitpoints;
+	hp = c.hp;
+	maxhp = c.maxhp;
 
 	_initCheck = this;
 }
@@ -131,26 +162,12 @@ House& House::operator =(const House& c){
 	length = c.length;
 	type = c.type;
 	state = c.state;
-	hitpoints = c.hitpoints;
+	hp = c.hp;
+	maxhp = c.maxhp;
 
 	_initCheck = this;
 
 	return *this;
-}
-
-void House::decreaseHP(){
-	REQUIRE(init(), "Object 'House' was not properly initialized when calling decreaseHP()");
-
-	double oldHP = hitpoints;
-	hitpoints = hitpoints - (1.0/(width*length));
-
-	ENSURE(hitpoints == oldHP - (1.0/(width*length)), "HP of house was not decreased successfully.");
-}
-
-double House::getHP(){
-	REQUIRE(init(), "Object 'House' was not properly initialized when calling getHP()");
-
-	return hitpoints;
 }
 
 
@@ -225,6 +242,8 @@ Fire_Department::Fire_Department(const Fire_Department& c){
 	state = c.state;
 	entrance = c.entrance;
 	trucks = c.trucks;
+	hp = c.hp;
+	maxhp = c.maxhp;
 
 	_initCheck = this;
 }
@@ -238,6 +257,8 @@ Fire_Department Fire_Department::operator =(const Fire_Department& c){
 	state = c.state;
 	entrance = c.entrance;
 	trucks = c.trucks;
+	hp = c.hp;
+	maxhp = c.maxhp;
 
 	_initCheck = this;
 
@@ -251,15 +272,13 @@ Fire_Department Fire_Department::operator =(const Fire_Department& c){
 
 Store::Store(): Structures(0, 0, "", 4, 4, store) {
 
-	hp = 0;
 	rp = 0;
 
 	ENSURE(init(), "Object 'Store' was not properly initialized.");
 }
 
-Store::Store(const int x, const int y, int hitpoints, int robberyPoints, const std::string n, const int width, const int length) : Structures(x, y, n, width, length, store) {
+Store::Store(const int x, const int y, int hitp, int robberyPoints, const std::string n, const int width, const int length) : Structures(x, y, n, width, length, store, hitp) {
 
-	hp = hitpoints;
 	rp = robberyPoints;
 
 	ENSURE(init(), "Object 'Store' was not properly initialized.");
@@ -267,6 +286,15 @@ Store::Store(const int x, const int y, int hitpoints, int robberyPoints, const s
 
 double Store::getRP() {
 	return rp;
+}
+
+void Store::decreaseRP(){
+	REQUIRE(init(), "Object 'Store' was not properly initialized when calling decreaseRP()");
+
+	double oldRP = rp;
+	rp = rp - (1.0/(width*length));
+
+	ENSURE(rp == oldRP - (1.0/(width*length)), "HP of house was not decreased successfully.");
 }
 
 Store::Store(const Store& c){
@@ -278,6 +306,7 @@ Store::Store(const Store& c){
 	state = c.state;
 	rp = c.rp;
 	hp = c.hp;
+	maxhp = c.maxhp;
 
 	_initCheck = this;
 }
@@ -291,6 +320,7 @@ Store& Store::operator =(const Store& c){
 	state = c.state;
 	rp = c.rp;
 	hp = c.hp;
+	maxhp = c.maxhp;
 
 	_initCheck = this;
 
@@ -303,14 +333,12 @@ Store& Store::operator =(const Store& c){
 
 PoliceStation::PoliceStation() : Structures(0, 0, "", 0, 0, policeStation), entrance(0, 0) {
 
-	hp = 0;
 
 	ENSURE(init(), "Object 'policeStation' was not properly initialized.");
 }
 
-PoliceStation::PoliceStation(const int x, const int y, const int x_entrance, const int y_entrance, int hitpoints, const std::string n, const int width, const int length) : Structures(x, y, n, width, length, policeStation), entrance(x_entrance, y_entrance) {
+PoliceStation::PoliceStation(const int x, const int y, const int x_entrance, const int y_entrance, int hitp, const std::string n, const int width, const int length) : Structures(x, y, n, width, length, policeStation, hitp), entrance(x_entrance, y_entrance) {
 
-	hp = hitpoints;
 
 	ENSURE(init(), "Object 'policeStation' was not properly initialized.");
 }
@@ -338,6 +366,7 @@ PoliceStation::PoliceStation(const PoliceStation& c){
 	state = c.state;
 	entrance = c.entrance;
 	hp = c.hp;
+	maxhp = c.maxhp;
 
 	_initCheck = this;
 }
@@ -351,6 +380,7 @@ PoliceStation& PoliceStation::operator =(const PoliceStation& c){
 	state = c.state;
 	entrance = c.entrance;
 	hp = c.hp;
+	maxhp = c.maxhp;
 
 	_initCheck = this;
 
@@ -363,14 +393,10 @@ PoliceStation& PoliceStation::operator =(const PoliceStation& c){
 
 Hospital::Hospital() : Structures(0, 0, "", 0, 0, hospital), entrance(0, 0) {
 
-	hp = 0;
-
 	ENSURE(init(), "Object 'Hospital' was not properly initialized.");
 }
 
-Hospital::Hospital(const int x, const int y, const int x_entrance, const int y_entrance, int hitpoints, const std::string n, const int width, const int length) : Structures(x, y, n, width, length, hospital), entrance(x_entrance, y_entrance) {
-
-	hp = hitpoints;
+Hospital::Hospital(const int x, const int y, const int x_entrance, const int y_entrance, int hitp, const std::string n, const int width, const int length) : Structures(x, y, n, width, length, hospital, hitp), entrance(x_entrance, y_entrance) {
 
 	ENSURE(init(), "Object 'Hospital' was not properly initialized.");
 }
@@ -398,6 +424,7 @@ Hospital::Hospital(const Hospital& c){
 	state = c.state;
 	entrance = c.entrance;
 	hp = c.hp;
+	maxhp = c.maxhp;
 
 	_initCheck = this;
 }
@@ -411,6 +438,7 @@ Hospital& Hospital::operator =(const Hospital& c){
 	state = c.state;
 	entrance = c.entrance;
 	hp = c.hp;
+	maxhp = c.maxhp;
 
 	_initCheck = this;
 

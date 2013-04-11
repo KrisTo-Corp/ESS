@@ -116,6 +116,12 @@ int City::getAmountTrucks(){
 	return trucks.size();
 }
 
+int City::getAmountCars(){
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountCars()");
+
+	return policecars.size();
+}
+
 CityObjects* City::getObject(int x, int y){
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getObject()");
 
@@ -470,7 +476,7 @@ int City::calculateDistance(Coordinate c1, Coordinate c2) {
 	return distance;
 }
 
-void City::driveTruck(Firetruck* rescueTruck) {
+void City::driveTruck(Vehicles* rescueTruck) {
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling driveTruck()");
 
 	Coordinate cur = rescueTruck->getCoord();
