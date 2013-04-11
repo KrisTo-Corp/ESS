@@ -265,6 +265,10 @@ Store::Store(const int x, const int y, int hitpoints, int robberyPoints, const s
 	ENSURE(init(), "Object 'Store' was not properly initialized.");
 }
 
+double Store::getRP() {
+	return rp;
+}
+
 Store::Store(const Store& c){
 	name = c.name;
 	location = c.location;

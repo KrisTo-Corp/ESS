@@ -244,6 +244,44 @@ CityObjects* City::setFire(){
 	return ptr;
 }
 
+Store* City::robStore() {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling robStore()");
+
+	bool success = false;
+	Store* ptr;
+
+	while (!success) {
+		int randomInt = rand()% stores.size();
+		ptr = &(*(stores.begin() + randomInt));
+		if (ptr->getState == normal) {
+			success = true;
+		}
+	}
+
+	ptr->setState(beingrobbed);
+
+	ENSURE(ptr->getState() == beingrobbed, "robSotre() did not cause a robbery.");
+
+	return ptr;
+}
+
+Store* City::robStore(int x, int y){
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling robStore(int, int)");
+
+	Store* ptr;
+	ptr = matrix.getObject(x, y);
+	if (ptr->getState() != normal || ptr->getType() != store){
+		output << "The arguments x and y do not point to a store or that store is already robbed empty." << std::endl;
+		// WHAT WILL WE DO HERE?
+	}
+
+	ptr->setState(beingrobbed);
+
+	ENSURE(ptr->getState() == beingrobbed, "setFire() did not correctly set fire to the given house.");
+
+	return ptr;
+}
+
 CityObjects* City::setFire(int x, int y){
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling setFire()");
 

@@ -132,6 +132,8 @@ public:
 	Store(const int x, const int y, int hitpoints, int robberyPoints, const std::string n, const int width, const int length);
 //	ENSURE(init(), "Object 'Store' was not properly initialized.");
 
+	double getRP();
+
 	Store(const Store& c);
 
 	Store& operator =(const Store&);

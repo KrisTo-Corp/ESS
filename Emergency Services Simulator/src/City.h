@@ -147,6 +147,12 @@ public:
 	Matrix* getMatrix();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getMatrix()");
 
+	Store* robStore();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling robStore()");
+
+	Store* robStore(int, int);
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling robStore(int, int)");
+
 	bool getValidCity();
 
 	void link_vehicles_to_bases();

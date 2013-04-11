@@ -20,8 +20,12 @@ void simulateCity(City& city) {
 	}
 
 	bool finished = false;
-	CityObjects* ptr;
 
+	/*
+	 * Fire
+	 */
+	// set fire
+	CityObjects* ptr;
 	ptr = city.setFire();
 	Structures* structptr = dynamic_cast<Structures*>(ptr);
 	Coordinate cur = structptr->getLocation();
@@ -48,6 +52,22 @@ void simulateCity(City& city) {
 		rescueTruck->setTarget(houseptr);
 		rescueTruck->setIsHome(false);
 	}
+
+	/*
+	 * Robbery
+	 */
+	// rob store
+	Store* storePtr;
+	storePtr = city.robStore();
+	Coordinate curStore = storePtr->getLocation();
+	std::string name = storePtr->getName();
+	city.output << name << " at location " << cur << " has started being robbed." << std::endl;
+	double rp = storePtr->getRP();
+	city.output << "\t It has " << rp << " robbery points left." << std::endl << std::endl;
+
+	// Find an available police car.
+
+
 
 	while (!finished) {
 		// Random chance to setFire()
@@ -116,6 +136,12 @@ void simulateCity(City& city) {
 		if (city.getTruckList()->size() == 0) {
 			city.output << "There are no firetrucks in this city." << std::endl;
 		}
+		else if (city.getAmbulancesList()->size() == 0) {
+			city.output << "There are no ambulances in this city." << std::endl;
+		}
+		else if (city.getPoliceCarsList()->size() == 0) {
+			city.output << "There are no policecars in this city." << std::endl;
+		}
 
 		// Move
 		for (std::list<Firetruck>::iterator it = city.getTruckList()->begin(); it != city.getTruckList()->end(); it++) {
@@ -179,8 +205,12 @@ void simulateCity_Test(City& city, Coordinate c1, Coordinate c2) {
 	}
 
 	bool finished = false;
-	CityObjects* ptr;
 
+	/*
+	 * Fire
+	 */
+	// Set fire
+	CityObjects* ptr;
 	ptr = city.setFire(c1.getX(), c1.getY());
 	Structures* structptr = dynamic_cast<Structures*>(ptr);
 	Coordinate cur = structptr->getLocation();
@@ -199,7 +229,6 @@ void simulateCity_Test(City& city, Coordinate c1, Coordinate c2) {
 			truck_distances.push_back(temp);
 		}
 	}
-
 	truck_distances.sort();
 	if (truck_distances.size() != 0){
 		Firetruck* rescueTruck = truck_distances.begin()->second;
@@ -208,6 +237,13 @@ void simulateCity_Test(City& city, Coordinate c1, Coordinate c2) {
 		rescueTruck->setTarget(houseptr);
 		rescueTruck->setIsHome(false);
 	}
+
+	/*
+	 * Robbery
+	 */
+	// rob store
+	//Store* storePtr;
+	//storePtr = city.robStore();
 
 	int loopcounter = 0;
 

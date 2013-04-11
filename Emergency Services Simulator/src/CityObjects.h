@@ -14,7 +14,7 @@
 #include "DesignByContract.h"
 
 enum Eobjects {none, house, department, street, crossroad, store, hospital, policeStation};
-enum Estate {normal, burning, beingrescued, destroyed, intouchable};
+enum Estate {normal, burning, beingrescued, destroyed, intouchable, beingrobbed};
 
 class CityObjects {
 protected:
