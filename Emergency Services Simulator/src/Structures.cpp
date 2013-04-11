@@ -311,6 +311,20 @@ PoliceStation::PoliceStation(const int x, const int y, const int x_entrance, con
 	ENSURE(init(), "Object 'policeStation' was not properly initialized.");
 }
 
+Coordinate& PoliceStation::getEntrance() {
+	REQUIRE(init(), "Object 'PoliceStation' was not properly initialized when calling getEntrance().");
+
+	return entrance;
+}
+
+void PoliceStation::addCar(PoliceCar* t) {
+	REQUIRE(init(), "Object 'Fire_Department' was not properly initialized when calling addTruck()");
+
+	cars.push_back(t);
+
+	ENSURE((cars[cars.size()-1] == t), "PoliceCar was not succesfully added to cars Vector");
+}
+
 PoliceStation::PoliceStation(const PoliceStation& c){
 	name = c.name;
 	location = c.location;
@@ -355,6 +369,20 @@ Hospital::Hospital(const int x, const int y, const int x_entrance, const int y_e
 	hp = hitpoints;
 
 	ENSURE(init(), "Object 'Hospital' was not properly initialized.");
+}
+
+Coordinate& Hospital::getEntrance() {
+	REQUIRE(init(), "Object 'Hospital' was not properly initialized when calling getEntrance().");
+
+	return entrance;
+}
+
+void Hospital::addAmbulance(Ambulance* t) {
+	REQUIRE(init(), "Object 'Fire_Department' was not properly initialized when calling addAmbulance()");
+
+	ambulances.push_back(t);
+
+	ENSURE((ambulances[ambulances.size()-1] == t), "Ambulance was not succesfully added to ambulances Vector");
 }
 
 Hospital::Hospital(const Hospital& c){

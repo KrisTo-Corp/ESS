@@ -169,6 +169,46 @@ void City::link_vehicles_to_bases() {
 			continue;
 		}
 	}
+
+	for (it_a = ambulances.begin(); it_a != ambulances.end(); it_a++) {
+		Ambulance* ambPtr = &(*it_a);
+		std::string basename = ambPtr->getBasename();
+		for (it_hosp = hospitals.begin(); it_hosp != hospitals.end(); it_hosp++) {
+			Hospital* hosPtr = &(*it_hosp);
+			std::string hosp_name = hosPtr->getName();
+			if (basename == hosp_name) {
+				// Add truck to the fire department.
+				hosPtr->addAmbulance(ambPtr);
+				// Set values in Firetruck
+				ambPtr->setCoord(hosPtr->getEntrance());
+				ambPtr->linkBase(hosPtr);
+				ambPtr->setDestination(hosPtr->getEntrance());
+			}
+		}
+		if (ambPtr->getBaseptr() == NULL){
+			continue;
+		}
+	}
+
+	for (it_p = policecars.begin(); it_p != policecars.end(); it_p++) {
+		PoliceCar* carPtr = &(*it_p);
+		std::string basename = carPtr->getBasename();
+		for (it_pstation = poliStats.begin(); it_pstation != poliStats.end(); it_pstation++) {
+			PoliceStation* polPtr = &(*it_pstation);
+			std::string pol_name = polPtr->getName();
+			if (basename == pol_name) {
+				// Add truck to the fire department.
+				polPtr->addCar(carPtr);
+				// Set values in Firetruck
+				carPtr->setCoord(polPtr->getEntrance());
+				carPtr->linkBase(polPtr);
+				carPtr->setDestination(polPtr->getEntrance());
+			}
+		}
+		if (carPtr->getBaseptr() == NULL){
+			continue;
+		}
+	}
 }
 
 bool City::properlyInitialized() {
@@ -863,6 +903,17 @@ std::list<PoliceStation>* City::getPoliStatsList() {
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getPolStatsList()");
 
 	return &poliStats;
+}
+
+std::list<PoliceCar>* City::getPoliceCarsList() {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getPolStatsList()");
+
+	return &policecars;
+}
+std::list<Ambulance>* City::getAmbulancesList() {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmbulancesList()");
+
+	return &ambulances;
 }
 
 Matrix* City::getMatrix() {

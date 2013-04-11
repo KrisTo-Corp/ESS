@@ -18,6 +18,8 @@
 #include "CityObjects.h"
 
 class Firetruck;
+class PoliceCar;
+class Ambulance;
 
 class Structures: public CityObjects {
 protected:
@@ -139,6 +141,7 @@ class PoliceStation : public Structures {
 private:
 	Coordinate entrance;
 	double hp;
+	std::vector<PoliceCar*> cars;
 
 public:
 	PoliceStation();
@@ -146,6 +149,13 @@ public:
 
 	PoliceStation(const int x, const int y, const int x_entrance, const int y_entrance, int hitpoints, const std::string n, const int width, const int length);
 //	ENSURE(init(), "Object 'policeStation' was not properly initialized.");
+
+	Coordinate& getEntrance();
+//	REQUIRE(init(), "Object 'Hospital' was not properly initialized.");
+
+	void addCar(PoliceCar*);
+//	REQUIRE(init(), "Object 'PoliceStation' was not properly initialized when calling addTruck()");
+//	ENSURE((trucks[trucks.size()-1] == t), "PoliceStation was not succesfully added to trucks Vector");
 
 	PoliceStation(const PoliceStation& c);
 
@@ -156,6 +166,7 @@ class Hospital : public Structures {
 private:
 	Coordinate entrance;
 	double hp;
+	std::vector<Ambulance*> ambulances;
 
 public:
 	Hospital();
@@ -163,6 +174,14 @@ public:
 
 	Hospital(const int x, const int y, const int x_entrance, const int y_entrance, int hitpoints, const std::string n, const int width, const int length);
 //	ENSURE(init(), "Object 'Hospital' was not properly initialized.");
+
+	Coordinate& getEntrance();
+//	REQUIRE(init(), "Object 'Hospital' was not properly initialized.");
+
+	void addAmbulance(Ambulance*);
+//	REQUIRE(init(), "Object 'Hospital' was not properly initialized when calling addTruck()");
+//	ENSURE((trucks[trucks.size()-1] == t), "Hospital was not succesfully added to trucks Vector");
+
 
 	Hospital(const Hospital& c);
 

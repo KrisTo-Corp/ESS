@@ -503,8 +503,8 @@ void XmlParser::parseCity(std::string filename) {
 					continue;
 				}
 			}
-			//PoliceCar policeCar(0, 0, name, base);
-			//city->getPoliceCarsList()->push_back(truck);
+			PoliceCar policeCar(0, 0, name, base);
+			city->getPoliceCarsList()->push_back(policeCar);
 		}
 		else if (objectName == "Politiewagen") {
 			std::string name, base;
@@ -525,8 +525,8 @@ void XmlParser::parseCity(std::string filename) {
 					continue;
 				}
 			}
-			//Ambulance policeCar(0, 0, name, base);
-			//city->getAmbulancesList()->push_back(truck);
+			Ambulance ambulance(0, 0, name, base);
+			city->getAmbulancesList()->push_back(ambulance);
 		}
 		else {
 			city->output << objectName << " is not a valid object." << std::endl;

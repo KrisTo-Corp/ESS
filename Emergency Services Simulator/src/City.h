@@ -136,7 +136,13 @@ public:
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getHospitalsList()");
 
 	std::list<PoliceStation>* getPoliStatsList();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getPoliceCarsList()");
+
+	std::list<PoliceCar>* getPoliceCarsList();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getPolStatsList()");
+
+	std::list<Ambulance>* getAmbulancesList();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmbulancesList()");
 
 	Matrix* getMatrix();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getMatrix()");
