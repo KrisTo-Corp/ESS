@@ -21,6 +21,7 @@ class Firetruck;
 
 class Structures: public CityObjects {
 protected:
+	double hp;
 	std::string name;
 	Coordinate location;
 	int width;
@@ -30,7 +31,7 @@ public:
 	Structures();
 //	ENSURE(init(), "Object 'Structures' was not properly initialized.");
 
-	Structures(const int x, const int y, const std::string n, const int w, const int l, Eobjects t);
+	Structures(const int x, const int y, const std::string n, const int w, const int l, Eobjects t, int hitpoints = 0);
 //	ENSURE(init(), "Object 'Structures' was not properly initialized.");
 
 	virtual ~Structures();
@@ -89,7 +90,7 @@ public:
 	Fire_Department();
 //	ENSURE(init(), "Object 'Fire_Department' was not properly initialized.");
 
-	Fire_Department(const int x, const int y, const int x_entrance, const int y_entrance, const std::string n);
+	Fire_Department(const int x, const int y, const int x_entrance, const int y_entrance, const std::string n, int hp = 0);
 //	ENSURE(init(), "Object 'Fire_Department' was not properly initialized.");
 
 	virtual ~Fire_Department();

@@ -116,7 +116,7 @@
 		<Grootte Hoogte="2" Breedte="4"/>
 		<Brandbaarheid>55</Brandbaarheid>
 		<Overvalbaarheid>16</Overvalbaarheid>
-	</Winkel
+	</Winkel>
 	<Huis>
 		<Locatie X="12" Y="12"/>
 		<Brandbaarheid>20</Brandbaarheid>

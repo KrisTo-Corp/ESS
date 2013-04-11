@@ -162,6 +162,7 @@ void XmlParser::parseCity(std::string filename) {
 		}
 		else if(objectName == "Brandweerkazerne") {
 			int x_building, y_building, x_entrance, y_entrance;
+			int hp = 0;
 			std::string name;
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
 				std::string fieldName = field->Value();
@@ -187,6 +188,26 @@ void XmlParser::parseCity(std::string filename) {
 					maxX = compareCoord(maxX, x_entrance);
 					maxY = compareCoord(maxY, y_entrance);
 				}
+				else if(fieldName == "Brandbaarheid") {
+					TiXmlText* text = field->FirstChild()->ToText();
+					if(text == NULL){
+						continue;
+					}
+					std::string hp_string = text->Value();
+					hp = atoi(hp_string.c_str());
+
+					/*
+					 * Check to see if the input is valid: not negative and of type int.
+					 */
+					if (hp < 0) {
+						city->output << "A house can not have a negative amount of hitpoints! Hitpoints read: " << hp << std::endl;
+						continue;
+					}
+					else if (isalpha(hp) || typeid(hp) != typeid(int)) {
+						city->output << "Hitpoints must be of type int! Hitpoints read: " << hp << std::endl;
+						continue;
+					}
+				}
 				else if(fieldName == "Naam") {
 					TiXmlText* text = field->FirstChild()->ToText();
 					if(text == NULL){
@@ -211,7 +232,7 @@ void XmlParser::parseCity(std::string filename) {
 				continue;
 			}
 
-			Fire_Department department(x_building, y_building, x_entrance, y_entrance, name);
+			Fire_Department department(x_building, y_building, x_entrance, y_entrance, name, hp);
 			city->getDepList()->push_back(department);
 		}
 		else if (objectName == "Winkel") {

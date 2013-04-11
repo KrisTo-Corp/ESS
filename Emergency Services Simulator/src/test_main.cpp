@@ -508,8 +508,9 @@ TEST_F(MatrixTest, AddDepartments){
 	Fire_Department* ptr3 = &(*it);
 	it++;
 	Fire_Department* ptr4 = &(*it);
-
+	std::cout << "Next step" << std::endl;
 	matrix.addFiredeps(deps);
+	std::cout << "correct" << std::endl;
 
 	EXPECT_EQ(ptr1, matrix.getObject(0, 7));
 	EXPECT_EQ(ptr1, matrix.getObject(1, 7));

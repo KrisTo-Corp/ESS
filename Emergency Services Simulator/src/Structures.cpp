@@ -16,11 +16,15 @@
 
 Structures::Structures(): CityObjects(none), name(""), location(0, 0), width(0), length(0)
 {
+	hp = 0;
+
 	ENSURE(init(), "Object 'Structures' was not properly initialized.");
 }
 
-Structures::Structures(const int x, const int y, const std::string n, const int w, const int l, Eobjects t): CityObjects(t), name(n), location(x, y), width(w), length(l)
+Structures::Structures(const int x, const int y, const std::string n, const int w, const int l, Eobjects t, int hitpoints): CityObjects(t), name(n), location(x, y), width(w), length(l)
 {
+	hp = hitpoints;
+
 	ENSURE(init(), "Object 'Structures' was not properly initialized.");
 }
 
@@ -155,11 +159,13 @@ double House::getHP(){
 //==========================
 
 Fire_Department::Fire_Department(): Structures(0, 0, "", 4, 4, department), entrance(0, 0) {
+
 	ENSURE(init(), "Object 'Fire_Department' was not properly initialized.");
 
 }
 
-Fire_Department::Fire_Department(const int x, const int y, const int x_entrance, const int y_entrance, const std::string n): Structures(x, y, n, 4, 4, department), entrance(x_entrance, y_entrance) {
+Fire_Department::Fire_Department(const int x, const int y, const int x_entrance, const int y_entrance, const std::string n, int hp): Structures(x, y, n, 4, 4, department, hp), entrance(x_entrance, y_entrance) {
+
 	ENSURE(init(), "Object 'Fire_Department' was not properly initialized.");
 }
 
