@@ -20,6 +20,8 @@
 #include <gtest/gtest.h>
 #include "Simulator.h"
 
+// TODO: copy the newly formatted files as the correct test outcomes.
+
 bool FileCompare(const char *leftFileName, const char *rightFileName) {
 	std::ifstream leftFile, rightFile;
 	char leftRead, rightRead;
