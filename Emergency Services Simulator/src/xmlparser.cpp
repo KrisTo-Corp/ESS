@@ -249,6 +249,7 @@ void XmlParser::parseCity(std::string filename) {
 			std::string name;
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
 				std::string fieldName = field->Value();
+				std::cout << fieldName << std::endl << std::endl;
 				if(fieldName == "Locatie") {
 					x_building = atoi(field->Attribute("X"));
 					y_building = atoi(field->Attribute("Y"));
@@ -297,6 +298,7 @@ void XmlParser::parseCity(std::string filename) {
 					}
 				}
 				else if(fieldName == "Overvalbaarheid") {
+					std::cout << "WE GOT IN BITCH!!!!" << std::endl;
 					TiXmlText* text = field->FirstChild()->ToText();
 					if(text == NULL){
 						continue;
@@ -312,19 +314,18 @@ void XmlParser::parseCity(std::string filename) {
 						continue;
 					}
 					else if (isalpha(rp) || typeid(rp) != typeid(int)) {
-						city->output << "Robbery points must be of type int! Robbery points read: " << hp << std::endl;
+						city->output << "Robbery points must be of type int! Robbery points read: " << rp << std::endl;
 						continue;
 					}
 				}
 				else {
-					city->output << "Label " << fieldName << " is not a valid field. dep" << std::endl;
+					city->output << "Label " << fieldName << " is not a valid field. " << std::endl;
 					continue;
 
 				}
 			}
-			std::cout << "CONSTRUCTING" << std::endl;
+			std::cout << "CHECK DIS OUTTTTTTTTTTTT" << rp << std::endl;
 			Store newStore(x_building, y_building, hp, rp, "Store", width, length);
-			std::cout << "next is wrong!" << std::endl;
 			city->getStoresList()->push_back(newStore);
 			std::cout << "store 1" << std::endl;
 		}

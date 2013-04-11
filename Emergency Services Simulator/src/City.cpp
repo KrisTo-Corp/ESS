@@ -30,6 +30,7 @@ City::City(const std::string filename, std::ostream& stream, std::string vehicle
 		parser.parseCity(vehiclesXML);
 	}
 	parser.parseCity(filename);
+
 	std::pair<int, int> maxCoords =	parser.getMaxValues();
 
 	if(maxCoords.first == -1 && maxCoords.second == -1){
@@ -53,6 +54,7 @@ City::City(const std::string filename, std::ostream& stream, std::string vehicle
 	matrix = Matrix(maxCoords.second + 1, maxCoords.first +1);
 
 	link_vehicles_to_bases();
+
 	matrix.addHouses(houses);
 	matrix.addFiredeps(departments);
 	crossroads = matrix.addStreets(streets);
@@ -250,22 +252,33 @@ Store* City::robStore() {
 	bool success = false;
 	Store* ptr;
 
+	std::cout << stores.size() << std::endl;
+
 	while (!success) {
+		std::list<Store>::iterator it = stores.begin();
 		int randomInt = rand()% stores.size();
-		ptr = &(*(stores.begin() + randomInt));
-		if (ptr->getState == normal) {
+		std::cout << randomInt << "random int!" << std::endl;
+		for (int i = 0; i < randomInt; i++) {
+			std::cout << i << std::endl;
+
+			it++;
+		}
+
+		ptr = &(*it);
+		std::cout << "STATE = " << ptr->getState() << std::endl;
+		if (ptr->getState() == normal) {
 			success = true;
 		}
 	}
 
 	ptr->setState(beingrobbed);
 
-	ENSURE(ptr->getState() == beingrobbed, "robSotre() did not cause a robbery.");
+	ENSURE(ptr->getState() == beingrobbed, "robStore() did not cause a robbery.");
 
 	return ptr;
 }
 
-Store* City::robStore(int x, int y){
+/*Store* City::robStore(int x, int y){
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling robStore(int, int)");
 
 	Store* ptr;
@@ -280,7 +293,7 @@ Store* City::robStore(int x, int y){
 	ENSURE(ptr->getState() == beingrobbed, "setFire() did not correctly set fire to the given house.");
 
 	return ptr;
-}
+}*/
 
 CityObjects* City::setFire(int x, int y){
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling setFire()");

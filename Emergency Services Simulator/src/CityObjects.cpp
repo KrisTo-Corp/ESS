@@ -22,6 +22,9 @@ CityObjects::CityObjects(Eobjects t): type(t)
 	if (type == house){
 		state = normal;
 	}
+	else if (type == store){
+		state = normal;
+	}
 	else {
 		state = intouchable;
 	}

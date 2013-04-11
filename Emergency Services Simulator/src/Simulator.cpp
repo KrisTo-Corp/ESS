@@ -60,14 +60,28 @@ void simulateCity(City& city) {
 	Store* storePtr;
 	storePtr = city.robStore();
 	Coordinate curStore = storePtr->getLocation();
-	std::string name = storePtr->getName();
-	city.output << name << " at location " << cur << " has started being robbed." << std::endl;
+	std::string storeName = storePtr->getName();
+	city.output << storeName << " at location " << curStore << " has started being robbed." << std::endl;
 	double rp = storePtr->getRP();
 	city.output << "\t It has " << rp << " robbery points left." << std::endl << std::endl;
 
 	// Find an available police car.
-
-
+	std::list<PoliceCar>::iterator it_pc;
+	std::list<std::pair<int, PoliceCar*> > car_distances;
+	for (it_pc = city.getPoliceCarsList()->begin(); it_pc != city.getPoliceCarsList()->end(); it_pc++) {
+		if (it_pc->getAvailable()) {
+			std::pair<int, PoliceCar*> temp(city.calculateDistance(city.getAdjecantStreet(storePtr, it_pc->getCoord()), it_pc->getCoord()), &(*it_pc));
+			car_distances.push_back(temp);
+		}
+	}
+	car_distances.sort();
+	if (car_distances.size() != 0){
+		PoliceCar* rescueCar = car_distances.begin()->second;
+		rescueCar->setAvailable(false);
+		rescueCar->setDestination(city.getAdjecantStreet(storePtr, rescueCar->getCoord()));
+		rescueCar->setTarget(houseptr);
+		rescueCar->setIsHome(false);
+	}
 
 	while (!finished) {
 		// Random chance to setFire()
@@ -101,7 +115,7 @@ void simulateCity(City& city) {
 			}
 		}
 
-		// Burn
+		// Burn and rob
 		for (int i = 0; i < city.getMatrix()->getColumns(); i++){
 			for (int j = 0; j < city.getMatrix()->getRows(); j++){
 				ptr = city.getMatrix()->getObject(i, j);
