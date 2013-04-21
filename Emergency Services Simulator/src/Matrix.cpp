@@ -302,45 +302,52 @@ void Matrix::printMatrix(OutputObject oo) {
 	}
 	else {
 		std::ostream& s = oo.getOutput();
+		s << "<table border = \"3\">";
 		s << "</br>MAP: </br>";
 		s << "====</br></br>";
 		for(int i = 0; i < rows; i++){
-			s << rows-1-i << "&nbsp;&nbsp;&nbsp;&nbsp;[";
+			s << "<tr>";
+			s << "<td style = \"background-color: #fde5c3\">" << rows-1-i << "</td>";//"&nbsp;&nbsp;&nbsp;&nbsp;[";
 			for(int j = 0; j < columns; j++){
 				if(matrix[i][j] == NULL){
-					s << "?&nbsp;&nbsp;&nbsp;&nbsp;";
+					s << "<td>" << "?" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
 				}
 				else if(matrix[i][j]->getType() == house){
-					s << "H&nbsp;&nbsp;&nbsp;&nbsp;";
+					s << "<td style = \"background-color: #6dc066\">" << "H" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
 				}
 				else if(matrix[i][j]->getType() == department){
-					s << "D&nbsp;&nbsp;&nbsp;&nbsp;";
+					s << "<td style = \"background-color: #e00707\">" << "D" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
 				}
 				else if(matrix[i][j]->getType() == street){
-					s << " &nbsp;&nbsp;&nbsp;&nbsp;";
+					s << "<td style = \"background-color: #b2b2b2\">" << " " << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
 				}
 				else if(matrix[i][j]->getType() == crossroad){
-					s << " &nbsp;&nbsp;&nbsp;&nbsp;";
+					s << "<td style = \"background-color: #b2b2b2\">" << " " << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
 				}
 				else if(matrix[i][j]->getType() == store){
-					s << "S&nbsp;&nbsp;&nbsp;&nbsp;";
+					s << "<td style = \"background-color: #ffc726\">" << "S" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
 				}
 				else if(matrix[i][j]->getType() == policeStation){
-					s << "P&nbsp;&nbsp;&nbsp;&nbsp;";
+					s << "<td style = \"background-color: #33338b\">" << "P" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
 				}
 				else if(matrix[i][j]->getType() == hospital){
-					s << "+&nbsp;&nbsp;&nbsp;&nbsp;";
+					s << "<td style = \"background-color: #ff009d\">" << "+" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
 				}
 				else{
-					s << "?&nbsp;&nbsp;&nbsp;&nbsp;";
+					s << "<td>" << "?" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
 				}
 			}
-			s << "]</br>";
+			s << "</tr>";
+			//s << "]</br>";
 		}
-		s << "</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		//s << "</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		s << "<tr>";
+		s << "<td style = \"background-color: #fde5c3\">" << " " << "</td>";
 		for (int i = 0; i < columns; i++){
-			s << i << "&nbsp;&nbsp;&nbsp;&nbsp;";
+			s << "<td style = \"background-color: #fde5c3\">" << i << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
 		}
+		s << "</tr>";
+		s << "</table>";
 		s << "</br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H = HOUSE&nbsp;&nbsp;&nbsp;&nbsp; D = FIRE DEPARTMENT&nbsp;&nbsp;&nbsp;&nbsp; S = STREET&nbsp;&nbsp;&nbsp;&nbsp; C = CROSSROAD&nbsp;&nbsp;&nbsp;&nbsp; ? = UNKNOWN</br>";
 	}
 }

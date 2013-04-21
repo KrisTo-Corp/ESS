@@ -14,6 +14,7 @@ OutputObject::OutputObject(std::ostream& stream, bool web) : output(stream){
 		output << "<!DOCTYPE html>" << std::endl;
 		output << "<html>" << std::endl;
 			output << "<head>" << std::endl;
+				output << "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" << std::endl;
 				output << "<title>KrisTo corp Emergency Services Simulator</title>" << std::endl;
 				output << "<body>" << std::endl;
 				output << "<h1>Emergency Services Simulator</h1>" << std::endl;
