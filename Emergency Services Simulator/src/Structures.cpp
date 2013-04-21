@@ -27,7 +27,7 @@ Structures::Structures(const int x, const int y, const std::string n, const int 
 	hp = hitp;
 	maxhp = hitp;
 
-	std::cout << "THIS OBJECT MAXHP : " << maxhp << std::endl;
+	//std::cout << "THIS OBJECT MAXHP : " << maxhp << std::endl;
 
 	ENSURE(init(), "Object 'Structures' was not properly initialized.");
 }
@@ -277,15 +277,20 @@ Store::Store(): Structures(0, 0, "", 4, 4, store) {
 	ENSURE(init(), "Object 'Store' was not properly initialized.");
 }
 
-Store::Store(const int x, const int y, int hitp, int robberyPoints, const std::string n, const int width, const int length) : Structures(x, y, n, width, length, store, hitp) {
+Store::Store(const int x, const int y, int hitp, int robberyPoints, const std::string n, const int width, const int length, bool rob) : Structures(x, y, n, width, length, store, hitp) {
 
 	rp = robberyPoints;
+	robable = rob;
 
 	ENSURE(init(), "Object 'Store' was not properly initialized.");
 }
 
 double Store::getRP() {
 	return rp;
+}
+
+bool Store::getRobable() {
+	return robable;
 }
 
 void Store::decreaseRP(){
@@ -307,6 +312,7 @@ Store::Store(const Store& c){
 	rp = c.rp;
 	hp = c.hp;
 	maxhp = c.maxhp;
+	robable = c.robable;
 
 	_initCheck = this;
 }
@@ -321,6 +327,7 @@ Store& Store::operator =(const Store& c){
 	rp = c.rp;
 	hp = c.hp;
 	maxhp = c.maxhp;
+	robable = c.robable;
 
 	_initCheck = this;
 

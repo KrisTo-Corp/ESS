@@ -17,6 +17,7 @@
 #include <sstream>
 #include <utility>
 
+#include "helpers.h"
 #include "CityObjects.h"
 #include "Structures.h"
 #include "Vehicles.h"
@@ -46,9 +47,9 @@ private:
 public:
 	City();
 
-	std::ostream& output;
+	OutputObject o;
 
-	City(std::string filename, std::ostream&, std::string vehiclesXML = "empty");
+	City(std::string filename, std::ostream&, std::string vehiclesXML = "empty", bool html = false);
 //	ENSURE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized.");
 
 	friend std::ostream& operator <<(std::ostream& s, City& city);

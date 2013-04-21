@@ -13,9 +13,11 @@
 #include <ostream>
 #include <list>
 
+#include "helpers.h"
 #include "CityObjects.h"
 #include "Structures.h"
 #include "Roads.h"
+#include "OutputObject.h"
 
 class Matrix {
 private:
@@ -75,6 +77,8 @@ public:
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling getColumns().");
 
 	Matrix& operator =(const Matrix&);
+
+	void printMatrix(OutputObject oo);
 
 	Matrix(const Matrix& c);
 

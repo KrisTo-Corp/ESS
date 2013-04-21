@@ -44,6 +44,8 @@ public:
 
 	friend std::ostream& operator <<(std::ostream& s, Coordinate& coordinate);
 
+	std::string getString();
+
 	bool operator==(const Coordinate &c) const;
 
 	bool operator!=(const Coordinate &c) const;

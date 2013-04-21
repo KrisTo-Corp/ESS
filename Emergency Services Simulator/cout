@@ -5,26 +5,27 @@
 MAP: 
 ====
 
-15	[ 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
-14	[ 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
-13	[ 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
-12	[ 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
-11	[ 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
-10	[ 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
-9	[ 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
-8	[ 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
-7	[ 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
-6	[ 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
-5	[ 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
-4	[ 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
-3	[ 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
-2	[ 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
-1	[ 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
-0	[ 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+15	[	C	S	S	S	S	S	S	C	S	S	S	S	S	S	S	S	C	S	S	S	S	C	]
+14	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+13	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+12	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+11	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+10	[	C	S	S	S	S	S	S	C	S	S	S	S	S	S	S	S	C	S	S	S	S	C	]
+9	[	S	H	H	H	H	H	H	S	D	D	D	D	H	H	H	H	S	H	H	H	H	S	]
+8	[	S	H	H	H	H	H	H	S	D	D	D	D	H	H	H	H	S	H	H	H	H	S	]
+7	[	S	H	H	H	H	H	H	S	D	D	D	D	H	H	H	H	S	H	H	H	H	S	]
+6	[	S	H	H	H	H	H	H	S	D	D	D	D	H	H	H	H	S	H	H	H	H	S	]
+5	[	C	S	S	S	S	S	S	C	S	S	S	S	S	S	S	S	C	S	S	S	S	C	]
+4	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+3	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+2	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+1	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
+0	[	C	S	S	S	S	S	S	C	S	S	S	S	S	S	S	S	C	S	S	S	S	C	]
 
 		0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20	21	
 
 		H = HOUSE	 D = FIRE DEPARTMENT	 S = STREET	 C = CROSSROAD	 ? = UNKNOWN
+
 
 INTEGRITYCHECK: 
 ===============
@@ -40,9 +41,7 @@ house at location (14, 12) started burning.
 house at location (14, 12) is still burning.
 	 It has 19 hitpoints left.
 
-There are no ambulances in this city.
 Firetruck Bw12 is on its way to house on location (14, 10). The firetruck is at Cstraat on location (9, 10)
-
 
 
 --------------------------------------------------------------------------------------------------------------------------------
@@ -50,9 +49,7 @@ Firetruck Bw12 is on its way to house on location (14, 10). The firetruck is at 
 house at location (14, 12) is still burning.
 	 It has 18 hitpoints left.
 
-There are no ambulances in this city.
 Firetruck Bw12 is on its way to house on location (14, 10). The firetruck is at Cstraat on location (10, 10)
-
 
 
 --------------------------------------------------------------------------------------------------------------------------------
@@ -60,9 +57,7 @@ Firetruck Bw12 is on its way to house on location (14, 10). The firetruck is at 
 house at location (14, 12) is still burning.
 	 It has 17 hitpoints left.
 
-There are no ambulances in this city.
 Firetruck Bw12 is on its way to house on location (14, 10). The firetruck is at Cstraat on location (11, 10)
-
 
 
 --------------------------------------------------------------------------------------------------------------------------------
@@ -70,9 +65,7 @@ Firetruck Bw12 is on its way to house on location (14, 10). The firetruck is at 
 house at location (14, 12) is still burning.
 	 It has 16 hitpoints left.
 
-There are no ambulances in this city.
 Firetruck Bw12 is on its way to house on location (14, 10). The firetruck is at Cstraat on location (12, 10)
-
 
 
 --------------------------------------------------------------------------------------------------------------------------------
@@ -80,9 +73,7 @@ Firetruck Bw12 is on its way to house on location (14, 10). The firetruck is at 
 house at location (14, 12) is still burning.
 	 It has 15 hitpoints left.
 
-There are no ambulances in this city.
 Firetruck Bw12 is on its way to house on location (14, 10). The firetruck is at Cstraat on location (13, 10)
-
 
 
 --------------------------------------------------------------------------------------------------------------------------------
@@ -90,57 +81,36 @@ Firetruck Bw12 is on its way to house on location (14, 10). The firetruck is at 
 house at location (14, 12) is still burning.
 	 It has 14 hitpoints left.
 
-There are no ambulances in this city.
 Firetruck Bw12 has reached its destination  at location (14, 10) and has extinguished the fire and are returning home.
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-There are no ambulances in this city.
 Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (13, 10)
 
 
-
 --------------------------------------------------------------------------------------------------------------------------------
 
-house at location (14, 12) is repairing.
-	 It has 15 hitpoints left.
-
-There are no ambulances in this city.
 Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (12, 10)
 
 
-
 --------------------------------------------------------------------------------------------------------------------------------
 
-There are no ambulances in this city.
 Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (11, 10)
 
 
-
 --------------------------------------------------------------------------------------------------------------------------------
 
-house at location (14, 12) is repairing.
-	 It has 16 hitpoints left.
-
-There are no ambulances in this city.
 Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (10, 10)
 
 
-
 --------------------------------------------------------------------------------------------------------------------------------
 
-There are no ambulances in this city.
 Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (9, 10)
 
 
-
 --------------------------------------------------------------------------------------------------------------------------------
 
-house at location (14, 12) is repairing.
-	 It has 17 hitpoints left.
-
-There are no ambulances in this city.
 Firetruck Bw12 has arrived at its base BWK1337
 
 

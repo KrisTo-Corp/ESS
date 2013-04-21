@@ -252,6 +252,100 @@ std::ostream& operator <<(std::ostream& s, Matrix& m){
 	return s;
 }
 
+void Matrix::printMatrix(OutputObject oo) {
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addHouses().");
+
+	if (!oo.getHTML()) {
+		std::string output;
+		output = "\nMAP: \n";
+		output = output + "====\n\n";
+		for(int i = 0; i < rows; i++){
+			output = output + intToString(rows-1-i) + "\t[";
+			for(int j = 0; j < columns; j++){
+				if(matrix[i][j] == NULL){
+					output = output + "?\t";
+				}
+				else if(matrix[i][j]->getType() == house){
+					output = output + "H\t";
+				}
+				else if(matrix[i][j]->getType() == department){
+					output = output + "D\t";
+				}
+				else if(matrix[i][j]->getType() == street){
+					output = output + " \t";
+				}
+				else if(matrix[i][j]->getType() == crossroad){
+					output = output + " \t";
+				}
+				else if(matrix[i][j]->getType() == store){
+					output = output + "S\t";
+				}
+				else if(matrix[i][j]->getType() == policeStation){
+					output = output + "P\t";
+				}
+				else if(matrix[i][j]->getType() == hospital){
+					output = output + "+\t";
+				}
+				else{
+					output = output + "?\t";
+				}
+			}
+			output = output + "]\n";
+		}
+		output = output + "\n\t\t";
+		for (int i = 0; i < columns; i++){
+			output = output + intToString(i) + "\t";
+		}
+		output = output + "\n\n\t\tH = HOUSE\t D = FIRE DEPARTMENT\t S = STREET\t C = CROSSROAD\t ? = UNKNOWN\n";
+
+		oo.print(output);
+	}
+	else {
+		std::ostream& s = oo.getOutput();
+		s << "</br>MAP: </br>";
+		s << "====</br></br>";
+		for(int i = 0; i < rows; i++){
+			s << rows-1-i << "&nbsp;&nbsp;&nbsp;&nbsp;[";
+			for(int j = 0; j < columns; j++){
+				if(matrix[i][j] == NULL){
+					s << "?&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else if(matrix[i][j]->getType() == house){
+					s << "H&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else if(matrix[i][j]->getType() == department){
+					s << "D&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else if(matrix[i][j]->getType() == street){
+					s << " &nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else if(matrix[i][j]->getType() == crossroad){
+					s << " &nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else if(matrix[i][j]->getType() == store){
+					s << "S&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else if(matrix[i][j]->getType() == policeStation){
+					s << "P&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else if(matrix[i][j]->getType() == hospital){
+					s << "+&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else{
+					s << "?&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+			}
+			s << "]</br>";
+		}
+		s << "</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		for (int i = 0; i < columns; i++){
+			s << i << "&nbsp;&nbsp;&nbsp;&nbsp;";
+		}
+		s << "</br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H = HOUSE&nbsp;&nbsp;&nbsp;&nbsp; D = FIRE DEPARTMENT&nbsp;&nbsp;&nbsp;&nbsp; S = STREET&nbsp;&nbsp;&nbsp;&nbsp; C = CROSSROAD&nbsp;&nbsp;&nbsp;&nbsp; ? = UNKNOWN</br>";
+	}
+}
+
+
 bool Matrix::properlyInitialized() {
 	return _initCheck == this;
 }

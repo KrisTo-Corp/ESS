@@ -127,15 +127,17 @@ public:
 class Store : public Structures {
 private:
 	double rp;
-
+	bool robable;
 public:
 	Store();
 //	ENSURE(init(), "Object 'Store' was not properly initialized.");
 
-	Store(const int x, const int y, int hitpoints, int robberyPoints, const std::string n, const int width, const int length);
+	Store(const int x, const int y, int hitpoints, int robberyPoints, const std::string n, const int width, const int length, bool rob);
 //	ENSURE(init(), "Object 'Store' was not properly initialized.");
 
 	double getRP();
+
+	bool getRobable();
 
 	void decreaseRP();
 //	REQUIRE(init(), "Object 'Store' was not properly initialized when calling decreaseRP()");

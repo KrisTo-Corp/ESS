@@ -25,10 +25,18 @@ int main(int argc, char **argv) {
 			City city(argv[1], std::cout);
 			simulateCity(city);
 		}
+		else if (argv2 == "html") {
+			std::ofstream filestream("ems.html");
+			City city(argv[1], filestream, "empty", true);
+			simulateCity(city);
+			city.o.closeHTML();
+		}
 		else {
 			std::ofstream filestream(argv[2]);
 			City city(argv[1], filestream);
+			std::cout << "constructed" << std::endl;
 			simulateCity(city);
+			std::cout << "simulated" << std::endl;
 			filestream.close();
 			std::cout << "output was written to " << argv2 << std::endl;
 		}
@@ -38,6 +46,12 @@ int main(int argc, char **argv) {
 		if (argv2 == "cout") {
 			City city(argv[1], std::cout, argv[3]);
 			simulateCity(city);
+		}
+		else if (argv2 == "html") {
+			std::ofstream filestream("ems.html");
+			City city(argv[1], filestream, argv[3], true);
+			simulateCity(city);
+			city.o.closeHTML();
 		}
 		else {
 			std::ofstream filestream(argv[2]);

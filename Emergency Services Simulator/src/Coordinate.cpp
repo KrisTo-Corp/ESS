@@ -74,6 +74,17 @@ std::ostream& operator <<(std::ostream& s, Coordinate& coordinate){
 	return s;
 }
 
+std::string Coordinate::getString() {
+	std::stringstream ss;
+	ss << x;
+	std::string sx = ss.str();
+	ss.str("");
+	ss << y;
+	std::string sy = ss.str();
+	std::string s =  "(" + sx + ", " + sy + ")";
+	return s;
+}
+
 bool Coordinate::operator==(const Coordinate &c) const{
 	Coordinate comp = c;
 	if (this->x == comp.getX() && this->y == comp.getY()) {

@@ -18,7 +18,8 @@ XmlParser::XmlParser(City* inputCity) {
 void XmlParser::parseCity(std::string filename) {
 	TiXmlDocument doc;
 	if(!doc.LoadFile(filename.c_str())) {
-		city->output << doc.ErrorDesc() << std::endl;
+		std::string error = doc.ErrorDesc();
+		city->o.print(error + "\n");
 		maxValues = std::pair<int, int>(-1, -1);
 		return;
 	}
@@ -26,7 +27,7 @@ void XmlParser::parseCity(std::string filename) {
 	TiXmlElement* virtualCity = doc.FirstChildElement();
 
 	if(virtualCity == NULL) {
-		city->output << "Failed to load file: No root element." << std::endl;
+		city->o.print("Failed to load file: No root element.\n");
 		doc.Clear();
 		maxValues =  std::pair<int, int>(-2, -2);
 		return;
@@ -38,7 +39,7 @@ void XmlParser::parseCity(std::string filename) {
 	for(TiXmlElement* object = virtualCity->FirstChildElement(); object != NULL; object = object->NextSiblingElement()) {
 		std::string objectName = object->Value();
 		if (objectName == "Huis") {
-			std::cout << "house 1" << std::endl;
+			//std::cout + "house 1" + std::endl;
 
 			int x, y, hp;
 
@@ -67,16 +68,16 @@ void XmlParser::parseCity(std::string filename) {
 					 * Check to see if the input is valid: not negative and of type int.
 					 */
 					if (hp < 0) {
-						city->output << "A house can not have a negative amount of hitpoints! Hitpoints read: " << hp << std::endl;
+						city->o.print("A house can not have a negative amount of hitpoints! Hitpoints read: " + doubleToString(hp) + "\n");
 						continue;
 					}
 					else if (isalpha(hp) || typeid(hp) != typeid(int)) {
-						city->output << "Hitpoints must be of type int! Hitpoints read: " << hp << std::endl;
+						city->o.print("Hitpoints must be of type int! Hitpoints read: " + doubleToString(hp) + "\n");
 						continue;
 					}
 				}
 				else {
-					city->output << "Label " << fieldName << " is not a valid field. House" << std::endl;
+					city->o.print("Label " + fieldName + " is not a valid field. House\n");
 					continue;
 				}
 			}
@@ -86,10 +87,10 @@ void XmlParser::parseCity(std::string filename) {
 			// validcoordcheck here
 			House house(x, y, hp, "house");
 			city->getHouseList()->push_back(house);
-			std::cout << "house 1" << std::endl;
+			//std::cout + "house 1" + std::endl;
 		}
 		else if (objectName == "Straat") {
-			std::cout << "street 1" << std::endl;
+			//std::cout + "street 1" + std::endl;
 			int x_start, y_start, x_end, y_end;
 			std::string name;
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
@@ -126,7 +127,7 @@ void XmlParser::parseCity(std::string filename) {
 					}
 				}
 				else {
-					city->output << "Label " << fieldName << " is not a valid field. Street" << std::endl;
+					city->o.print("Label " + fieldName + " is not a valid field. Street\n");
 					continue;
 				}
 			}
@@ -141,7 +142,7 @@ void XmlParser::parseCity(std::string filename) {
 
 			Street street(x_start, y_start, x_end, y_end, name);
 			city->getStreetsList()->push_back(street);
-			std::cout << "street 1" << std::endl;
+			//std::cout + "street 1" + std::endl;
 		}
 		else if (objectName == "Brandweerwagen") {
 			std::string name, base;
@@ -158,7 +159,7 @@ void XmlParser::parseCity(std::string filename) {
 					base = text->Value();
 				}
 				else {
-					city->output << "Label " << fieldName << " is not a valid field. Truck" << std::endl;
+					city->o.print("Label " + fieldName + " is not a valid field. Truck\n");
 					continue;
 				}
 			}
@@ -166,7 +167,7 @@ void XmlParser::parseCity(std::string filename) {
 			city->getTruckList()->push_back(truck);
 		}
 		else if(objectName == "Brandweerkazerne") {
-			std::cout << "dep 1" << std::endl;
+			//std::cout + "dep 1" + std::endl;
 			int x_building, y_building, x_entrance, y_entrance;
 			int hp = 0;
 			std::string name;
@@ -206,11 +207,11 @@ void XmlParser::parseCity(std::string filename) {
 					 * Check to see if the input is valid: not negative and of type int.
 					 */
 					if (hp < 0) {
-						city->output << "A house can not have a negative amount of hitpoints! Hitpoints read: " << hp << std::endl;
+						city->o.print("A house can not have a negative amount of hitpoints! Hitpoints read: " + doubleToString(hp) + "\n");
 						continue;
 					}
 					else if (isalpha(hp) || typeid(hp) != typeid(int)) {
-						city->output << "Hitpoints must be of type int! Hitpoints read: " << hp << std::endl;
+						city->o.print("Hitpoints must be of type int! Hitpoints read: " + doubleToString(hp) + "\n");
 						continue;
 					}
 				}
@@ -224,7 +225,7 @@ void XmlParser::parseCity(std::string filename) {
 					}
 				}
 				else {
-					city->output << "Label " << fieldName << " is not a valid field. dep" << std::endl;
+					city->o.print("Label " + fieldName + " is not a valid field. dep\n");
 					continue;
 
 				}
@@ -240,16 +241,16 @@ void XmlParser::parseCity(std::string filename) {
 
 			Fire_Department department(x_building, y_building, x_entrance, y_entrance, name, hp);
 			city->getDepList()->push_back(department);
-			std::cout << "dep 1" << std::endl;
+			//std::cout + "dep 1" + std::endl;
 		}
 		else if (objectName == "Winkel") {
-			std::cout << "store 1" << std::endl;
+			//std::cout + "store 1" + std::endl;
 
 			int x_building, y_building, width, length, hp, rp;
 			std::string name;
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
 				std::string fieldName = field->Value();
-				std::cout << fieldName << std::endl << std::endl;
+				//std::cout + fieldName + std::endl + std::endl;
 				if(fieldName == "Locatie") {
 					x_building = atoi(field->Attribute("X"));
 					y_building = atoi(field->Attribute("Y"));
@@ -269,11 +270,11 @@ void XmlParser::parseCity(std::string filename) {
 					 * Check to see if the input is valid: not negative and of type int.
 					 */
 					if (width < 0 || length < 0) {
-						city->output << "A Store can't have negative dimensions! Dimensions read: " << width << " " << length << std::endl;
+						city->o.print("A Store can't have negative dimensions! Dimensions read: " + intToString(width) + " " + intToString(length) + "\n");
 						continue;
 					}
 					else if (isalpha(width) || typeid(width) != typeid(int) || isalpha(length) || typeid(length) != typeid(int)) {
-						city->output << "Dimensions must be of type int! Dimensions read: " << width << " " << length << std::endl;
+						city->o.print("Dimensions must be of type int! Dimensions read: " + intToString(width) + " " + intToString(length) + "\n");
 						continue;
 					}
 				}
@@ -289,16 +290,16 @@ void XmlParser::parseCity(std::string filename) {
 					 * Check to see if the input is valid: not negative and of type int.
 					 */
 					if (hp < 0) {
-						city->output << "A house can not have a negative amount of hitpoints! Hitpoints read: " << hp << std::endl;
+						city->o.print("A house can not have a negative amount of hitpoints! Hitpoints read: " + intToString(hp) + "\n");
 						continue;
 					}
 					else if (isalpha(hp) || typeid(hp) != typeid(int)) {
-						city->output << "Hitpoints must be of type int! Hitpoints read: " << hp << std::endl;
+						city->o.print("Hitpoints must be of type int! Hitpoints read: " + intToString(hp) + "\n");
 						continue;
 					}
 				}
 				else if(fieldName == "Overvalbaarheid") {
-					std::cout << "WE GOT IN BITCH!!!!" << std::endl;
+					//std::cout + "WE GOT IN BITCH!!!!" + std::endl;
 					TiXmlText* text = field->FirstChild()->ToText();
 					if(text == NULL){
 						continue;
@@ -310,27 +311,32 @@ void XmlParser::parseCity(std::string filename) {
 					 * Check to see if the input is valid: not negative and of type int.
 					 */
 					if (rp < 0) {
-						city->output << "A house can not have a negative amount of robbery points! Robbery points read: " << rp << std::endl;
+						city->o.print("A house can not have a negative amount of robbery points! Robbery points read: " + intToString(rp) + "\n");
 						continue;
 					}
 					else if (isalpha(rp) || typeid(rp) != typeid(int)) {
-						city->output << "Robbery points must be of type int! Robbery points read: " << rp << std::endl;
+						city->o.print("Robbery points must be of type int! Robbery points read: " + intToString(rp) + "\n");
 						continue;
 					}
 				}
 				else {
-					city->output << "Label " << fieldName << " is not a valid field. " << std::endl;
+					city->o.print("Label " + fieldName + " is not a valid field. " + "\n");
 					continue;
 
 				}
 			}
-			std::cout << "CHECK DIS OUTTTTTTTTTTTT" << rp << std::endl;
-			Store newStore(x_building, y_building, hp, rp, "Store", width, length);
+			Store newStore;
+			if (rp != 0) {
+				newStore = Store(x_building, y_building, hp, rp, "Store", width, length, true);
+			}
+			else {
+				newStore = Store(x_building, y_building, hp, rp, "Store", width, length, false);
+			}
 			city->getStoresList()->push_back(newStore);
-			std::cout << "store 1" << std::endl;
+			//std::cout + "store 1" + std::endl;
 		}
 		else if (objectName == "Ziekenhuis") {
-			std::cout << "hospital 1" << std::endl;
+			//std::cout + "hospital 1" + std::endl;
 			int x_building, y_building, x_entrance, y_entrance, width, length, hp;
 			std::string name;
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
@@ -363,11 +369,11 @@ void XmlParser::parseCity(std::string filename) {
 					 * Check to see if the input is valid: not negative and of type int.
 					 */
 					if (width < 0 || length < 0) {
-						city->output << "A Store can't have negative dimensions! Dimensions read: " << width << " " << length << std::endl;
+						city->o.print("A Store can't have negative dimensions! Dimensions read: " + intToString(width) + " " + intToString(length) + "\n");
 						continue;
 					}
 					else if (isalpha(width) || typeid(width) != typeid(int) || isalpha(length) || typeid(length) != typeid(int)) {
-						city->output << "Dimensions must be of type int! Dimensions read: " << width << " " << length << std::endl;
+						city->o.print("Dimensions must be of type int! Dimensions read: " + intToString(width) + " " + intToString(length) + "\n");
 						continue;
 					}
 				}
@@ -394,21 +400,21 @@ void XmlParser::parseCity(std::string filename) {
 					 * Check to see if the input is valid: not negative and of type int.
 					 */
 					if (hp < 0) {
-						city->output << "A hospital can not have a negative amount of hitpoints! Hitpoints read: " << hp << std::endl;
+						city->o.print("A hospital can not have a negative amount of hitpoints! Hitpoints read: " + intToString(hp) + "\n");
 						continue;
 					}
 					else if (isalpha(hp) || typeid(hp) != typeid(int)) {
-						city->output << "Hitpoints must be of type int! Hitpoints read: " << hp << std::endl;
+						city->o.print("Hitpoints must be of type int! Hitpoints read: " + intToString(hp) + "\n");
 						continue;
 					}
 				}
 			}
 			Hospital newHospital(x_building, y_building, x_entrance, y_entrance, hp, name, width, length);
 			city->getHospitalsList()->push_back(newHospital);
-			std::cout << "hospital 1" << std::endl;
+			//std::cout + "hospital 1" + std::endl;
 		}
 		else if (objectName == "PolitieBureau") {
-			std::cout << "pol 1" << std::endl;
+			//std::cout + "pol 1" + std::endl;
 			int x_building, y_building, x_entrance, y_entrance, width, length, hp;
 			std::string name;
 			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
@@ -441,11 +447,11 @@ void XmlParser::parseCity(std::string filename) {
 					 * Check to see if the input is valid: not negative and of type int.
 					 */
 					if (width < 0 || length < 0) {
-						city->output << "A Store can't have negative dimensions! Dimensions read: " << width << " " << length << std::endl;
+						city->o.print("A Store can't have negative dimensions! Dimensions read: " + intToString(width) + " " + intToString(length) + "\n");
 						continue;
 					}
 					else if (isalpha(width) || typeid(width) != typeid(int) || isalpha(length) || typeid(length) != typeid(int)) {
-						city->output << "Dimensions must be of type int! Dimensions read: " << width << " " << length << std::endl;
+						city->o.print("Dimensions must be of type int! Dimensions read: " + intToString(width) + " " + intToString(length) + "\n");
 						continue;
 					}
 				}
@@ -472,18 +478,18 @@ void XmlParser::parseCity(std::string filename) {
 					 * Check to see if the input is valid: not negative and of type int.
 					 */
 					if (hp < 0) {
-						city->output << "A house can not have a negative amount of hitpoints! Hitpoints read: " << hp << std::endl;
+						city->o.print("A house can not have a negative amount of hitpoints! Hitpoints read: " + intToString(hp) + "\n");
 						continue;
 					}
 					else if (isalpha(hp) || typeid(hp) != typeid(int)) {
-						city->output << "Hitpoints must be of type int! Hitpoints read: " << hp << std::endl;
+						city->o.print("Hitpoints must be of type int! Hitpoints read: " + intToString(hp) + "\n");
 						continue;
 					}
 				}
 			}
 			PoliceStation newPolStation(x_building, y_building, x_entrance, y_entrance, hp, name, width, length);
 			city->getPoliStatsList()->push_back(newPolStation);
-			std::cout << "pol 1" << std::endl;
+			//std::cout + "pol 1" + std::endl;
 		}
 		else if (objectName == "Politiewagen") {
 			std::string name, base;
@@ -500,7 +506,7 @@ void XmlParser::parseCity(std::string filename) {
 					base = text->Value();
 				}
 				else {
-					city->output << "Label " << fieldName << " is not a valid field. Truck" << std::endl;
+					city->o.print("Label " + fieldName + " is not a valid field. Truck\n");
 					continue;
 				}
 			}
@@ -522,7 +528,7 @@ void XmlParser::parseCity(std::string filename) {
 					base = text->Value();
 				}
 				else {
-					city->output << "Label " << fieldName << " is not a valid field. Truck" << std::endl;
+					city->o.print("Label " + fieldName + " is not a valid field. Truck\n");
 					continue;
 				}
 			}
@@ -530,7 +536,7 @@ void XmlParser::parseCity(std::string filename) {
 			city->getAmbulancesList()->push_back(ambulance);
 		}
 		else {
-			city->output << objectName << " is not a valid object." << std::endl;
+			city->o.print(objectName + " is not a valid object.\n");
 			maxValues = std::pair<int, int>(-3, -3);
 			return;
 		}
@@ -545,11 +551,11 @@ bool XmlParser::validCoordCheck(int x, int y) {
 	 */
 
 	if (x < 0 || y < 0) {
-		city->output << "A coordinate can not be negative! Coordinate read: (" << x << "," << y << ")" << std::endl;
+		city->o.print("A coordinate can not be negative! Coordinate read: (" + intToString(x) + "," + intToString(y) + ")\n");
 		return false;
 	}
 	else if (isalpha(x) || isalpha(y) || typeid(x) != typeid(int) || typeid(y) != typeid(int)) {
-		city->output << "A coordinate must be of type int! Coordinate read: (" << x << "," << y << ")" << std::endl;
+		city->o.print("A coordinate must be of type int! Coordinate read: (" + intToString(x) + "," + intToString(y) + ")\n");
 		return false;
 	}
 	else {
