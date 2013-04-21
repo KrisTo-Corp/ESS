@@ -319,6 +319,62 @@ CityObjects* City::setFire(int x, int y){
 	return ptr;
 }
 
+Coordinate City::getAdjecantBuilding(CityObjects* building) {
+	Structures* ptr = dynamic_cast<Structures*>(building);
+	std::vector<Coordinate> coordinates;
+	Coordinate location;
+
+	for (int x = 0; x < ptr->getWidth(); x++){
+		for (int y = 0; y < ptr->getLength(); y++){
+			location = ptr->getLocation();
+			location.setX(location.getX()+x);
+			location.setY(location.getY()-y);
+
+			CityObjects* obj = matrix.getObject(location.getX(), location.getY()+1);
+			if (location.getY() < matrix.getRows()-1) {
+				//std::cout << obj->getType() << " " << obj << " " << building <<
+				if (obj == NULL) {
+					continue;
+				}
+				else if(obj->getType() != street && obj->getType() != crossroad && obj != building && obj->getState() == normal){
+					return (Coordinate(location.getX(), location.getY()+1));
+				}
+			}
+
+			obj = matrix.getObject(location.getX(), location.getY()-1);
+			if (location.getY() > 0){
+				if ( obj == NULL) {
+					continue;
+				}
+				else if(obj->getType() != street && obj->getType() != crossroad && obj != building && obj->getState() == normal){
+					return (Coordinate(location.getX(), location.getY()-1));
+				}
+			}
+
+			obj = matrix.getObject(location.getX()+1, location.getY());
+			if (location.getX() < matrix.getColumns()-1){
+				if (obj == NULL) {
+					continue;
+				}
+				else if (obj->getType() != street && obj->getType() != crossroad && obj != building && obj->getState() == normal){
+					return (Coordinate(location.getX()+1, location.getY()));
+				}
+			}
+
+			obj = matrix.getObject(location.getX()-1, location.getY());
+			if (location.getX() > 0){
+				if (obj == NULL) {
+					continue;
+				}
+				else if(obj->getType() != street && obj->getType() != crossroad && obj != building && obj->getState() == normal){
+					return (Coordinate(location.getX()-1, location.getY()));
+				}
+			}
+		}
+	}
+	return (Coordinate(-1, -1));
+}
+
 Coordinate City::getAdjecantStreet(CityObjects* building, Coordinate truckLoc) {
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAdjecantStreet()");
 
@@ -328,7 +384,6 @@ Coordinate City::getAdjecantStreet(CityObjects* building, Coordinate truckLoc) {
 
 	for (int x = 0; x < ptr->getWidth(); x++){
 		for (int y = 0; y < ptr->getLength(); y++){
-
 			location = ptr->getLocation();
 			location.setX(location.getX()+x);
 			location.setY(location.getY()-y);

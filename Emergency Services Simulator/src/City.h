@@ -158,6 +158,8 @@ public:
 	Store* robStore(int, int);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling robStore(int, int)");
 
+	Coordinate getAdjecantBuilding(CityObjects*);
+
 	bool getValidCity();
 
 	void link_vehicles_to_bases();

@@ -159,6 +159,39 @@ void simulateCity(City& city) {
 						city.o.print(name + " at location " + cur.getString() + " is destroyed.\n");
 						city.o.print("\t It has " + doubleToString(hp) + " hitpoints left.\n\n");
 					}
+
+					// Spread fire.
+					Structures* structptr = dynamic_cast<Structures*>(ptr);
+					if (structptr->getHP() <= structptr->getMaxHp() - 3 && ptr->getState() == burning) {
+						std::cout << "ENTERED" << std::endl;
+						Coordinate newFire = city.getAdjecantBuilding(ptr);
+						std::cout << newFire << std::endl;
+						if (newFire.getX() != -1 && newFire.getY() != -1) {
+							city.setFire(newFire.getX(), newFire.getY());
+							city.o.print("Fire has spread and a building on location " + newFire.getString() + " has caught fire.\n");
+
+							CityObjects* newFireBuilding = city.getMatrix()->getObject(newFire.getX(), newFire.getY());
+							Structures* newFireStructure = dynamic_cast<Structures*>(newFireBuilding);
+
+							// Find an available firetruck.
+							std::list<Firetruck>::iterator it_t;
+							std::list<std::pair<int, Firetruck*> > truck_distances;
+							for (it_t = city.getTruckList()->begin(); it_t != city.getTruckList()->end(); it_t++) {
+								if (it_t->getAvailable()) {
+									std::pair<int, Firetruck*> temp(city.calculateDistance(city.getAdjecantStreet(newFireStructure, it_t->getCoord()), it_t->getCoord()), &(*it_t));
+									truck_distances.push_back(temp);
+								}
+							}
+							truck_distances.sort();
+							if (truck_distances.size() != 0){
+								Firetruck* rescueTruck = truck_distances.begin()->second;
+								rescueTruck->setAvailable(false);
+								rescueTruck->setDestination(city.getAdjecantStreet(newFireStructure, rescueTruck->getCoord()));
+								rescueTruck->setTarget(newFireStructure);
+								rescueTruck->setIsHome(false);
+							}
+						}
+					}
 				}
 				else if (ptr->getState() == beingrobbed) {
 					finished = false;
@@ -468,3 +501,4 @@ void simulateCity_Test(City& city, Coordinate c1, Coordinate c2) {
 		loopcounter++;
 	}
 }
+
