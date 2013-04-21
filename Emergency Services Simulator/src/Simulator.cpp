@@ -215,7 +215,7 @@ void simulateCity(City& city) {
 						city.o.print("\t It has " + doubleToString(rp) + " robbery points left.\n\n");
 					}
 				}
-				else if (ptr->getState() == normal){
+				else if (ptr->getState() == repairing){
 					Structures* structptr = dynamic_cast<Structures*>(ptr);
 					double hp = structptr->getHP();
 					double maxhp = structptr->getMaxHp();
@@ -254,7 +254,7 @@ void simulateCity(City& city) {
 				if (it->getAvailable() == false) {
 					Structures* saved = it->getTarget();
 					if (saved->getState() == burning) {
-						saved->setState(normal);
+						saved->setState(repairing);
 						it->setAvailable(true);
 						it->setDestination(it->getBaseptr()->getEntrance());
 						it->setTarget(it->getBaseptr());
