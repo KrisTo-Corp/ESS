@@ -52,6 +52,7 @@ void simulateCity(City& city) {
 		rescueTruck->setDestination(city.getAdjecantStreet(structptr, rescueTruck->getCoord()));
 		rescueTruck->setTarget(structptr);
 		rescueTruck->setIsHome(false);
+		//ptr->setState(beingrescuedF);
 	}
 
 	/*
@@ -138,7 +139,7 @@ void simulateCity(City& city) {
 			for (int j = 0; j < city.getMatrix()->getRows(); j++){
 				ptr = city.getMatrix()->getObject(i, j);
 
-				if (ptr->getState() == burning){
+				if (ptr->getState() == burning || ptr->getState() == beingrescuedF) {
 					finished = false;
 
 					House* houseptr = dynamic_cast<House*>(ptr);
@@ -189,6 +190,29 @@ void simulateCity(City& city) {
 								rescueTruck->setDestination(city.getAdjecantStreet(newFireStructure, rescueTruck->getCoord()));
 								rescueTruck->setTarget(newFireStructure);
 								rescueTruck->setIsHome(false);
+								//newFireBuilding->setState(beingrescuedF);
+							}
+						}
+						if (ptr->getState() == burning) {
+							Structures* newFireStructure = dynamic_cast<Structures*>(ptr);
+
+							// Find an available firetruck.
+							std::list<Firetruck>::iterator it_t;
+							std::list<std::pair<int, Firetruck*> > truck_distances;
+							for (it_t = city.getTruckList()->begin(); it_t != city.getTruckList()->end(); it_t++) {
+								if (it_t->getAvailable()) {
+									std::pair<int, Firetruck*> temp(city.calculateDistance(city.getAdjecantStreet(newFireStructure, it_t->getCoord()), it_t->getCoord()), &(*it_t));
+									truck_distances.push_back(temp);
+								}
+							}
+							truck_distances.sort();
+							if (truck_distances.size() != 0){
+								Firetruck* rescueTruck = truck_distances.begin()->second;
+								rescueTruck->setAvailable(false);
+								rescueTruck->setDestination(city.getAdjecantStreet(newFireStructure, rescueTruck->getCoord()));
+								rescueTruck->setTarget(newFireStructure);
+								rescueTruck->setIsHome(false);
+								//ptr->setState(beingrescuedF);
 							}
 						}
 					}
