@@ -170,6 +170,8 @@ class Ambulance: public Vehicles {
 private:
 	Hospital* base;
 
+	Casualty* passenger;
+
 public:
 	Ambulance();
 //	ENSURE(properlyInitialized(), "Object 'Firetruck' was not properly initialized.");
@@ -187,6 +189,9 @@ public:
 	friend std::ostream& operator <<(std::ostream& s, Ambulance& pCar);
 
 	Ambulance(const Ambulance& c);
+
+	void setPassenger(Casualty*);
+	Casualty* getPassenger();
 
 	Ambulance& operator = (const Ambulance&);
 };

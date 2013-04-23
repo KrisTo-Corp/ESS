@@ -166,6 +166,28 @@ void XmlParser::parseCity(std::string filename) {
 			Firetruck truck(0, 0, name, base);
 			city->getTruckList()->push_back(truck);
 		}
+		else if (objectName == "Ziekenwagen") {
+			std::string name, base;
+			for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
+				std::string fieldName = field->Value();
+				TiXmlText* text = field->FirstChild()->ToText();
+				if(text == NULL){
+					continue;
+				}
+				else if (fieldName == "Naam") {
+					name = text->Value();
+				}
+				else if (fieldName == "Basis") {
+					base = text->Value();
+				}
+				else {
+					city->o.print("Label " + fieldName + " is not a valid field. Truck\n");
+					continue;
+				}
+			}
+			Ambulance amb(0, 0, name, base);
+			city->getAmbulancesList()->push_back(amb);
+		}
 		else if(objectName == "Brandweerkazerne") {
 			//std::cout + "dep 1" + std::endl;
 			int x_building, y_building, x_entrance, y_entrance;

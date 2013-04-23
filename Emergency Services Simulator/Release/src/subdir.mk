@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/Casualty.cpp \
 ../src/City.cpp \
 ../src/CityObjects.cpp \
 ../src/Coordinate.cpp \
@@ -22,6 +23,7 @@ CPP_SRCS += \
 ../src/xmlparser.cpp 
 
 OBJS += \
+./src/Casualty.o \
 ./src/City.o \
 ./src/CityObjects.o \
 ./src/Coordinate.o \
@@ -40,6 +42,7 @@ OBJS += \
 ./src/xmlparser.o 
 
 CPP_DEPS += \
+./src/Casualty.d \
 ./src/City.d \
 ./src/CityObjects.d \
 ./src/Coordinate.d \

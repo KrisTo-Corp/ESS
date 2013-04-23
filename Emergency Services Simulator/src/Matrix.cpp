@@ -272,10 +272,10 @@ void Matrix::printMatrix(OutputObject oo) {
 					output = output + "D\t";
 				}
 				else if(matrix[i][j]->getType() == street){
-					output = output + " \t";
+					output = output + "\t";
 				}
 				else if(matrix[i][j]->getType() == crossroad){
-					output = output + " \t";
+					output = output + "\t";
 				}
 				else if(matrix[i][j]->getType() == store){
 					output = output + "S\t";
@@ -294,7 +294,7 @@ void Matrix::printMatrix(OutputObject oo) {
 		}
 		output = output + "\n\t\t";
 		for (int i = 0; i < columns; i++){
-			output = output + intToString(i) + "\t";
+			output = output + intToString(i) + " \t";
 		}
 		output = output + "\n\n\t\tH = HOUSE\t D = FIRE DEPARTMENT\t S = STREET\t C = CROSSROAD\t ? = UNKNOWN\n";
 

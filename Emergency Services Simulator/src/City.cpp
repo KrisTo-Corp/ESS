@@ -124,6 +124,10 @@ int City::getAmountCars(){
 	return policecars.size();
 }
 
+std::vector<Casualty>* City::getCasualtyList() {
+	return &casualties;
+}
+
 CityObjects* City::getObject(int x, int y){
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getObject()");
 

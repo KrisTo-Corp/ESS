@@ -416,4 +416,11 @@ Ambulance& Ambulance::operator = (const Ambulance& c){
 	return *this;
 }
 
+void Ambulance::setPassenger(Casualty* c){
+	passenger = c;
+}
+Casualty* Ambulance::getPassenger(){
+	return passenger;
+}
+
 

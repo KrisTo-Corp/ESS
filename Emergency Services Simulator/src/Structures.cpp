@@ -18,6 +18,7 @@ Structures::Structures(): CityObjects(none), name(""), location(0, 0), width(0),
 {
 	hp = 0;
 	maxhp = 0;
+	spreadcounter = 0;
 
 	ENSURE(init(), "Object 'Structures' was not properly initialized.");
 }
@@ -26,6 +27,7 @@ Structures::Structures(const int x, const int y, const std::string n, const int 
 {
 	hp = hitp;
 	maxhp = hitp;
+	spreadcounter = 0;
 
 	//std::cout << "THIS OBJECT MAXHP : " << maxhp << std::endl;
 
@@ -68,6 +70,7 @@ Structures::Structures(const Structures& c){
 	state = c.state;
 	hp = c.hp;
 	maxhp = c.maxhp;
+	spreadcounter = c.spreadcounter;
 
 	_initCheck = this;
 }
@@ -81,6 +84,7 @@ Structures& Structures::operator =(const Structures& c){
 	state = c.state;
 	maxhp = c.maxhp;
 	hp = c.hp;
+	spreadcounter = c.spreadcounter;
 
 	_initCheck = this;
 
@@ -109,6 +113,18 @@ double Structures::getHP(){
 
 double Structures::getMaxHp(){
 	return maxhp;
+}
+
+double Structures::getSpreadcounter(){
+	return spreadcounter;
+}
+
+void Structures::resetSpreadcounter(){
+	spreadcounter = 0;
+}
+
+void Structures::increaseSpreadcounter(){
+	spreadcounter++;
 }
 
 

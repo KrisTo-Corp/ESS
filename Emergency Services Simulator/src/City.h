@@ -24,6 +24,7 @@
 #include "Roads.h"
 #include "Matrix.h"
 #include "DesignByContract.h"
+#include "Casualty.h"
 
 class City {
 private:
@@ -37,6 +38,7 @@ private:
 	std::list<PoliceStation> poliStats;
 	std::list<PoliceCar> policecars;
 	std::list<Ambulance> ambulances;
+	std::vector<Casualty> casualties;
 
 	bool validCity;
 
@@ -148,6 +150,8 @@ public:
 
 	std::list<Ambulance>* getAmbulancesList();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmbulancesList()");
+
+	std::vector<Casualty>* getCasualtyList();
 
 	Matrix* getMatrix();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getMatrix()");

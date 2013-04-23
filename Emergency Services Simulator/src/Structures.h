@@ -25,6 +25,7 @@ class Structures: public CityObjects {
 protected:
 	double maxhp;
 	double hp;
+	double spreadcounter;
 	std::string name;
 	Coordinate location;
 	int width;
@@ -53,6 +54,12 @@ public:
 //	REQUIRE(init(), "Object 'House' was not properly initialized when calling getHP()");
 
 	double getMaxHp();
+
+	double getSpreadcounter();
+
+	void resetSpreadcounter();
+
+	void increaseSpreadcounter();
 
 	void increaseHp();
 
