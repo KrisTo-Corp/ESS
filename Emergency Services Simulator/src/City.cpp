@@ -83,6 +83,10 @@ City::City(const std::string filename, std::ostream& stream, std::string vehicle
 
 City::~City()
 {
+	std::vector<Casualty*>::iterator it;
+	for (it = casualties.begin(); it != casualties.end(); it++) {
+		delete (*it);
+	}
 }
 
 std::ostream& operator <<(std::ostream& s, City& city) {
@@ -118,13 +122,17 @@ int City::getAmountTrucks(){
 	return trucks.size();
 }
 
+int City::getAmountAmbulances(){
+	return ambulances.size();
+}
+
 int City::getAmountCars(){
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountCars()");
 
 	return policecars.size();
 }
 
-std::vector<Casualty>* City::getCasualtyList() {
+std::vector<Casualty*>* City::getCasualtyList() {
 	return &casualties;
 }
 

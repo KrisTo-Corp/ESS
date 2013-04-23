@@ -173,10 +173,10 @@ void simulateCity(City& city) {
 
 					// Casualties
 					if (houseptr->getHP() == houseptr->getMaxHp()-5) {
-
-						Casualty cas;
+						std::cout << "kristof is kaka" << std::endl;
+						Casualty* cas = new Casualty(houseptr);
 						city.getCasualtyList()->push_back(cas);
-						city.o.print("A new casualty has fallen, he has " + intToString(cas.getHP()) + "hp left");
+						city.o.print("A new casualty has fallen, he has " + intToString(cas->getHP()) + "hp left");
 
 						//find available ambulanceS
 						std::list<Ambulance>::iterator it_t;
@@ -188,13 +188,15 @@ void simulateCity(City& city) {
 							}
 						}
 						truck_distances.sort();
+						std::cout << "tom is awesomesauce" << std::endl;
 						if (truck_distances.size() != 0){
 							Ambulance* rescueTruck = truck_distances.begin()->second;
 							rescueTruck->setAvailable(false);
-							rescueTruck->setDestination(city.getAdjecantStreet(structptr, rescueTruck->getCoord()));
-							rescueTruck->setTarget(structptr);
-							rescueTruck->setPassenger(&(*city.getCasualtyList()->end()));
+							rescueTruck->setPassenger(city.getCasualtyList()->at(city.getCasualtyList()->size()-1));
+							rescueTruck->setDestination(city.getAdjecantStreet(rescueTruck->getPassenger()->getHome(), rescueTruck->getCoord()));
+							rescueTruck->setTarget(rescueTruck->getPassenger()->getHome());
 							rescueTruck->setIsHome(false);
+							rescueTruck->getPassenger()->setPassengerState(beingrescued);
 						}
 					}
 
@@ -336,14 +338,39 @@ void simulateCity(City& city) {
 			city.o.print("There are no policecars in this city.\n");
 		}
 
+		std::cout << "KAKA 7" << std::endl;
 		// Decrease HP (casualties)
-		std::vector<Casualty>::iterator itc;
+		city.o.print("casualties = " + intToString(city.getCasualtyList()->size()));
+		std::vector<Casualty*>::iterator itc;
 		for (itc = city.getCasualtyList()->begin(); itc != city.getCasualtyList()->end(); itc++) {
-			if (!(itc->getInCare())) {
-				itc->decreaseHP();
-				city.o.print("casualty's hp has decreased, he has " + intToString(itc->getHP()) + " hp left");
+			if ((*itc)->getPState() == hurt || (*itc)->getPState() == beingrescued) {
+				finished = false;
+				(*itc)->decreaseHP();
+				city.o.print("casualty's hp has decreased, he has " + intToString((*itc)->getHP()) + " hp left");
 			}
+			if ((*itc)->getPState() == hurt){
+				std::list<Ambulance>::iterator it_t;
+				std::list<std::pair<int, Ambulance*> > truck_distances;
+				for (it_t = city.getAmbulancesList()->begin(); it_t != city.getAmbulancesList()->end(); it_t++) {
+					if (it_t->getAvailable()) {
+						std::pair<int, Ambulance*> temp(city.calculateDistance(city.getAdjecantStreet(structptr, it_t->getCoord()), it_t->getCoord()), &(*it_t));
+						truck_distances.push_back(temp);
+					}
+				}
+				truck_distances.sort();
+				if (truck_distances.size() != 0){
+					Ambulance* rescueTruck = truck_distances.begin()->second;
+					rescueTruck->setAvailable(false);
+					rescueTruck->setPassenger((*itc));
+					rescueTruck->setDestination(city.getAdjecantStreet(rescueTruck->getPassenger()->getHome(), rescueTruck->getCoord()));
+					rescueTruck->setTarget(rescueTruck->getPassenger()->getHome());
+					rescueTruck->setIsHome(false);
+					(*itc)->setPassengerState(beingrescued);
+				}
+			}
+			city.o.getOutput() << "Casualty state = " << &(*itc) << std::endl;
 		}
+		std::cout << "MOVINGTRUCK" << std::endl;
 
 		// Move
 		for (std::list<Firetruck>::iterator it = city.getTruckList()->begin(); it != city.getTruckList()->end(); it++) {
@@ -384,6 +411,7 @@ void simulateCity(City& city) {
 				city.o.print(destination.getString() + ". The firetruck is at " + truckStreet->getName() + " on location " + location.getString() + "\n\n\n");
 			}
 		}
+		std::cout << "MOVINGPOLICE" << std::endl;
 
 		for (std::list<PoliceCar>::iterator it = city.getPoliceCarsList()->begin(); it != city.getPoliceCarsList()->end(); it++) {
 			city.driveTruck(&(*it));
@@ -424,48 +452,60 @@ void simulateCity(City& city) {
 				city.o.print(destination.getString() + ". The policecar is at " + truckStreet->getName() + " on location " + location.getString() + "\n\n\n");
 			}
 		}
+		std::cout << "AMBULANCE" << std::endl;
+
 
 		for (std::list<Ambulance>::iterator it = city.getAmbulancesList()->begin(); it != city.getAmbulancesList()->end(); it++) {
 			city.driveTruck(&(*it));
 			Coordinate destination = it->getDestination();
 			if (it->getCoord() == destination) {
+				std::cout << " GETCOORD == DESTINATION" << std::endl;
 				Coordinate cur_dest = it->getCoord();
-				if (it->getAvailable() == false) {
+				if (it->getAvailable() == false && (it->getBaseptr() != it->getTarget())) {
 					Casualty* passenger = it->getPassenger();
-					if (saved->getState() == beingrescuedR) {
-						saved->setState(normal);
-						it->setAvailable(true);
+					std::cout << "passengerstate = " << passenger;
+					if (!(passenger->getPState() == dead)) {
+						std::cout << " 1IF == !dead" << std::endl;
+						it->setContaining(true);
+						passenger->setPassengerState(inCare);
 						it->setDestination(it->getBaseptr()->getEntrance());
 						it->setTarget(it->getBaseptr());
-						city.o.print("Policecar " + it->getName() + " has reached its destination ");
-						city.o.print(" at location " + destination.getString() + " and has stopped the robbery and are returning home.\n\n");
+						city.o.print("Ambulance " + it->getName() + " has reached its destination ");
+						city.o.print(" at location " + destination.getString() + " and has picked up the injured person.\n\n");
 					}
-					else if (saved->getState() == destroyed) {
+					else if (passenger->getPState() == dead) {
+						std::cout << " 1IF == dead" << std::endl;
 						it->setAvailable(true);
 						it->setDestination(it->getBaseptr()->getEntrance());
 						it->setTarget(it->getBaseptr());
-						city.o.print("Policecar " + it->getName() + " has reached its destination ");
-						city.o.print(" at location " + destination.getString() + " and saw that the store was robbed empty and are now returning home.\n\n");
+						city.o.print("Ambulance " + it->getName() + " has reached its destination ");
+						city.o.print(" at location " + destination.getString() + " and saw that the victim was dead and burried them in the backyard. \nThey are now returning home.\n\n");
 					}
 				}
 				else {
+					std::cout << " ELSE" << std::endl;
 					i++;
 					if (it->getIsHome() == false){
-						city.o.print("Policecar " + it->getName() + " has arrived at its base " + it->getBaseptr()->getName() + "\n\n");
+						city.o.print("Ambulance " + it->getName() + " has arrived at its base " + it->getBaseptr()->getName() + "\n\n");
+						if(it->getContaining() == true){
+							city.o.print("It has dropped of its passenger.");
+							it->setContaining(false);
+						}
 						it->setIsHome(true);
-
+						it->setAvailable(true);
 					}
 				}
 			}
 			else {
 				Coordinate location = it->getCoord();
 				Roads* truckStreet = dynamic_cast<Roads*>(city.getMatrix()->getObject(it->getCoord().getX(), it->getCoord().getY()));
-				city.o.print("Policecar " + it->getName() + " is on its way to " + it->getTarget()->getName() + " on location ");
-				city.o.print(destination.getString() + ". The policecar is at " + truckStreet->getName() + " on location " + location.getString() + "\n\n\n");
+				city.o.print("Ambulance " + it->getName() + " is on its way to " + it->getTarget()->getName() + " on location ");
+				city.o.print(destination.getString() + ". The ambulance is at " + truckStreet->getName() + " on location " + location.getString() + "\n\n\n");
 			}
 		}
 
-		if ((i == city.getAmountTrucks()+city.getAmountCars()) && finished) {
+		if ((i == city.getAmountTrucks()+city.getAmountCars()+city.getAmountAmbulances()) && finished) {
+			std::cout << "kaka5" << std::endl;
 			city.o.print("\n================================================================================================================================");
 			return;
 		}

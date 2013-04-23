@@ -8,19 +8,26 @@
 #ifndef CASUALTY_H_
 #define CASUALTY_H_
 
+#include "Structures.h"
+
+class Structures;
+
+enum status {dead, inCare, beingrescued, hurt};
+
 class Casualty {
 private:
-	//int id;
+	status state;
+	Structures* home;
 	int hp;
-	bool inCare;
 public:
-	Casualty();
+	Casualty(Structures*);
 	virtual ~Casualty();
 
+	status getPState();
 	int getHP();
-	bool getInCare();
+	Structures* getHome();
 	void decreaseHP();
-	int getID();
+	void setPassengerState(status );
 };
 
 #endif /* CASUALTY_H_ */

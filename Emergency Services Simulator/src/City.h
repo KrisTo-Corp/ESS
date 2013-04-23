@@ -38,7 +38,7 @@ private:
 	std::list<PoliceStation> poliStats;
 	std::list<PoliceCar> policecars;
 	std::list<Ambulance> ambulances;
-	std::vector<Casualty> casualties;
+	std::vector<Casualty*> casualties;
 
 	bool validCity;
 
@@ -151,7 +151,7 @@ public:
 	std::list<Ambulance>* getAmbulancesList();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmbulancesList()");
 
-	std::vector<Casualty>* getCasualtyList();
+	std::vector<Casualty*>* getCasualtyList();
 
 	Matrix* getMatrix();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getMatrix()");
@@ -165,6 +165,8 @@ public:
 	Coordinate getAdjecantBuilding(CityObjects*);
 
 	bool getValidCity();
+
+	int getAmountAmbulances();
 
 	void link_vehicles_to_bases();
 

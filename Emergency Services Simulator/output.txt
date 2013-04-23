@@ -1,7 +1,6 @@
 								EMERGENCY SERVICES SIMULATION 
 								============================= 
 
-Ziekenwagen is not a valid object.
 
 MAP: 
 ====
@@ -35,394 +34,955 @@ INTEGRITYCHECK:
 SIMULATION:
 ==========
 
-Store at location (12, 7) started burning.
-	 It has 27 hitpoints left.
-
-Store at location (8, 12) has started being robbed.
-	 It has 16 robbery points left.
-
-Store at location (8, 12) is still burning.
-	 It has 15 robbery points left.
-
-Store at location (12, 7) is still burning.
-	 It has 26 hitpoints left.
-
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to Store on location (12, 5). The firetruck is at Cstraat-Javastraat on location (7, 10)
-
-
-Policecar Pw3 is on its way to Store on location (8, 10). The policecar is at Haskellstraat-Javastraat on location (7, 5)
-
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Store at location (8, 12) is still burning.
-	 It has 14 robbery points left.
-
-Store at location (12, 7) is still burning.
-	 It has 25 hitpoints left.
-
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to Store on location (12, 5). The firetruck is at Javastraat on location (7, 9)
-
-
-Policecar Pw3 is on its way to Store on location (8, 10). The policecar is at Javastraat on location (7, 6)
-
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Store at location (8, 12) is still burning.
-	 It has 13 robbery points left.
-
-Store at location (12, 7) is still burning.
-	 It has 24 hitpoints left.
-
-spreadcounter = 3Fire has spread and a building on location (12, 8) has caught fire.
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to Store on location (12, 5). The firetruck is at Javastraat on location (7, 8)
-
-
-Firetruck Bw34 is on its way to Store on location (12, 10). The firetruck is at Cstraat on location (9, 10)
-
-
-Policecar Pw3 is on its way to Store on location (8, 10). The policecar is at Javastraat on location (7, 7)
-
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Store at location (8, 12) is still burning.
-	 It has 12 robbery points left.
-
-Store at location (12, 9) is still burning.
-	 It has 29 hitpoints left.
-
-Store at location (12, 7) is still burning.
-	 It has 23 hitpoints left.
-
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to Store on location (12, 5). The firetruck is at Javastraat on location (7, 7)
-
-
-Firetruck Bw34 is on its way to Store on location (12, 10). The firetruck is at Cstraat on location (10, 10)
-
-
-Policecar Pw3 is on its way to Store on location (8, 10). The policecar is at Javastraat on location (7, 8)
-
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Store at location (8, 12) is still burning.
-	 It has 11 robbery points left.
-
-Store at location (12, 9) is still burning.
-	 It has 28 hitpoints left.
-
-Store at location (12, 7) is still burning.
-	 It has 22 hitpoints left.
-
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to Store on location (12, 5). The firetruck is at Javastraat on location (7, 6)
-
-
-Firetruck Bw34 is on its way to Store on location (12, 10). The firetruck is at Cstraat on location (11, 10)
-
-
-Policecar Pw3 is on its way to Store on location (8, 10). The policecar is at Javastraat on location (7, 9)
-
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Store at location (8, 12) is still burning.
-	 It has 10 robbery points left.
-
-Store at location (12, 9) is still burning.
-	 It has 27 hitpoints left.
-
-spreadcounter = 3Fire has spread and a building on location (14, 9) has caught fire.
-Store at location (12, 7) is still burning.
-	 It has 21 hitpoints left.
-
-spreadcounter = 3Store at location (14, 9) is still burning.
-	 It has 39 hitpoints left.
-
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to Store on location (12, 5). The firetruck is at Haskellstraat-Javastraat on location (7, 5)
-
-
-Firetruck Bw34 has reached its destination  at location (12, 10) and has extinguished the fire and are returning home.
-
-Policecar Pw3 is on its way to Store on location (8, 10). The policecar is at Cstraat-Javastraat on location (7, 10)
-
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Store at location (8, 12) is still burning.
-	 It has 9 robbery points left.
-
-Store at location (12, 7) is still burning.
+house at location (1, 7) started burning.
 	 It has 20 hitpoints left.
 
-Store at location (12, 9) is repairing.
-	 It has 27 hitpoints left.
+Store at location (14, 9) has started being robbed.
+	 It has 30 robbery points left.
 
-Store at location (14, 9) is still burning.
-	 It has 38 hitpoints left.
-
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to Store on location (12, 5). The firetruck is at Haskellstraat on location (8, 5)
-
-
-Firetruck Bw34 is on its way to Store on location (14, 10). The firetruck is at Cstraat on location (13, 10)
-
-
-Policecar Pw3 has reached its destination  at location (8, 10) and has stopped the robbery and are returning home.
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Store at location (12, 7) is still burning.
+house at location (1, 7) is still burning.
 	 It has 19 hitpoints left.
 
 Store at location (14, 9) is still burning.
-	 It has 37 hitpoints left.
+	 It has 29 robbery points left.
 
-spreadcounter = 3There are no ambulances in this city.
-Firetruck Bw12 is on its way to Store on location (12, 5). The firetruck is at Haskellstraat on location (9, 5)
+casualties = 0Firetruck Bw12 is on its way to house on location (2, 5). The firetruck is at Cstraat-Javastraat on location (7, 10)
 
 
-Firetruck Bw34 has reached its destination  at location (14, 10) and has extinguished the fire and are returning home.
-
-Policecar Pw3 is on its way to PB134 on location (8, 5). The policecar is at Cstraat-Javastraat on location (7, 10)
+Policecar Pw3 is on its way to Store on location (14, 5). The policecar is at Haskellstraat on location (9, 5)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Store at location (12, 7) is still burning.
+house at location (1, 7) is still burning.
 	 It has 18 hitpoints left.
 
-spreadcounter = 3Store at location (12, 9) is repairing.
-	 It has 28 hitpoints left.
+Store at location (14, 9) is still burning.
+	 It has 28 robbery points left.
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to Store on location (12, 5). The firetruck is at Haskellstraat on location (10, 5)
-
-
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (13, 10)
+casualties = 0Firetruck Bw12 is on its way to house on location (2, 5). The firetruck is at Javastraat on location (7, 9)
 
 
-Policecar Pw3 is on its way to PB134 on location (8, 5). The policecar is at Javastraat on location (7, 9)
+Policecar Pw3 is on its way to Store on location (14, 5). The policecar is at Haskellstraat on location (10, 5)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Store at location (12, 7) is still burning.
+house at location (1, 7) is still burning.
 	 It has 17 hitpoints left.
 
-Store at location (14, 9) is repairing.
-	 It has 38 hitpoints left.
+spreadcounter = 3Fire has spread and a building on location (1, 8) has caught fire.
+Store at location (14, 9) is still burning.
+	 It has 27 robbery points left.
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to Store on location (12, 5). The firetruck is at Haskellstraat on location (11, 5)
-
-
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (12, 10)
+casualties = 0Firetruck Bw12 is on its way to house on location (2, 5). The firetruck is at Javastraat on location (7, 8)
 
 
-Policecar Pw3 is on its way to PB134 on location (8, 5). The policecar is at Javastraat on location (7, 8)
+Firetruck Bw34 is on its way to house on location (2, 10). The firetruck is at Cstraat-Javastraat on location (7, 10)
+
+
+Policecar Pw3 is on its way to Store on location (14, 5). The policecar is at Haskellstraat on location (11, 5)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Store at location (12, 7) is still burning.
+house at location (1, 9) is still burning.
+	 It has 19 hitpoints left.
+
+house at location (1, 7) is still burning.
 	 It has 16 hitpoints left.
 
-Store at location (12, 9) is repairing.
-	 It has 29 hitpoints left.
+Store at location (14, 9) is still burning.
+	 It has 26 robbery points left.
 
-There are no ambulances in this city.
-Firetruck Bw12 has reached its destination  at location (12, 5) and has extinguished the fire and are returning home.
-
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (11, 10)
+casualties = 0Firetruck Bw12 is on its way to house on location (2, 5). The firetruck is at Javastraat on location (7, 7)
 
 
-Policecar Pw3 is on its way to PB134 on location (8, 5). The policecar is at Javastraat on location (7, 7)
+Firetruck Bw34 is on its way to house on location (2, 10). The firetruck is at Cstraat on location (6, 10)
 
 
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Store at location (14, 9) is repairing.
-	 It has 39 hitpoints left.
-
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Haskellstraat on location (13, 5)
-
-
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (10, 10)
-
-
-Policecar Pw3 is on its way to PB134 on location (8, 5). The policecar is at Javastraat on location (7, 6)
+Policecar Pw3 is on its way to Store on location (14, 5). The policecar is at Haskellstraat on location (12, 5)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Store at location (12, 7) is repairing.
+house at location (1, 9) is still burning.
+	 It has 18 hitpoints left.
+
+house at location (1, 7) is still burning.
+	 It has 15 hitpoints left.
+
+Store at location (14, 9) is still burning.
+	 It has 25 robbery points left.
+
+casualties = 0Firetruck Bw12 is on its way to house on location (2, 5). The firetruck is at Javastraat on location (7, 6)
+
+
+Firetruck Bw34 is on its way to house on location (2, 10). The firetruck is at Cstraat on location (5, 10)
+
+
+Policecar Pw3 is on its way to Store on location (14, 5). The policecar is at Haskellstraat on location (13, 5)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+A new casualty has fallen, he has 10hp lefthouse at location (1, 9) is still burning.
 	 It has 17 hitpoints left.
 
-Store at location (12, 9) is repairing.
-	 It has 30 hitpoints left.
+spreadcounter = 3Fire has spread and a building on location (3, 9) has caught fire.
+house at location (1, 7) is still burning.
+	 It has 14 hitpoints left.
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Haskellstraat on location (14, 5)
+spreadcounter = 3Fire has spread and a building on location (3, 7) has caught fire.
+house at location (3, 7) is still burning.
+	 It has 19 hitpoints left.
+
+house at location (3, 9) is still burning.
+	 It has 19 hitpoints left.
+
+Store at location (14, 9) is still burning.
+	 It has 24 robbery points left.
+
+casualties = 1casualty's hp has decreased, he has 9 hp leftCasualty state = 0xa03cc70
+Firetruck Bw12 is on its way to house on location (2, 5). The firetruck is at Haskellstraat-Javastraat on location (7, 5)
 
 
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (9, 10)
+Firetruck Bw34 is on its way to house on location (2, 10). The firetruck is at Cstraat on location (4, 10)
 
 
-Policecar Pw3 is on its way to PB134 on location (8, 5). The policecar is at Haskellstraat-Javastraat on location (7, 5)
+Policecar Pw3 has reached its destination  at location (14, 5) and has stopped the robbery and are returning home.
+
+Ambulance Zw7 is on its way to house on location (1, 5). The ambulance is at Lispstraat-Assemblystraat on location (0, 0)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Store at location (14, 9) is repairing.
-	 It has 40 hitpoints left.
+house at location (1, 9) is still burning.
+	 It has 16 hitpoints left.
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Haskellstraat on location (15, 5)
+house at location (1, 7) is still burning.
+	 It has 13 hitpoints left.
+
+house at location (3, 7) is still burning.
+	 It has 18 hitpoints left.
+
+house at location (3, 9) is still burning.
+	 It has 18 hitpoints left.
+
+casualties = 1casualty's hp has decreased, he has 8 hp leftCasualty state = 0xa03cc70
+Firetruck Bw12 is on its way to house on location (2, 5). The firetruck is at Haskellstraat on location (6, 5)
 
 
-Firetruck Bw34 has arrived at its base BWK1337
+Firetruck Bw34 is on its way to house on location (2, 10). The firetruck is at Cstraat on location (3, 10)
+
+
+Policecar Pw3 is on its way to PB134 on location (8, 5). The policecar is at Haskellstraat on location (13, 5)
+
+
+Ambulance Zw7 is on its way to house on location (1, 5). The ambulance is at Assemblystraat on location (0, 1)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 9) is still burning.
+	 It has 15 hitpoints left.
+
+house at location (1, 7) is still burning.
+	 It has 12 hitpoints left.
+
+A new casualty has fallen, he has 10hp lefthouse at location (3, 7) is still burning.
+	 It has 17 hitpoints left.
+
+spreadcounter = 3Fire has spread and a building on location (5, 7) has caught fire.
+house at location (3, 9) is still burning.
+	 It has 17 hitpoints left.
+
+spreadcounter = 3Fire has spread and a building on location (5, 9) has caught fire.
+house at location (5, 7) is still burning.
+	 It has 19 hitpoints left.
+
+house at location (5, 9) is still burning.
+	 It has 19 hitpoints left.
+
+casualties = 2casualty's hp has decreased, he has 7 hp leftCasualty state = 0xa03cc50
+casualty's hp has decreased, he has 9 hp leftCasualty state = 0xa03cc54
+Firetruck Bw12 is on its way to house on location (2, 5). The firetruck is at Haskellstraat on location (5, 5)
+
+
+Firetruck Bw34 has reached its destination  at location (2, 10) and has extinguished the fire and are returning home.
+
+Policecar Pw3 is on its way to PB134 on location (8, 5). The policecar is at Haskellstraat on location (12, 5)
+
+
+Ambulance Zw7 is on its way to house on location (1, 5). The ambulance is at Assemblystraat on location (0, 2)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 7) is still burning.
+	 It has 11 hitpoints left.
+
+spreadcounter = 3house at location (1, 9) is repairing.
+	 It has 15 hitpoints left.
+
+house at location (3, 7) is still burning.
+	 It has 16 hitpoints left.
+
+house at location (3, 9) is still burning.
+	 It has 16 hitpoints left.
+
+house at location (5, 7) is still burning.
+	 It has 18 hitpoints left.
+
+house at location (5, 9) is still burning.
+	 It has 18 hitpoints left.
+
+casualties = 2casualty's hp has decreased, he has 6 hp leftCasualty state = 0xa03cc50
+casualty's hp has decreased, he has 8 hp leftCasualty state = 0xa03cc54
+Firetruck Bw12 is on its way to house on location (2, 5). The firetruck is at Haskellstraat on location (4, 5)
+
+
+Firetruck Bw34 is on its way to house on location (3, 5). The firetruck is at Cstraat on location (1, 10)
+
+
+Policecar Pw3 is on its way to PB134 on location (8, 5). The policecar is at Haskellstraat on location (11, 5)
+
+
+Ambulance Zw7 is on its way to house on location (1, 5). The ambulance is at Assemblystraat on location (0, 3)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 7) is still burning.
+	 It has 10 hitpoints left.
+
+house at location (3, 7) is still burning.
+	 It has 15 hitpoints left.
+
+house at location (3, 9) is still burning.
+	 It has 15 hitpoints left.
+
+house at location (5, 7) is still burning.
+	 It has 17 hitpoints left.
+
+spreadcounter = 3house at location (5, 9) is still burning.
+	 It has 17 hitpoints left.
+
+spreadcounter = 3casualties = 2casualty's hp has decreased, he has 5 hp leftCasualty state = 0xa03cc50
+casualty's hp has decreased, he has 7 hp leftCasualty state = 0xa03cc54
+Firetruck Bw12 is on its way to house on location (2, 5). The firetruck is at Haskellstraat on location (3, 5)
+
+
+Firetruck Bw34 is on its way to house on location (3, 5). The firetruck is at Cstraat-Assemblystraat on location (0, 10)
+
+
+Policecar Pw3 is on its way to PB134 on location (8, 5). The policecar is at Haskellstraat on location (10, 5)
+
+
+Ambulance Zw7 is on its way to house on location (1, 5). The ambulance is at Assemblystraat on location (0, 4)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 7) is still burning.
+	 It has 9 hitpoints left.
+
+house at location (1, 9) is repairing.
+	 It has 16 hitpoints left.
+
+A new casualty has fallen, he has 10hp leftA new casualty has fallen, he has 10hp lefthouse at location (3, 7) is still burning.
+	 It has 14 hitpoints left.
+
+spreadcounter = 3house at location (3, 9) is still burning.
+	 It has 14 hitpoints left.
+
+spreadcounter = 3house at location (5, 7) is still burning.
+	 It has 16 hitpoints left.
+
+house at location (5, 9) is still burning.
+	 It has 16 hitpoints left.
+
+casualties = 4casualty's hp has decreased, he has 4 hp leftCasualty state = 0xa033750
+casualty's hp has decreased, he has 6 hp leftCasualty state = 0xa033754
+casualty's hp has decreased, he has 9 hp leftCasualty state = 0xa033758
+casualty's hp has decreased, he has 9 hp leftCasualty state = 0xa03375c
+Firetruck Bw12 has reached its destination  at location (2, 5) and has extinguished the fire and are returning home.
+
+Firetruck Bw34 is on its way to house on location (3, 5). The firetruck is at Assemblystraat on location (0, 9)
+
+
+Policecar Pw3 is on its way to PB134 on location (8, 5). The policecar is at Haskellstraat on location (9, 5)
+
+
+Ambulance Zw7 is on its way to house on location (1, 5). The ambulance is at Haskellstraat-Assemblystraat on location (0, 5)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (3, 7) is still burning.
+	 It has 13 hitpoints left.
+
+house at location (3, 9) is still burning.
+	 It has 13 hitpoints left.
+
+house at location (5, 7) is still burning.
+	 It has 15 hitpoints left.
+
+house at location (5, 9) is still burning.
+	 It has 15 hitpoints left.
+
+casualties = 4casualty's hp has decreased, he has 3 hp leftCasualty state = 0xa033750
+casualty's hp has decreased, he has 5 hp leftCasualty state = 0xa033754
+casualty's hp has decreased, he has 8 hp leftCasualty state = 0xa033758
+casualty's hp has decreased, he has 8 hp leftCasualty state = 0xa03375c
+Firetruck Bw12 is on its way to house on location (3, 10). The firetruck is at Haskellstraat on location (1, 5)
+
+
+Firetruck Bw34 is on its way to house on location (3, 5). The firetruck is at Assemblystraat on location (0, 8)
+
 
 Policecar Pw3 has arrived at its base PB134
 
+Ambulance Zw7 has reached its destination  at location (1, 5) and has picked up the injured person.
+
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Store at location (12, 7) is repairing.
+house at location (1, 7) is repairing.
+	 It has 10 hitpoints left.
+
+house at location (1, 9) is repairing.
+	 It has 17 hitpoints left.
+
+house at location (3, 7) is still burning.
+	 It has 12 hitpoints left.
+
+house at location (3, 9) is still burning.
+	 It has 12 hitpoints left.
+
+A new casualty has fallen, he has 10hp leftA new casualty has fallen, he has 10hp lefthouse at location (5, 7) is still burning.
+	 It has 14 hitpoints left.
+
+spreadcounter = 3house at location (5, 9) is still burning.
+	 It has 14 hitpoints left.
+
+spreadcounter = 3casualties = 6Casualty state = 0xa03c940
+casualty's hp has decreased, he has 4 hp leftCasualty state = 0xa03c944
+casualty's hp has decreased, he has 7 hp leftCasualty state = 0xa03c948
+casualty's hp has decreased, he has 7 hp leftCasualty state = 0xa03c94c
+casualty's hp has decreased, he has 9 hp leftCasualty state = 0xa03c950
+casualty's hp has decreased, he has 9 hp leftCasualty state = 0xa03c954
+Firetruck Bw12 is on its way to house on location (3, 10). The firetruck is at Haskellstraat-Assemblystraat on location (0, 5)
+
+
+Firetruck Bw34 is on its way to house on location (3, 5). The firetruck is at Assemblystraat on location (0, 7)
+
+
+Ambulance Zw7 is on its way to Middelheim on location (1, 0). The ambulance is at Haskellstraat-Assemblystraat on location (0, 5)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (3, 7) is still burning.
+	 It has 11 hitpoints left.
+
+spreadcounter = 3house at location (3, 9) is still burning.
+	 It has 11 hitpoints left.
+
+spreadcounter = 3house at location (5, 7) is still burning.
+	 It has 13 hitpoints left.
+
+house at location (5, 9) is still burning.
+	 It has 13 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+casualty's hp has decreased, he has 3 hp leftCasualty state = 0xa03c944
+casualty's hp has decreased, he has 6 hp leftCasualty state = 0xa03c948
+casualty's hp has decreased, he has 6 hp leftCasualty state = 0xa03c94c
+casualty's hp has decreased, he has 8 hp leftCasualty state = 0xa03c950
+casualty's hp has decreased, he has 8 hp leftCasualty state = 0xa03c954
+Firetruck Bw12 is on its way to house on location (3, 10). The firetruck is at Assemblystraat on location (0, 6)
+
+
+Firetruck Bw34 is on its way to house on location (3, 5). The firetruck is at Assemblystraat on location (0, 6)
+
+
+Ambulance Zw7 is on its way to Middelheim on location (1, 0). The ambulance is at Assemblystraat on location (0, 4)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 7) is repairing.
+	 It has 11 hitpoints left.
+
+house at location (1, 9) is repairing.
 	 It has 18 hitpoints left.
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Haskellstraat-Eiffelstraat on location (16, 5)
+house at location (3, 7) is still burning.
+	 It has 10 hitpoints left.
+
+house at location (3, 9) is still burning.
+	 It has 10 hitpoints left.
+
+house at location (5, 7) is still burning.
+	 It has 12 hitpoints left.
+
+house at location (5, 9) is still burning.
+	 It has 12 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+casualty's hp has decreased, he has 2 hp leftCasualty state = 0xa03c944
+casualty's hp has decreased, he has 5 hp leftCasualty state = 0xa03c948
+casualty's hp has decreased, he has 5 hp leftCasualty state = 0xa03c94c
+casualty's hp has decreased, he has 7 hp leftCasualty state = 0xa03c950
+casualty's hp has decreased, he has 7 hp leftCasualty state = 0xa03c954
+Firetruck Bw12 is on its way to house on location (3, 10). The firetruck is at Assemblystraat on location (0, 7)
+
+
+Firetruck Bw34 is on its way to house on location (3, 5). The firetruck is at Haskellstraat-Assemblystraat on location (0, 5)
+
+
+Ambulance Zw7 is on its way to Middelheim on location (1, 0). The ambulance is at Assemblystraat on location (0, 3)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Eiffelstraat on location (16, 6)
+house at location (3, 7) is still burning.
+	 It has 9 hitpoints left.
+
+house at location (3, 9) is still burning.
+	 It has 9 hitpoints left.
+
+house at location (5, 7) is still burning.
+	 It has 11 hitpoints left.
+
+spreadcounter = 3house at location (5, 9) is still burning.
+	 It has 11 hitpoints left.
+
+spreadcounter = 3casualties = 6Casualty state = 0xa03c940
+casualty's hp has decreased, he has 1 hp leftCasualty state = 0xa03c944
+casualty's hp has decreased, he has 4 hp leftCasualty state = 0xa03c948
+casualty's hp has decreased, he has 4 hp leftCasualty state = 0xa03c94c
+casualty's hp has decreased, he has 6 hp leftCasualty state = 0xa03c950
+casualty's hp has decreased, he has 6 hp leftCasualty state = 0xa03c954
+Firetruck Bw12 is on its way to house on location (3, 10). The firetruck is at Assemblystraat on location (0, 8)
+
+
+Firetruck Bw34 is on its way to house on location (3, 5). The firetruck is at Haskellstraat on location (1, 5)
+
+
+Ambulance Zw7 is on its way to Middelheim on location (1, 0). The ambulance is at Assemblystraat on location (0, 2)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Store at location (12, 7) is repairing.
+house at location (1, 7) is repairing.
+	 It has 12 hitpoints left.
+
+house at location (1, 9) is repairing.
 	 It has 19 hitpoints left.
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Eiffelstraat on location (16, 7)
+house at location (3, 7) is still burning.
+	 It has 8 hitpoints left.
+
+spreadcounter = 3house at location (3, 9) is still burning.
+	 It has 8 hitpoints left.
+
+spreadcounter = 3house at location (5, 7) is still burning.
+	 It has 10 hitpoints left.
+
+house at location (5, 9) is still burning.
+	 It has 10 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+casualty's hp has decreased, he has 0 hp leftCasualty state = 0xa03c944
+casualty's hp has decreased, he has 3 hp leftCasualty state = 0xa03c948
+casualty's hp has decreased, he has 3 hp leftCasualty state = 0xa03c94c
+casualty's hp has decreased, he has 5 hp leftCasualty state = 0xa03c950
+casualty's hp has decreased, he has 5 hp leftCasualty state = 0xa03c954
+Firetruck Bw12 is on its way to house on location (3, 10). The firetruck is at Assemblystraat on location (0, 9)
+
+
+Firetruck Bw34 is on its way to house on location (3, 5). The firetruck is at Haskellstraat on location (2, 5)
+
+
+Ambulance Zw7 is on its way to Middelheim on location (1, 0). The ambulance is at Assemblystraat on location (0, 1)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Eiffelstraat on location (16, 8)
+house at location (3, 7) is still burning.
+	 It has 7 hitpoints left.
+
+house at location (3, 9) is still burning.
+	 It has 7 hitpoints left.
+
+house at location (5, 7) is still burning.
+	 It has 9 hitpoints left.
+
+house at location (5, 9) is still burning.
+	 It has 9 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+casualty's hp has decreased, he has 0 hp leftCasualty state = 0xa03c944
+casualty's hp has decreased, he has 2 hp leftCasualty state = 0xa03c948
+casualty's hp has decreased, he has 2 hp leftCasualty state = 0xa03c94c
+casualty's hp has decreased, he has 4 hp leftCasualty state = 0xa03c950
+casualty's hp has decreased, he has 4 hp leftCasualty state = 0xa03c954
+Firetruck Bw12 is on its way to house on location (3, 10). The firetruck is at Cstraat-Assemblystraat on location (0, 10)
+
+
+Firetruck Bw34 has reached its destination  at location (3, 5) and has extinguished the fire and are returning home.
+
+Ambulance Zw7 is on its way to Middelheim on location (1, 0). The ambulance is at Lispstraat-Assemblystraat on location (0, 0)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Store at location (12, 7) is repairing.
+house at location (1, 7) is repairing.
+	 It has 13 hitpoints left.
+
+house at location (1, 9) is repairing.
 	 It has 20 hitpoints left.
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Eiffelstraat on location (16, 9)
+house at location (3, 9) is still burning.
+	 It has 6 hitpoints left.
+
+house at location (5, 7) is still burning.
+	 It has 8 hitpoints left.
+
+spreadcounter = 3house at location (5, 9) is still burning.
+	 It has 8 hitpoints left.
+
+spreadcounter = 3casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+casualty's hp has decreased, he has 1 hp leftCasualty state = 0xa03c948
+casualty's hp has decreased, he has 1 hp leftCasualty state = 0xa03c94c
+casualty's hp has decreased, he has 3 hp leftCasualty state = 0xa03c950
+casualty's hp has decreased, he has 3 hp leftCasualty state = 0xa03c954
+Firetruck Bw12 is on its way to house on location (3, 10). The firetruck is at Cstraat on location (1, 10)
+
+
+Firetruck Bw34 is on its way to house on location (5, 5). The firetruck is at Haskellstraat on location (4, 5)
+
+
+Ambulance Zw7 has arrived at its base Middelheim
+
+It has dropped of its passenger.
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (3, 7) is repairing.
+	 It has 8 hitpoints left.
+
+house at location (3, 9) is still burning.
+	 It has 5 hitpoints left.
+
+spreadcounter = 3house at location (5, 7) is still burning.
+	 It has 7 hitpoints left.
+
+house at location (5, 9) is still burning.
+	 It has 7 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+casualty's hp has decreased, he has 0 hp leftCasualty state = 0xa03c948
+casualty's hp has decreased, he has 0 hp leftCasualty state = 0xa03c94c
+casualty's hp has decreased, he has 2 hp leftCasualty state = 0xa03c950
+casualty's hp has decreased, he has 2 hp leftCasualty state = 0xa03c954
+Firetruck Bw12 is on its way to house on location (3, 10). The firetruck is at Cstraat on location (2, 10)
+
+
+Firetruck Bw34 has reached its destination  at location (5, 5) and has extinguished the fire and are returning home.
+
+Ambulance Zw7 is on its way to house on location (3, 5). The ambulance is at Lispstraat-Assemblystraat on location (0, 0)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat-Eiffelstraat on location (16, 10)
+house at location (1, 7) is repairing.
+	 It has 14 hitpoints left.
+
+house at location (3, 9) is still burning.
+	 It has 4 hitpoints left.
+
+house at location (5, 9) is still burning.
+	 It has 6 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+casualty's hp has decreased, he has 0 hp leftCasualty state = 0xa03c948
+casualty's hp has decreased, he has 0 hp leftCasualty state = 0xa03c94c
+casualty's hp has decreased, he has 1 hp leftCasualty state = 0xa03c950
+casualty's hp has decreased, he has 1 hp leftCasualty state = 0xa03c954
+Firetruck Bw12 has reached its destination  at location (3, 10) and has extinguished the fire and are returning home.
+
+Firetruck Bw34 is on its way to house on location (7, 8). The firetruck is at Haskellstraat on location (6, 5)
+
+
+Ambulance Zw7 is on its way to house on location (3, 5). The ambulance is at Assemblystraat on location (0, 1)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Store at location (12, 7) is repairing.
-	 It has 21 hitpoints left.
+house at location (3, 7) is repairing.
+	 It has 9 hitpoints left.
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (15, 10)
+house at location (5, 7) is repairing.
+	 It has 8 hitpoints left.
 
+house at location (5, 9) is still burning.
+	 It has 5 hitpoints left.
 
-
---------------------------------------------------------------------------------------------------------------------------------
-
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (14, 10)
-
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Store at location (12, 7) is repairing.
-	 It has 22 hitpoints left.
-
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (13, 10)
+spreadcounter = 3casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+casualty's hp has decreased, he has 0 hp leftCasualty state = 0xa03c950
+casualty's hp has decreased, he has 0 hp leftCasualty state = 0xa03c954
+Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (4, 10)
 
 
+Firetruck Bw34 is on its way to house on location (7, 8). The firetruck is at Haskellstraat-Javastraat on location (7, 5)
 
---------------------------------------------------------------------------------------------------------------------------------
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (12, 10)
+Ambulance Zw7 is on its way to house on location (3, 5). The ambulance is at Assemblystraat on location (0, 2)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Store at location (12, 7) is repairing.
-	 It has 23 hitpoints left.
+house at location (1, 7) is repairing.
+	 It has 15 hitpoints left.
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (11, 10)
+house at location (3, 9) is repairing.
+	 It has 5 hitpoints left.
+
+house at location (5, 9) is still burning.
+	 It has 4 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+casualty's hp has decreased, he has 0 hp leftCasualty state = 0xa03c950
+casualty's hp has decreased, he has 0 hp leftCasualty state = 0xa03c954
+Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (5, 10)
+
+
+Firetruck Bw34 is on its way to house on location (7, 8). The firetruck is at Javastraat on location (7, 6)
+
+
+Ambulance Zw7 is on its way to house on location (3, 5). The ambulance is at Assemblystraat on location (0, 3)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (10, 10)
+house at location (3, 7) is repairing.
+	 It has 10 hitpoints left.
+
+house at location (5, 7) is repairing.
+	 It has 9 hitpoints left.
+
+house at location (5, 9) is still burning.
+	 It has 3 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+Casualty state = 0xa03c950
+Casualty state = 0xa03c954
+Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (6, 10)
+
+
+Firetruck Bw34 is on its way to house on location (7, 8). The firetruck is at Javastraat on location (7, 7)
+
+
+Ambulance Zw7 is on its way to house on location (3, 5). The ambulance is at Assemblystraat on location (0, 4)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Store at location (12, 7) is repairing.
-	 It has 24 hitpoints left.
+house at location (1, 7) is repairing.
+	 It has 16 hitpoints left.
 
-There are no ambulances in this city.
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (9, 10)
+house at location (3, 9) is repairing.
+	 It has 6 hitpoints left.
+
+house at location (5, 9) is still burning.
+	 It has 2 hitpoints left.
+
+spreadcounter = 3casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+Casualty state = 0xa03c950
+Casualty state = 0xa03c954
+Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat-Javastraat on location (7, 10)
+
+
+Firetruck Bw34 has reached its destination  at location (7, 8) and has extinguished the fire and are returning home.
+
+Ambulance Zw7 is on its way to house on location (3, 5). The ambulance is at Haskellstraat-Assemblystraat on location (0, 5)
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-There are no ambulances in this city.
+house at location (3, 7) is repairing.
+	 It has 11 hitpoints left.
+
+house at location (5, 7) is repairing.
+	 It has 10 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+Casualty state = 0xa03c950
+Casualty state = 0xa03c954
 Firetruck Bw12 has arrived at its base BWK1337
+
+Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Javastraat on location (7, 9)
+
+
+Ambulance Zw7 is on its way to house on location (3, 5). The ambulance is at Haskellstraat on location (1, 5)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 7) is repairing.
+	 It has 17 hitpoints left.
+
+house at location (3, 9) is repairing.
+	 It has 7 hitpoints left.
+
+house at location (5, 9) is repairing.
+	 It has 3 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+Casualty state = 0xa03c950
+Casualty state = 0xa03c954
+Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat-Javastraat on location (7, 10)
+
+
+Ambulance Zw7 is on its way to house on location (3, 5). The ambulance is at Haskellstraat on location (2, 5)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (3, 7) is repairing.
+	 It has 12 hitpoints left.
+
+house at location (5, 7) is repairing.
+	 It has 11 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+Casualty state = 0xa03c950
+Casualty state = 0xa03c954
+Firetruck Bw34 has arrived at its base BWK1337
+
+Ambulance Zw7 has reached its destination  at location (3, 5) and saw that the victim was dead and burried them in the backyard. 
+They are now returning home.
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 7) is repairing.
+	 It has 18 hitpoints left.
+
+house at location (3, 9) is repairing.
+	 It has 8 hitpoints left.
+
+house at location (5, 9) is repairing.
+	 It has 4 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+Casualty state = 0xa03c950
+Casualty state = 0xa03c954
+Ambulance Zw7 is on its way to Middelheim on location (1, 0). The ambulance is at Haskellstraat on location (2, 5)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (3, 7) is repairing.
+	 It has 13 hitpoints left.
+
+house at location (5, 7) is repairing.
+	 It has 12 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+Casualty state = 0xa03c950
+Casualty state = 0xa03c954
+Ambulance Zw7 is on its way to Middelheim on location (1, 0). The ambulance is at Haskellstraat on location (1, 5)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 7) is repairing.
+	 It has 19 hitpoints left.
+
+house at location (3, 9) is repairing.
+	 It has 9 hitpoints left.
+
+house at location (5, 9) is repairing.
+	 It has 5 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+Casualty state = 0xa03c950
+Casualty state = 0xa03c954
+Ambulance Zw7 is on its way to Middelheim on location (1, 0). The ambulance is at Haskellstraat-Assemblystraat on location (0, 5)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (3, 7) is repairing.
+	 It has 14 hitpoints left.
+
+house at location (5, 7) is repairing.
+	 It has 13 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+Casualty state = 0xa03c950
+Casualty state = 0xa03c954
+Ambulance Zw7 is on its way to Middelheim on location (1, 0). The ambulance is at Assemblystraat on location (0, 4)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 7) is repairing.
+	 It has 20 hitpoints left.
+
+house at location (3, 9) is repairing.
+	 It has 10 hitpoints left.
+
+house at location (5, 9) is repairing.
+	 It has 6 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+Casualty state = 0xa03c950
+Casualty state = 0xa03c954
+Ambulance Zw7 is on its way to Middelheim on location (1, 0). The ambulance is at Assemblystraat on location (0, 3)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (3, 7) is repairing.
+	 It has 15 hitpoints left.
+
+house at location (5, 7) is repairing.
+	 It has 14 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+Casualty state = 0xa03c950
+Casualty state = 0xa03c954
+Ambulance Zw7 is on its way to Middelheim on location (1, 0). The ambulance is at Assemblystraat on location (0, 2)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (3, 9) is repairing.
+	 It has 11 hitpoints left.
+
+house at location (5, 9) is repairing.
+	 It has 7 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+Casualty state = 0xa03c950
+Casualty state = 0xa03c954
+Ambulance Zw7 is on its way to Middelheim on location (1, 0). The ambulance is at Assemblystraat on location (0, 1)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (3, 7) is repairing.
+	 It has 16 hitpoints left.
+
+house at location (5, 7) is repairing.
+	 It has 15 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+Casualty state = 0xa03c950
+Casualty state = 0xa03c954
+Ambulance Zw7 is on its way to Middelheim on location (1, 0). The ambulance is at Lispstraat-Assemblystraat on location (0, 0)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (3, 9) is repairing.
+	 It has 12 hitpoints left.
+
+house at location (5, 9) is repairing.
+	 It has 8 hitpoints left.
+
+casualties = 6Casualty state = 0xa03c940
+Casualty state = 0xa03c944
+Casualty state = 0xa03c948
+Casualty state = 0xa03c94c
+Casualty state = 0xa03c950
+Casualty state = 0xa03c954
+Ambulance Zw7 has arrived at its base Middelheim
 
 
 ================================================================================================================================

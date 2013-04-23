@@ -14,8 +14,9 @@
 
 #include "Coordinate.h"
 #include "Structures.h"
+#include "Casualty.h"
 
-
+class Casualty;
 class Structures;
 class Fire_Department;
 class Hospital;
@@ -172,6 +173,8 @@ private:
 
 	Casualty* passenger;
 
+	bool containing_passenger;
+
 public:
 	Ambulance();
 //	ENSURE(properlyInitialized(), "Object 'Firetruck' was not properly initialized.");
@@ -192,6 +195,10 @@ public:
 
 	void setPassenger(Casualty*);
 	Casualty* getPassenger();
+
+	bool getContaining();
+
+	void setContaining(bool);
 
 	Ambulance& operator = (const Ambulance&);
 };

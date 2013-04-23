@@ -423,4 +423,11 @@ Casualty* Ambulance::getPassenger(){
 	return passenger;
 }
 
+bool Ambulance::getContaining(){
+	return containing_passenger;
+}
+void Ambulance::setContaining(bool b){
+	containing_passenger = b;
+}
+
 

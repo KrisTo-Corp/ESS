@@ -7,10 +7,11 @@
 
 #include "Casualty.h"
 
-Casualty::Casualty() {
-	//id = id_nr;
+Casualty::Casualty(Structures* s) {
 	hp = 10;
-	inCare = false;
+	state = hurt;
+	home = s;
+
 }
 
 Casualty::~Casualty() {
@@ -18,7 +19,10 @@ Casualty::~Casualty() {
 }
 
 void Casualty::decreaseHP() {
-	if (!inCare) {
+	if (hp <= 0){
+		state = dead;
+	}
+	else if (state == hurt || state == beingrescued) {
 		hp--;
 	}
 }
@@ -26,10 +30,14 @@ int Casualty::getHP() {
 	return hp;
 }
 
-bool Casualty::getInCare() {
-	return inCare;
+status Casualty::getPState() {
+	return state;
 }
 
-/*int Casualty::getID() {
-	return id;
-}*/
+void Casualty::setPassengerState(status s) {
+	state = s;
+}
+
+Structures* Casualty::getHome(){
+	return home;
+}
