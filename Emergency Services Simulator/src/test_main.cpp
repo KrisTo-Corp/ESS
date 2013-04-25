@@ -17,7 +17,6 @@
 #include "Vehicles.h"
 #include "Matrix.h"
 #include <sys/stat.h>
-#include <gtest/gtest.h>
 #include "Simulator.h"
 
 // TODO: copy the newly formatted files as the correct test outcomes.
