@@ -241,6 +241,8 @@ std::ostream& operator <<(std::ostream& s, Firetruck& truck){
 }
 
 Firetruck::Firetruck(const Firetruck& c){
+	REQUIRE(properlyInitialized(), "Object 'Firetruck' was not properly initialized when calling copy constructor().");
+
 	coord = c.coord;
 	tempDestination = c.tempDestination;
 	destination = c.destination;
@@ -313,6 +315,8 @@ std::ostream& operator <<(std::ostream& s, PoliceCar& truck){
 }
 
 PoliceCar::PoliceCar(const PoliceCar& c){
+//	REQUIRE(properlyInitialized(), "Object 'PoliceCar' was not properly initialized when calling copy constructor.");
+
 	coord = c.coord;
 	tempDestination = c.tempDestination;
 	destination = c.destination;
@@ -366,7 +370,6 @@ void Ambulance::linkBase(Hospital* dep_ptr) {
 	base = dep_ptr;
 
 	ENSURE((getBaseptr() == dep_ptr), "Setted base* does not match Ambulance's base*.");
-
 }
 
 Hospital* Ambulance::getBaseptr() {
@@ -385,6 +388,8 @@ std::ostream& operator <<(std::ostream& s, Ambulance& truck){
 }
 
 Ambulance::Ambulance(const Ambulance& c){
+	REQUIRE(properlyInitialized(), "Object 'Ambulance' was not properly initialized when calling copy constructor.");
+
 	coord = c.coord;
 	tempDestination = c.tempDestination;
 	destination = c.destination;
@@ -417,17 +422,29 @@ Ambulance& Ambulance::operator = (const Ambulance& c){
 }
 
 void Ambulance::setPassenger(Casualty* c){
+	REQUIRE(properlyInitialized(), "Object 'Ambulance' was not properly initialized when calling setPassenger().");
+
 	passenger = c;
+
+	ENSURE(passenger == c, "Method setPassenger() of Ambulance did not correctly set passenger.");
 }
 Casualty* Ambulance::getPassenger(){
+	REQUIRE(properlyInitialized(), "Object 'Ambulance' was not properly initialized when calling getPassenger().");
+
 	return passenger;
 }
 
 bool Ambulance::getContaining(){
+	REQUIRE(properlyInitialized(), "Object 'Ambulance' was not properly initialized when calling getContaining().");
+
 	return containing_passenger;
 }
 void Ambulance::setContaining(bool b){
+	REQUIRE(properlyInitialized(), "Object 'Ambulance' was not properly initialized when calling setContaining().");
+
 	containing_passenger = b;
+
+	ENSURE(containing_passenger == b, "Method setContaining() of Ambulance did not correctly set bool containing_passenger.");
 }
 
 
