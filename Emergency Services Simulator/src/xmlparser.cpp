@@ -13,9 +13,16 @@
 XmlParser::XmlParser(City* inputCity) {
 	city = inputCity;
 	maxValues = std::pair<int, int>(0, 0);
+
+	_initCheck = this;
+
+	ENSURE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initializedialized.");
+
 }
 
 void XmlParser::parseCity(std::string filename) {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properlyInitializedialized when calling parseCity(std::string) .");
+
 	TiXmlDocument doc;
 	if(!doc.LoadFile(filename.c_str())) {
 		std::string error = doc.ErrorDesc();
@@ -568,6 +575,8 @@ void XmlParser::parseCity(std::string filename) {
 
 
 bool XmlParser::validCoordCheck(int x, int y) {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initializedialized when calling validCoordCheck(int, int).");
+
 	/*
 	 * Check to see if the input is valid: not negative and of type int.
 	 */
@@ -586,6 +595,8 @@ bool XmlParser::validCoordCheck(int x, int y) {
 }
 
 int XmlParser::compareCoord(int curMax, int testVal) {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initializedialized when calling compareCoord(int, int).");
+
 	if (testVal > curMax) {
 		return testVal;
 	}
@@ -595,5 +606,11 @@ int XmlParser::compareCoord(int curMax, int testVal) {
 }
 
 std::pair<int, int> XmlParser::getMaxValues() {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initializedialized when calling getMaxValues().");
+
 	return maxValues;
+}
+
+bool XmlParser::properlyInitialized() {
+	return _initCheck == this;
 }
