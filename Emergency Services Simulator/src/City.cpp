@@ -295,22 +295,22 @@ Store* City::robStore() {
 	return ptr;
 }
 
-/*Store* City::robStore(int x, int y){
+Store* City::robStore(int x, int y){
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling robStore(int, int)");
 
-	Store* ptr;
+	CityObjects* ptr;
 	ptr = matrix.getObject(x, y);
-	if (ptr->getState() != normal || ptr->getType() != store){
-		o.print("The arguments x and y do not point to a store or that store is already robbed empty." << std::endl);
-		// WHAT WILL WE DO HERE?
+	Store* storeptr = dynamic_cast<Store*>(ptr);
+	if (storeptr->getState() != normal || storeptr->getType() != store){
+		return NULL;
 	}
 
-	ptr->setState(beingrobbed);
+	storeptr->setState(beingrobbed);
 
-	ENSURE(ptr->getState() == beingrobbed, "setFire() did not correctly set fire to the given house.");
+	ENSURE(storeptr->getState() == beingrobbed, "setFire() did not correctly set fire to the given house.");
 
-	return ptr;
-}*/
+	return storeptr;
+}
 
 CityObjects* City::setFire(int x, int y){
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling setFire()");

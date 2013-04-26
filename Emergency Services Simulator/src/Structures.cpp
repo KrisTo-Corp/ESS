@@ -62,6 +62,8 @@ int Structures::getLength() {
 }
 
 Structures::Structures(const Structures& c){
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling copy constructor");
+
 	name = c.name;
 	location = c.location;
 	width = c.width;
@@ -101,8 +103,11 @@ void Structures::decreaseHP(){
 }
 
 void Structures::increaseHp(){
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling increaseHP()");
+
 	hp = hp + ((1.0/(width*length))/2);
 
+	ENSURE(hp = hp + ((((1.0)/width*length))/2), "Method increaseHP() of Structures did not correctly increase the object's hp");
 }
 
 double Structures::getHP(){
@@ -112,19 +117,32 @@ double Structures::getHP(){
 }
 
 double Structures::getMaxHp(){
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getMaxHp()");
+
 	return maxhp;
 }
 
 double Structures::getSpreadcounter(){
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getSpreadcounter()");
+
 	return spreadcounter;
 }
 
 void Structures::resetSpreadcounter(){
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling resetSpreadcounter()");
+
 	spreadcounter = 0;
+
+	ENSURE(spreadcounter == 0, "Method resetSpreadcounter() of object 'Structures' did not correctly reset the spreadcounter.");
 }
 
 void Structures::increaseSpreadcounter(){
+	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling increaseSpreadcounter()");
+
+	double oldSpreadCounter = spreadcounter;
 	spreadcounter++;
+
+	ENSURE(spreadcounter == oldSpreadCounter + 1, "Method increaseSpreadcounter() of object 'Structures' did not correctly increase the spreadcounter.");
 }
 
 
@@ -159,6 +177,8 @@ std::ostream& operator <<(std::ostream& s, House& house){
 }
 
 House::House(const House& c){
+	REQUIRE(init(), "Object 'House' was not properly initialized when calling copy constructor");
+
 	name = c.name;
 	location = c.location;
 	width = c.width;
@@ -250,6 +270,8 @@ int Fire_Department::getAmountTrucks(){
 }
 
 Fire_Department::Fire_Department(const Fire_Department& c){
+	REQUIRE(init(), "Object 'Fire_Department' was not properly initialized when calling copy constructor");
+
 	name = c.name;
 	location = c.location;
 	width = c.width;
@@ -302,10 +324,14 @@ Store::Store(const int x, const int y, int hitp, int robberyPoints, const std::s
 }
 
 double Store::getRP() {
+	REQUIRE(init(), "Object 'Store' was not properly initialized when calling getRP()");
+
 	return rp;
 }
 
 bool Store::getRobable() {
+	REQUIRE(init(), "Object 'Store' was not properly initialized when calling getRobable()");
+
 	return robable;
 }
 
@@ -319,6 +345,8 @@ void Store::decreaseRP(){
 }
 
 Store::Store(const Store& c){
+	REQUIRE(init(), "Object 'Store' was not properly initialized when calling copy constructor");
+
 	name = c.name;
 	location = c.location;
 	width = c.width;
@@ -355,14 +383,10 @@ Store& Store::operator =(const Store& c){
 //==========================
 
 PoliceStation::PoliceStation() : Structures(0, 0, "", 0, 0, policeStation), entrance(0, 0) {
-
-
 	ENSURE(init(), "Object 'policeStation' was not properly initialized.");
 }
 
 PoliceStation::PoliceStation(const int x, const int y, const int x_entrance, const int y_entrance, int hitp, const std::string n, const int width, const int length) : Structures(x, y, n, width, length, policeStation, hitp), entrance(x_entrance, y_entrance) {
-
-
 	ENSURE(init(), "Object 'policeStation' was not properly initialized.");
 }
 
@@ -373,7 +397,7 @@ Coordinate& PoliceStation::getEntrance() {
 }
 
 void PoliceStation::addCar(PoliceCar* t) {
-	REQUIRE(init(), "Object 'Fire_Department' was not properly initialized when calling addTruck()");
+	REQUIRE(init(), "Object 'PoliceStation' was not properly initialized when calling addCar()");
 
 	cars.push_back(t);
 
@@ -381,6 +405,8 @@ void PoliceStation::addCar(PoliceCar* t) {
 }
 
 PoliceStation::PoliceStation(const PoliceStation& c){
+	REQUIRE(init(), "Object 'PoliceStation' was not properly initialized.");
+
 	name = c.name;
 	location = c.location;
 	width = c.width;
@@ -395,6 +421,7 @@ PoliceStation::PoliceStation(const PoliceStation& c){
 }
 
 PoliceStation& PoliceStation::operator =(const PoliceStation& c){
+
 	name = c.name;
 	location = c.location;
 	width = c.width;
@@ -439,6 +466,8 @@ void Hospital::addAmbulance(Ambulance* t) {
 }
 
 Hospital::Hospital(const Hospital& c){
+	REQUIRE(init(), "Object 'Hospital' was not properly initialized when calling copy constructor.");
+
 	name = c.name;
 	location = c.location;
 	width = c.width;

@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
 		else if (argv2 == "html") {
 			std::ofstream filestream("ems.html");
 			City city(argv[1], filestream, "empty", true);
-			simulateCity(city);
+			simulateCity_Test(city, Coordinate(20, 1), Coordinate(8, 14), 10, Coordinate(10, 11), Coordinate(13, 8), 15);
 			city.o.closeHTML();
 		}
 		else {
@@ -50,7 +50,7 @@ int main(int argc, char **argv) {
 		else if (argv2 == "html") {
 			std::ofstream filestream("ems.html");
 			City city(argv[1], filestream, argv[3], true);
-			simulateCity(city);
+			simulateCity_Test(city, Coordinate(20, 1), Coordinate(8, 14), 10, Coordinate(10, 11), Coordinate(13, 8), 15);
 			city.o.closeHTML();
 		}
 		else {

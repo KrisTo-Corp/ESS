@@ -54,14 +54,22 @@ public:
 //	REQUIRE(init(), "Object 'House' was not properly initialized when calling getHP()");
 
 	double getMaxHp();
+//	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getMaxHp()");
 
 	double getSpreadcounter();
+//	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getSpreadcounter()");
 
 	void resetSpreadcounter();
+//	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling resetSpreadcounter()");
+//	ENSURE(spreadcounter == 0, "Method resetSpreadcounter() of object 'Structures' did not correctly reset the spreadcounter.");
 
 	void increaseSpreadcounter();
+//	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling increaseSpreadcounter()");
+//	ENSURE(spreadcounter == oldSpreadCounter + 1, "Method increaseSpreadcounter() of object 'Structures' did not correctly increase the spreadcounter.");
 
 	void increaseHp();
+//	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling increaseHP()");
+//	ENSURE(hp = hp + ((((1.0)/width*length))/2), "Method increaseHP() of Structures did not correctly increase the object's hp");
 
 	int getWidth();
 //	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
@@ -70,6 +78,7 @@ public:
 //	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling getName()");
 
 	Structures(const Structures& c);
+//	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling copy constructor");
 
 	Structures& operator =(const Structures&);
 };
@@ -86,9 +95,10 @@ public:
 
 	virtual ~House();
 
-	friend std::ostream& operator <<(std::ostream& s, House& house);
-
 	House(const House& c);
+//	REQUIRE(init(), "Object 'House' was not properly initialized when calling copy constructor");
+
+	friend std::ostream& operator <<(std::ostream& s, House& house);
 
 	House& operator =(const House&);
 };
@@ -122,13 +132,12 @@ public:
 //	REQUIRE(init(), "Object 'Fire_Department' was not properly initialized when calling useTruck()");
 //	ENSURE((size - 1 == trucks.size()), "Firetruck was not succesfully added to trucks Vector");
 
+	Fire_Department(const Fire_Department& c);
+//	REQUIRE(init(), "Object 'Fire_Department' was not properly initialized when calling copy constructor");
 
 	friend std::ostream& operator <<(std::ostream& s, Fire_Department& department);
 
 	Fire_Department operator =(const Fire_Department&);
-
-	Fire_Department(const Fire_Department& c);
-
 };
 
 class Store : public Structures {
@@ -143,13 +152,17 @@ public:
 //	ENSURE(init(), "Object 'Store' was not properly initialized.");
 
 	double getRP();
+//	REQUIRE(init(), "Object 'Store' was not properly initialized when calling getRP()");
 
 	bool getRobable();
+//	REQUIRE(init(), "Object 'Store' was not properly initialized when calling getRobable()");
 
 	void decreaseRP();
 //	REQUIRE(init(), "Object 'Store' was not properly initialized when calling decreaseRP()");
+//	ENSURE(rp == oldRP - (1.0/(width*length)), "HP of house was not decreased successfully.");
 
 	Store(const Store& c);
+//	REQUIRE(init(), "Object 'Store' was not properly initialized when calling copy constructor");
 
 	Store& operator =(const Store&);
 };
@@ -174,6 +187,7 @@ public:
 //	ENSURE((trucks[trucks.size()-1] == t), "PoliceStation was not succesfully added to trucks Vector");
 
 	PoliceStation(const PoliceStation& c);
+//	REQUIRE(init(), "Object 'PoliceStation' was not properly initialized when calling copy constructor");
 
 	PoliceStation& operator =(const PoliceStation&);
 };
@@ -197,8 +211,8 @@ public:
 //	REQUIRE(init(), "Object 'Hospital' was not properly initialized when calling addTruck()");
 //	ENSURE((trucks[trucks.size()-1] == t), "Hospital was not succesfully added to trucks Vector");
 
-
 	Hospital(const Hospital& c);
+//	REQUIRE(init(), "Object 'Hospital' was not properly initialized when calling copy constructor.");
 
 	Hospital& operator =(const Hospital&);
 };

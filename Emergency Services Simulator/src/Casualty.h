@@ -19,15 +19,33 @@ private:
 	status state;
 	Structures* home;
 	int hp;
+
+	Casualty* _initCheck;
 public:
 	Casualty(Structures*);
+//	ENSURE(properlyInitialized(), "Object 'Casualty' was not properly initialized.");
 	virtual ~Casualty();
 
 	status getPState();
+//	REQUIRE(properlyInitialized(), "Object 'Casualty' was not properly initialized when calling getPState().");
+
 	int getHP();
+//	REQUIRE(properlyInitialized(), "Object 'Casualty' was not properly initialized when calling getHP().");
+
 	Structures* getHome();
+//	REQUIRE(properlyInitialized(), "Object 'Casualty' was not properly initialized when calling getHome().");
+
 	void decreaseHP();
-	void setPassengerState(status );
+//	REQUIRE(properlyInitialized(), "Object 'Casualty' was not properly initialized when calling decreaseHP().");
+//	ENSURE(hp == oldHp-1, "Method decreaseHP() of object 'Casualty' did not properly decrease casualty's hp.");
+//	OR
+// 	ENSURE(state == dead, "Method decreaseHP() of object 'Casualty' did not properly change state to 'dead'.");
+
+	void setPassengerState(status);
+//	REQUIRE(properlyInitialized(), "Object 'Casualty' was not properly initialized when calling setPassengerState().");
+//	ENSURE(state == status, "Method setPassengerState(status) of object 'Casualty' did not properly set casualty's state.");
+
+	bool properlyInitialized();
 };
 
 #endif /* CASUALTY_H_ */

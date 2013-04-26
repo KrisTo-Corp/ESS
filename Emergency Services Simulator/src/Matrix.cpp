@@ -253,7 +253,7 @@ std::ostream& operator <<(std::ostream& s, Matrix& m){
 }
 
 void Matrix::printMatrix(OutputObject oo) {
-	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addHouses().");
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling printMatrix().");
 
 	if (!oo.getHTML()) {
 		std::string output;
