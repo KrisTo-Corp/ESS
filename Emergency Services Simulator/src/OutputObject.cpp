@@ -34,7 +34,7 @@ OutputObject::~OutputObject() {
 }
 
 void OutputObject::print(std::string s) {
-	REQUIRE(properlyInitialized(), "Object 'OutputObject' was not properly initialized when calling print(std::string).");
+	//REQUIRE(properlyInitialized(), "Object 'OutputObject' was not properly initialized when calling print(std::string).");
 
 	if (!html) {
 		output << s;
@@ -45,7 +45,7 @@ void OutputObject::print(std::string s) {
 }
 
 void OutputObject::closeHTML() {
-	REQUIRE(properlyInitialized(), "Object 'OutputObject' was not properly initialized when calling closeHTML().");
+	//REQUIRE(properlyInitialized(), "Object 'OutputObject' was not properly initialized when calling closeHTML().");
 	if (html) {
 				output << "</body>" << std::endl;
 				output << "</head>" << std::endl;
@@ -57,12 +57,12 @@ void OutputObject::closeHTML() {
 }
 
 bool OutputObject::getHTML() {
-	REQUIRE(properlyInitialized(), "Object 'OutputObject' was not properly initialized when calling getHTML().");
+	//REQUIRE(properlyInitialized(), "Object 'OutputObject' was not properly initialized when calling getHTML().");
 	return html;
 }
 
 std::ostream& OutputObject::getOutput() {
-	REQUIRE(properlyInitialized(), "Object 'OutputObject' was not properly initialized when calling getOutput().");
+	//REQUIRE(properlyInitialized(), "Object 'OutputObject' was not properly initialized when calling getOutput().");
 	return output;
 }
 

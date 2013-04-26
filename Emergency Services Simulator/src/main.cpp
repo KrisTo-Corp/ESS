@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
 		std::string argv2 = argv[2];
 		if (argv2 == "cout") {
 			City city(argv[1], std::cout);
-			simulateCity(city);
+			simulateCity_Test(city, Coordinate(20, 1), Coordinate(8, 14), 10, Coordinate(10, 11), Coordinate(13, 8), 15);
 		}
 		else if (argv2 == "html") {
 			std::ofstream filestream("ems.html");
@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
 			std::ofstream filestream(argv[2]);
 			City city(argv[1], filestream);
 			std::cout << "constructed" << std::endl;
-			simulateCity(city);
+			simulateCity_Test(city, Coordinate(20, 1), Coordinate(8, 14), 10, Coordinate(10, 11), Coordinate(13, 8), 15);
 			std::cout << "simulated" << std::endl;
 			filestream.close();
 			std::cout << "output was written to " << argv2 << std::endl;
@@ -45,7 +45,7 @@ int main(int argc, char **argv) {
 		std::string argv2 = argv[2];
 		if (argv2 == "cout") {
 			City city(argv[1], std::cout, argv[3]);
-			simulateCity(city);
+			simulateCity_Test(city, Coordinate(20, 1), Coordinate(8, 14), 10, Coordinate(10, 11), Coordinate(13, 8), 15);
 		}
 		else if (argv2 == "html") {
 			std::ofstream filestream("ems.html");
@@ -56,7 +56,7 @@ int main(int argc, char **argv) {
 		else {
 			std::ofstream filestream(argv[2]);
 			City city(argv[1], filestream, argv[3]);
-			simulateCity(city);
+			simulateCity_Test(city, Coordinate(20, 1), Coordinate(8, 14), 10, Coordinate(10, 11), Coordinate(13, 8), 15);
 			filestream.close();
 			std::cout << "output was written to " << argv2 << std::endl;
 		}

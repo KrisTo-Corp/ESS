@@ -12,6 +12,8 @@ Casualty::Casualty(Structures* s) {
 	state = hurt;
 	home = s;
 
+	_initCheck = this;
+
 	ENSURE(properlyInitialized(), "Object 'Casualty' was not properly initialized.");
 }
 

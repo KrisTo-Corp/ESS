@@ -522,7 +522,7 @@ void simulateCity_Test(City& city,
 	REQUIRE(city.properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling update()");
 
 	city.o.print("\nSIMULATION:");
-	city.o.print("\n==========\n\n");
+	city.o.print("\n===========\n\n");
 
 	if (!(city.getValidCity())){
 		city.o.print("\n\t CITY WAS NOT VALID\n\n");
@@ -583,7 +583,7 @@ void simulateCity_Test(City& city,
 		Coordinate curStore = storePtr->getLocation();
 		std::string storeName = storePtr->getName();
 		std::string rp = doubleToString(storePtr->getRP());
-		city.o.print(storeName + " at location " + curStore.getString() + " has started being robbed.\n\t It has " + rp + " robbery points left.\n\n");
+		city.o.print(storeName + " at location " + curStore.getString() + " has started being robbed.\n\tIt has " + rp + " robbery points left.\n\n");
 
 		// ===============================
 		//	FIND AN AVAILABLE POLICECAR
@@ -625,7 +625,7 @@ void simulateCity_Test(City& city,
 			std::string name = structptr->getName();
 			House* houseptr = dynamic_cast<House*>(structptr);
 			std::string hp = doubleToString(houseptr->getHP());
-			city.o.print(name + " at location " + cur.getString() + " started burning.\n \t It has " + hp + " hitpoints left.\n\n");
+			city.o.print(name + " at location " + cur.getString() + " started burning.\n \tIt has " + hp + " hitpoints left.\n\n");
 
 			// ===========================
 			//	   FIND CLOSEST TRUCK
@@ -657,7 +657,7 @@ void simulateCity_Test(City& city,
 			Coordinate curStore = storePtr->getLocation();
 			std::string storeName = storePtr->getName();
 			std::string rp = doubleToString(storePtr->getRP());
-			city.o.print(storeName + " at location " + curStore.getString() + " has started being robbed.\n \t It has " + rp + " robbery points left.\n\n");
+			city.o.print(storeName + " at location " + curStore.getString() + " has started being robbed.\n \tIt has " + rp + " robbery points left.\n\n");
 
 			// ===============================
 			//	FIND AN AVAILABLE POLICECAR
@@ -726,7 +726,7 @@ void simulateCity_Test(City& city,
 					if (structptr->getHP() == structptr->getMaxHp()-10) {
 						Casualty* cas = new Casualty(structptr);
 						city.getCasualtyList()->push_back(cas);
-						city.o.print("A new casualty has fallen, he has " + intToString(cas->getHP()) + "hp left");
+						city.o.print("A new casualty has fallen, he has " + intToString(cas->getHP()) + " hp left.\n\n");
 
 						// ==========================
 						//	    FIND AN AMBULANCE
@@ -757,14 +757,14 @@ void simulateCity_Test(City& city,
 						structptr->increaseSpreadcounter();
 						Coordinate cur = structptr->getLocation();
 						std::string name = structptr->getName();
-						city.o.print(name + " at location " + cur.getString() + " is still burning.\n\t It has " + doubleToString(hp) + " hitpoints left.\n\n");
+						city.o.print(name + " at location " + cur.getString() + " is still burning.\n\tIt has " + doubleToString(hp) + " hitpoints left.\n\n");
 					}
 
 					if (structptr->getHP() <= 0){
 						structptr->setState(destroyed);
 						Coordinate cur = structptr->getLocation();
 						std::string name = structptr->getName();
-						city.o.print(name + " at location " + cur.getString() + " is destroyed.\n \t It has " + doubleToString(hp) + " hitpoints left.\n\n");
+						city.o.print(name + " at location " + cur.getString() + " is destroyed.\n \tIt has " + doubleToString(hp) + " hitpoints left.\n\n");
 					}
 
 					// ========================
@@ -775,7 +775,7 @@ void simulateCity_Test(City& city,
 						Coordinate newFire = city.getAdjecantBuilding(ptr);
 						if (newFire.getX() != -1 && newFire.getY() != -1) {
 							city.setFire(newFire.getX(), newFire.getY());
-							city.o.print("Fire has spread and a building on location " + newFire.getString() + " has caught fire.\n");
+							city.o.print("Fire has spread and a building on location " + newFire.getString() + " has caught fire.\n\n");
 
 							CityObjects* newFireBuilding = city.getMatrix()->getObject(newFire.getX(), newFire.getY());
 							Structures* newFireStructure = dynamic_cast<Structures*>(newFireBuilding);
@@ -836,14 +836,14 @@ void simulateCity_Test(City& city,
 					if (rp/floor(rp) == 1){
 						Coordinate cur = storePtr->getLocation();
 						std::string name = storePtr->getName();
-						city.o.print(name + " at location " + cur.getString() + " is still being robbed.\n\t It has " + doubleToString(rp) + " robbery points left.\n\n");
+						city.o.print(name + " at location " + cur.getString() + " is still being robbed.\n\tIt has " + doubleToString(rp) + " robbery points left.\n\n");
 					}
 
 					if (storePtr->getRP() <= 0){
 						storePtr->setState(destroyed);
 						Coordinate cur = storePtr->getLocation();
 						std::string name = storePtr->getName();
-						city.o.print(name + " at location " + cur.getString() + " is robbed empty.\n \t It has " + doubleToString(rp) + " robbery points left.\n\n");
+						city.o.print(name + " at location " + cur.getString() + " is robbed empty.\n \tIt has " + doubleToString(rp) + " robbery points left.\n\n");
 					}
 				}
 				else if (ptr->getState() == repairing){
@@ -856,7 +856,7 @@ void simulateCity_Test(City& city,
 						if (structptr->getHP()/floor(structptr->getHP()) == 1){
 							Coordinate cur = structptr->getLocation();
 							std::string name = structptr->getName();
-							city.o.print(name + " at location " + cur.getString() + " is repairing.\n \t It has " + doubleToString(structptr->getHP()) + " hitpoints left.\n\n");
+							city.o.print(name + " at location " + cur.getString() + " is repairing.\n \tIt has " + doubleToString(structptr->getHP()) + " hitpoints left.\n\n");
 						}
 					}
 				}
@@ -873,7 +873,7 @@ void simulateCity_Test(City& city,
 			if ((*itc)->getPState() == hurt || (*itc)->getPState() == beingrescued) {
 				finished = false;
 				(*itc)->decreaseHP();
-				city.o.print("Casualty's hp has decreased, he has " + intToString((*itc)->getHP()) + " hp left");
+				city.o.print("Casualty's hp has decreased, he has " + intToString((*itc)->getHP()) + " hp left.\n\n");
 			}
 			if ((*itc)->getPState() == hurt){
 				std::list<Ambulance>::iterator it_t;
@@ -911,21 +911,21 @@ void simulateCity_Test(City& city,
 						it->setAvailable(true);
 						it->setDestination(it->getBaseptr()->getEntrance());
 						it->setTarget(it->getBaseptr());
-						city.o.print("Firetruck " + it->getName() + " has reached its destination ");
-						city.o.print(" at location " + destination.getString() + " and has extinguished the fire and are returning home.\n\n");
+						city.o.print("Firetruck " + it->getName() + " has reached its destination at location " + destination.getString() + ".\n");
+						city.o.print("\tThey have extinguished the fire and are returning to the base.\n\n");
 					}
 					else if (saved->getState() == destroyed) {
 						it->setAvailable(true);
 						it->setDestination(it->getBaseptr()->getEntrance());
 						it->setTarget(it->getBaseptr());
-						city.o.print("Firetruck " + it->getName() + " has reached its destination ");
-						city.o.print(" at location " + destination.getString() + " and saw that the structure was destroyed and are now returning home.\n\n");
+						city.o.print("Firetruck " + it->getName() + " has reached its destination at location " + destination.getString() + ".\n");
+						city.o.print("\tThey saw that the structure was destroyed and are returning to the base.\n\n");
 					}
 				}
 				else {
 					i++;
 					if (it->getIsHome() == false){
-						city.o.print("Firetruck " + it->getName() + " has arrived at its base " + it->getBaseptr()->getName() + "\n\n");
+						city.o.print("Firetruck " + it->getName() + " has arrived at its base " + it->getBaseptr()->getName() + ".\n\n");
 						it->setIsHome(true);
 						it->setAvailable(true);
 					}
@@ -934,8 +934,8 @@ void simulateCity_Test(City& city,
 			else {
 				Coordinate location = it->getCoord();
 				Roads* truckStreet = dynamic_cast<Roads*>(city.getMatrix()->getObject(it->getCoord().getX(), it->getCoord().getY()));
-				city.o.print("Firetruck " + it->getName() + " is on its way to " + it->getTarget()->getName() + " on location" + destination.getString() + ".");
-				city.o.print("The firetruck is at " + truckStreet->getName() + " on location " + location.getString() + "\n\n\n");
+				city.o.print("Firetruck " + it->getName() + " is on its way to " + it->getTarget()->getName() + " on location" + destination.getString() + ".\n");
+				city.o.print("\tThe firetruck is at " + truckStreet->getName() + " on location " + location.getString() + ".\n\n");
 			}
 		}
 
@@ -954,21 +954,21 @@ void simulateCity_Test(City& city,
 						it->setAvailable(true);
 						it->setDestination(it->getBaseptr()->getEntrance());
 						it->setTarget(it->getBaseptr());
-						city.o.print("Policecar " + it->getName() + " has reached its destination ");
-						city.o.print(" at location " + destination.getString() + " and has stopped the robbery and are returning home.\n\n");
+						city.o.print("Policecar " + it->getName() + " has reached its destination at location " + destination.getString() + ".\n");
+						city.o.print("\tThey stopped the robbery and caught the bad guys and are now returning to the base.\n\n");
 					}
 					else if (saved->getState() == destroyed) {
 						it->setAvailable(true);
 						it->setDestination(it->getBaseptr()->getEntrance());
 						it->setTarget(it->getBaseptr());
-						city.o.print("Policecar " + it->getName() + " has reached its destination ");
-						city.o.print(" at location " + destination.getString() + " and saw that the store was robbed empty and are now returning home.\n\n");
+						city.o.print("Policecar " + it->getName() + " has reached its destination at location " + destination.getString() + ".\n");
+						city.o.print("\tThey were too late and the store was completely robbed and are now returning to the base.\n\n");
 					}
 				}
 				else {
 					i++;
 					if (it->getIsHome() == false){
-						city.o.print("Policecar " + it->getName() + " has arrived at its base " + it->getBaseptr()->getName() + "\n\n");
+						city.o.print("Policecar " + it->getName() + " has arrived at its base " + it->getBaseptr()->getName() + ".\n\n");
 						it->setIsHome(true);
 
 					}
@@ -977,8 +977,8 @@ void simulateCity_Test(City& city,
 			else {
 				Coordinate location = it->getCoord();
 				Roads* truckStreet = dynamic_cast<Roads*>(city.getMatrix()->getObject(it->getCoord().getX(), it->getCoord().getY()));
-				city.o.print("Policecar " + it->getName() + " is on its way to " + it->getTarget()->getName() + " on location " + destination.getString() + ".");
-				city.o.print("The policecar is at " + truckStreet->getName() + " on location " + location.getString() + "\n\n\n");
+				city.o.print("Policecar " + it->getName() + " is on its way to " + it->getTarget()->getName() + " on location " + destination.getString() + ".\n");
+				city.o.print("\tThe policecar is at " + truckStreet->getName() + " on location " + location.getString() + ".\n\n");
 			}
 		}
 
@@ -997,24 +997,24 @@ void simulateCity_Test(City& city,
 						passenger->setPassengerState(inCare);
 						it->setDestination(it->getBaseptr()->getEntrance());
 						it->setTarget(it->getBaseptr());
-						city.o.print("Ambulance " + it->getName() + " has reached its destination ");
-						city.o.print(" at location " + destination.getString() + " and has picked up the injured person.\n\n");
+						city.o.print("Ambulance " + it->getName() + " has reached its destination at location " + destination.getString() + ".\n");
+						city.o.print("\tThey picked up the injured person and are now returning to the hospital.\n\n");
 					}
 					else if (passenger->getPState() == dead) {
 						it->setAvailable(true);
 						it->setDestination(it->getBaseptr()->getEntrance());
 						it->setTarget(it->getBaseptr());
-						city.o.print("Ambulance " + it->getName() + " has reached its destination ");
-						city.o.print(" at location " + destination.getString() + " and saw that the victim was dead and burried them in the backyard. \nThey are now returning home.\n\n");
+						city.o.print("Ambulance " + it->getName() + " has reached its destination at location " + destination.getString() + ".\n");
+						city.o.print("\tThey were too late, the person died and was burried and they are now returning to the hospital.\n\n");
 						it->setContaining(false);
 					}
 				}
 				else {
 					i++;
 					if (it->getIsHome() == false){
-						city.o.print("Ambulance " + it->getName() + " has arrived at its base " + it->getBaseptr()->getName() + "\n\n");
+						city.o.print("Ambulance " + it->getName() + " has arrived at the hospital " + it->getBaseptr()->getName() + ".\n\n");
 						if(it->getContaining() == true){
-							city.o.print("It has dropped of its passenger.");
+							city.o.print("\tThey have dropped of the injured person.");
 							it->setContaining(false);
 						}
 						it->setIsHome(true);
@@ -1025,8 +1025,8 @@ void simulateCity_Test(City& city,
 			else {
 				Coordinate location = it->getCoord();
 				Roads* truckStreet = dynamic_cast<Roads*>(city.getMatrix()->getObject(it->getCoord().getX(), it->getCoord().getY()));
-				city.o.print("Ambulance " + it->getName() + " is on its way to " + it->getTarget()->getName() + " on location " + destination.getString() + ".");
-				city.o.print("The ambulance is at " + truckStreet->getName() + " on location " + location.getString() + "\n\n\n");
+				city.o.print("Ambulance " + it->getName() + " is on its way to " + it->getTarget()->getName() + " on location " + destination.getString() + ".\n");
+				city.o.print("\tThe ambulance is at " + truckStreet->getName() + " on location " + location.getString() + ".\n\n");
 			}
 		}
 
@@ -1035,7 +1035,7 @@ void simulateCity_Test(City& city,
 			return;
 		}
 		else {
-			city.o.print("\n--------------------------------------------------------------------------------------------------------------------------------\n\n");
+			city.o.print("--------------------------------------------------------------------------------------------------------------------------------\n\n");
 		}
 
 		loops++;
