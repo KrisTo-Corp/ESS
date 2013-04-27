@@ -5,27 +5,27 @@
 MAP: 
 ====
 
-15	[	C	S	S	S	S	S	S	C	S	S	S	S	S	S	S	S	C	S	S	S	S	C	]
-14	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
-13	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
-12	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
-11	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
-10	[	C	S	S	S	S	S	S	C	S	S	S	S	S	S	S	S	C	S	S	S	S	C	]
-9	[	S	H	H	H	H	H	H	S	D	D	D	D	H	H	H	H	S	H	H	H	H	S	]
-8	[	S	H	H	H	H	H	H	S	D	D	D	D	H	H	H	H	S	H	H	H	H	S	]
-7	[	S	H	H	H	H	H	H	S	D	D	D	D	H	H	H	H	S	H	H	H	H	S	]
-6	[	S	H	H	H	H	H	H	S	D	D	D	D	H	H	H	H	S	H	H	H	H	S	]
-5	[	C	S	S	S	S	S	S	C	S	S	S	S	S	S	S	S	C	S	S	S	S	C	]
-4	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
-3	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
-2	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
-1	[	S	H	H	H	H	H	H	S	H	H	H	H	H	H	H	H	S	H	H	H	H	S	]
-0	[	C	S	S	S	S	S	S	C	S	S	S	S	S	S	S	S	C	S	S	S	S	C	]
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
 
-		0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20	21	
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9  10  11  12  13  14  15  16  17  18  19  20  21  
 
-		H = HOUSE	 D = FIRE DEPARTMENT	 S = STREET	 C = CROSSROAD	 ? = UNKNOWN
-
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 INTEGRITYCHECK: 
 ===============
@@ -33,332 +33,1533 @@ INTEGRITYCHECK:
 
 
 SIMULATION:
-==========
+===========
 
 house at location (3, 14) started burning.
-	 It has 20 hitpoints left.
+	It has 20 hitpoints left.
 
 house at location (3, 14) is still burning.
-	 It has 19 hitpoints left.
+	It has 19 hitpoints left.
 
-Firetruck Bw12 is on its way to house on location (4, 15). The firetruck is at Cstraat-Javastraat on location (7, 10)
-
+Firetruck Bw12 is on its way to house on location(4, 15).
+	The firetruck is at Cstraat-Javastraat on location (7, 10).
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 house at location (3, 14) is still burning.
-	 It has 18 hitpoints left.
+	It has 18 hitpoints left.
 
-Firetruck Bw12 is on its way to house on location (4, 15). The firetruck is at Javastraat on location (7, 11)
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-house at location (3, 14) is still burning.
-	 It has 17 hitpoints left.
-
-Firetruck Bw12 is on its way to house on location (4, 15). The firetruck is at Javastraat on location (7, 12)
-
+Firetruck Bw12 is on its way to house on location(4, 15).
+	The firetruck is at Javastraat on location (7, 11).
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 house at location (3, 14) is still burning.
-	 It has 16 hitpoints left.
+	It has 17 hitpoints left.
 
-Firetruck Bw12 is on its way to house on location (4, 15). The firetruck is at Javastraat on location (7, 13)
+Fire has spread and a building on location (2, 14) has caught fire.
 
+Firetruck Bw12 is on its way to house on location(4, 15).
+	The firetruck is at Javastraat on location (7, 12).
+
+Firetruck Bw34 is on its way to house on location(2, 15).
+	The firetruck is at Cstraat-Javastraat on location (7, 10).
 
 --------------------------------------------------------------------------------------------------------------------------------
 
+house at location (1, 14) is still burning.
+	It has 19 hitpoints left.
+
 house at location (3, 14) is still burning.
-	 It has 15 hitpoints left.
+	It has 16 hitpoints left.
 
-Firetruck Bw12 is on its way to house on location (4, 15). The firetruck is at Javastraat on location (7, 14)
+Firetruck Bw12 is on its way to house on location(4, 15).
+	The firetruck is at Javastraat on location (7, 13).
 
+Firetruck Bw34 is on its way to house on location(2, 15).
+	The firetruck is at Javastraat on location (7, 11).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 14) is still burning.
+	It has 18 hitpoints left.
+
+house at location (3, 14) is still burning.
+	It has 15 hitpoints left.
+
+Firetruck Bw12 is on its way to house on location(4, 15).
+	The firetruck is at Javastraat on location (7, 14).
+
+Firetruck Bw34 is on its way to house on location(2, 15).
+	The firetruck is at Javastraat on location (7, 12).
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 house at location (14, 2) started burning.
-	 It has 20 hitpoints left.
+ 	It has 20 hitpoints left.
+
+house at location (1, 14) is still burning.
+	It has 17 hitpoints left.
+
+Fire has spread and a building on location (1, 12) has caught fire.
 
 house at location (3, 14) is still burning.
-	 It has 14 hitpoints left.
+	It has 14 hitpoints left.
+
+Fire has spread and a building on location (3, 12) has caught fire.
 
 house at location (14, 2) is still burning.
-	 It has 19 hitpoints left.
+	It has 19 hitpoints left.
 
-Firetruck Bw12 is on its way to house on location (4, 15). The firetruck is at Pythonstraat-Javastraat on location (7, 15)
+Firetruck Bw12 is on its way to house on location(4, 15).
+	The firetruck is at Pythonstraat-Javastraat on location (7, 15).
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Cstraat-Javastraat on location (7, 10)
-
+Firetruck Bw34 is on its way to house on location(2, 15).
+	The firetruck is at Javastraat on location (7, 13).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 19 hitpoints left.
+
+house at location (1, 14) is still burning.
+	It has 16 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 19 hitpoints left.
 
 house at location (3, 14) is still burning.
-	 It has 13 hitpoints left.
+	It has 13 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 18 hitpoints left.
+	It has 18 hitpoints left.
 
-Firetruck Bw12 is on its way to house on location (4, 15). The firetruck is at Pythonstraat on location (6, 15)
+Firetruck Bw12 is on its way to house on location(4, 15).
+	The firetruck is at Pythonstraat on location (6, 15).
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Javastraat on location (7, 9)
-
+Firetruck Bw34 is on its way to house on location(2, 15).
+	The firetruck is at Javastraat on location (7, 14).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 18 hitpoints left.
+
+house at location (1, 14) is still burning.
+	It has 15 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 18 hitpoints left.
 
 house at location (3, 14) is still burning.
-	 It has 12 hitpoints left.
+	It has 12 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 17 hitpoints left.
+	It has 17 hitpoints left.
 
-Firetruck Bw12 is on its way to house on location (4, 15). The firetruck is at Pythonstraat on location (5, 15)
+Fire has spread and a building on location (14, 3) has caught fire.
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Javastraat on location (7, 8)
+Firetruck Bw12 is on its way to house on location(4, 15).
+	The firetruck is at Pythonstraat on location (5, 15).
 
+Firetruck Bw34 is on its way to house on location(2, 15).
+	The firetruck is at Pythonstraat-Javastraat on location (7, 15).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 17 hitpoints left.
+
+house at location (1, 14) is still burning.
+	It has 14 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 17 hitpoints left.
+
+Fire has spread and a building on location (5, 12) has caught fire.
 
 house at location (3, 14) is still burning.
-	 It has 11 hitpoints left.
+	It has 11 hitpoints left.
+
+Fire has spread and a building on location (5, 14) has caught fire.
+
+house at location (5, 12) is still burning.
+	It has 19 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 19 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 19 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 16 hitpoints left.
+	It has 16 hitpoints left.
 
-Firetruck Bw12 has reached its destination  at location (4, 15) and has extinguished the fire and are returning home.
+Firetruck Bw12 has reached its destination at location (4, 15).
+	They have extinguished the fire and are returning to the base.
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Javastraat on location (7, 7)
-
+Firetruck Bw34 is on its way to house on location(2, 15).
+	The firetruck is at Pythonstraat on location (6, 15).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 16 hitpoints left.
+
+house at location (1, 14) is still burning.
+	It has 13 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 16 hitpoints left.
+
+house at location (5, 12) is still burning.
+	It has 18 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 18 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 18 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 15 hitpoints left.
+	It has 15 hitpoints left.
 
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Pythonstraat on location (5, 15)
+Firetruck Bw12 is on its way to house on location(0, 12).
+	The firetruck is at Pythonstraat on location (5, 15).
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Javastraat on location (7, 6)
-
+Firetruck Bw34 is on its way to house on location(2, 15).
+	The firetruck is at Pythonstraat on location (5, 15).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 15 hitpoints left.
+
+house at location (1, 14) is still burning.
+	It has 12 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 15 hitpoints left.
+
+house at location (3, 14) is repairing.
+ 	It has 16 hitpoints left.
+
+house at location (5, 12) is still burning.
+	It has 17 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 17 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 17 hitpoints left.
+
+Fire has spread and a building on location (13, 4) has caught fire.
 
 house at location (14, 2) is still burning.
-	 It has 14 hitpoints left.
+	It has 14 hitpoints left.
 
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Pythonstraat on location (6, 15)
+Fire has spread and a building on location (13, 2) has caught fire.
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Haskellstraat-Javastraat on location (7, 5)
+Firetruck Bw12 is on its way to house on location(0, 12).
+	The firetruck is at Pythonstraat on location (6, 15).
 
+Firetruck Bw34 is on its way to house on location(2, 15).
+	The firetruck is at Pythonstraat on location (4, 15).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 14 hitpoints left.
+
+house at location (1, 14) is still burning.
+	It has 11 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 14 hitpoints left.
+
+house at location (5, 12) is still burning.
+	It has 16 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 16 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 19 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 19 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 16 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 13 hitpoints left.
+	It has 13 hitpoints left.
 
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Pythonstraat-Javastraat on location (7, 15)
+Firetruck Bw12 is on its way to house on location(0, 12).
+	The firetruck is at Pythonstraat-Javastraat on location (7, 15).
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Javastraat on location (7, 4)
-
+Firetruck Bw34 is on its way to house on location(2, 15).
+	The firetruck is at Pythonstraat on location (3, 15).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 13 hitpoints left.
+
+house at location (1, 14) is still burning.
+	It has 10 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 13 hitpoints left.
+
+house at location (5, 12) is still burning.
+	It has 15 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 15 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 18 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 18 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 15 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 12 hitpoints left.
+	It has 12 hitpoints left.
 
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Javastraat on location (7, 14)
+Firetruck Bw12 is on its way to house on location(0, 12).
+	The firetruck is at Pythonstraat on location (6, 15).
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Javastraat on location (7, 3)
-
+Firetruck Bw34 has reached its destination at location (2, 15).
+	They have extinguished the fire and are returning to the base.
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 12 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 12 hitpoints left.
+
+house at location (5, 12) is still burning.
+	It has 14 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 14 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 17 hitpoints left.
+
+Fire has spread and a building on location (11, 2) has caught fire.
+
+house at location (12, 4) is still burning.
+	It has 17 hitpoints left.
+
+Fire has spread and a building on location (11, 4) has caught fire.
+
+house at location (14, 4) is still burning.
+	It has 14 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 11 hitpoints left.
+	It has 11 hitpoints left.
 
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Javastraat on location (7, 13)
+Firetruck Bw12 is on its way to house on location(0, 12).
+	The firetruck is at Pythonstraat on location (5, 15).
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Javastraat on location (7, 2)
-
+Firetruck Bw34 is on its way to house on location(3, 10).
+	The firetruck is at Pythonstraat on location (1, 15).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 11 hitpoints left.
+
+house at location (1, 14) is repairing.
+ 	It has 15 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 11 hitpoints left.
+
+house at location (5, 12) is still burning.
+	It has 13 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 13 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 19 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 19 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 16 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 16 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 13 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 10 hitpoints left.
+	It has 10 hitpoints left.
 
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Javastraat on location (7, 12)
+Firetruck Bw12 is on its way to house on location(0, 12).
+	The firetruck is at Pythonstraat on location (4, 15).
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Javastraat on location (7, 1)
-
+Firetruck Bw34 is on its way to house on location(3, 10).
+	The firetruck is at Pythonstraat-Assemblystraat on location (0, 15).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 10 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 10 hitpoints left.
+
+house at location (5, 12) is still burning.
+	It has 12 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 12 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 18 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 18 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 15 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 15 hitpoints left.
+
+A new casualty has fallen, he has 10 hp left.
+
+house at location (14, 4) is still burning.
+	It has 12 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 9 hitpoints left.
+	It has 9 hitpoints left.
 
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Javastraat on location (7, 11)
+Casualty's hp has decreased, he has 9 hp left.
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Lispstraat-Javastraat on location (7, 0)
+Firetruck Bw12 is on its way to house on location(0, 12).
+	The firetruck is at Pythonstraat on location (3, 15).
 
+Firetruck Bw34 is on its way to house on location(3, 10).
+	The firetruck is at Assemblystraat on location (0, 14).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+A new casualty has fallen, he has 10 hp left.
+
+house at location (1, 12) is still burning.
+	It has 9 hitpoints left.
+
+house at location (1, 14) is repairing.
+ 	It has 20 hitpoints left.
+
+A new casualty has fallen, he has 10 hp left.
+
+house at location (3, 12) is still burning.
+	It has 9 hitpoints left.
+
+house at location (5, 12) is still burning.
+	It has 11 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 11 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 17 hitpoints left.
+
+Fire has spread and a building on location (9, 2) has caught fire.
+
+house at location (10, 4) is still burning.
+	It has 17 hitpoints left.
+
+Fire has spread and a building on location (9, 4) has caught fire.
+
+house at location (12, 2) is still burning.
+	It has 14 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 14 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 11 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 8 hitpoints left.
+	It has 8 hitpoints left.
 
-Firetruck Bw12 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat-Javastraat on location (7, 10)
+Casualty's hp has decreased, he has 8 hp left.
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Lispstraat on location (8, 0)
+Casualty's hp has decreased, he has 9 hp left.
 
+Casualty's hp has decreased, he has 9 hp left.
+
+Firetruck Bw12 is on its way to house on location(0, 12).
+	The firetruck is at Pythonstraat on location (2, 15).
+
+Firetruck Bw34 is on its way to house on location(3, 10).
+	The firetruck is at Assemblystraat on location (0, 13).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 8 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 8 hitpoints left.
+
+house at location (5, 12) is still burning.
+	It has 10 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 10 hitpoints left.
+
+house at location (8, 2) is still burning.
+	It has 19 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 19 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 16 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 16 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 13 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 13 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 10 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 7 hitpoints left.
+	It has 7 hitpoints left.
 
-Firetruck Bw12 has arrived at its base BWK1337
+A new casualty has fallen, he has 10 hp left.
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Lispstraat on location (9, 0)
+Casualty's hp has decreased, he has 7 hp left.
 
+Casualty's hp has decreased, he has 8 hp left.
+
+Casualty's hp has decreased, he has 8 hp left.
+
+Casualty's hp has decreased, he has 9 hp left.
+
+Firetruck Bw12 is on its way to house on location(0, 12).
+	The firetruck is at Pythonstraat on location (1, 15).
+
+Firetruck Bw34 is on its way to house on location(3, 10).
+	The firetruck is at Assemblystraat on location (0, 12).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 7 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 7 hitpoints left.
+
+A new casualty has fallen, he has 10 hp left.
+
+A new casualty has fallen, he has 10 hp left.
+
+house at location (5, 12) is still burning.
+	It has 9 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 9 hitpoints left.
+
+house at location (8, 2) is still burning.
+	It has 18 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 18 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 15 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 15 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 12 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 12 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 9 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 6 hitpoints left.
+	It has 6 hitpoints left.
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Lispstraat on location (10, 0)
+Casualty's hp has decreased, he has 6 hp left.
 
+Casualty's hp has decreased, he has 7 hp left.
+
+Casualty's hp has decreased, he has 7 hp left.
+
+Casualty's hp has decreased, he has 8 hp left.
+
+Casualty's hp has decreased, he has 9 hp left.
+
+Casualty's hp has decreased, he has 9 hp left.
+
+Firetruck Bw12 is on its way to house on location(0, 12).
+	The firetruck is at Pythonstraat-Assemblystraat on location (0, 15).
+
+Firetruck Bw34 is on its way to house on location(3, 10).
+	The firetruck is at Assemblystraat on location (0, 11).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 6 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 6 hitpoints left.
+
+house at location (5, 12) is still burning.
+	It has 8 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 8 hitpoints left.
+
+house at location (8, 2) is still burning.
+	It has 17 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 17 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 14 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 14 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 11 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 11 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 8 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 5 hitpoints left.
+	It has 5 hitpoints left.
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Lispstraat on location (11, 0)
+Casualty's hp has decreased, he has 5 hp left.
 
+Casualty's hp has decreased, he has 6 hp left.
+
+Casualty's hp has decreased, he has 6 hp left.
+
+Casualty's hp has decreased, he has 7 hp left.
+
+Casualty's hp has decreased, he has 8 hp left.
+
+Casualty's hp has decreased, he has 8 hp left.
+
+Firetruck Bw12 is on its way to house on location(0, 12).
+	The firetruck is at Assemblystraat on location (0, 14).
+
+Firetruck Bw34 is on its way to house on location(3, 10).
+	The firetruck is at Cstraat-Assemblystraat on location (0, 10).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 5 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 5 hitpoints left.
+
+house at location (5, 12) is still burning.
+	It has 7 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 7 hitpoints left.
+
+house at location (8, 2) is still burning.
+	It has 16 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 16 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 13 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 13 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 10 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 10 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 7 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 4 hitpoints left.
+	It has 4 hitpoints left.
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Lispstraat on location (12, 0)
+Casualty's hp has decreased, he has 4 hp left.
 
+Casualty's hp has decreased, he has 5 hp left.
+
+Casualty's hp has decreased, he has 5 hp left.
+
+Casualty's hp has decreased, he has 6 hp left.
+
+Casualty's hp has decreased, he has 7 hp left.
+
+Casualty's hp has decreased, he has 7 hp left.
+
+Firetruck Bw12 is on its way to house on location(0, 12).
+	The firetruck is at Assemblystraat on location (0, 13).
+
+Firetruck Bw34 is on its way to house on location(3, 10).
+	The firetruck is at Cstraat on location (1, 10).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is still burning.
+	It has 4 hitpoints left.
+
+house at location (3, 12) is still burning.
+	It has 4 hitpoints left.
+
+house at location (5, 12) is still burning.
+	It has 6 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 6 hitpoints left.
+
+house at location (8, 2) is still burning.
+	It has 15 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 15 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 12 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 12 hitpoints left.
+
+A new casualty has fallen, he has 10 hp left.
+
+A new casualty has fallen, he has 10 hp left.
+
+house at location (12, 2) is still burning.
+	It has 9 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 9 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 6 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 3 hitpoints left.
+	It has 3 hitpoints left.
 
-Firetruck Bw34 is on its way to house on location (14, 0). The firetruck is at Lispstraat on location (13, 0)
+Casualty's hp has decreased, he has 3 hp left.
 
+Casualty's hp has decreased, he has 4 hp left.
+
+Casualty's hp has decreased, he has 4 hp left.
+
+Casualty's hp has decreased, he has 5 hp left.
+
+Casualty's hp has decreased, he has 6 hp left.
+
+Casualty's hp has decreased, he has 6 hp left.
+
+Casualty's hp has decreased, he has 9 hp left.
+
+Casualty's hp has decreased, he has 9 hp left.
+
+Firetruck Bw12 has reached its destination at location (0, 12).
+	They have extinguished the fire and are returning to the base.
+
+Firetruck Bw34 is on its way to house on location(3, 10).
+	The firetruck is at Cstraat on location (2, 10).
 
 --------------------------------------------------------------------------------------------------------------------------------
+
+house at location (3, 12) is still burning.
+	It has 3 hitpoints left.
+
+house at location (5, 12) is still burning.
+	It has 5 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 5 hitpoints left.
+
+house at location (8, 2) is still burning.
+	It has 14 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 14 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 11 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 11 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 8 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 8 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 5 hitpoints left.
 
 house at location (14, 2) is still burning.
-	 It has 2 hitpoints left.
+	It has 2 hitpoints left.
 
-Firetruck Bw34 has reached its destination  at location (14, 0) and has extinguished the fire and are returning home.
+Casualty's hp has decreased, he has 2 hp left.
 
+Casualty's hp has decreased, he has 3 hp left.
 
---------------------------------------------------------------------------------------------------------------------------------
+Casualty's hp has decreased, he has 3 hp left.
 
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Lispstraat on location (15, 0)
+Casualty's hp has decreased, he has 4 hp left.
 
+Casualty's hp has decreased, he has 5 hp left.
 
---------------------------------------------------------------------------------------------------------------------------------
+Casualty's hp has decreased, he has 5 hp left.
 
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Lispstraat-Eiffelstraat on location (16, 0)
+Casualty's hp has decreased, he has 8 hp left.
 
+Casualty's hp has decreased, he has 8 hp left.
 
---------------------------------------------------------------------------------------------------------------------------------
+Firetruck Bw12 is on its way to house on location(5, 10).
+	The firetruck is at Assemblystraat on location (0, 11).
 
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Eiffelstraat on location (16, 1)
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Eiffelstraat on location (16, 2)
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Eiffelstraat on location (16, 3)
-
+Firetruck Bw34 has reached its destination at location (3, 10).
+	They have extinguished the fire and are returning to the base.
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Eiffelstraat on location (16, 4)
+house at location (1, 12) is repairing.
+ 	It has 9 hitpoints left.
 
+house at location (5, 12) is still burning.
+	It has 4 hitpoints left.
 
---------------------------------------------------------------------------------------------------------------------------------
+house at location (5, 14) is still burning.
+	It has 4 hitpoints left.
 
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Haskellstraat-Eiffelstraat on location (16, 5)
+house at location (8, 2) is still burning.
+	It has 13 hitpoints left.
 
+house at location (8, 4) is still burning.
+	It has 13 hitpoints left.
 
---------------------------------------------------------------------------------------------------------------------------------
+house at location (10, 2) is still burning.
+	It has 10 hitpoints left.
 
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Eiffelstraat on location (16, 6)
+house at location (10, 4) is still burning.
+	It has 10 hitpoints left.
 
+house at location (12, 2) is still burning.
+	It has 7 hitpoints left.
 
---------------------------------------------------------------------------------------------------------------------------------
+house at location (12, 4) is still burning.
+	It has 7 hitpoints left.
 
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Eiffelstraat on location (16, 7)
+house at location (14, 4) is still burning.
+	It has 4 hitpoints left.
 
+house at location (14, 2) is still burning.
+	It has 1 hitpoints left.
 
---------------------------------------------------------------------------------------------------------------------------------
+Casualty's hp has decreased, he has 1 hp left.
 
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Eiffelstraat on location (16, 8)
+Casualty's hp has decreased, he has 2 hp left.
 
+Casualty's hp has decreased, he has 2 hp left.
 
---------------------------------------------------------------------------------------------------------------------------------
+Casualty's hp has decreased, he has 3 hp left.
 
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Eiffelstraat on location (16, 9)
+Casualty's hp has decreased, he has 4 hp left.
 
+Casualty's hp has decreased, he has 4 hp left.
 
---------------------------------------------------------------------------------------------------------------------------------
+Casualty's hp has decreased, he has 7 hp left.
 
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat-Eiffelstraat on location (16, 10)
+Casualty's hp has decreased, he has 7 hp left.
 
+Firetruck Bw12 is on its way to house on location(5, 10).
+	The firetruck is at Cstraat-Assemblystraat on location (0, 10).
 
---------------------------------------------------------------------------------------------------------------------------------
-
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (15, 10)
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (14, 10)
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (13, 10)
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (12, 10)
-
-
---------------------------------------------------------------------------------------------------------------------------------
-
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (11, 10)
-
+Firetruck Bw34 is on its way to house on location(5, 15).
+	The firetruck is at Cstraat on location (2, 10).
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (10, 10)
+house at location (3, 12) is repairing.
+ 	It has 8 hitpoints left.
 
+house at location (5, 12) is still burning.
+	It has 3 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 3 hitpoints left.
+
+house at location (8, 2) is still burning.
+	It has 12 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 12 hitpoints left.
+
+A new casualty has fallen, he has 10 hp left.
+
+A new casualty has fallen, he has 10 hp left.
+
+house at location (10, 2) is still burning.
+	It has 9 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 9 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 6 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 6 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 3 hitpoints left.
+
+house at location (14, 2) is destroyed.
+ 	It has 0 hitpoints left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 1 hp left.
+
+Casualty's hp has decreased, he has 1 hp left.
+
+Casualty's hp has decreased, he has 2 hp left.
+
+Casualty's hp has decreased, he has 3 hp left.
+
+Casualty's hp has decreased, he has 3 hp left.
+
+Casualty's hp has decreased, he has 6 hp left.
+
+Casualty's hp has decreased, he has 6 hp left.
+
+Casualty's hp has decreased, he has 9 hp left.
+
+Casualty's hp has decreased, he has 9 hp left.
+
+Firetruck Bw12 is on its way to house on location(5, 10).
+	The firetruck is at Cstraat on location (1, 10).
+
+Firetruck Bw34 is on its way to house on location(5, 15).
+	The firetruck is at Cstraat on location (1, 10).
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw34 is on its way to BWK1337 on location (8, 10). The firetruck is at Cstraat on location (9, 10)
+house at location (1, 12) is repairing.
+ 	It has 14 hitpoints left.
 
+house at location (5, 12) is still burning.
+	It has 2 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 2 hitpoints left.
+
+house at location (8, 2) is still burning.
+	It has 11 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 11 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 8 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 8 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 5 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 5 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 2 hitpoints left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 1 hp left.
+
+Casualty's hp has decreased, he has 2 hp left.
+
+Casualty's hp has decreased, he has 2 hp left.
+
+Casualty's hp has decreased, he has 5 hp left.
+
+Casualty's hp has decreased, he has 5 hp left.
+
+Casualty's hp has decreased, he has 8 hp left.
+
+Casualty's hp has decreased, he has 8 hp left.
+
+Firetruck Bw12 is on its way to house on location(5, 10).
+	The firetruck is at Cstraat on location (2, 10).
+
+Firetruck Bw34 is on its way to house on location(5, 15).
+	The firetruck is at Cstraat-Assemblystraat on location (0, 10).
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw34 has arrived at its base BWK1337
+house at location (3, 12) is repairing.
+ 	It has 13 hitpoints left.
 
+house at location (5, 12) is still burning.
+	It has 1 hitpoints left.
+
+house at location (5, 14) is still burning.
+	It has 1 hitpoints left.
+
+house at location (8, 2) is still burning.
+	It has 10 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 10 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 7 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 7 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 4 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 4 hitpoints left.
+
+house at location (14, 4) is still burning.
+	It has 1 hitpoints left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 1 hp left.
+
+Casualty's hp has decreased, he has 1 hp left.
+
+Casualty's hp has decreased, he has 4 hp left.
+
+Casualty's hp has decreased, he has 4 hp left.
+
+Casualty's hp has decreased, he has 7 hp left.
+
+Casualty's hp has decreased, he has 7 hp left.
+
+Firetruck Bw12 is on its way to house on location(5, 10).
+	The firetruck is at Cstraat on location (3, 10).
+
+Firetruck Bw34 is on its way to house on location(5, 15).
+	The firetruck is at Assemblystraat on location (0, 11).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (1, 12) is repairing.
+ 	It has 19 hitpoints left.
+
+house at location (5, 12) is destroyed.
+ 	It has 0 hitpoints left.
+
+house at location (5, 14) is destroyed.
+ 	It has 0 hitpoints left.
+
+A new casualty has fallen, he has 10 hp left.
+
+A new casualty has fallen, he has 10 hp left.
+
+house at location (8, 2) is still burning.
+	It has 9 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 9 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 6 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 6 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 3 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 3 hitpoints left.
+
+house at location (14, 4) is destroyed.
+ 	It has 0 hitpoints left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 3 hp left.
+
+Casualty's hp has decreased, he has 3 hp left.
+
+Casualty's hp has decreased, he has 6 hp left.
+
+Casualty's hp has decreased, he has 6 hp left.
+
+Casualty's hp has decreased, he has 9 hp left.
+
+Casualty's hp has decreased, he has 9 hp left.
+
+Firetruck Bw12 is on its way to house on location(5, 10).
+	The firetruck is at Cstraat on location (4, 10).
+
+Firetruck Bw34 is on its way to house on location(5, 15).
+	The firetruck is at Assemblystraat on location (0, 12).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (3, 12) is repairing.
+ 	It has 18 hitpoints left.
+
+house at location (8, 2) is still burning.
+	It has 8 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 8 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 5 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 5 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 2 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 2 hitpoints left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 2 hp left.
+
+Casualty's hp has decreased, he has 2 hp left.
+
+Casualty's hp has decreased, he has 5 hp left.
+
+Casualty's hp has decreased, he has 5 hp left.
+
+Casualty's hp has decreased, he has 8 hp left.
+
+Casualty's hp has decreased, he has 8 hp left.
+
+Firetruck Bw12 has reached its destination at location (5, 10).
+	They saw that the structure was destroyed and are returning to the base.
+
+Firetruck Bw34 is on its way to house on location(5, 15).
+	The firetruck is at Assemblystraat on location (0, 13).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (8, 2) is still burning.
+	It has 7 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 7 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 4 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 4 hitpoints left.
+
+house at location (12, 2) is still burning.
+	It has 1 hitpoints left.
+
+house at location (12, 4) is still burning.
+	It has 1 hitpoints left.
+
+Casualty's hp has decreased, he has 1 hp left.
+
+Casualty's hp has decreased, he has 1 hp left.
+
+Casualty's hp has decreased, he has 4 hp left.
+
+Casualty's hp has decreased, he has 4 hp left.
+
+Casualty's hp has decreased, he has 7 hp left.
+
+Casualty's hp has decreased, he has 7 hp left.
+
+Firetruck Bw12 is on its way to house on location(7, 2).
+	The firetruck is at Cstraat on location (6, 10).
+
+Firetruck Bw34 is on its way to house on location(5, 15).
+	The firetruck is at Assemblystraat on location (0, 14).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (8, 2) is still burning.
+	It has 6 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 6 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 3 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 3 hitpoints left.
+
+house at location (12, 2) is destroyed.
+ 	It has 0 hitpoints left.
+
+house at location (12, 4) is destroyed.
+ 	It has 0 hitpoints left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 3 hp left.
+
+Casualty's hp has decreased, he has 3 hp left.
+
+Casualty's hp has decreased, he has 6 hp left.
+
+Casualty's hp has decreased, he has 6 hp left.
+
+Firetruck Bw12 is on its way to house on location(7, 2).
+	The firetruck is at Cstraat-Javastraat on location (7, 10).
+
+Firetruck Bw34 is on its way to house on location(5, 15).
+	The firetruck is at Pythonstraat-Assemblystraat on location (0, 15).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (8, 2) is still burning.
+	It has 5 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 5 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 2 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 2 hitpoints left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 2 hp left.
+
+Casualty's hp has decreased, he has 2 hp left.
+
+Casualty's hp has decreased, he has 5 hp left.
+
+Casualty's hp has decreased, he has 5 hp left.
+
+Firetruck Bw12 is on its way to house on location(7, 2).
+	The firetruck is at Javastraat on location (7, 9).
+
+Firetruck Bw34 is on its way to house on location(5, 15).
+	The firetruck is at Pythonstraat on location (1, 15).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (8, 2) is still burning.
+	It has 4 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 4 hitpoints left.
+
+house at location (10, 2) is still burning.
+	It has 1 hitpoints left.
+
+house at location (10, 4) is still burning.
+	It has 1 hitpoints left.
+
+Casualty's hp has decreased, he has 1 hp left.
+
+Casualty's hp has decreased, he has 1 hp left.
+
+Casualty's hp has decreased, he has 4 hp left.
+
+Casualty's hp has decreased, he has 4 hp left.
+
+Firetruck Bw12 is on its way to house on location(7, 2).
+	The firetruck is at Javastraat on location (7, 8).
+
+Firetruck Bw34 is on its way to house on location(5, 15).
+	The firetruck is at Pythonstraat on location (2, 15).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (8, 2) is still burning.
+	It has 3 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 3 hitpoints left.
+
+house at location (10, 2) is destroyed.
+ 	It has 0 hitpoints left.
+
+house at location (10, 4) is destroyed.
+ 	It has 0 hitpoints left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 3 hp left.
+
+Casualty's hp has decreased, he has 3 hp left.
+
+Firetruck Bw12 is on its way to house on location(7, 2).
+	The firetruck is at Javastraat on location (7, 7).
+
+Firetruck Bw34 is on its way to house on location(5, 15).
+	The firetruck is at Pythonstraat on location (3, 15).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (8, 2) is still burning.
+	It has 2 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 2 hitpoints left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 2 hp left.
+
+Casualty's hp has decreased, he has 2 hp left.
+
+Firetruck Bw12 is on its way to house on location(7, 2).
+	The firetruck is at Javastraat on location (7, 6).
+
+Firetruck Bw34 is on its way to house on location(5, 15).
+	The firetruck is at Pythonstraat on location (4, 15).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (8, 2) is still burning.
+	It has 1 hitpoints left.
+
+house at location (8, 4) is still burning.
+	It has 1 hitpoints left.
+
+Casualty's hp has decreased, he has 1 hp left.
+
+Casualty's hp has decreased, he has 1 hp left.
+
+Firetruck Bw12 is on its way to house on location(7, 2).
+	The firetruck is at Haskellstraat-Javastraat on location (7, 5).
+
+Firetruck Bw34 has reached its destination at location (5, 15).
+	They saw that the structure was destroyed and are returning to the base.
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+house at location (8, 2) is destroyed.
+ 	It has 0 hitpoints left.
+
+house at location (8, 4) is destroyed.
+ 	It has 0 hitpoints left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Firetruck Bw12 is on its way to house on location(7, 2).
+	The firetruck is at Javastraat on location (7, 4).
+
+Firetruck Bw34 is on its way to house on location(8, 5).
+	The firetruck is at Pythonstraat on location (6, 15).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Casualty's hp has decreased, he has 0 hp left.
+
+Firetruck Bw12 is on its way to house on location(7, 2).
+	The firetruck is at Javastraat on location (7, 3).
+
+Firetruck Bw34 is on its way to house on location(8, 5).
+	The firetruck is at Pythonstraat-Javastraat on location (7, 15).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw12 has reached its destination at location (7, 2).
+	They saw that the structure was destroyed and are returning to the base.
+
+Firetruck Bw34 is on its way to house on location(8, 5).
+	The firetruck is at Javastraat on location (7, 14).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Javastraat on location (7, 1).
+
+Firetruck Bw34 is on its way to house on location(8, 5).
+	The firetruck is at Javastraat on location (7, 13).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Lispstraat-Javastraat on location (7, 0).
+
+Firetruck Bw34 is on its way to house on location(8, 5).
+	The firetruck is at Javastraat on location (7, 12).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Javastraat on location (7, 1).
+
+Firetruck Bw34 is on its way to house on location(8, 5).
+	The firetruck is at Javastraat on location (7, 11).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Javastraat on location (7, 2).
+
+Firetruck Bw34 is on its way to house on location(8, 5).
+	The firetruck is at Cstraat-Javastraat on location (7, 10).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Javastraat on location (7, 3).
+
+Firetruck Bw34 is on its way to house on location(8, 5).
+	The firetruck is at Javastraat on location (7, 9).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Javastraat on location (7, 4).
+
+Firetruck Bw34 is on its way to house on location(8, 5).
+	The firetruck is at Javastraat on location (7, 8).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Haskellstraat-Javastraat on location (7, 5).
+
+Firetruck Bw34 is on its way to house on location(8, 5).
+	The firetruck is at Javastraat on location (7, 7).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Javastraat on location (7, 6).
+
+Firetruck Bw34 is on its way to house on location(8, 5).
+	The firetruck is at Javastraat on location (7, 6).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Javastraat on location (7, 7).
+
+Firetruck Bw34 is on its way to house on location(8, 5).
+	The firetruck is at Haskellstraat-Javastraat on location (7, 5).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Javastraat on location (7, 8).
+
+Firetruck Bw34 has reached its destination at location (8, 5).
+	They saw that the structure was destroyed and are returning to the base.
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Javastraat on location (7, 9).
+
+Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Haskellstraat-Javastraat on location (7, 5).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Cstraat-Javastraat on location (7, 10).
+
+Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Javastraat on location (7, 6).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw12 has arrived at its base BWK1337.
+
+Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Javastraat on location (7, 7).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Javastraat on location (7, 8).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Javastraat on location (7, 9).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Cstraat-Javastraat on location (7, 10).
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Firetruck Bw34 has arrived at its base BWK1337.
 
 ================================================================================================================================

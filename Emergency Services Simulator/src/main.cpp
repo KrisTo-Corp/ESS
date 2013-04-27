@@ -21,44 +21,78 @@ int main(int argc, char **argv) {
 	}
 	else if (argc == 3) {
 		std::string argv2 = argv[2];
-		if (argv2 == "cout") {
-			City city(argv[1], std::cout);
-			simulateCity_Test(city, Coordinate(20, 1), Coordinate(8, 14), 10, Coordinate(10, 11), Coordinate(13, 8), 15);
+		bool found_dot = false;
+		bool html = false;
+		for(int i = 0; i < argv2.size(); i++){
+			if(argv2[i] == '.'){
+				found_dot = true;
+			}
+			if (found_dot){
+				if (argv2[i+1] == 'h' && argv2[i+2] == 't' && argv2[i+3] == 'm' && argv2[i+4] == 'l'){
+					html = true;
+				}
+			}
 		}
-		else if (argv2 == "html") {
-			std::ofstream filestream("ems.html");
+
+		if (argv2 == "console") {
+			City city(argv[1], std::cout);
+			simulateCity(city);
+			return 0;
+		}
+		if (html) {
+			std::ofstream filestream(argv[2]);
 			City city(argv[1], filestream, "empty", true);
-			simulateCity_Test(city, Coordinate(20, 1), Coordinate(8, 14), 10, Coordinate(10, 11), Coordinate(13, 8), 15);
+			simulateCity(city);
 			city.o.closeHTML();
+			std::cout << "Output was written to " << argv2 << ".\n";
+			return 0;
 		}
 		else {
 			std::ofstream filestream(argv[2]);
 			City city(argv[1], filestream);
-			std::cout << "constructed" << std::endl;
-			simulateCity_Test(city, Coordinate(20, 1), Coordinate(8, 14), 10, Coordinate(10, 11), Coordinate(13, 8), 15);
-			std::cout << "simulated" << std::endl;
+			simulateCity(city);
 			filestream.close();
-			std::cout << "output was written to " << argv2 << std::endl;
+			std::cout << "Output was written to " << argv2 << ".\n";
+			return 0;
 		}
 	}
+
 	else{
+
 		std::string argv2 = argv[2];
-		if (argv2 == "cout") {
-			City city(argv[1], std::cout, argv[3]);
-			simulateCity_Test(city, Coordinate(20, 1), Coordinate(8, 14), 10, Coordinate(10, 11), Coordinate(13, 8), 15);
+		bool found_dot = false;
+		bool html = false;
+		for(int i = 0; i < argv2.size(); i++){
+			if(argv2[i] == '.'){
+				found_dot = true;
+			}
+			if (found_dot){
+				if (argv2[i+1] == 'h' && argv2[i+2] == 't' && argv2[i+3] == 'm' && argv2[i+4] == 'l'){
+					html = true;
+				}
+			}
 		}
-		else if (argv2 == "html") {
-			std::ofstream filestream("ems.html");
+
+		if (argv2 == "console") {
+			City city(argv[1], std::cout, argv[3]);
+			simulateCity(city);
+			return 0;
+		}
+		if (html) {
+			std::ofstream filestream(argv[2]);
 			City city(argv[1], filestream, argv[3], true);
-			simulateCity_Test(city, Coordinate(20, 1), Coordinate(8, 14), 10, Coordinate(10, 11), Coordinate(13, 8), 15);
+			simulateCity(city);
 			city.o.closeHTML();
+			std::cout << "Output was written to " << argv2 << ".\n";
+			return 0;
 		}
 		else {
 			std::ofstream filestream(argv[2]);
 			City city(argv[1], filestream, argv[3]);
-			simulateCity_Test(city, Coordinate(20, 1), Coordinate(8, 14), 10, Coordinate(10, 11), Coordinate(13, 8), 15);
+			simulateCity(city);
 			filestream.close();
-			std::cout << "output was written to " << argv2 << std::endl;
+			std::cout << "Output was written to " << argv2 << ".\n";
+			return 0;
 		}
 	}
 }

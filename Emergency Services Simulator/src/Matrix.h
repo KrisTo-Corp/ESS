@@ -81,6 +81,9 @@ public:
 	void printMatrix(OutputObject oo);
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling printMatrix().");
 
+	void printVehicles(OutputObject oo);
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling printMatrix().");
+
 	Matrix(const Matrix& c);
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling copy constructor.");
 

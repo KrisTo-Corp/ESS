@@ -115,7 +115,7 @@ protected:
 	friend class City;
 };
 
-/*
+
 // TEST THE DEFAULT COORDINATE CONSTRUCTOR.
 TEST_F(CoordinateTest, DefaultConstructor){
 	EXPECT_TRUE(coordinate.properlyInitialized());
@@ -148,7 +148,7 @@ TEST_F(VehiclesTest, DefaultConstructor){
 
 // TEST THE SPECIFIED VEHICLES CONSTRUCTOR
 TEST_F(VehiclesTest, Constructor){
-	vehicle = Vehicles(10, 9, "car");
+	vehicle = Vehicles(10, 9, "car", "base");
 	EXPECT_TRUE(vehicle.properlyInitialized());
 	EXPECT_EQ("car", vehicle.getName());
 	EXPECT_EQ(Coordinate(10, 9), vehicle.getCoord());
@@ -509,9 +509,7 @@ TEST_F(MatrixTest, AddDepartments){
 	Fire_Department* ptr3 = &(*it);
 	it++;
 	Fire_Department* ptr4 = &(*it);
-	std::cout << "Next step" << std::endl;
 	matrix.addFiredeps(deps);
-	std::cout << "correct" << std::endl;
 
 	EXPECT_EQ(ptr1, matrix.getObject(0, 7));
 	EXPECT_EQ(ptr1, matrix.getObject(1, 7));
@@ -679,8 +677,8 @@ TEST_F(CityObjectsTest, setState) {
 	EXPECT_EQ(normal, cObject.getState());
 	cObject.setState(burning);
 	EXPECT_EQ(burning, cObject.getState());
-	cObject.setState(beingrescued);
-	EXPECT_EQ(beingrescued, cObject.getState());
+	cObject.setState(beingrescuedF);
+	EXPECT_EQ(beingrescuedF, cObject.getState());
 	cObject.setState(destroyed);
 	EXPECT_EQ(destroyed, cObject.getState());
 	cObject.setState(intouchable);
@@ -702,17 +700,19 @@ TEST_F(CityTest, Constructor){
 
 // TEST A UPDATE FUNCTION
 TEST_F(CityTest, Update){
-	std::ofstream stream("Output files/unusedOutput.txt");
+	std::ofstream stream("Output files/updateTest.txt");
 	City c("XML Files/stad.xml", stream);
-	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1), 5);
 	stream.close();
 
 	EXPECT_TRUE(FileCompare("Output files/updateTest.txt", "Expected Output/expectedUpdateTest.txt"));
 }
 
 // TEST IS VALID COORDINATE
+/*
 TEST_F(CityTest, ValidCoordinate){
-	City c("XML Files/stad.xml", "Output files/unusedOutput.txt");
+	std::ofstream stream("Output files/unusedOutput.txt");
+	City c("XML Files/stad.xml", stream);
 	EXPECT_TRUE(c.validCoordCheck(15, 7));
 	EXPECT_TRUE(c.validCoordCheck(21, 0));
 	EXPECT_TRUE(c.validCoordCheck(21, 15));
@@ -723,7 +723,7 @@ TEST_F(CityTest, ValidCoordinate){
 	EXPECT_FALSE(c.validCoordCheck(0, -1));
 	EXPECT_FALSE(c.validCoordCheck('a', 9));
 	EXPECT_FALSE(c.validCoordCheck(15, 'b'));
-}
+}*/
 
 // TEST THE SETFIRE FUNCTION
 TEST_F(CityTest, SetFire){
@@ -871,7 +871,7 @@ TEST_F(CityTest, DriveTruck){
 TEST_F(SimulationTest, InputSyntaxError){
 	std::ofstream stream("Output files/syntaxErrorOutput.txt");
 	City c("XML Files/syntaxError.xml", stream);
-	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1), 5);
 	stream.close();
 	EXPECT_TRUE(FileCompare("Output files/syntaxErrorOutput.txt", "Expected Output/expectedSyntaxErrorOutput.txt"));
 }
@@ -881,7 +881,7 @@ TEST_F(SimulationTest, InputSyntaxError){
 TEST_F(SimulationTest, InputObjectNotFound){
 	std::ofstream stream("Output files/invalidObjectOutput.txt");
 	City c("XML Files/invalidObject.xml", stream);
-	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1), 5);
 	stream.close();
 	EXPECT_TRUE(FileCompare("Output files/invalidObjectOutput.txt", "Expected Output/expectedInvalidObjectOutput.txt"));
 }
@@ -891,7 +891,7 @@ TEST_F(SimulationTest, InputObjectNotFound){
 TEST_F(SimulationTest, NegativeCoordinate){
 	std::ofstream stream("Output files/noRootOutput.txt");
 	City c("XML Files/negativeCoordinate.xml", stream);
-	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1), 5);
 	stream.close();
 	EXPECT_TRUE(FileCompare("Output files/negativeCoordinateOutput.txt", "Expected Output/expectedNegativeCoordinateOutput.txt"));
 }
@@ -900,7 +900,7 @@ TEST_F(SimulationTest, NegativeCoordinate){
 TEST_F(SimulationTest, NoRootObject){
 	std::ofstream stream("Output files/noRootOutput.txt");
 	City c("XML Files/noRoot.xml", stream);
-	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1), 5);
 	stream.close();
 	EXPECT_TRUE(FileCompare("Output files/noRootOutput.txt", "Expected Output/expectedNoRootOutput.txt"));
 }
@@ -910,7 +910,7 @@ TEST_F(SimulationTest, NoRootObject){
 TEST_F(SimulationTest, InvalidCityEmptySpots){
 	std::ofstream stream("Output files/emptySpotsOutput.txt");
 	City c("XML Files/emptySpots.xml", stream);
-	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1), 5);
 	stream.close();
 	EXPECT_TRUE(FileCompare("Output files/emptySpotsOutput.txt", "Expected Output/expectedEmptySpotsOutput.txt"));
 }
@@ -920,42 +920,42 @@ TEST_F(SimulationTest, InvalidCityEmptySpots){
 TEST_F(SimulationTest, Overlap){
 	std::ofstream stream("Output files/overlapOutput.txt");
 	City c("XML Files/overlap.xml", stream);
-	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1), 5);
 	stream.close();
 	EXPECT_TRUE(FileCompare("Output files/overlapOutput.txt", "Expected Output/expectedOverlapOutput.txt"));
-}*/
+}
 
 // TEST WITH UNLINKED TRUCKS
 TEST_F(SimulationTest, UnlinkedTrucks){
 	std::ofstream stream("Output files/unlinkedTrucksOutput.txt");
 	City c("XML Files/unlinkedTrucks.xml", stream);
-	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1), 5);
 	stream.close();
 	EXPECT_TRUE(FileCompare("Output files/unlinkedTrucksOutput.txt", "Expected Output/expectedUnlinkedTrucksOutput.txt"));
 }
-/*
+
 // HOUSES NOT LINKED TO STREET
 TEST_F(SimulationTest, UnlinkedHouses){
-	std::ofstream stream("Output files/unlinkedTrucksOutput.txt");
+	std::ofstream stream("Output files/unlinkedHousesOutput.txt");
 	City c("XML Files/unlinkedStreets.xml", stream);
-	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1), 5);
 	stream.close();
 	EXPECT_TRUE(FileCompare("Output files/unlinkedHousesOutput.txt", "Expected Output/expectedUnlinkedHousesOutput.txt"));
 }
 
 // TEST A NORMAL SIMULATION
 TEST_F(SimulationTest, NormalSimulation){
-	std::ofstream stream("Output files/unlinkedTrucksOutput.txt");
+	std::ofstream stream("Output files/normalOutput.txt");
 	City c("XML Files/stad.xml", stream);
-	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1));
+	simulateCity_Test(c, Coordinate(4, 14), Coordinate(15, 1), 5);
 	stream.close();
 	EXPECT_TRUE(FileCompare("Output files/normalOutput.txt", "Expected Output/expectedNormalOutput.txt"));
 }
 
 TEST_F(SimulationTest, NormalSimulation2){
-	std::ofstream stream("Output files/unlinkedTrucksOutput.txt");
+	std::ofstream stream("Output files/normalOutput2.txt");
 	City c("XML Files/stad.xml", stream);
-	simulateCity_Test(c, Coordinate(3, 1), Coordinate(20, 1));
+	simulateCity_Test(c, Coordinate(3, 1), Coordinate(20, 1), 5);
 	stream.close();
 	EXPECT_TRUE(FileCompare("Output files/normalOutput2.txt", "Expected Output/expectedNormalOutput2.txt"));
 }
@@ -963,10 +963,10 @@ TEST_F(SimulationTest, NormalSimulation2){
 TEST_F(SimulationTest, NormalSimulation3){
 	std::ofstream stream( "Output files/normalOutput3.txt");
 	City c("XML Files/stad.xml", stream);
-	simulateCity_Test(c, Coordinate(4, 11), Coordinate(12, 11));
+	simulateCity_Test(c, Coordinate(4, 11), Coordinate(12, 11), 5);
 	stream.close();
 	EXPECT_TRUE(FileCompare("Output files/normalOutput3.txt", "Expected Output/expectedNormalOutput3.txt"));
-}*/
+}
 
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);

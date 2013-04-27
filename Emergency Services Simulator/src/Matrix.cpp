@@ -260,7 +260,7 @@ void Matrix::printMatrix(OutputObject oo) {
 		output = "\nMAP: \n";
 		output = output + "====\n\n";
 		for(int i = 0; i < rows; i++){
-			output = output + intToString(rows-1-i) + "\t[";
+			output = output + intToString(rows-1-i) + "\t[\t";
 			for(int j = 0; j < columns; j++){
 				if(matrix[i][j] == NULL){
 					output = output + "?\t";
@@ -272,10 +272,10 @@ void Matrix::printMatrix(OutputObject oo) {
 					output = output + "D\t";
 				}
 				else if(matrix[i][j]->getType() == street){
-					output = output + "\t";
+					output = output + " \t";
 				}
 				else if(matrix[i][j]->getType() == crossroad){
-					output = output + "\t";
+					output = output + " \t";
 				}
 				else if(matrix[i][j]->getType() == store){
 					output = output + "S\t";
@@ -294,9 +294,124 @@ void Matrix::printMatrix(OutputObject oo) {
 		}
 		output = output + "\n\t\t";
 		for (int i = 0; i < columns; i++){
-			output = output + intToString(i) + " \t";
+			if (i >= 9){
+				output = output + intToString(i) + "  ";
+
+			}
+			else {
+				output = output + intToString(i) + " \t";
+			}
 		}
-		output = output + "\n\n\t\tH = HOUSE\t D = FIRE DEPARTMENT\t S = STREET\t C = CROSSROAD\t ? = UNKNOWN\n";
+		output = output + "\n\n\t\tH = HOUSE\t D = FIRE DEPARTMENT\t S = STORE\n";
+		output = output + "\t\t+ = HOSPITAL\t P = POLICE DEPARTMENT\t ? = UNKNOWN\n";
+
+		oo.print(output);
+	}
+	else {
+		std::ostream& s = oo.getOutput();
+		s << "<table border = \"3\">";
+		s << "</br>MAP: </br>";
+		s << "====</br></br>";
+		for(int i = 0; i < rows; i++){
+			s << "<tr>";
+			s << "<td style = \"background-color: #fde5c3\">" << rows-1-i << "</td>";//"&nbsp;&nbsp;&nbsp;&nbsp;[";
+			for(int j = 0; j < columns; j++){
+				if(matrix[i][j] == NULL){
+					s << "<td>" << "?" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else if(matrix[i][j]->getType() == house){
+					s << "<td style = \"background-color: #6dc066\">" << "H" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else if(matrix[i][j]->getType() == department){
+					s << "<td style = \"background-color: #e00707\">" << "D" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else if(matrix[i][j]->getType() == street){
+					s << "<td style = \"background-color: #b2b2b2\">" << " " << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else if(matrix[i][j]->getType() == crossroad){
+					s << "<td style = \"background-color: #b2b2b2\">" << " " << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else if(matrix[i][j]->getType() == store){
+					s << "<td style = \"background-color: #ffc726\">" << "S" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else if(matrix[i][j]->getType() == policeStation){
+					s << "<td style = \"background-color: #33338b\">" << "P" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else if(matrix[i][j]->getType() == hospital){
+					s << "<td style = \"background-color: #ffffff\">" << "+" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+				else{
+					s << "<td>" << "?" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+				}
+			}
+			s << "</tr>";
+			//s << "]</br>";
+		}
+		//s << "</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		s << "<tr>";
+		s << "<td style = \"background-color: #fde5c3\">" << " " << "</td>";
+		for (int i = 0; i < columns; i++){
+			s << "<td style = \"background-color: #fde5c3\">" << i << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+		}
+		s << "</tr>";
+		s << "</table>";
+		s << "</br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H = HOUSE&nbsp;&nbsp;&nbsp;&nbsp; D = FIRE DEPARTMENT&nbsp;&nbsp;&nbsp;&nbsp; S = STORE</br>";
+		s << "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ = HOSPITAL&nbsp;&nbsp;&nbsp;&nbsp; P = POLICE DEPARTMENT&nbsp;&nbsp;&nbsp;&nbsp; ? = UNKNOWN</br></br>";
+	}
+}
+
+void Matrix::printVehicles(OutputObject oo) {
+	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling printMatrix().");
+
+	if (!oo.getHTML()) {
+		std::string output;
+		output = "\nMAP: \n";
+		output = output + "====\n\n";
+		for(int i = 0; i < rows; i++){
+			output = output + intToString(rows-1-i) + "\t[\t";
+			for(int j = 0; j < columns; j++){
+				if(matrix[i][j] == NULL){
+					output = output + "?\t";
+				}
+				else if(matrix[i][j]->getType() == house){
+					output = output + "H\t";
+				}
+				else if(matrix[i][j]->getType() == department){
+					output = output + "D\t";
+				}
+				else if(matrix[i][j]->getType() == street){
+					output = output + " \t";
+				}
+				else if(matrix[i][j]->getType() == crossroad){
+					output = output + " \t";
+				}
+				else if(matrix[i][j]->getType() == store){
+					output = output + "S\t";
+				}
+				else if(matrix[i][j]->getType() == policeStation){
+					output = output + "P\t";
+				}
+				else if(matrix[i][j]->getType() == hospital){
+					output = output + "+\t";
+				}
+				else{
+					output = output + "?\t";
+				}
+			}
+			output = output + "]\n";
+		}
+		output = output + "\n\t\t";
+		for (int i = 0; i < columns; i++){
+			if (i >= 9){
+				output = output + intToString(i) + "  ";
+
+			}
+			else {
+				output = output + intToString(i) + " \t";
+			}
+		}
+		output = output + "\n\n\t\tH = HOUSE\t D = FIRE DEPARTMENT\t S = STORE\n";
+		output = output + "\t\t+ = HOSPITAL\t P = POLICE DEPARTMENT\t ? = UNKNOWN\n";
 
 		oo.print(output);
 	}
@@ -348,7 +463,8 @@ void Matrix::printMatrix(OutputObject oo) {
 		}
 		s << "</tr>";
 		s << "</table>";
-		s << "</br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H = HOUSE&nbsp;&nbsp;&nbsp;&nbsp; D = FIRE DEPARTMENT&nbsp;&nbsp;&nbsp;&nbsp; S = STREET&nbsp;&nbsp;&nbsp;&nbsp; C = CROSSROAD&nbsp;&nbsp;&nbsp;&nbsp; ? = UNKNOWN</br>";
+		s << "</br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H = HOUSE&nbsp;&nbsp;&nbsp;&nbsp; D = FIRE DEPARTMENT&nbsp;&nbsp;&nbsp;&nbsp; S = STORE</br>";
+		s << "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ = HOSPITAL&nbsp;&nbsp;&nbsp;&nbsp; P = POLICE DEPARTMENT&nbsp;&nbsp;&nbsp;&nbsp; ? = UNKNOWN</br>";
 	}
 }
 

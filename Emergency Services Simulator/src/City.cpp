@@ -246,17 +246,23 @@ CityObjects* City::setFire(){
 
 	bool succes = false;
 	CityObjects* ptr;
+	int loops = 0;
 
 	while (!succes){
 
 		int random_y = rand()% matrix.getRows();
 		int random_x = rand()% matrix.getColumns();
 
+
 		ptr = matrix.getObject(random_x, random_y);
 
-		if (ptr->getState() == normal){
+		if (ptr->getState() == normal || ptr->getState() == repairing){
 			succes = true;
 		}
+		if (loops == 100){
+			return NULL;
+		}
+		loops++;
 	}
 
 	ptr->setState(burning);
@@ -271,14 +277,12 @@ Store* City::robStore() {
 
 	bool success = false;
 	Store* ptr;
+	int loops = 0;
 
 	while (!success) {
 		std::list<Store>::iterator it = stores.begin();
 		int randomInt = rand()% stores.size();
-		std::cout << randomInt << "random int!" << std::endl;
 		for (int i = 0; i < randomInt; i++) {
-			std::cout << i << std::endl;
-
 			it++;
 		}
 
@@ -286,6 +290,10 @@ Store* City::robStore() {
 		if (ptr->getState() == normal) {
 			success = true;
 		}
+		if (loops == 100){
+			return NULL;
+		}
+		loops++;
 	}
 
 	ptr->setState(beingrobbed);
@@ -320,7 +328,7 @@ CityObjects* City::setFire(int x, int y){
 
 	ptr = matrix.getObject(x, y);
 
-	if (ptr->getState() == normal){
+	if (ptr->getState() == normal || ptr->getState() == repairing){
 		succes = true;
 	}
 
@@ -344,7 +352,6 @@ Coordinate City::getAdjecantBuilding(CityObjects* building) {
 
 			CityObjects* obj = matrix.getObject(location.getX(), location.getY()+1);
 			if (location.getY() < matrix.getRows()-1) {
-				//std::cout << obj->getType() << " " << obj << " " << building <<
 				if (obj == NULL) {
 					continue;
 				}
