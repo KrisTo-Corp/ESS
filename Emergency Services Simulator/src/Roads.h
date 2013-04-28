@@ -99,4 +99,14 @@ public:
 	virtual ~Crossroad();
 };
 
+class RoadsTest: public ::testing::Test {
+protected:
+	friend class Roads;
+
+	Roads road;
+	Street the_street;
+	Crossroad the_crossroad;
+
+};
+
 #endif /* ROADS_H_ */

@@ -186,6 +186,8 @@ public:
 //	REQUIRE(init(), "Object 'PoliceStation' was not properly initialized when calling addTruck()");
 //	ENSURE((trucks[trucks.size()-1] == t), "PoliceStation was not succesfully added to trucks Vector");
 
+	int getAmountCars();
+
 	PoliceStation(const PoliceStation& c);
 //	REQUIRE(init(), "Object 'PoliceStation' was not properly initialized when calling copy constructor");
 
@@ -211,10 +213,29 @@ public:
 //	REQUIRE(init(), "Object 'Hospital' was not properly initialized when calling addTruck()");
 //	ENSURE((trucks[trucks.size()-1] == t), "Hospital was not succesfully added to trucks Vector");
 
+	int getAmountAmbulances();
+
 	Hospital(const Hospital& c);
 //	REQUIRE(init(), "Object 'Hospital' was not properly initialized when calling copy constructor.");
 
 	Hospital& operator =(const Hospital&);
+};
+
+class StructuresTest: public ::testing::Test {
+protected:
+	friend class Structures;
+	friend class House;
+	friend class Fire_Department;
+	friend class Store;
+	friend class PoliceStation;
+	friend class Hospital;
+
+	Structures structure;
+	House test_house;
+	Fire_Department test_department;
+	Store store;
+	PoliceStation policestation;
+	Hospital hospital;
 };
 
 #endif /* STRUCTURES_H_ */

@@ -97,18 +97,14 @@ void simulateCity(City& city) {
 		}
 	}
 
-	int random_fires = 0;
-	int random_robberies = 0;
-
 	// ======================
 	// 		WHILE LOOP
 	// ======================
 	while (true) {
 		finished = true;
 
-		int random_chance = rand() % 200;
-		if (random_chance == 20) {
-			random_fires++;
+		int random_chance = rand() % 20;
+		if (random_chance == 10) {
 			// ============================
 			// 		   SETTING FIRE
 			// ============================
@@ -146,8 +142,7 @@ void simulateCity(City& city) {
 		// =============================
 		//	 		ROB STORE
 		// =============================
-		if (rand() % 200 == 0) {
-			random_robberies++;
+		if (rand() % 20 == 0) {
 			Store* storePtr;
 			storePtr = city.robStore();
 			if (storePtr != NULL){

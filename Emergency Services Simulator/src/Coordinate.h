@@ -13,6 +13,7 @@
 #include <ostream>
 
 #include "DesignByContract.h"
+#include <gtest/gtest.h>
 
 class Coordinate {
 private:
@@ -57,6 +58,13 @@ public:
 	bool properlyInitialized();
 
 	virtual ~Coordinate();
+};
+
+class CoordinateTest: public ::testing::Test {
+protected:
+	friend class Coordinate;
+
+	Coordinate coordinate;
 };
 
 #endif /* COORDINATE_H_ */

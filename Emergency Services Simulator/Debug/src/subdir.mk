@@ -4,14 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/Casualty.cpp \
 ../src/City.cpp \
 ../src/CityObjects.cpp \
 ../src/Coordinate.cpp \
 ../src/Matrix.cpp \
+../src/OutputObject.cpp \
 ../src/Roads.cpp \
 ../src/Simulator.cpp \
 ../src/Structures.cpp \
 ../src/Vehicles.cpp \
+../src/helpers.cpp \
 ../src/test_main.cpp \
 ../src/tinystr.cpp \
 ../src/tinyxml.cpp \
@@ -20,14 +23,17 @@ CPP_SRCS += \
 ../src/xmlparser.cpp 
 
 OBJS += \
+./src/Casualty.o \
 ./src/City.o \
 ./src/CityObjects.o \
 ./src/Coordinate.o \
 ./src/Matrix.o \
+./src/OutputObject.o \
 ./src/Roads.o \
 ./src/Simulator.o \
 ./src/Structures.o \
 ./src/Vehicles.o \
+./src/helpers.o \
 ./src/test_main.o \
 ./src/tinystr.o \
 ./src/tinyxml.o \
@@ -36,14 +42,17 @@ OBJS += \
 ./src/xmlparser.o 
 
 CPP_DEPS += \
+./src/Casualty.d \
 ./src/City.d \
 ./src/CityObjects.d \
 ./src/Coordinate.d \
 ./src/Matrix.d \
+./src/OutputObject.d \
 ./src/Roads.d \
 ./src/Simulator.d \
 ./src/Structures.d \
 ./src/Vehicles.d \
+./src/helpers.d \
 ./src/test_main.d \
 ./src/tinystr.d \
 ./src/tinyxml.d \
@@ -56,7 +65,7 @@ CPP_DEPS += \
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross G++ Compiler'
-	g++ -I/home/kristof/Uni/Software_Engineering/gtest-1.6.0/include -O0 -g3 -Wall -c -pthread -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	g++ -I/home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include -O0 -g3 -Wall -c -pthread -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

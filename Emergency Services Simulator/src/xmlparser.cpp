@@ -91,7 +91,7 @@ void XmlParser::parseCity(std::string filename) {
 					continue;
 			}
 			// validcoordcheck here
-			House house(x, y, hp, "house");
+			House house(x, y, hp, "House");
 			city->getHouseList()->push_back(house);
 		}
 		else if (objectName == "Straat") {
