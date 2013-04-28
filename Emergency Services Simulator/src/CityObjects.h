@@ -10,6 +10,7 @@
 #define CITYOBJECTS_H_
 
 #include <ostream>
+#include <gtest/gtest.h>
 
 #include "DesignByContract.h"
 
@@ -48,6 +49,13 @@ public:
 
 	CityObjects& operator = (const CityObjects& c);
 
+};
+
+class CityObjectsTest: public ::testing::Test {
+protected:
+	friend class CityObjects;
+
+	CityObjects cObject;
 };
 
 #endif /* CITYOBJECTS_H_ */

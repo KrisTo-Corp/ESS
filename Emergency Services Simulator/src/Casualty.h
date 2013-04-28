@@ -22,6 +22,8 @@ private:
 
 	Casualty* _initCheck;
 public:
+	Casualty();
+
 	Casualty(Structures*);
 //	ENSURE(properlyInitialized(), "Object 'Casualty' was not properly initialized.");
 	virtual ~Casualty();
@@ -45,7 +47,19 @@ public:
 //	REQUIRE(properlyInitialized(), "Object 'Casualty' was not properly initialized when calling setPassengerState().");
 //	ENSURE(state == status, "Method setPassengerState(status) of object 'Casualty' did not properly set casualty's state.");
 
+	Casualty(const Casualty& c);
+//	REQUIRE(init(), "Object 'Structures' was not properly initialized when calling copy constructor");
+
+	Casualty& operator =(const Casualty&);
+
 	bool properlyInitialized();
+};
+
+class CasualtyTest: public ::testing::Test {
+protected:
+	friend class Casualty;
+
+	Casualty casualty;
 };
 
 #endif /* CASUALTY_H_ */
