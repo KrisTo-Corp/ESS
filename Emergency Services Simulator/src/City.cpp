@@ -123,6 +123,8 @@ int City::getAmountTrucks(){
 }
 
 int City::getAmountAmbulances(){
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountAmbulances()");
+
 	return ambulances.size();
 }
 
@@ -340,6 +342,8 @@ CityObjects* City::setFire(int x, int y){
 }
 
 Coordinate City::getAdjecantBuilding(CityObjects* building) {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAdjecantBuilding(CityObjects*)");
+
 	Structures* ptr = dynamic_cast<Structures*>(building);
 	std::vector<Coordinate> coordinates;
 	Coordinate location;
@@ -1053,6 +1057,8 @@ Matrix* City::getMatrix() {
 }
 
 bool City::getValidCity() {
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getValidCity()");
+
 	return validCity;
 }
 

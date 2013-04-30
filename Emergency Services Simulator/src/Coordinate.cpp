@@ -75,6 +75,8 @@ std::ostream& operator <<(std::ostream& s, Coordinate& coordinate){
 }
 
 std::string Coordinate::getString() {
+	REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling getString().");
+
 	std::stringstream ss;
 	ss << x;
 	std::string sx = ss.str();

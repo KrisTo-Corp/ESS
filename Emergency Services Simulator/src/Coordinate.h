@@ -46,6 +46,7 @@ public:
 	friend std::ostream& operator <<(std::ostream& s, Coordinate& coordinate);
 
 	std::string getString();
+//	REQUIRE(this->properlyInitialized(), "Object 'Coordinate' was not properly initialized when calling getString().");
 
 	bool operator==(const Coordinate &c) const;
 

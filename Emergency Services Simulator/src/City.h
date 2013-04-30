@@ -163,10 +163,13 @@ public:
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling robStore(int, int)");
 
 	Coordinate getAdjecantBuilding(CityObjects*);
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAdjecantBuilding(CityObjects*)");
 
 	bool getValidCity();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getValidCity()");
 
 	int getAmountAmbulances();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountAmbulances()");
 
 	void link_vehicles_to_bases();
 
