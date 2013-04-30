@@ -160,6 +160,63 @@ TEST_F(SimulationTest, NormalSimulation3){
 	EXPECT_TRUE(FileCompare("Output files/normalOutput3.txt", "Expected Output/expectedNormalOutput3.txt"));
 }
 
+TEST_F(SimulationTest, NormalSimulation4){
+	std::ofstream stream( "Output files/normalOutput4.txt");
+	City c("XML Files/stad2.0.xml", stream, "XML Files/voertuigen2.0.xml");
+	simulateCity_Test(c, Coordinate(1, 1), Coordinate(20, 14), 5);
+	stream.close();
+	EXPECT_TRUE(FileCompare("Output files/normalOutput4.txt", "Expected Output/expectedNormalOutput4.txt"));
+}
+
+TEST_F(SimulationTest, NormalSimulation5){
+	std::ofstream stream( "Output files/normalOutput5.txt");
+	City c("XML Files/stad2.0_bis.xml", stream, "XML Files/voertuigen2.0_bis.xml");
+	simulateCity_Test(c, Coordinate(1, 6), Coordinate(20, 14), 5);
+	stream.close();
+	EXPECT_TRUE(FileCompare("Output files/normalOutput5.txt", "Expected Output/expectedNormalOutput5.txt"));
+}
+
+TEST_F(SimulationTest, NormalSimulation6){
+	std::ofstream stream( "Output files/normalOutput6.txt");
+	City c("XML Files/stad2.0_bis.xml", stream, "XML Files/voertuigen2.0_bis.xml");
+	simulateCity_Test(c, Coordinate(15, 6), Coordinate(6, 11), 5, Coordinate(13, 9));
+	stream.close();
+	EXPECT_TRUE(FileCompare("Output files/normalOutput6.txt", "Expected Output/expectedNormalOutput6.txt"));
+}
+
+TEST_F(SimulationTest, NormalSimulation7){
+	std::ofstream stream( "Output files/normalOutput7.txt");
+	City c("XML Files/stad2.0_bis.xml", stream, "XML Files/voertuigen2.0_bis.xml");
+	simulateCity_Test(c, Coordinate(20, 1), Coordinate(3, 14), 5, Coordinate(13, 9), Coordinate(11, 11));
+	stream.close();
+	EXPECT_TRUE(FileCompare("Output files/normalOutput7.txt", "Expected Output/expectedNormalOutput7.txt"));
+}
+
+TEST_F(SimulationTest, NormalSimulation8){
+	std::ofstream stream( "Output files/normalOutput8.txt");
+	City c("XML Files/stad2.0_bis.xml", stream, "XML Files/voertuigen2.0_bis.xml");
+	simulateCity_Test(c, Coordinate(12, 14), Coordinate(6, 11), 5, Coordinate(12, 9));
+	stream.close();
+	EXPECT_TRUE(FileCompare("Output files/normalOutput8.txt", "Expected Output/expectedNormalOutput8.txt"));
+}
+
+TEST_F(SimulationTest, NormalSimulation9){
+	std::ofstream stream( "Output files/normalOutput9.txt");
+	City c("XML Files/stad2.0_bis.xml", stream, "XML Files/voertuigen2.0_bis.xml");
+	simulateCity_Test(c, Coordinate(18, 11), Coordinate(6, 7), 5, Coordinate(8, 11));
+	stream.close();
+	EXPECT_TRUE(FileCompare("Output files/normalOutput9.txt", "Expected Output/expectedNormalOutput9.txt"));
+}
+
+TEST_F(SimulationTest, NormalSimulation10){
+	std::ofstream stream( "Output files/normalOutput10.txt");
+	City c("XML Files/stad2.0_bis.xml", stream, "XML Files/voertuigen2.0_bis.xml");
+	simulateCity_Test(c, Coordinate(9, 13), Coordinate(10, 13), 5, Coordinate(10, 11));
+	stream.close();
+	EXPECT_TRUE(FileCompare("Output files/normalOutput10.txt", "Expected Output/expectedNormalOutput10.txt"));
+}
+
+
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
