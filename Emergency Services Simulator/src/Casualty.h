@@ -55,11 +55,4 @@ public:
 	bool properlyInitialized();
 };
 
-class CasualtyTest: public ::testing::Test {
-protected:
-	friend class Casualty;
-
-	Casualty casualty;
-};
-
 #endif /* CASUALTY_H_ */

@@ -61,11 +61,4 @@ public:
 	virtual ~Coordinate();
 };
 
-class CoordinateTest: public ::testing::Test {
-protected:
-	friend class Coordinate;
-
-	Coordinate coordinate;
-};
-
 #endif /* COORDINATE_H_ */

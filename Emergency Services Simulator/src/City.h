@@ -182,10 +182,4 @@ public:
 	virtual ~City();
 };
 
-class CityTest: public ::testing::Test {
-protected:
-	friend class City;
-
-};
-
 #endif /* CITY_H_ */

@@ -213,18 +213,5 @@ public:
 	friend std::ostream& operator <<(std::ostream& s, Ambulance& pCar);
 };
 
-class VehiclesTest: public ::testing::Test {
-protected:
-	friend class Vehicles;
-	friend class Firetruck;
-	friend class PoliceCar;
-	friend class Ambulance;
-
-	Vehicles vehicle;
-	Firetruck firetruck;
-	PoliceCar policecar;
-	Ambulance ambulance;
-};
-
 
 #endif /* VEHICLES_H_ */

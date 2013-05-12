@@ -51,11 +51,4 @@ public:
 
 };
 
-class CityObjectsTest: public ::testing::Test {
-protected:
-	friend class CityObjects;
-
-	CityObjects cObject;
-};
-
 #endif /* CITYOBJECTS_H_ */

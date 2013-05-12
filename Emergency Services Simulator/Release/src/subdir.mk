@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/Casualty.cpp \
+../src/CasualtyTests.cpp \
 ../src/City.cpp \
 ../src/CityObjects.cpp \
 ../src/Coordinate.cpp \
@@ -24,6 +25,7 @@ CPP_SRCS += \
 
 OBJS += \
 ./src/Casualty.o \
+./src/CasualtyTests.o \
 ./src/City.o \
 ./src/CityObjects.o \
 ./src/Coordinate.o \
@@ -43,6 +45,7 @@ OBJS += \
 
 CPP_DEPS += \
 ./src/Casualty.d \
+./src/CasualtyTests.d \
 ./src/City.d \
 ./src/CityObjects.d \
 ./src/Coordinate.d \

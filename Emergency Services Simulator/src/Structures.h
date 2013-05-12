@@ -221,21 +221,6 @@ public:
 	Hospital& operator =(const Hospital&);
 };
 
-class StructuresTest: public ::testing::Test {
-protected:
-	friend class Structures;
-	friend class House;
-	friend class Fire_Department;
-	friend class Store;
-	friend class PoliceStation;
-	friend class Hospital;
 
-	Structures structure;
-	House test_house;
-	Fire_Department test_department;
-	Store store;
-	PoliceStation policestation;
-	Hospital hospital;
-};
 
 #endif /* STRUCTURES_H_ */

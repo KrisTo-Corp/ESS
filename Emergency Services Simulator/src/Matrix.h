@@ -94,10 +94,4 @@ public:
 	virtual ~Matrix();
 };
 
-class MatrixTest: public ::testing::Test {
-protected:
-	friend class Matrix;
-
-	Matrix matrix;
-};
 #endif /* MATRIX_H_ */
