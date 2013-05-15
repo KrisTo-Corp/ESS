@@ -34,6 +34,8 @@ protected:
 	bool available;
 	bool atHome;
 
+	int driveTime;
+
 	std::string basename;
 
 	Vehicles* _initCheck;
@@ -108,6 +110,14 @@ public:
 
 	Vehicles(const Vehicles& c);
 //	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling copy constructor.");
+
+	void increaseDriveTime();
+	//	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling increaseDriveTime().");
+	//	ENSURE(driveTime == oldDriveTime +1, "The driveTime was not incremented successfully.");
+
+	int getDriveTime();
+	//	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling getDriveTime().");
+
 
 	Vehicles& operator =(const Vehicles&);
 

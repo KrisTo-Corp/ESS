@@ -8,13 +8,20 @@ CPP_SRCS += \
 ../src/CasualtyTests.cpp \
 ../src/City.cpp \
 ../src/CityObjects.cpp \
+../src/CityObjectsTests.cpp \
+../src/CityTests.cpp \
 ../src/Coordinate.cpp \
+../src/CoordinateTests.cpp \
 ../src/Matrix.cpp \
+../src/MatrixTests.cpp \
 ../src/OutputObject.cpp \
 ../src/Roads.cpp \
+../src/RoadsTests.cpp \
 ../src/Simulator.cpp \
 ../src/Structures.cpp \
+../src/StructuresTests.cpp \
 ../src/Vehicles.cpp \
+../src/VehiclesTests.cpp \
 ../src/helpers.cpp \
 ../src/main.cpp \
 ../src/tinystr.cpp \
@@ -28,13 +35,20 @@ OBJS += \
 ./src/CasualtyTests.o \
 ./src/City.o \
 ./src/CityObjects.o \
+./src/CityObjectsTests.o \
+./src/CityTests.o \
 ./src/Coordinate.o \
+./src/CoordinateTests.o \
 ./src/Matrix.o \
+./src/MatrixTests.o \
 ./src/OutputObject.o \
 ./src/Roads.o \
+./src/RoadsTests.o \
 ./src/Simulator.o \
 ./src/Structures.o \
+./src/StructuresTests.o \
 ./src/Vehicles.o \
+./src/VehiclesTests.o \
 ./src/helpers.o \
 ./src/main.o \
 ./src/tinystr.o \
@@ -48,13 +62,20 @@ CPP_DEPS += \
 ./src/CasualtyTests.d \
 ./src/City.d \
 ./src/CityObjects.d \
+./src/CityObjectsTests.d \
+./src/CityTests.d \
 ./src/Coordinate.d \
+./src/CoordinateTests.d \
 ./src/Matrix.d \
+./src/MatrixTests.d \
 ./src/OutputObject.d \
 ./src/Roads.d \
+./src/RoadsTests.d \
 ./src/Simulator.d \
 ./src/Structures.d \
+./src/StructuresTests.d \
 ./src/Vehicles.d \
+./src/VehiclesTests.d \
 ./src/helpers.d \
 ./src/main.d \
 ./src/tinystr.d \
@@ -68,7 +89,7 @@ CPP_DEPS += \
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross G++ Compiler'
-	g++ -I/home/kristof/Uni/Software_Engineering/gtest-1.6.0/include -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	g++ -I/home/uauser/Downloads/gtest-1.6.0/include -O3 -Wall -c -pthread -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

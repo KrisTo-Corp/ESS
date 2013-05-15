@@ -32,16 +32,17 @@ public:
 	void parseCity(std::string);
 //	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properlyInitializedialized when calling parseCity(std::string) .");
 
+	std::pair<int, int> getMaxValues();
+//	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initializedialized when calling getMaxValues().");
+
+	bool properlyInitialized();
+
+private:
 	bool validCoordCheck(int, int);
 //	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initializedialized when calling validCoordCheck(int, int).");
 
 	int compareCoord(int, int);
 //	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initializedialized when calling compareCoord(int, int).");
-
-	std::pair<int, int> getMaxValues();
-//	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initializedialized when calling getMaxValues().");
-
-	bool properlyInitialized();
 };
 
 

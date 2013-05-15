@@ -341,6 +341,50 @@ CityObjects* City::setFire(int x, int y){
 	return ptr;
 }
 
+void City::handleTrafficJams(){
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling handleTrafficJams()");
+
+	std::list<Street>::iterator it;
+	for (it = streets.begin(); it != streets.end(); it++){
+		if(it->getTrafficJam()){
+			it->setTrafficCounter(it->getTrafficCounter() +1);
+		}
+		if(it->getTrafficCounter() >= 10){
+			it->setTrafficJam(false);
+			it->setTrafficCounter(0);
+			o.print("The traffic jam in street " + it->getName() + " was resolved.");
+		}
+	}
+
+	int randomint = rand() % 50;
+	if (randomint == 25){
+		bool succes = false;
+		CityObjects* object;
+		int loops = 0;
+		while(!succes){
+			int random_y = rand()% matrix.getRows();
+			int random_x = rand()% matrix.getColumns();
+
+			object = matrix.getObject(random_x, random_y);
+
+			if(object->getType() == street){
+				succes = true;
+			}
+
+			if (loops >= 100 && succes == false){
+				return;
+			}
+			loops++;
+		}
+		Street* street = dynamic_cast<Street*>(object);
+		street->setTrafficJam(true);
+
+		o.print("A traffic jam developed in street " + street->getName() + ".");
+
+	}
+}
+
+
 Coordinate City::getAdjecantBuilding(CityObjects* building) {
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAdjecantBuilding(CityObjects*)");
 
@@ -556,97 +600,88 @@ int City::calculateDistance(Coordinate c1, Coordinate c2) {
 void City::driveTruck(Vehicles* rescueTruck) {
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling driveTruck()");
 
+	rescueTruck->increaseDriveTime();
+	bool runfunction = true;
+
 	Coordinate cur = rescueTruck->getCoord();
 	Coordinate destination = rescueTruck->getDestination();
 
-	if (cur == destination) {
-		return;
+	CityObjects* cur_location = matrix.getObject(cur.getX(), cur.getY());
+
+	if (cur_location->getType() == street){
+		Street* cur_street = dynamic_cast<Street*>(cur_location);
+		if ((cur_street->getTrafficJam()) && (rescueTruck->getDriveTime() % 2 == 0)){
+			runfunction = false;
+		}
 	}
 
-	Street* destStreet = dynamic_cast<Street*>(matrix.getObject(destination.getX(), destination.getY()));
-	if (checkOrientation(rescueTruck->getCoord()) == "crossroad") {
-		Crossroad* truckCross = dynamic_cast<Crossroad*>(matrix.getObject(rescueTruck->getCoord().getX(), rescueTruck->getCoord().getY()));
-		if (truckCross->getStreet1() == destStreet->getName() || truckCross->getStreet2() == destStreet->getName()) {
+	if (runfunction){
+		if (cur == destination) {
+			return;
+		}
+
+		Street* destStreet = dynamic_cast<Street*>(matrix.getObject(destination.getX(), destination.getY()));
+		if (checkOrientation(rescueTruck->getCoord()) == "crossroad") {
+			Crossroad* truckCross = dynamic_cast<Crossroad*>(matrix.getObject(rescueTruck->getCoord().getX(), rescueTruck->getCoord().getY()));
+			if (truckCross->getStreet1() == destStreet->getName() || truckCross->getStreet2() == destStreet->getName()) {
+				std::string orientation = checkOrientation(destination);
+				if (orientation == "horizontal") {
+					if (destination.getY() == cur.getY()) {
+						if (destination.getX() < cur.getX()) {
+							rescueTruck->move("left");
+						}
+						else {
+							rescueTruck->move("right");
+						}
+					}
+				}
+				if (orientation == "vertical") {
+					if (destination.getY() < cur.getY()) {
+						rescueTruck->move("down");
+					}
+					else {
+						rescueTruck->move("up");
+					}
+				}
+			}
+			else {
+				// on crossroad but wrong streets
+				// go to other crossroad with streetname
+
+				Crossroad xRoad = closestCorrectCrossroad(cur, destStreet);
+				rescueTruck->setTempDest(xRoad.getLocation());
+				rescueTruck->setGoToTemp(true);
+
+				if (xRoad.getLocation().getX() < cur.getX()) {
+					rescueTruck->move("left");
+				}
+				else if (xRoad.getLocation().getX() > cur.getX()) {
+					rescueTruck->move("right");
+				}
+				else if (xRoad.getLocation().getY() < cur.getY()) {
+					rescueTruck->move("down");
+				}
+				else {
+					rescueTruck->move("up");
+				}
+			}
+		}
+		else {
+			Street* curStreet = dynamic_cast<Street*>(matrix.getObject(rescueTruck->getCoord().getX(), rescueTruck->getCoord().getY()));
+			if (destStreet->getName() == curStreet->getName()) {
 			std::string orientation = checkOrientation(destination);
-			if (orientation == "horizontal") {
-				if (destination.getY() == cur.getY()) {
-					if (destination.getX() < cur.getX()) {
-						rescueTruck->move("left");
-					}
-					else {
-						rescueTruck->move("right");
-					}
-				}
-			}
-			if (orientation == "vertical") {
-				if (destination.getY() < cur.getY()) {
-					rescueTruck->move("down");
-				}
-				else {
-					rescueTruck->move("up");
-				}
-			}
-		}
-		else {
-			// on crossroad but wrong streets
-			// go to other crossroad with streetname
-
-			Crossroad xRoad = closestCorrectCrossroad(cur, destStreet);
-			rescueTruck->setTempDest(xRoad.getLocation());
-			rescueTruck->setGoToTemp(true);
-
-			if (xRoad.getLocation().getX() < cur.getX()) {
-				rescueTruck->move("left");
-			}
-			else if (xRoad.getLocation().getX() > cur.getX()) {
-				rescueTruck->move("right");
-			}
-			else if (xRoad.getLocation().getY() < cur.getY()) {
-				rescueTruck->move("down");
-			}
-			else {
-				rescueTruck->move("up");
-			}
-		}
-	}
-	else {
-		Street* curStreet = dynamic_cast<Street*>(matrix.getObject(rescueTruck->getCoord().getX(), rescueTruck->getCoord().getY()));
-		if (destStreet->getName() == curStreet->getName()) {
-		std::string orientation = checkOrientation(destination);
-			if (orientation == "horizontal") {
-				if (destination.getY() == cur.getY()) {
-					if (destination.getX() < cur.getX()) {
-						rescueTruck->move("left");
-					}
-					else {
-						rescueTruck->move("right");
-					}
-				}
-			}
-			if (orientation == "vertical") {
-				if (destination.getY() < cur.getY()) {
-					rescueTruck->move("down");
-				}
-				else {
-					rescueTruck->move("up");
-				}
-			}
-		}
-		else {
-			std::string orientation = checkOrientation(rescueTruck->getCoord());
-			if (!rescueTruck->getGoToTemp()) {
-				//Go to the closest crossroad
-				Crossroad xroad = closestCrossroad(rescueTruck->getCoord());
 				if (orientation == "horizontal") {
-					if (xroad.getLocation().getX() < cur.getX()) {
-						rescueTruck->move("left");
-					}
-					else {
-						rescueTruck->move("right");
+					if (destination.getY() == cur.getY()) {
+						if (destination.getX() < cur.getX()) {
+							rescueTruck->move("left");
+						}
+						else {
+							rescueTruck->move("right");
+						}
 					}
 				}
 				if (orientation == "vertical") {
-					if (xroad.getLocation().getY() < cur.getY()) {
+					if (destination.getY() < cur.getY()) {
 						rescueTruck->move("down");
 					}
 					else {
@@ -655,30 +690,52 @@ void City::driveTruck(Vehicles* rescueTruck) {
 				}
 			}
 			else {
-				if (orientation == "horizontal") {
-					if (rescueTruck->getTempDest().getX() < cur.getX()) {
-						rescueTruck->move("left");
+				std::string orientation = checkOrientation(rescueTruck->getCoord());
+				if (!rescueTruck->getGoToTemp()) {
+					//Go to the closest crossroad
+					Crossroad xroad = closestCrossroad(rescueTruck->getCoord());
+					if (orientation == "horizontal") {
+						if (xroad.getLocation().getX() < cur.getX()) {
+							rescueTruck->move("left");
+						}
+						else {
+							rescueTruck->move("right");
+						}
 					}
-					else {
-						rescueTruck->move("right");
+					if (orientation == "vertical") {
+						if (xroad.getLocation().getY() < cur.getY()) {
+							rescueTruck->move("down");
+						}
+						else {
+							rescueTruck->move("up");
+						}
 					}
 				}
-				if (orientation == "vertical") {
-					if (rescueTruck->getTempDest().getY() < cur.getY()) {
-						rescueTruck->move("down");
+				else {
+					if (orientation == "horizontal") {
+						if (rescueTruck->getTempDest().getX() < cur.getX()) {
+							rescueTruck->move("left");
+						}
+						else {
+							rescueTruck->move("right");
+						}
 					}
-					else {
-						rescueTruck->move("up");
+					if (orientation == "vertical") {
+						if (rescueTruck->getTempDest().getY() < cur.getY()) {
+							rescueTruck->move("down");
+						}
+						else {
+							rescueTruck->move("up");
+						}
 					}
-				}
 
-				if (rescueTruck->getTempDest() == rescueTruck->getCoord()) {
-					rescueTruck->setGoToTemp(false);
+					if (rescueTruck->getTempDest() == rescueTruck->getCoord()) {
+						rescueTruck->setGoToTemp(false);
+					}
 				}
 			}
 		}
 	}
-
 }
 
 Crossroad City::closestCorrectCrossroad(Coordinate cur, Street* destStreet) {

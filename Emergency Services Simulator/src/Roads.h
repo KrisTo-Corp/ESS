@@ -43,6 +43,8 @@ class Street: public Roads {
 private:
 	Coordinate start;
 	Coordinate end;
+	bool traffic_jam;
+	int traffic_counter;
 
 public:
 	Street();
@@ -56,6 +58,23 @@ public:
 
 	Coordinate getEnd();
 //	REQUIRE(init(), "Object 'Street' was not properly initialized when calling getEnd()");
+
+	bool getTrafficJam();
+	//	REQUIRE(init(), "Object 'Street' was not properly initialized when calling getTrafficJam()");
+
+	void setTrafficJam(bool b);
+	//	REQUIRE(init(), "Object 'Street' was not properly initialized when calling setTrafficJam()");
+	//	ENSURE(traffic_jam == b, "traffic_jam was not set correctly.");
+
+	int getTrafficCounter();
+	//	REQUIRE(init(), "Object 'Street' was not properly initialized when calling getTrafficCounter()");
+
+	void setTrafficCounter(int t);
+	//	REQUIRE(init(), "Object 'Street' was not properly initialized when calling setTrafficCounter()");
+	//	ENSURE(traffic_counter = t, "traffic_counter was not properly set.");
+
+
+
 
 	friend std::ostream& operator <<(std::ostream& s, Street& street);
 

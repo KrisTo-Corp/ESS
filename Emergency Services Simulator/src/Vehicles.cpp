@@ -22,6 +22,7 @@ Vehicles::Vehicles(): name(""), coord(0, 0), basename(""), tempDestination(0, 0)
 	available = true;
 	atHome = true;
 	target = NULL;
+	driveTime = 0;
 
 	ENSURE(properlyInitialized(), "Object 'Vehicles' was not properly initialized.");
 
@@ -34,6 +35,7 @@ Vehicles::Vehicles(int x, int y, const std::string n, std::string bn): name(n), 
 	available = true;
 	atHome = true;
 	target = NULL;
+	driveTime = 0;
 
 	ENSURE(properlyInitialized(), "Object 'Vehicles' was not properly initialized.");
 }
@@ -194,6 +196,20 @@ void Vehicles::setIsHome(bool b){
 	atHome = b;
 
 	ENSURE((getIsHome() == b), "Setted atHome does not match Vehicle's atHome.");
+}
+
+void Vehicles::increaseDriveTime(){
+	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling increaseDriveTime().");
+
+	int oldDriveTime = driveTime;
+	driveTime++;
+
+	ENSURE(driveTime == oldDriveTime +1, "The driveTime was not incremented successfully.");
+}
+
+int Vehicles::getDriveTime(){
+	REQUIRE(properlyInitialized(), "Object 'Vehicles' was not properly initialized when calling getDriveTime().");
+	return driveTime;
 }
 
 //====================

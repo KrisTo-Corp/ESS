@@ -171,6 +171,9 @@ public:
 	int getAmountAmbulances();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountAmbulances()");
 
+	void handleTrafficJams();
+	//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling handleTrafficJams()");
+
 	void link_vehicles_to_bases();
 
 	bool properlyInitialized(int, int);

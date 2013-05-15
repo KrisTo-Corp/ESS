@@ -59,11 +59,15 @@ Roads& Roads::operator = (const Roads& r) {
 
 Street::Street(): Roads("", street), start(0, 0), end(0, 0)
 {
+	traffic_jam = false;
+	traffic_counter = 0;
 	ENSURE(init(), "Object 'Street' was not properly initialized.");
 }
 
 Street::Street(const int x_start, const int y_start, const int x_end, const int y_end, const std::string n): Roads(n, street), start(x_start, y_start), end(x_end, y_end)
 {
+	traffic_jam = false;
+	traffic_counter = 0;
 	ENSURE(init(), "Object 'Street' was not properly initialized.");
 }
 
@@ -83,6 +87,34 @@ Coordinate Street::getEnd(){
 	return end;
 }
 
+bool Street::getTrafficJam(){
+	REQUIRE(init(), "Object 'Street' was not properly initialized when calling getTrafficJam()");
+
+	return traffic_jam;
+}
+
+void Street::setTrafficJam(bool b){
+	REQUIRE(init(), "Object 'Street' was not properly initialized when calling setTrafficJam()");
+
+	traffic_jam = b;
+
+	ENSURE(traffic_jam == b, "traffic_jam was not set correctly.");
+}
+
+int Street::getTrafficCounter(){
+	REQUIRE(init(), "Object 'Street' was not properly initialized when calling getTrafficCounter()");
+
+	return traffic_counter;
+}
+
+void Street::setTrafficCounter(int t){
+	REQUIRE(init(), "Object 'Street' was not properly initialized when calling setTrafficCounter()");
+
+	traffic_counter = t;
+
+	ENSURE(traffic_counter == t, "traffic_counter was not properly set.");
+}
+
 std::ostream& operator <<(std::ostream& s, Street& street){
 	s << "Road: Street \n";
 	s << "Name: " << street.name << "\n";
@@ -99,6 +131,8 @@ Street::Street (const Street& s) {
 
 	start = s.start;
 	end = s.end;
+	traffic_jam = s.traffic_jam;
+	traffic_counter = s.traffic_counter;
 
 	_initCheck = this;
 }
@@ -110,6 +144,8 @@ Street& Street::operator = (const Street& s) {
 
 	start = s.start;
 	end = s.end;
+	traffic_jam = s.traffic_jam;
+	traffic_counter = s.traffic_counter;
 
 	_initCheck = this;
 	return *this;

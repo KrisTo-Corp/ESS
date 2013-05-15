@@ -174,6 +174,11 @@ void simulateCity(City& city) {
 			}
 		}
 
+		//===================================
+		//		RANDOM CHANCE TRAFFIC JAM
+		//===================================
+		city.handleTrafficJams();
+
 		// =======================
 		//		BURN & ROB
 		// =======================
