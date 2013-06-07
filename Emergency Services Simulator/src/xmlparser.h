@@ -43,6 +43,28 @@ private:
 
 	int compareCoord(int, int);
 //	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initializedialized when calling compareCoord(int, int).");
+
+	bool parseHouse(TiXmlElement* object, int& maxX, int& maxY);
+
+	bool parseStreet(TiXmlElement* object, int& maxX, int& maxY);
+
+	void parseFiretruck(TiXmlElement* object);
+
+	void parseAmbulance(TiXmlElement* object);
+
+	bool parseFiredep(TiXmlElement* object, int& maxX, int& maxY);
+
+	bool parseStore(TiXmlElement* object, int& maxX, int& maxY);
+
+	bool parseHospital(TiXmlElement* object, int& maxX, int& maxY);
+
+	bool parsePolicedep(TiXmlElement* object, int& maxX, int& maxY);
+
+	bool parsePolicecar(TiXmlElement* object);
+
+	bool parseLocation(TiXmlElement* field, int& maxX, int& maxY, int& x, int& y);
+
+	bool parseBrandbaarheid(TiXmlElement* field, int& hp);
 };
 
 
