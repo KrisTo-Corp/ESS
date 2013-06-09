@@ -103,6 +103,7 @@ void XmlParser::parseCity(std::string filename) {
 }
 
 bool XmlParser::parseHouse(TiXmlElement* object, int& maxX, int& maxY) {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initialized when calling parseHouse(TiXmlElement* object, int& maxX, int& maxY).");
 	int x, y, hp;
 	for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
 		std::string fieldName = field->Value();
@@ -133,6 +134,8 @@ bool XmlParser::parseHouse(TiXmlElement* object, int& maxX, int& maxY) {
 }
 
 bool XmlParser::parseStreet(TiXmlElement* object, int& maxX, int& maxY) {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initialized when calling parseStreet(TiXmlElement* object, int& maxX, int& maxY).");
+
 	int x_start, y_start, x_end, y_end;
 	std::string name;
 	for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
@@ -189,6 +192,7 @@ bool XmlParser::parseStreet(TiXmlElement* object, int& maxX, int& maxY) {
 }
 
 void XmlParser::parseFiretruck(TiXmlElement* object) {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initialized when calling parseFiretruck(TiXmlElement* object).");
 	std::string name, base;
 	for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
 		std::string fieldName = field->Value();
@@ -212,6 +216,8 @@ void XmlParser::parseFiretruck(TiXmlElement* object) {
 }
 
 void XmlParser::parseAmbulance(TiXmlElement* object) {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initialized when calling parseAmbulance(TiXmlElement* object).");
+
 	std::string name, base;
 	for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
 		std::string fieldName = field->Value();
@@ -235,6 +241,7 @@ void XmlParser::parseAmbulance(TiXmlElement* object) {
 }
 
 bool XmlParser::parseFiredep(TiXmlElement* object, int& maxX, int& maxY) {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initialized when calling parseFiredep(TiXmlElement* object, int& maxX, int& maxY).");
 	int x_building, y_building, x_entrance, y_entrance;
 	int hp = 0;
 	std::string name;
@@ -294,6 +301,7 @@ bool XmlParser::parseFiredep(TiXmlElement* object, int& maxX, int& maxY) {
 }
 
 bool XmlParser::parseStore(TiXmlElement* object, int& maxX, int& maxY) {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initialized when calling parseStore(TiXmlElement* object, int& maxX, int& maxY).");
 	int x_building, y_building, width, length, hp, rp;
 	std::string name;
 	for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
@@ -365,6 +373,7 @@ bool XmlParser::parseStore(TiXmlElement* object, int& maxX, int& maxY) {
 }
 
 bool XmlParser::parseHospital(TiXmlElement* object, int& maxX, int& maxY) {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initialized when calling parseHospital(TiXmlElement* object, int& maxX, int& maxY).");
 	int x_building, y_building, x_entrance, y_entrance, width, length, hp;
 	std::string name;
 	for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
@@ -425,6 +434,7 @@ bool XmlParser::parseHospital(TiXmlElement* object, int& maxX, int& maxY) {
 }
 
 bool XmlParser::parsePolicedep(TiXmlElement* object, int& maxX, int& maxY) {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initialized when calling parsePolicedep(TiXmlElement* object, int& maxX, int& maxY).");
 	int x_building, y_building, x_entrance, y_entrance, width, length, hp;
 	std::string name;
 	for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
@@ -485,6 +495,7 @@ bool XmlParser::parsePolicedep(TiXmlElement* object, int& maxX, int& maxY) {
 }
 
 bool XmlParser::parsePolicecar(TiXmlElement* object) {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initialized when calling parsePolicecar(TiXmlElement* object).");
 	std::string name, base;
 	for (TiXmlElement* field = object->FirstChildElement(); field != NULL; field = field->NextSiblingElement()) {
 		std::string fieldName = field->Value();
@@ -510,6 +521,8 @@ bool XmlParser::parsePolicecar(TiXmlElement* object) {
 }
 
 bool XmlParser::parseLocation(TiXmlElement* field, int& maxX, int& maxY, int& x, int& y) {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initialized when calling parseLocation(TiXmlElement* field, int& maxX, int& maxY, int& x, int& y).");
+
 	x = atoi(field->Attribute("X"));
 	y = atoi(field->Attribute("Y"));
 
@@ -524,6 +537,8 @@ bool XmlParser::parseLocation(TiXmlElement* field, int& maxX, int& maxY, int& x,
 }
 
 bool XmlParser::parseBrandbaarheid(TiXmlElement* field, int& hp) {
+	REQUIRE(properlyInitialized(), "Object 'XmlParser' was not properly properly Initialized when calling parseBrandbaarheid(TiXmlElement* field, int& hp).");
+
 	TiXmlText* text = field->FirstChild()->ToText();
 	if(text == NULL){
 		return false;
