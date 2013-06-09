@@ -8,6 +8,8 @@
 
 #include <vector>
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
 #include "Matrix.h"
 
@@ -19,6 +21,7 @@ Matrix::Matrix(): rows(10), columns(5){
 		}
 		matrix.push_back(colum);
 	}
+
 	_initCheck = this;
 	ENSURE(properlyInitialized(), "Object 'Matrix' was not properly initialized.");
 }
@@ -501,4 +504,230 @@ Matrix& Matrix::operator = (const Matrix& c){
 	_initCheck = this;
 
 	return *this;
+}
+
+int Matrix::calculateBlocks() {
+	int blockAmount = rows * columns;
+	for(int i = 0; i < rows; i++){
+		for(int j = 0; j < columns; j++){
+			if(matrix[i][j]->getType() == house){
+				blockAmount++;
+			}
+			else if(matrix[i][j]->getType() == department){
+				blockAmount++;
+			}
+			else if(matrix[i][j]->getType() == store){
+				blockAmount++;
+			}
+			else if(matrix[i][j]->getType() == policeStation){
+				blockAmount++;
+			}
+			else if(matrix[i][j]->getType() == hospital){
+				blockAmount++;
+			}
+		}
+	}
+	return blockAmount;
+}
+
+/*void Matrix::generateGFX() {
+	std::cout << "YES!" << std::endl;
+	std::ofstream gfx;
+	gfx.open("GFX.ini");
+
+	// General info
+	gfx << "[General]" << std::endl;
+	gfx << "size = 1024" << std::endl;
+	gfx << "backgroundcolor = (0, 0, 0)" << std::endl;
+	gfx << "type = \"LightedZBuffering\"" << std::endl;
+	gfx << "nrLights = 1" << std::endl;
+	gfx << "eye = (100, 25, 75)" << std::endl;
+	int blockAmount = calculateBlocks();
+	gfx << "nrFigures = " << blockAmount << std::endl << std::endl;
+
+	gfx << "[Light0]" << std::endl;
+	gfx << "infinity = FALSE" << std::endl;
+	gfx << "location = (8, 9, 10)" << std::endl;
+	gfx << "ambientLight = (1, 1, 1)" << std::endl;
+	gfx << "diffuseLight = (1, 1, 1)" << std::endl << std::endl;
+	gfx << "specularLight = (1, 1, 1)" << std::endl << std::endl;
+
+	// draw floor
+	std::stringstream ss;
+	int counter = 0;
+	for(int i = 0; i < rows; i++){
+		for(int j = 0; j < columns; j++){
+			// Figure number
+			ss << "[Figure" << counter << "]";
+			std::string figureNr = ss.str();
+			ss.str("");
+
+			// Coordinates
+			int x_coord = i * 2;
+			int y_coord = j * 2;
+
+			gfx << figureNr << std::endl;
+			gfx << "type = \"Cube\"" << std::endl;
+			gfx << "scale = 1" << std::endl;
+			gfx << "rotateX = 0" << std::endl;
+			gfx << "rotateY = 0" << std::endl;
+			gfx << "rotateZ = 0" << std::endl;
+			gfx << "center = (" << x_coord << "," << y_coord << ", -2)" << std::endl;
+			gfx << "ambientReflection = (0.5, 0.5, 0.5)"  << std::endl << std::endl;
+			gfx << "diffuseReflection = (0.5, 0.5, 0.5)"  << std::endl << std::endl;
+			gfx << "specularLight = (1, 1, 1)" << std::endl << std::endl;
+			gfx << "reflectionCoefficient = 20" << std::endl << std::endl;
+			counter++;
+		}
+	}
+
+	// draw buildings
+	for(int i = 0; i < rows; i++){
+		for(int j = 0; j < columns; j++){
+			bool valid = false;
+			std::string ambientColor;
+			std::string diffuseColor;
+			if(matrix[i][j]->getType() == house){
+				valid = true;
+				ambientColor = "ambientReflection = (0, 1, 0)";
+				diffuseColor = "diffuseColor = (0, 1, 0)";
+			}
+			else if(matrix[i][j]->getType() == department){
+				valid = true;
+				ambientColor = "ambientReflection = (1, 0, 0)";
+				diffuseColor = "diffuseColor = (1, 0, 0)";
+
+			}
+			else if(matrix[i][j]->getType() == store){
+				valid = true;
+				ambientColor = "ambientReflection = (1, 1, 0)";
+				diffuseColor = "diffuseColor = (1, 1, 0)";
+			}
+			else if(matrix[i][j]->getType() == policeStation){
+				valid = true;
+				ambientColor = "ambientReflection = (0, 0, 1)";
+				diffuseColor = "diffuseColor = (0, 0, 1)";
+			}
+			else if(matrix[i][j]->getType() == hospital){
+				valid = true;
+				ambientColor = "ambientReflection = (1, 1, 1)";
+				diffuseColor = "diffuseColor = (1, 1, 1)";
+			}
+			if (valid) {
+				// Figure number
+				ss << "[Figure" << counter << "]";
+				std::string figureNr = ss.str();
+				ss.str("");
+
+				// Coordinates
+				int x_coord = i * 2;
+				int y_coord = j * 2;
+
+				gfx << figureNr << std::endl;
+				gfx << "type = \"Cube\"" << std::endl;
+				gfx << "scale = 1" << std::endl;
+				gfx << "rotateX = 0" << std::endl;
+				gfx << "rotateY = 0" << std::endl;
+				gfx << "rotateZ = 0" << std::endl;
+				gfx << "center = (" << x_coord << "," << y_coord << ", 0)" << std::endl;
+				gfx << ambientColor  << std::endl;
+				gfx << diffuseColor  << std::endl << std::endl;
+				gfx << "specularLight = (1, 1, 1)" << std::endl << std::endl;
+				gfx << "reflectionCoefficient = 20" << std::endl << std::endl;
+				counter++;
+			}
+		}
+	}
+	gfx.close();
+}*/
+
+void Matrix::generateGFX() {
+	std::cout << "YES!" << std::endl;
+	std::ofstream gfx;
+	gfx.open("GFX.ini");
+
+	// General info
+	gfx << "[General]" << std::endl;
+	gfx << "size = 1024" << std::endl;
+	gfx << "backgroundcolor = (0, 0, 0)" << std::endl;
+	gfx << "type = \"ZBuffering\"" << std::endl;
+	gfx << "eye = (100, 25, 75)" << std::endl;
+	int blockAmount = calculateBlocks();
+	gfx << "nrFigures = " << blockAmount << std::endl << std::endl;
+
+	// draw floor
+	std::stringstream ss;
+	int counter = 0;
+	for(int i = 0; i < rows; i++){
+		for(int j = 0; j < columns; j++){
+			// Figure number
+			ss << "[Figure" << counter << "]";
+			std::string figureNr = ss.str();
+			ss.str("");
+
+			// Coordinates
+			int x_coord = i * 2;
+			int y_coord = j * 2;
+
+			gfx << figureNr << std::endl;
+			gfx << "type = \"Cube\"" << std::endl;
+			gfx << "scale = 1" << std::endl;
+			gfx << "rotateX = 0" << std::endl;
+			gfx << "rotateY = 0" << std::endl;
+			gfx << "rotateZ = 0" << std::endl;
+			gfx << "center = (" << x_coord << "," << y_coord << ", -2)" << std::endl;
+			gfx << "color = (0.5, 0.5, 0.5)"  << std::endl << std::endl;
+			counter++;
+		}
+	}
+
+	// draw buildings
+	for(int i = 0; i < rows; i++){
+		for(int j = 0; j < columns; j++){
+			bool valid = false;
+			std::string buildingColor;
+			if(matrix[i][j]->getType() == house){
+				valid = true;
+				buildingColor = "color = (0, 1, 0)";
+			}
+			else if(matrix[i][j]->getType() == department){
+				valid = true;
+				buildingColor = "color = (1, 0, 0)";
+			}
+			else if(matrix[i][j]->getType() == store){
+				valid = true;
+				buildingColor = "color = (1, 1, 0)";
+			}
+			else if(matrix[i][j]->getType() == policeStation){
+				valid = true;
+				buildingColor = "color = (0, 0, 1)";
+			}
+			else if(matrix[i][j]->getType() == hospital){
+				valid = true;
+				buildingColor = "color = (1, 1, 1)";
+			}
+			if (valid) {
+				// Figure number
+				ss << "[Figure" << counter << "]";
+				std::string figureNr = ss.str();
+				ss.str("");
+
+				// Coordinates
+				int x_coord = i * 2;
+				int y_coord = j * 2;
+
+				gfx << figureNr << std::endl;
+				gfx << "type = \"Cube\"" << std::endl;
+				gfx << "scale = 1" << std::endl;
+				gfx << "rotateX = 0" << std::endl;
+				gfx << "rotateY = 0" << std::endl;
+				gfx << "rotateZ = 0" << std::endl;
+				gfx << "center = (" << x_coord << "," << y_coord << ", 0)" << std::endl;
+				gfx << buildingColor  << std::endl << std::endl;
+				counter++;
+			}
+		}
+	}
+
+	gfx.close();
 }

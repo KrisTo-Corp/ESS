@@ -37,6 +37,12 @@ int main(int argc, char **argv) {
 		if (argv2 == "console") {
 			City city(argv[1], std::cout);
 			simulateCity(city);
+
+			/*
+			 * Experimental CGFX integration
+			 */
+			Matrix* theMatrix = city.getMatrix();
+			theMatrix->generateGFX();
 			return 0;
 		}
 		if (html) {
@@ -76,6 +82,12 @@ int main(int argc, char **argv) {
 		if (argv2 == "console") {
 			City city(argv[1], std::cout, argv[3]);
 			simulateCity(city);
+
+			/*
+			 * Experimental CGFX integration
+			 */
+			Matrix* theMatrix = city.getMatrix();
+			theMatrix->generateGFX();
 			return 0;
 		}
 		if (html) {

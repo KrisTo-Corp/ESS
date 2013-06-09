@@ -87,6 +87,10 @@ public:
 	Matrix(const Matrix& c);
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling copy constructor.");
 
+	int calculateBlocks();
+
+	void generateGFX();
+
 	bool properlyInitialized();
 
 	bool properlyInitialized(int, int);
