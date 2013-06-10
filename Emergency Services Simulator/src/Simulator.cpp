@@ -20,7 +20,6 @@ void simulateCity(City& city) {
 	}
 
 	bool finished = false;
-
 	// ============================
 	// 		   SETTING FIRE
 	// ============================
@@ -53,7 +52,6 @@ void simulateCity(City& city) {
 		rescueTruck->setIsHome(false);
 		ptr->setState(beingrescuedF);
 	}
-
 	// =============================
 	//	 CHECK FOR ROBBABLE STORE
 	// =============================
@@ -74,7 +72,6 @@ void simulateCity(City& city) {
 		std::string storeName = storePtr->getName();
 		std::string rp = doubleToString(storePtr->getRP());
 		city.o.print(storeName + " at location " + curStore.getString() + " has started being robbed.\n\tIt has " + rp + " robbery points left.\n\n");
-
 		// ===============================
 		//	FIND AN AVAILABLE POLICECAR
 		// ===============================
@@ -96,13 +93,11 @@ void simulateCity(City& city) {
 			storePtr->setState(beingrescuedR);
 		}
 	}
-
 	// ======================
 	// 		WHILE LOOP
 	// ======================
 	while (true) {
 		finished = true;
-
 		int random_chance = rand() % 20;
 		if (random_chance == 10) {
 			// ============================
@@ -140,36 +135,48 @@ void simulateCity(City& city) {
 		}
 
 		// =============================
+		//	 CHECK FOR ROBBABLE STORE
+		// =============================
+		std::list<Store>::iterator it_s;
+		bool robable = false;
+		for (it_s = city.getStoresList()->begin(); it_s != city.getStoresList()->end(); it_s++) {
+			if (it_s->getState() == normal) {
+				robable = true;
+			}
+		}
+		// =============================
 		//	 		ROB STORE
 		// =============================
-		if (rand() % 20 == 0) {
-			Store* storePtr;
-			storePtr = city.robStore();
-			if (storePtr != NULL){
-				Coordinate curStore = storePtr->getLocation();
-				std::string storeName = storePtr->getName();
-				std::string rp = doubleToString(storePtr->getRP());
-				city.o.print(storeName + " at location " + curStore.getString() + " has started being robbed.\n \tIt has " + rp + " robbery points left.\n\n");
+		if (robable) {
+			if (rand() % 20 == 0) {
+				Store* storePtr;
+				storePtr = city.robStore();
+				if (storePtr != NULL){
+					Coordinate curStore = storePtr->getLocation();
+					std::string storeName = storePtr->getName();
+					std::string rp = doubleToString(storePtr->getRP());
+					city.o.print(storeName + " at location " + curStore.getString() + " has started being robbed.\n \tIt has " + rp + " robbery points left.\n\n");
 
-				// ===============================
-				//	FIND AN AVAILABLE POLICECAR
-				// ===============================
-				std::list<PoliceCar>::iterator it_pc;
-				std::list<std::pair<int, PoliceCar*> > car_distances;
-				for (it_pc = city.getPoliceCarsList()->begin(); it_pc != city.getPoliceCarsList()->end(); it_pc++) {
-					if (it_pc->getAvailable()) {
-						std::pair<int, PoliceCar*> temp(city.calculateDistance(city.getAdjecantStreet(storePtr, it_pc->getCoord()), it_pc->getCoord()), &(*it_pc));
-						car_distances.push_back(temp);
+					// ===============================
+					//	FIND AN AVAILABLE POLICECAR
+					// ===============================
+					std::list<PoliceCar>::iterator it_pc;
+					std::list<std::pair<int, PoliceCar*> > car_distances;
+					for (it_pc = city.getPoliceCarsList()->begin(); it_pc != city.getPoliceCarsList()->end(); it_pc++) {
+						if (it_pc->getAvailable()) {
+							std::pair<int, PoliceCar*> temp(city.calculateDistance(city.getAdjecantStreet(storePtr, it_pc->getCoord()), it_pc->getCoord()), &(*it_pc));
+							car_distances.push_back(temp);
+						}
 					}
-				}
-				car_distances.sort();
-				if (car_distances.size() != 0){
-					PoliceCar* rescueCar = car_distances.begin()->second;
-					rescueCar->setAvailable(false);
-					rescueCar->setDestination(city.getAdjecantStreet(storePtr, rescueCar->getCoord()));
-					rescueCar->setTarget(storePtr);
-					rescueCar->setIsHome(false);
-					storePtr->setState(beingrescuedR);
+					car_distances.sort();
+					if (car_distances.size() != 0){
+						PoliceCar* rescueCar = car_distances.begin()->second;
+						rescueCar->setAvailable(false);
+						rescueCar->setDestination(city.getAdjecantStreet(storePtr, rescueCar->getCoord()));
+						rescueCar->setTarget(storePtr);
+						rescueCar->setIsHome(false);
+						storePtr->setState(beingrescuedR);
+					}
 				}
 			}
 		}
@@ -182,6 +189,7 @@ void simulateCity(City& city) {
 		// =======================
 		//		BURN & ROB
 		// =======================
+
 		for (int i = 0; i < city.getMatrix()->getColumns(); i++){
 			for (int j = 0; j < city.getMatrix()->getRows(); j++){
 				ptr = city.getMatrix()->getObject(i, j);
