@@ -96,6 +96,8 @@ public:
 	bool properlyInitialized(int, int);
 
 	virtual ~Matrix();
+
+	void printVehicles(OutputObject oo, std::vector<Vehicles*> vehicles);
 };
 
 #endif /* MATRIX_H_ */

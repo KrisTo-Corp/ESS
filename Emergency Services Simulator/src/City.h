@@ -187,6 +187,8 @@ public:
 	bool validFireCoordinates(int x, int y);
 
 	bool validRobberyCoordinates(int x, int y);
+
+	std::vector<Vehicles*> getVehicles();
 };
 
 #endif /* CITY_H_ */

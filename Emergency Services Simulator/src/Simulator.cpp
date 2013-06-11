@@ -562,11 +562,15 @@ void simulateCity(City& city) {
 			}
 		}
 
+		city.getMatrix()->printVehicles(city.o, city.getVehicles());
+
 		if ((at_home == city.getAmountTrucks()+city.getAmountCars()+city.getAmountAmbulances()) && finished) {
+			city.o.print("\n");
 			city.o.print("================================================================================================================================");
 			return;
 		}
 		else {
+			city.o.print("\n");
 			city.o.print("--------------------------------------------------------------------------------------------------------------------------------\n\n");
 		}
 

@@ -57,10 +57,11 @@ void userInterface::printMap(){
 void userInterface::printRealTimeMap(){
 
 	if (in_console) std::cout << "\033[2J\033[1;1H";
-	std::cout << *(city->getMatrix()) << std::endl << std::endl;
+	city->getMatrix()->printVehicles(city->o, city->getVehicles());
 }
 
 void userInterface::printMenu(){
+	std::cout << std::endl;
 	std::cout << "Welcome to the menu:" << std::endl;
 	std::cout << "--------------------" << std::endl;
 	std::cout << "\t 1. Set a fire." << std::endl;
@@ -92,6 +93,8 @@ void userInterface::makeChoice(){
 		std::cout << "UPDATE REPORT:" << std::endl;
 		std::cout << "--------------" << std::endl;
 		singleSimulate(city);
+		std::cout << std::endl;
+		city->getMatrix()->printVehicles(city->o, city->getVehicles());
 		std::cout << std::endl;
 		std::cout << "Press 'ENTER' to continue...";
 		std::cin.ignore();

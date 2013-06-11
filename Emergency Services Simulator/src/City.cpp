@@ -356,7 +356,7 @@ void City::handleTrafficJams(){
 		if(it->getTrafficCounter() >= 10){
 			it->setTrafficJam(false);
 			it->setTrafficCounter(0);
-			o.print("The traffic jam in street " + it->getName() + " was resolved.");
+			o.print("The traffic jam in street " + it->getName() + " was resolved.\n");
 		}
 	}
 
@@ -383,7 +383,7 @@ void City::handleTrafficJams(){
 		Street* street = dynamic_cast<Street*>(object);
 		street->setTrafficJam(true);
 
-		o.print("A traffic jam developed in street " + street->getName() + ".");
+		o.print("A traffic jam developed in street " + street->getName() + ".\n");
 
 	}
 }
@@ -1146,3 +1146,22 @@ bool City::validRobberyCoordinates(int x, int y){
 	}
 	else return false;
 }
+
+std::vector<Vehicles*> City::getVehicles(){
+    std::vector<Vehicles*> vehicles;
+
+    std::list<Firetruck>::iterator it_t;
+    for (it_t = trucks.begin(); it_t != trucks.end(); it_t++) {
+            vehicles.push_back(&(*it_t));
+    }
+    std::list<PoliceCar>::iterator it_p;
+    for (it_p = policecars.begin(); it_p != policecars.end(); it_p++) {
+            vehicles.push_back(&(*it_p));
+    }
+    std::list<Ambulance>::iterator it_a;
+    for (it_a = ambulances.begin(); it_a != ambulances.end(); it_a++) {
+            vehicles.push_back(&(*it_a));
+    }
+    return vehicles;
+}
+
