@@ -17,13 +17,15 @@ City::City() : o(std::cout, false){
 	_initCheck = this;
 }
 
-City::City(const std::string filename, std::ostream& stream, std::string vehiclesXML, bool html) : o(stream, html) {
+City::City(const std::string filename, std::ostream& stream, std::string vehiclesXML, bool html, bool runningUI) : o(stream, html) {
 
 	validCity = true;
 	_initCheck = this;
 
-	o.print("\t\t\t\t\t\t\t\tEMERGENCY SERVICES SIMULATION \n");
-	o.print("\t\t\t\t\t\t\t\t============================= \n\n");
+	if (!runningUI){
+		o.print("\t\t\t\t\t\t\t\tEMERGENCY SERVICES SIMULATION \n");
+		o.print("\t\t\t\t\t\t\t\t============================= \n\n");
+	}
 
 	XmlParser parser(this);
 	if (vehiclesXML != "empty") {
@@ -34,19 +36,19 @@ City::City(const std::string filename, std::ostream& stream, std::string vehicle
 	std::pair<int, int> maxCoords =	parser.getMaxValues();
 
 	if(maxCoords.first == -1 && maxCoords.second == -1){
-		o.print("ERROR: .XML CONTAINED SYNTAX ERRORS !\n\n");
+		if (!runningUI) o.print("ERROR: .XML CONTAINED SYNTAX ERRORS !\n\n");
 		validCity = false;
 		return;
 	}
 
 	else if(maxCoords.first == -2 && maxCoords.second == -2){
-		o.print("ERROR: THERE WAS NO ROOT FOUND IN THE XMLFILE !\n\n");
+		if (!runningUI) o.print("ERROR: THERE WAS NO ROOT FOUND IN THE XMLFILE !\n\n");
 		validCity = false;
 		return;
 	}
 
 	else if(maxCoords.first == -3 && maxCoords.second == -3){
-		o.print("ERROR: THERE WAS FOUND AN OBJECT THAT'S NOT SUPPORTED !\n\n");
+		if (!runningUI) o.print("ERROR: THERE WAS FOUND AN OBJECT THAT'S NOT SUPPORTED !\n\n");
 		validCity = false;
 		return;
 	}
@@ -64,16 +66,18 @@ City::City(const std::string filename, std::ostream& stream, std::string vehicle
 	matrix.addPolStations(poliStats);
 
 	//o.print(matrix << "\n");
-	matrix.printMatrix(o);
+	if (!runningUI) matrix.printMatrix(o);
 
-	o.print("\nINTEGRITYCHECK: \n");
-	o.print("===============\n");
+	if (!runningUI){
+		o.print("\nINTEGRITYCHECK: \n");
+		o.print("===============\n");
+	}
 	if (!(integrityCheck())){
 		validCity = false;
 		return;
 	}
 	else {
-		o.print("\tPASSED\n\n");
+		if (!runningUI) o.print("\tPASSED\n\n");
 	}
 
 
@@ -1117,4 +1121,28 @@ bool City::getValidCity() {
 	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getValidCity()");
 
 	return validCity;
+}
+
+bool City::validFireCoordinates(int x, int y){
+	if (x > matrix.getColumns()) return false;
+	if (y > matrix.getRows()) return false;
+
+	CityObjects* ptr = getObject(x, y);
+
+	if (ptr->getState() == normal || ptr->getState() == repairing){
+		return true;
+	}
+	else return false;
+}
+
+bool City::validRobberyCoordinates(int x, int y){
+	if (x > matrix.getColumns()) return false;
+	if (y > matrix.getRows()) return false;
+
+	CityObjects* ptr = getObject(x, y);
+
+	if (ptr->getState() == normal && ptr->getType() == store){
+		return true;
+	}
+	else return false;
 }

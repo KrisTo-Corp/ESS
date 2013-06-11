@@ -6,104 +6,137 @@
 // Description : TicTactToe in C++, Ansi-style
 //============================================================================
 
+#include <algorithm>
+#include <string>
 #include <iostream>
 #include <cstdlib>
 
 #include "City.h"
 #include "Simulator.h"
+#include "userInterface.h"
 
 int main(int argc, char **argv) {
 
 	srand(time(NULL));
 
-	if (argc < 3){
-		std::cerr << "Usage: ./Release \"XML FILE\" \"OUTPUT NAME\" \"VEHICLES XML FILE\ (optional)" << std::endl << std::endl;
+	if (argc < 2){
+		std::cerr << "Usage: ./Release [MODE]" << std::endl << "\tMode: simulation, ui." << std::endl << "\tEnter one of the modes for more information !" << std::endl << std::endl;
+		return 0;
 	}
-	else if (argc == 3) {
-		std::string argv2 = argv[2];
-		bool found_dot = false;
-		bool html = false;
-		for(int i = 0; i < argv2.size(); i++){
-			if(argv2[i] == '.'){
-				found_dot = true;
-			}
-			if (found_dot){
-				if (argv2[i+1] == 'h' && argv2[i+2] == 't' && argv2[i+3] == 'm' && argv2[i+4] == 'l'){
-					html = true;
-				}
-			}
-		}
 
-		if (argv2 == "console") {
-			City city(argv[1], std::cout);
-			simulateCity(city);
+	std::string mode = argv[1];
+	for (int i = 0; i < mode.size(); i++) mode[i] = tolower(mode[i]);
 
-			/*
-			 * Experimental CGFX integration
-			 */
-			Matrix* theMatrix = city.getMatrix();
-			theMatrix->generateGFX();
+	if (mode == "ui"){
+		if (argc == 4){
+			std::string inputfile = argv[2];
+			std::string realConsole = argv[3];
+			bool in_console = false;
+			for(int i = 0; i < realConsole.size(); i++) realConsole[i] = tolower(realConsole[i]);
+			if (realConsole == "true") in_console = true;
+
+			City city(inputfile, std::cout, "empty", false, true);
+			userInterface ui(&city, in_console);
+			ui.runUI();
 			return 0;
 		}
-		if (html) {
-			std::ofstream filestream(argv[2]);
-			City city(argv[1], filestream, "empty", true);
-			simulateCity(city);
-			city.o.closeHTML();
-			std::cout << "Output was written to " << argv2 << ".\n";
+		else if (argc == 5){
+			std::string inputfile = argv[2];
+			std::string inputfile_vehicles = argv[3];
+			std::string realConsole = argv[4];
+			bool in_console = false;
+			for(int i = 0; i < realConsole.size(); i++) realConsole[i] = tolower(realConsole[i]);
+			if (realConsole == "true") in_console = true;
+
+			City city(inputfile, std::cout, inputfile_vehicles, false, true);
+			userInterface ui(&city, in_console);
+			ui.runUI();
 			return 0;
 		}
 		else {
-			std::ofstream filestream(argv[2]);
-			City city(argv[1], filestream);
-			simulateCity(city);
-			filestream.close();
-			std::cout << "Output was written to " << argv2 << ".\n";
+			std::cerr << "Usage: ./Release [SIMULATION] [CITY XML FILE] [VEHICLE XML FILE]* [REAL CONSOLE]" << std::endl << "\t* OPTIONAL" << std::endl << std::endl;
 			return 0;
 		}
 	}
 
-	else{
-
-		std::string argv2 = argv[2];
-		bool found_dot = false;
-		bool html = false;
-		for(int i = 0; i < argv2.size(); i++){
-			if(argv2[i] == '.'){
-				found_dot = true;
-			}
-			if (found_dot){
-				if (argv2[i+1] == 'h' && argv2[i+2] == 't' && argv2[i+3] == 'm' && argv2[i+4] == 'l'){
-					html = true;
+	else if (mode == "simulation"){
+		if (argc == 4){
+			std::string inputfile = argv[2];
+			std::string outputfile = argv[3];
+			bool found_dot = false;
+			bool html = false;
+			for(int i = 0; i < outputfile.size(); i++){
+				if(outputfile[i] == '.'){
+					found_dot = true;
+				}
+				if (found_dot){
+					if (outputfile[i+1] == 'h' && outputfile[i+2] == 't' && outputfile[i+3] == 'm' && outputfile[i+4] == 'l'){
+						html = true;
+					}
 				}
 			}
-		}
 
-		if (argv2 == "console") {
-			City city(argv[1], std::cout, argv[3]);
-			simulateCity(city);
-
-			/*
-			 * Experimental CGFX integration
-			 */
-			Matrix* theMatrix = city.getMatrix();
-			theMatrix->generateGFX();
-			return 0;
+			if (outputfile == "console"){
+				City city(inputfile, std::cout);
+				simulateCity(city);
+				return 0;
+			}
+			else if (html){
+				std::ofstream outputstream(outputfile.c_str());
+				City city(inputfile, outputstream, "empty", true);
+				simulateCity(city);
+				city.o.closeHTML();
+				std::cout << "Output was written to " << outputfile << ".\n";
+				return 0;
+			}
+			else {
+				std::ofstream outputstream(outputfile.c_str());
+				City city(inputfile, outputstream);
+				simulateCity(city);
+				std::cout << "Output was written to " << outputfile << ".\n";
+				return 0;
+			}
 		}
-		if (html) {
-			std::ofstream filestream(argv[2]);
-			City city(argv[1], filestream, argv[3], true);
-			simulateCity(city);
-			city.o.closeHTML();
-			std::cout << "Output was written to " << argv2 << ".\n";
-			return 0;
+		else if (argc == 5){
+			std::string inputfile = argv[2];
+			std::string inputfile_vehicles = argv[3];
+			std::string outputfile = argv[4];
+			bool found_dot = false;
+			bool html = false;
+			for(int i = 0; i < outputfile.size(); i++){
+				if(outputfile[i] == '.'){
+					found_dot = true;
+				}
+				if (found_dot){
+					if (outputfile[i+1] == 'h' && outputfile[i+2] == 't' && outputfile[i+3] == 'm' && outputfile[i+4] == 'l'){
+						html = true;
+					}
+				}
+			}
+
+			if (outputfile == "console"){
+				City city(inputfile, std::cout, inputfile_vehicles);
+				simulateCity(city);
+				return 0;
+			}
+			else if (html){
+				std::ofstream outputstream(outputfile.c_str());
+				City city(inputfile, outputstream, inputfile_vehicles, true);
+				simulateCity(city);
+				city.o.closeHTML();
+				std::cout << "Output was written to " << outputfile << ".\n";
+				return 0;
+			}
+			else {
+				std::ofstream outputstream(outputfile.c_str());
+				City city(inputfile, outputstream, inputfile_vehicles);
+				simulateCity(city);
+				std::cout << "Output was written to " << outputfile << ".\n";
+				return 0;
+			}
 		}
 		else {
-			std::ofstream filestream(argv[2]);
-			City city(argv[1], filestream, argv[3]);
-			simulateCity(city);
-			filestream.close();
-			std::cout << "Output was written to " << argv2 << ".\n";
+			std::cerr << "Usage: ./Release [SIMULATION] [CITY XML FILE] [VEHICLE XML FILE]* [OUTPUT FILE]" << std::endl << "\t* OPTIONAL" << std::endl << std::endl;
 			return 0;
 		}
 	}

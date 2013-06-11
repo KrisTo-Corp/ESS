@@ -51,7 +51,7 @@ public:
 
 	OutputObject o;
 
-	City(std::string filename, std::ostream&, std::string vehiclesXML = "empty", bool html = false);
+	City(std::string filename, std::ostream&, std::string vehiclesXML = "empty", bool html = false, bool runningUI = false);
 //	ENSURE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized.");
 
 	friend std::ostream& operator <<(std::ostream& s, City& city);
@@ -183,6 +183,10 @@ public:
 	City& operator =(const City&);
 
 	virtual ~City();
+
+	bool validFireCoordinates(int x, int y);
+
+	bool validRobberyCoordinates(int x, int y);
 };
 
 #endif /* CITY_H_ */

@@ -211,46 +211,56 @@ bool Matrix::properlyInitialized(int x, int y){
 std::ostream& operator <<(std::ostream& s, Matrix& m){
 	REQUIRE(m.properlyInitialized(), "Object 'Matrix' was not properly initialized when calling addHouses().");
 
-	s << "\nMAP: \n";
-	s << "====\n\n";
+	std::string output;
+	output = "\nMAP: \n";
+	output = output + "====\n\n";
 	for(int i = 0; i < m.rows; i++){
-		s << m.rows-1-i << "\t[";
+		output = output + intToString(m.rows-1-i) + "\t[\t";
 		for(int j = 0; j < m.columns; j++){
 			if(m.matrix[i][j] == NULL){
-				s << "?\t";
+				output = output + "?\t";
 			}
 			else if(m.matrix[i][j]->getType() == house){
-				s << "H\t";
+				output = output + "H\t";
 			}
 			else if(m.matrix[i][j]->getType() == department){
-				s << "D\t";
+				output = output + "D\t";
 			}
 			else if(m.matrix[i][j]->getType() == street){
-				s << " \t";
+				output = output + " \t";
 			}
 			else if(m.matrix[i][j]->getType() == crossroad){
-				s << " \t";
+				output = output + " \t";
 			}
 			else if(m.matrix[i][j]->getType() == store){
-				s << "S\t";
+				output = output + "S\t";
 			}
 			else if(m.matrix[i][j]->getType() == policeStation){
-				s << "P\t";
+				output = output + "P\t";
 			}
 			else if(m.matrix[i][j]->getType() == hospital){
-				s << "+\t";
+				output = output + "+\t";
 			}
 			else{
-				s << "?\t";
+				output = output + "?\t";
 			}
 		}
-		s << "]\n";
+		output = output + "]\n";
 	}
-	s << "\n\t\t";
+	output = output + "\n\t\t";
 	for (int i = 0; i < m.columns; i++){
-		s << i << "\t";
+		if (i >= 9){
+			output = output + intToString(i) + "\t";
+
+		}
+		else {
+			output = output + intToString(i) + " \t";
+		}
 	}
-	s << "\n\n\t\tH = HOUSE\t D = FIRE DEPARTMENT\t S = STREET\t C = CROSSROAD\t ? = UNKNOWN\n";
+	output = output + "\n\n\t\tH = HOUSE\t D = FIRE DEPARTMENT\t S = STORE\n";
+	output = output + "\t\t+ = HOSPITAL\t P = POLICE DEPARTMENT\t ? = UNKNOWN\n";
+
+	s << output << std::endl;
 
 	return s;
 }

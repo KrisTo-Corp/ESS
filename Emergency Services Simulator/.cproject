@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="cdt.managedbuild.config.gnu.cross.exe.debug.637822198">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.637822198" moduleId="org.eclipse.cdt.core.settings" name="Debug">
@@ -29,7 +31,7 @@
 								<option id="gnu.cpp.compiler.option.optimization.level.1456292466" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.debugging.level.1682947452" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1606044563" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/kristof/Uni/Software_Engineering/gtest-1.6.0/include"/>
+									<listOptionValue builtIn="false" value="/home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.other.other.1306491441" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -pthread -fmessage-length=0" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2117463183" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -37,7 +39,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1229352382" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1457039355" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
 								<option id="gnu.cpp.link.option.paths.1513965772" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/home/kristof/Uni/Software_Engineering/gtest-1.6.0/lib"/>
+									<listOptionValue builtIn="false" value="/home/tom/Dropbox/Software_Engineering/gtest-1.6.0/lib"/>
 								</option>
 								<option id="gnu.cpp.link.option.libs.2094926869" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="gtest"/>
@@ -90,7 +92,7 @@
 								<option id="gnu.cpp.compiler.option.optimization.level.1993707487" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.debugging.level.741403073" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.3845865" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/kristof/Uni/Software_Engineering/gtest-1.6.0/include"/>
+									<listOptionValue builtIn="false" value="/home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.other.other.1449089309" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -pthread -fmessage-length=0" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1519488215" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -102,7 +104,7 @@
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="gtest_main"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.155943098" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/home/kristof/Uni/Software_Engineering/gtest-1.6.0/lib"/>
+									<listOptionValue builtIn="false" value="/home/tom/Dropbox/Software_Engineering/gtest-1.6.0/lib"/>
 								</option>
 								<option id="gnu.cpp.link.option.flags.2138254632" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-pthread " valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1873519218" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">

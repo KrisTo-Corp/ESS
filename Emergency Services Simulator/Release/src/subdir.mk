@@ -28,6 +28,7 @@ CPP_SRCS += \
 ../src/tinyxml.cpp \
 ../src/tinyxmlerror.cpp \
 ../src/tinyxmlparser.cpp \
+../src/userInterface.cpp \
 ../src/xmlparser.cpp 
 
 OBJS += \
@@ -55,6 +56,7 @@ OBJS += \
 ./src/tinyxml.o \
 ./src/tinyxmlerror.o \
 ./src/tinyxmlparser.o \
+./src/userInterface.o \
 ./src/xmlparser.o 
 
 CPP_DEPS += \
@@ -82,6 +84,7 @@ CPP_DEPS += \
 ./src/tinyxml.d \
 ./src/tinyxmlerror.d \
 ./src/tinyxmlparser.d \
+./src/userInterface.d \
 ./src/xmlparser.d 
 
 
@@ -89,7 +92,7 @@ CPP_DEPS += \
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross G++ Compiler'
-	g++ -I/home/kristof/Uni/Software_Engineering/gtest-1.6.0/include -O3 -Wall -c -pthread -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	g++ -I/home/tom/Dropbox/Software_Engineering/gtest-1.6.0/include -O3 -Wall -c -pthread -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
