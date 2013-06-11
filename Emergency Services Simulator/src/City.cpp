@@ -1124,8 +1124,10 @@ bool City::getValidCity() {
 }
 
 bool City::validFireCoordinates(int x, int y){
-	if (x > matrix.getColumns()) return false;
-	if (y > matrix.getRows()) return false;
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling validFireCoordinates()");
+
+	if (x > matrix.getColumns() || x < 0) return false;
+	if (y > matrix.getRows() || y < 0) return false;
 
 	CityObjects* ptr = getObject(x, y);
 
@@ -1136,8 +1138,10 @@ bool City::validFireCoordinates(int x, int y){
 }
 
 bool City::validRobberyCoordinates(int x, int y){
-	if (x > matrix.getColumns()) return false;
-	if (y > matrix.getRows()) return false;
+	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling validRobberyCoordinates()");
+
+	if (x > matrix.getColumns() || x < 0) return false;
+	if (y > matrix.getRows() || y < 0) return false;
 
 	CityObjects* ptr = getObject(x, y);
 

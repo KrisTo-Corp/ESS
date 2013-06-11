@@ -75,7 +75,6 @@ public:
 	int getAmountCars();
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountCars()");
 
-
 	CityObjects* getObject(int, int);
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountTrucks()");
 
@@ -172,7 +171,7 @@ public:
 //	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getAmountAmbulances()");
 
 	void handleTrafficJams();
-	//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling handleTrafficJams()");
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling handleTrafficJams()");
 
 	void link_vehicles_to_bases();
 
@@ -185,10 +184,13 @@ public:
 	virtual ~City();
 
 	bool validFireCoordinates(int x, int y);
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling validFireCoordinates()");
 
 	bool validRobberyCoordinates(int x, int y);
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling validRobberyCoordinates()");
 
 	std::vector<Vehicles*> getVehicles();
+//	REQUIRE(properlyInitialized(), "Object 'City' was not properly properlyInitializedialized when calling getVehicles()");
 };
 
 #endif /* CITY_H_ */

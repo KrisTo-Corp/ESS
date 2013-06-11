@@ -88,8 +88,10 @@ public:
 //	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling copy constructor.");
 
 	int calculateBlocks();
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling calculateBlocks.");
 
 	void generateGFX(std::string filename);
+//	REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling generateGFX.");
 
 	bool properlyInitialized();
 

@@ -187,6 +187,7 @@ public:
 //	ENSURE((trucks[trucks.size()-1] == t), "PoliceStation was not succesfully added to trucks Vector");
 
 	int getAmountCars();
+//	REQUIRE(init(), "Object 'PoliceStation' was not properly initialized when calling getAmountCars()");
 
 	PoliceStation(const PoliceStation& c);
 //	REQUIRE(init(), "Object 'PoliceStation' was not properly initialized when calling copy constructor");
@@ -214,6 +215,7 @@ public:
 //	ENSURE((trucks[trucks.size()-1] == t), "Hospital was not succesfully added to trucks Vector");
 
 	int getAmountAmbulances();
+//	REQUIRE(init(), "Object 'Hospital' was not properly initialized when calling getAmountAmbulances()");
 
 	Hospital(const Hospital& c);
 //	REQUIRE(init(), "Object 'Hospital' was not properly initialized when calling copy constructor.");

@@ -406,6 +406,8 @@ void PoliceStation::addCar(PoliceCar* t) {
 }
 
 int PoliceStation::getAmountCars(){
+	REQUIRE(init(), "Object 'PoliceStation' was not properly initialized when calling getAmountCars()");
+
 	return cars.size();
 }
 
@@ -471,6 +473,8 @@ void Hospital::addAmbulance(Ambulance* t) {
 }
 
 int Hospital::getAmountAmbulances(){
+	REQUIRE(init(), "Object 'Hospital' was not properly initialized when calling getAmountAmbulances()");
+
 	return ambulances.size();
 }
 
