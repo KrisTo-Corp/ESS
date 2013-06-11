@@ -44,6 +44,32 @@ House at location (3, 12) is still burning.
 Firetruck Bw12 is on its way to House on location(4, 10).
 	The firetruck is at Cstraat-Javastraat on location (7, 10).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (3, 12) is still burning.
@@ -51,6 +77,32 @@ House at location (3, 12) is still burning.
 
 Firetruck Bw12 is on its way to House on location(4, 10).
 	The firetruck is at Cstraat on location (6, 10).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -64,6 +116,32 @@ Firetruck Bw12 is on its way to House on location(4, 10).
 
 Firetruck Bw34 is on its way to House on location(4, 15).
 	The firetruck is at Cstraat-Javastraat on location (7, 10).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	B	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -79,6 +157,32 @@ Firetruck Bw12 has reached its destination at location (4, 10).
 Firetruck Bw34 is on its way to House on location(4, 15).
 	The firetruck is at Javastraat on location (7, 11).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (3, 14) is still burning.
@@ -89,6 +193,32 @@ Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
 
 Firetruck Bw34 is on its way to House on location(4, 15).
 	The firetruck is at Javastraat on location (7, 12).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -109,6 +239,32 @@ Firetruck Bw12 is on its way to House on location(12, 10).
 Firetruck Bw34 is on its way to House on location(4, 15).
 	The firetruck is at Javastraat on location (7, 13).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (1, 14) is still burning.
@@ -125,6 +281,32 @@ Firetruck Bw12 is on its way to House on location(12, 10).
 
 Firetruck Bw34 is on its way to House on location(4, 15).
 	The firetruck is at Javastraat on location (7, 14).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -144,6 +326,32 @@ Firetruck Bw12 is on its way to House on location(12, 10).
 
 Firetruck Bw34 is on its way to House on location(4, 15).
 	The firetruck is at Pythonstraat-Javastraat on location (7, 15).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -172,6 +380,32 @@ Firetruck Bw12 is on its way to House on location(12, 10).
 Firetruck Bw34 is on its way to House on location(4, 15).
 	The firetruck is at Pythonstraat on location (6, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (1, 12) is still burning.
@@ -197,6 +431,32 @@ Firetruck Bw12 is on its way to House on location(12, 10).
 
 Firetruck Bw34 is on its way to House on location(4, 15).
 	The firetruck is at Pythonstraat on location (5, 15).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -230,6 +490,32 @@ Firetruck Bw12 is on its way to House on location(12, 10).
 Firetruck Bw34 has reached its destination at location (4, 15).
 	They have extinguished the fire and are returning to the base.
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (1, 12) is still burning.
@@ -262,6 +548,32 @@ House at location (12, 12) is still burning.
 Firetruck Bw34 is on its way to House on location(0, 12).
 	The firetruck is at Pythonstraat on location (5, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (1, 12) is still burning.
@@ -290,6 +602,32 @@ House at location (12, 12) is still burning.
 
 Firetruck Bw34 is on its way to House on location(0, 12).
 	The firetruck is at Pythonstraat on location (6, 15).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -337,6 +675,32 @@ House at location (14, 14) is still burning.
 Firetruck Bw34 is on its way to House on location(0, 12).
 	The firetruck is at Pythonstraat-Javastraat on location (7, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (1, 12) is still burning.
@@ -377,6 +741,32 @@ House at location (14, 14) is still burning.
 
 Firetruck Bw34 is on its way to House on location(0, 12).
 	The firetruck is at Pythonstraat on location (6, 15).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -422,6 +812,32 @@ Casualty's hp has decreased, he has 9 hp left.
 
 Firetruck Bw34 is on its way to House on location(0, 12).
 	The firetruck is at Pythonstraat on location (5, 15).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -469,6 +885,32 @@ Casualty's hp has decreased, he has 9 hp left.
 
 Firetruck Bw34 is on its way to House on location(0, 12).
 	The firetruck is at Pythonstraat on location (4, 15).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -518,6 +960,32 @@ Casualty's hp has decreased, he has 9 hp left.
 
 Firetruck Bw34 is on its way to House on location(0, 12).
 	The firetruck is at Pythonstraat on location (3, 15).
+
+
+MAP: 
+====
+
+15	[	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -569,6 +1037,32 @@ Casualty's hp has decreased, he has 9 hp left.
 
 Firetruck Bw34 is on its way to House on location(0, 12).
 	The firetruck is at Pythonstraat on location (2, 15).
+
+
+MAP: 
+====
+
+15	[	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -623,6 +1117,32 @@ Casualty's hp has decreased, he has 9 hp left.
 Firetruck Bw34 is on its way to House on location(0, 12).
 	The firetruck is at Pythonstraat on location (1, 15).
 
+
+MAP: 
+====
+
+15	[	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (1, 12) is still burning.
@@ -673,6 +1193,32 @@ Casualty's hp has decreased, he has 8 hp left.
 
 Firetruck Bw34 is on its way to House on location(0, 12).
 	The firetruck is at Pythonstraat-Assemblystraat on location (0, 15).
+
+
+MAP: 
+====
+
+15	[	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -737,6 +1283,32 @@ Casualty's hp has decreased, he has 9 hp left.
 Firetruck Bw34 is on its way to House on location(0, 12).
 	The firetruck is at Assemblystraat on location (0, 14).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	B	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (1, 12) is still burning.
@@ -793,6 +1365,32 @@ Casualty's hp has decreased, he has 8 hp left.
 
 Firetruck Bw34 is on its way to House on location(0, 12).
 	The firetruck is at Assemblystraat on location (0, 13).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	B	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -858,6 +1456,32 @@ Casualty's hp has decreased, he has 9 hp left.
 
 Firetruck Bw34 has reached its destination at location (0, 12).
 	They have extinguished the fire and are returning to the base.
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	B	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -928,6 +1552,32 @@ Firetruck Bw12 has reached its destination at location (12, 10).
 Firetruck Bw34 has reached its destination at location (0, 13).
 	They have extinguished the fire and are returning to the base.
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	B	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (1, 12) is repairing.
@@ -990,6 +1640,32 @@ Firetruck Bw12 is on its way to House on location(7, 12).
 Firetruck Bw34 is on its way to House on location(5, 15).
 	The firetruck is at Assemblystraat on location (0, 14).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	B	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (1, 14) is repairing.
@@ -1050,6 +1726,32 @@ Firetruck Bw12 is on its way to House on location(7, 12).
 Firetruck Bw34 is on its way to House on location(5, 15).
 	The firetruck is at Pythonstraat-Assemblystraat on location (0, 15).
 
+
+MAP: 
+====
+
+15	[	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (1, 12) is repairing.
@@ -1108,6 +1810,32 @@ Firetruck Bw12 is on its way to House on location(7, 12).
 Firetruck Bw34 is on its way to House on location(5, 15).
 	The firetruck is at Pythonstraat on location (1, 15).
 
+
+MAP: 
+====
+
+15	[	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (1, 14) is repairing.
@@ -1158,6 +1886,32 @@ Firetruck Bw12 is on its way to House on location(7, 12).
 Firetruck Bw34 is on its way to House on location(5, 15).
 	The firetruck is at Pythonstraat on location (2, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (1, 12) is repairing.
@@ -1206,6 +1960,32 @@ Firetruck Bw12 is on its way to House on location(7, 12).
 Firetruck Bw34 is on its way to House on location(5, 15).
 	The firetruck is at Pythonstraat on location (3, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (1, 14) is repairing.
@@ -1252,6 +2032,32 @@ Firetruck Bw12 is on its way to House on location(7, 12).
 Firetruck Bw34 is on its way to House on location(5, 15).
 	The firetruck is at Pythonstraat on location (4, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (8, 12) is still burning.
@@ -1286,6 +2092,32 @@ Firetruck Bw12 is on its way to House on location(7, 12).
 Firetruck Bw34 has reached its destination at location (5, 15).
 	They saw that the structure was destroyed and are returning to the base.
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (8, 12) is still burning.
@@ -1314,6 +2146,32 @@ Firetruck Bw12 is on its way to House on location(7, 12).
 Firetruck Bw34 is on its way to House on location(7, 12).
 	The firetruck is at Pythonstraat on location (6, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (8, 12) is destroyed.
@@ -1336,6 +2194,32 @@ Firetruck Bw12 is on its way to House on location(7, 12).
 Firetruck Bw34 is on its way to House on location(7, 12).
 	The firetruck is at Pythonstraat-Javastraat on location (7, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Casualty's hp has decreased, he has 0 hp left.
@@ -1348,6 +2232,32 @@ Firetruck Bw12 is on its way to House on location(7, 12).
 Firetruck Bw34 is on its way to House on location(7, 12).
 	The firetruck is at Javastraat on location (7, 14).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to House on location(7, 12).
@@ -1355,6 +2265,32 @@ Firetruck Bw12 is on its way to House on location(7, 12).
 
 Firetruck Bw34 is on its way to House on location(7, 12).
 	The firetruck is at Javastraat on location (7, 13).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -1364,6 +2300,32 @@ Firetruck Bw12 is on its way to House on location(7, 12).
 Firetruck Bw34 has reached its destination at location (7, 12).
 	They saw that the structure was destroyed and are returning to the base.
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to House on location(7, 12).
@@ -1372,6 +2334,32 @@ Firetruck Bw12 is on its way to House on location(7, 12).
 Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
 	The firetruck is at Javastraat on location (7, 11).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to House on location(7, 12).
@@ -1379,6 +2367,32 @@ Firetruck Bw12 is on its way to House on location(7, 12).
 
 Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
 	The firetruck is at Cstraat-Javastraat on location (7, 10).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -1387,18 +2401,122 @@ Firetruck Bw12 has reached its destination at location (7, 12).
 
 Firetruck Bw34 has arrived at its base BWK1337.
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
 	The firetruck is at Javastraat on location (7, 11).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
 	The firetruck is at Cstraat-Javastraat on location (7, 10).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 has arrived at its base BWK1337.
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	H	H	H	H	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 ================================================================================================================================

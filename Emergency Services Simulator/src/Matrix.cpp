@@ -651,10 +651,9 @@ int Matrix::calculateBlocks() {
 	gfx.close();
 }*/
 
-void Matrix::generateGFX() {
-	std::cout << "YES!" << std::endl;
+void Matrix::generateGFX(std::string filename) {
 	std::ofstream gfx;
-	gfx.open("GFX.ini");
+	gfx.open(filename.c_str());
 
 	// General info
 	gfx << "[General]" << std::endl;
@@ -738,7 +737,6 @@ void Matrix::generateGFX() {
 			}
 		}
 	}
-
 	gfx.close();
 }
 

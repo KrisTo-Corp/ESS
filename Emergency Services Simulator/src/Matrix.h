@@ -89,7 +89,7 @@ public:
 
 	int calculateBlocks();
 
-	void generateGFX();
+	void generateGFX(std::string filename);
 
 	bool properlyInitialized();
 

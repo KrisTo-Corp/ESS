@@ -53,6 +53,32 @@ Firetruck Bw12 is on its way to House on location(7, 13).
 Policecar Pw3 is on its way to Store on location (8, 10).
 	The policecar is at Haskellstraat-Javastraat on location (7, 5).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	P	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (8, 14) is still burning.
@@ -66,6 +92,32 @@ Firetruck Bw12 is on its way to House on location(7, 13).
 
 Policecar Pw3 is on its way to Store on location (8, 10).
 	The policecar is at Javastraat on location (7, 6).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	B	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	P	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -89,6 +141,32 @@ Firetruck Bw34 is on its way to House on location(10, 15).
 Policecar Pw3 is on its way to Store on location (8, 10).
 	The policecar is at Javastraat on location (7, 7).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	B	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	P	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (8, 14) is still burning.
@@ -108,6 +186,32 @@ Firetruck Bw34 is on its way to House on location(10, 15).
 
 Policecar Pw3 is on its way to Store on location (8, 10).
 	The policecar is at Javastraat on location (7, 8).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	B	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	P	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -130,6 +234,32 @@ Firetruck Bw34 is on its way to House on location(10, 15).
 
 Policecar Pw3 is on its way to Store on location (8, 10).
 	The policecar is at Javastraat on location (7, 9).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	B	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	P	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -154,6 +284,32 @@ Firetruck Bw34 is on its way to House on location(10, 15).
 Policecar Pw3 is on its way to Store on location (8, 10).
 	The policecar is at Cstraat-Javastraat on location (7, 10).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	P	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Store at location (8, 12) is still being robbed.
@@ -175,6 +331,32 @@ Firetruck Bw34 is on its way to House on location(10, 15).
 
 Policecar Pw3 has reached its destination at location (8, 10).
 	They stopped the robbery and caught the bad guys and are now returning to the base.
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	P	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -198,6 +380,32 @@ Firetruck Bw34 is on its way to House on location(10, 15).
 Policecar Pw3 is on its way to PB134 on location (8, 5).
 	The policecar is at Cstraat-Javastraat on location (7, 10).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	B	 	B	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	P	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Store at location (8, 12) is still burning.
@@ -220,6 +428,32 @@ Firetruck Bw34 is on its way to House on location(10, 15).
 
 Policecar Pw3 is on its way to PB134 on location (8, 5).
 	The policecar is at Javastraat on location (7, 9).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	B	 	B	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	P	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -254,6 +488,32 @@ Firetruck Bw34 is on its way to House on location(10, 15).
 Policecar Pw3 is on its way to PB134 on location (8, 5).
 	The policecar is at Javastraat on location (7, 8).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	B	 	B	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	P	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Store at location (8, 12) is still burning.
@@ -280,6 +540,32 @@ Firetruck Bw12 has reached its destination at location (12, 15).
 Policecar Pw3 is on its way to PB134 on location (8, 5).
 	The policecar is at Javastraat on location (7, 7).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	B	 	B	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	P	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Store at location (8, 12) is still burning.
@@ -302,6 +588,32 @@ Firetruck Bw12 is on its way to Store on location(7, 12).
 
 Policecar Pw3 is on its way to PB134 on location (8, 5).
 	The policecar is at Javastraat on location (7, 6).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	B	 	 	B	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	P	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -336,6 +648,32 @@ Policecar Pw3 is on its way to PB134 on location (8, 5).
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Lispstraat-Assemblystraat on location (0, 0).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	B	 	 	 	B	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	P	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Store at location (8, 12) is still burning.
@@ -363,6 +701,32 @@ Policecar Pw3 has arrived at its base PB134.
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Assemblystraat on location (0, 1).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	B	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	Z	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Store at location (8, 12) is still burning.
@@ -387,6 +751,32 @@ Firetruck Bw12 is on its way to Store on location(7, 12).
 
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Assemblystraat on location (0, 2).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	B	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	Z	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -413,6 +803,32 @@ Firetruck Bw12 is on its way to Store on location(7, 12).
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Assemblystraat on location (0, 3).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	B	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	Z	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Store at location (8, 12) is still burning.
@@ -437,6 +853,32 @@ Firetruck Bw12 is on its way to Store on location(7, 12).
 
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Assemblystraat on location (0, 4).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	B	 	 	 	B	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	Z	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -466,6 +908,32 @@ Firetruck Bw12 is on its way to Store on location(7, 12).
 
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Haskellstraat-Assemblystraat on location (0, 5).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	B	 	 	B	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -497,6 +965,32 @@ Firetruck Bw12 is on its way to Store on location(7, 12).
 
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Assemblystraat on location (0, 6).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	B	 	B	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	Z	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -535,6 +1029,32 @@ Firetruck Bw12 is on its way to Store on location(7, 12).
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Assemblystraat on location (0, 7).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	B	B	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	Z	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Store at location (8, 12) is still burning.
@@ -567,6 +1087,32 @@ Firetruck Bw12 is on its way to Store on location(7, 12).
 
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Assemblystraat on location (0, 8).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	BB	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	Z	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -604,6 +1150,32 @@ Firetruck Bw34 has reached its destination at location (10, 15).
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Assemblystraat on location (0, 9).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	B	B	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	Z	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Store at location (8, 12) is still burning.
@@ -637,6 +1209,32 @@ Firetruck Bw34 is on its way to House on location(12, 10).
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Cstraat-Assemblystraat on location (0, 10).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	B	B	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Store at location (8, 12) is still burning.
@@ -667,6 +1265,32 @@ Firetruck Bw34 is on its way to House on location(12, 10).
 
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Assemblystraat on location (0, 11).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	B	B	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	Z	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -699,6 +1323,32 @@ Firetruck Bw34 is on its way to House on location(12, 10).
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Assemblystraat on location (0, 12).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	Z	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Store at location (8, 12) is still burning.
@@ -729,6 +1379,32 @@ Firetruck Bw34 is on its way to House on location(12, 10).
 
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Assemblystraat on location (0, 13).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	Z	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -761,6 +1437,32 @@ Firetruck Bw34 is on its way to House on location(12, 10).
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Assemblystraat on location (0, 14).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	Z	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	B	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	B	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 House at location (14, 12) is still burning.
@@ -785,6 +1487,32 @@ Firetruck Bw34 is on its way to House on location(12, 10).
 
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Pythonstraat-Assemblystraat on location (0, 15).
+
+
+MAP: 
+====
+
+15	[	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	B	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	B	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -812,6 +1540,32 @@ Firetruck Bw34 is on its way to House on location(12, 10).
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Pythonstraat on location (1, 15).
 
+
+MAP: 
+====
+
+15	[	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	B	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Casualty's hp has decreased, he has 0 hp left.
@@ -827,6 +1581,32 @@ Firetruck Bw34 is on its way to House on location(12, 10).
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Pythonstraat on location (2, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	B	B	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Store at location (8, 12) is repairing.
@@ -841,6 +1621,32 @@ Firetruck Bw34 is on its way to House on location(12, 10).
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Pythonstraat on location (3, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	B	B	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to House on location(14, 10).
@@ -851,6 +1657,32 @@ Firetruck Bw34 is on its way to House on location(12, 10).
 
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Pythonstraat on location (4, 15).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	B	B	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -866,6 +1698,32 @@ Firetruck Bw34 is on its way to House on location(12, 10).
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Pythonstraat on location (5, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	B	B	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to House on location(14, 10).
@@ -876,6 +1734,32 @@ Firetruck Bw34 is on its way to House on location(12, 10).
 
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Pythonstraat on location (6, 15).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	B	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -888,6 +1772,32 @@ Firetruck Bw34 has reached its destination at location (12, 10).
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Pythonstraat-Javastraat on location (7, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	B	B	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 has reached its destination at location (14, 10).
@@ -898,6 +1808,32 @@ Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
 
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Pythonstraat on location (8, 15).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	B	 	 	B	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -910,6 +1846,32 @@ Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
 Ambulance Zw7 is on its way to House on location (10, 15).
 	The ambulance is at Pythonstraat on location (9, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	B	 	 	B	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
@@ -921,6 +1883,32 @@ Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
 Ambulance Zw7 has reached its destination at location (10, 15).
 	They were too late, the person died and was burried and they are now returning to the hospital.
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	B	 	 	B	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
@@ -931,6 +1919,32 @@ Firetruck Bw34 has arrived at its base BWK1337.
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Pythonstraat on location (9, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
@@ -938,6 +1952,32 @@ Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Pythonstraat on location (8, 15).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -947,6 +1987,32 @@ Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Pythonstraat-Javastraat on location (7, 15).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	B	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 has arrived at its base BWK1337.
@@ -954,103 +2020,649 @@ Firetruck Bw12 has arrived at its base BWK1337.
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Javastraat on location (7, 14).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	Z	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Javastraat on location (7, 13).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	Z	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Javastraat on location (7, 12).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	Z	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Javastraat on location (7, 11).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	Z	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Cstraat-Javastraat on location (7, 10).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Javastraat on location (7, 9).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	Z	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Javastraat on location (7, 8).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	Z	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Javastraat on location (7, 7).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	Z	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Javastraat on location (7, 6).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	Z	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Haskellstraat-Javastraat on location (7, 5).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Javastraat on location (7, 4).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	Z	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Javastraat on location (7, 3).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	Z	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Javastraat on location (7, 2).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	Z	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Javastraat on location (7, 1).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	Z	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Lispstraat-Javastraat on location (7, 0).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Lispstraat on location (6, 0).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Lispstraat on location (5, 0).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Lispstraat on location (4, 0).
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Lispstraat on location (3, 0).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Lispstraat on location (2, 0).
 
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	Z	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Ambulance Zw7 has arrived at the hospital Middelheim.
+
+
+MAP: 
+====
+
+15	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+14	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+13	[	 	H	H	H	H	H	H	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+12	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+11	[	 	H	H	H	H	H	H	 	S	S	S	S	H	H	H	H	 	H	H	H	H	 	]
+10	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+9	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+8	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+7	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+6	[	 	H	H	H	H	H	H	 	D	D	D	D	S	S	S	S	 	H	H	H	H	 	]
+5	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+4	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+3	[	 	+	+	+	+	+	+	 	P	P	P	P	H	H	H	H	 	H	H	H	H	 	]
+2	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+1	[	 	+	+	+	+	+	+	 	H	H	H	H	H	H	H	H	 	H	H	H	H	 	]
+0	[	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	]
+
+		0 	1 	2 	3 	4 	5 	6 	7 	8 	9	10	11	12	13	14	15	16	17	18	19	20	21	
+
+		H = HOUSE	 D = FIRE DEPARTMENT	 S = STORE
+		+ = HOSPITAL	 P = POLICE DEPARTMENT	 ? = UNKNOWN
 
 ================================================================================================================================

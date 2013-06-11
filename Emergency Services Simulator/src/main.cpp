@@ -15,12 +15,13 @@
 #include "Simulator.h"
 #include "userInterface.h"
 
+
 int main(int argc, char **argv) {
 
 	srand(time(NULL));
 
 	if (argc < 2){
-		std::cerr << "Usage: ./Release [MODE]" << std::endl << "\tMode: simulation, ui." << std::endl << "\tEnter one of the modes for more information !" << std::endl << std::endl;
+		std::cerr << "Usage: ./Release [MODE]" << std::endl << "\tMode: simulation, UI, GFX." << std::endl << "\tEnter one of the modes for more information !" << std::endl << std::endl;
 		return 0;
 	}
 
@@ -138,6 +139,23 @@ int main(int argc, char **argv) {
 		else {
 			std::cerr << "Usage: ./Release [SIMULATION] [CITY XML FILE] [VEHICLE XML FILE]* [OUTPUT FILE]" << std::endl << "\t* OPTIONAL" << std::endl << std::endl;
 			return 0;
+		}
+	}
+
+	else if (mode == "gfx"){
+		if (argc == 4){
+			std::string inputfile = argv[2];
+			std::string outputfile = argv[3];
+			City city(inputfile, std::cout, "empty", false, true);
+			city.getMatrix()->generateGFX(outputfile);
+			std::string command = "./GFXexecutable";
+			command += " " + outputfile;
+			system(command.c_str());
+			std::cout << "Ini file was generated: " << outputfile << "." << std::endl;
+			outputfile[outputfile.size()-1] = 'p';
+			outputfile[outputfile.size()-2] = 'm';
+			outputfile[outputfile.size()-3] = 'b';
+			std::cout << "Image was generated: " << outputfile << "." << std::endl;
 		}
 	}
 }
