@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += webkit
 
 TARGET = ESS-GUI
 TEMPLATE = app

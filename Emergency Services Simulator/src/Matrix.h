@@ -100,6 +100,8 @@ public:
 	virtual ~Matrix();
 
 	void printVehicles(OutputObject oo, std::vector<Vehicles*> vehicles);
+
+    void generateHTMLMap(std::vector<Vehicles*>);
 };
 
 #endif /* MATRIX_H_ */

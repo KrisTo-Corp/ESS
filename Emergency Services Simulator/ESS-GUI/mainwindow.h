@@ -24,6 +24,8 @@ private slots:
 
     void on_startRobberyButton_clicked();
 
+    void on_simulateButton_clicked(bool checked);
+
 private:
     Ui::MainWindow *ui;
     std::stringstream updatestream;

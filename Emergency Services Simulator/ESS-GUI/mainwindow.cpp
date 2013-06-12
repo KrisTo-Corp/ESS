@@ -3,6 +3,9 @@
 #include <QMessageBox>
 #include <cstdlib>
 #include <iostream>
+#include <QWebView>
+#include <QUrl>
+#include <QApplication>
 #include "Simulator.h"
 
 MainWindow::MainWindow(QWidget *parent, std::string inputfile, std::string inputfile_vehicles) :
@@ -12,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent, std::string inputfile, std::string input
 {
     ui->setupUi(this); 
     city.getMatrix()->printVehicles(city.o, city.getVehicles());
-    ui->map->setText(updatestream.str().c_str());
+    ui->map->reload();
     updatestream.clear();
     updatestream.str("");
 }
@@ -32,7 +35,7 @@ void MainWindow::on_simulateButton_clicked()
     updatestream.clear();
     updatestream.str("");
     city.getMatrix()->printVehicles(city.o, city.getVehicles());
-    ui->map->setText(updatestream.str().c_str());
+    ui->map->reload();
     updatestream.clear();
     updatestream.str("");
 }
@@ -67,4 +70,9 @@ void MainWindow::on_startRobberyButton_clicked()
         QMessageBox pop_up;
         pop_up.information(this, "Succes!", "The store is now being robbed.", QMessageBox::Close);
     }
+}
+
+void MainWindow::on_simulateButton_clicked(bool b)
+{
+
 }

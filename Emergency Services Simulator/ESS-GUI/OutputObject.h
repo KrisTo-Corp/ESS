@@ -19,7 +19,7 @@ private:
 	OutputObject* _initCheck;
 
 public:
-	OutputObject(std::ostream&, bool);
+    OutputObject(std::ostream& stream, bool web, bool onlyMap = false);
 //	ENSURE(properlyInitialized(), "OutputObject was not correctly constructed.");
 	virtual ~OutputObject();
 

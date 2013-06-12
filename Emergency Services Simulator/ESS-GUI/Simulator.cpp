@@ -1450,6 +1450,7 @@ void singleSimulate(City* city){
 		}
 	}
 
+    city->getMatrix()->generateHTMLMap(city->getVehicles());
 }
 
 

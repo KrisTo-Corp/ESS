@@ -563,6 +563,7 @@ void simulateCity(City& city) {
 		}
 
 		city.getMatrix()->printVehicles(city.o, city.getVehicles());
+        city.getMatrix()->generateHTMLMap(city.getVehicles());
 
 		if ((at_home == city.getAmountTrucks()+city.getAmountCars()+city.getAmountAmbulances()) && finished) {
 			city.o.print("\n");

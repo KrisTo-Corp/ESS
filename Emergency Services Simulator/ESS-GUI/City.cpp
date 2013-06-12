@@ -80,6 +80,7 @@ City::City(const std::string filename, std::ostream& stream, std::string vehicle
 		if (!runningUI) o.print("\tPASSED\n\n");
 	}
 
+    matrix.generateHTMLMap(getVehicles());
 
 	ENSURE(properlyInitialized(), "Object 'City' was not properly initialized.");
 }

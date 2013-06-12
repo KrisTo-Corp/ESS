@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Wed Jun 12 15:16:08 2013
-**      by: Qt User Interface Compiler version 4.8.1
+** Created: Wed Jun 12 17:57:48 2013
+**      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -22,10 +22,10 @@
 #include <QtGui/QPushButton>
 #include <QtGui/QSpinBox>
 #include <QtGui/QStatusBar>
-#include <QtGui/QTextBrowser>
 #include <QtGui/QToolBar>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
+#include <QtWebKit/QWebView>
 
 QT_BEGIN_NAMESPACE
 
@@ -33,8 +33,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QTextBrowser *map;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_4;
     QHBoxLayout *horizontalLayout_3;
@@ -48,6 +47,7 @@ public:
     QPushButton *startRobberyButton;
     QHBoxLayout *horizontalLayout_5;
     QPushButton *simulateButton;
+    QWebView *map;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -56,16 +56,13 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(2093, 732);
+        MainWindow->resize(789, 768);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        map = new QTextBrowser(centralWidget);
-        map->setObjectName(QString::fromUtf8("map"));
-        map->setGeometry(QRect(10, 0, 2071, 511));
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(660, 530, 740, 134));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(30, 570, 740, 134));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
@@ -79,13 +76,13 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setMaximumSize(QSize(21, 17));
 
         horizontalLayout->addWidget(label);
 
-        xValue = new QSpinBox(widget);
+        xValue = new QSpinBox(layoutWidget);
         xValue->setObjectName(QString::fromUtf8("xValue"));
         xValue->setMinimumSize(QSize(91, 27));
         xValue->setMaximumSize(QSize(91, 27));
@@ -98,13 +95,13 @@ public:
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setMaximumSize(QSize(21, 17));
 
         horizontalLayout_2->addWidget(label_2);
 
-        yValue = new QSpinBox(widget);
+        yValue = new QSpinBox(layoutWidget);
         yValue->setObjectName(QString::fromUtf8("yValue"));
         yValue->setMinimumSize(QSize(91, 27));
         yValue->setMaximumSize(QSize(91, 27));
@@ -117,13 +114,13 @@ public:
 
         horizontalLayout_4->addLayout(horizontalLayout_3);
 
-        setFireButton = new QPushButton(widget);
+        setFireButton = new QPushButton(layoutWidget);
         setFireButton->setObjectName(QString::fromUtf8("setFireButton"));
         setFireButton->setMinimumSize(QSize(241, 51));
 
         horizontalLayout_4->addWidget(setFireButton);
 
-        startRobberyButton = new QPushButton(widget);
+        startRobberyButton = new QPushButton(layoutWidget);
         startRobberyButton->setObjectName(QString::fromUtf8("startRobberyButton"));
         startRobberyButton->setMinimumSize(QSize(241, 51));
 
@@ -135,7 +132,7 @@ public:
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(6);
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
-        simulateButton = new QPushButton(widget);
+        simulateButton = new QPushButton(layoutWidget);
         simulateButton->setObjectName(QString::fromUtf8("simulateButton"));
         simulateButton->setMinimumSize(QSize(171, 71));
 
@@ -144,16 +141,15 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_5);
 
+        map = new QWebView(centralWidget);
+        map->setObjectName(QString::fromUtf8("map"));
+        map->setGeometry(QRect(30, -10, 721, 571));
+        map->setAutoFillBackground(false);
+        map->setUrl(QUrl(QString::fromUtf8("file:///home/owner/git/ESS5/Emergency Services Simulator/ESS-GUI/map.html")));
         MainWindow->setCentralWidget(centralWidget);
-        xValue->raise();
-        label->raise();
-        simulateButton->raise();
-        map->raise();
-        simulateButton->raise();
-        simulateButton->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 2093, 25));
+        menuBar->setGeometry(QRect(0, 0, 789, 25));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));

@@ -6,29 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>2093</width>
-    <height>732</height>
+    <width>789</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTextBrowser" name="map">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>0</y>
-      <width>2071</width>
-      <height>511</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>660</x>
-      <y>530</y>
+      <x>30</x>
+      <y>570</y>
       <width>740</width>
       <height>134</height>
      </rect>
@@ -153,21 +143,31 @@
      </item>
     </layout>
    </widget>
-   <zorder>xValue</zorder>
-   <zorder>label</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>simulateButton</zorder>
-   <zorder>endButton</zorder>
-   <zorder>map</zorder>
-   <zorder>simulateButton</zorder>
-   <zorder>simulateButton</zorder>
+   <widget class="QWebView" name="map">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>-10</y>
+      <width>721</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="url">
+     <url>
+      <string>file:///home/owner/git/ESS5/Emergency Services Simulator/ESS-GUI/map.html</string>
+     </url>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>2093</width>
+     <width>789</width>
      <height>25</height>
     </rect>
    </property>
@@ -183,6 +183,13 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKit/QWebView</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

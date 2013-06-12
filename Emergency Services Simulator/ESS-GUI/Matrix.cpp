@@ -871,4 +871,71 @@ void Matrix::printVehicles(OutputObject oo, std::vector<Vehicles*> vehicles) {
         }
 }
 
+void Matrix::generateHTMLMap(std::vector<Vehicles*> vehicles) {
+        REQUIRE(properlyInitialized(), "Object 'Matrix' was not properly initialized when calling printMatrix().");
+
+        std::ofstream outputstream("map.html");
+        OutputObject oo(outputstream, true, true);
+
+        std::vector<Vehicles*>::iterator itv;
+
+        std::ostream& s = oo.getOutput();
+        s << "<table border = \"3\" rules = \"none\" >";
+        for(int i = 0; i < rows; i++){
+                s << "<tr>";
+                s << "<td style = \"background-color: #fde5c3\">" << rows-1-i << "</td>";//"&nbsp;&nbsp;&nbsp;&nbsp;[";
+                for(int j = 0; j < columns; j++){
+                        if(matrix[i][j] == NULL){
+                                s << "<td>" << "?" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+                        }
+                        else if(matrix[i][j]->getType() == house){
+                                s << "<td style = \"background-color: #6dc066\">" << "H" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+                        }
+                        else if(matrix[i][j]->getType() == department){
+                                s << "<td style = \"background-color: #e00707\">" << "D" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+                        }
+                        else if(matrix[i][j]->getType() == street || matrix[i][j]->getType() == crossroad){
+                                std::string sign = "";
+                                for (itv = vehicles.begin(); itv != vehicles.end(); itv++) {
+                                        Coordinate location = (*itv)->getCoord();
+                                        if ((location.getX() == j) && (location.getY() == rows-1-i) && (!(*itv)->getIsHome())) {
+                                                Coordinate location = (*itv)->getCoord();
+                                                sign += *((*itv)->getName().begin());
+                                        }
+                                }
+                                if (sign != "") {
+                                        s << "<td style = \"background-color: #b2b2b2\">" << sign << "</td>";
+                                }
+                                else {
+                                        s << "<td style = \"background-color: #b2b2b2\">" << " " << "</td>";
+                                }
+                        }
+                        else if(matrix[i][j]->getType() == store){
+                                s << "<td style = \"background-color: #ffc726\">" << "S" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+                        }
+                        else if(matrix[i][j]->getType() == policeStation){
+                                s << "<td style = \"background-color: #33338b\">" << "P" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+                        }
+                        else if(matrix[i][j]->getType() == hospital){
+                                s << "<td style = \"background-color: #ff009d\">" << "+" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+                        }
+                        else{
+                                s << "<td>" << "?" << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+                        }
+                }
+                s << "</tr>";
+                //s << "]</br>";
+        }
+        //s << "</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        s << "<tr>";
+        s << "<td style = \"background-color: #fde5c3\">" << " " << "</td>";
+        for (int i = 0; i < columns; i++){
+                s << "<td style = \"background-color: #fde5c3\">" << i << "</td>";//&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+        s << "</tr>";
+        s << "</table>";
+
+        oo.closeHTML();
+}
+
 
