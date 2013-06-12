@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
 	srand(time(NULL));
 
 	if (argc < 2){
-		std::cerr << "Usage: ./Release [MODE]" << std::endl << "\tMode: simulation, UI, GFX." << std::endl << "\tEnter one of the modes for more information !" << std::endl << std::endl;
+		std::cerr << "Usage: ./Release [MODE]" << std::endl << "\tMode: simulation, UI, GUI, GFX." << std::endl << "\tEnter one of the modes for more information !" << std::endl << std::endl;
 		return 0;
 	}
 
@@ -55,7 +55,7 @@ int main(int argc, char **argv) {
 			return 0;
 		}
 		else {
-			std::cerr << "Usage: ./Release [SIMULATION] [CITY XML FILE] [VEHICLE XML FILE]* [REAL CONSOLE]" << std::endl << "\t* OPTIONAL" << std::endl << std::endl;
+			std::cerr << "Usage: ./Release [UI] [CITY XML FILE] [VEHICLE XML FILE]* [REAL CONSOLE]" << std::endl << "\t* OPTIONAL" << std::endl << std::endl;
 			return 0;
 		}
 	}
@@ -141,6 +141,24 @@ int main(int argc, char **argv) {
 			return 0;
 		}
 	}
+	else if (mode == "gui"){
+		if (argc == 3){
+			std::string inputfile = argv[2];
+			std::string command = "./GUIexecutable";
+			command += " " + inputfile;
+			system(command.c_str());
+		}
+		else if (argc == 4){
+			std::string inputfile = argv[2];
+			std::string inputfile_vehicles = argv[3];
+			std::string command = "./GUIexecutable";
+			command += " " + inputfile + " " + inputfile_vehicles;
+			system(command.c_str());
+		}
+		else {
+			std::cout << "Usage: ./exe [GUI] [CITY XML FILE] [VEHICLES XML FILE]* \t *optional" << std::endl;
+		}
+	}
 
 	else if (mode == "gfx"){
 		if (argc == 4){
@@ -156,6 +174,9 @@ int main(int argc, char **argv) {
 			outputfile[outputfile.size()-2] = 'm';
 			outputfile[outputfile.size()-3] = 'b';
 			std::cout << "Image was generated: " << outputfile << "." << std::endl;
+		}
+		else {
+			std::cout << "Usage: ./exe [GFX] [CITY XML FILE] [OUTPUT INI FILE]" << std::endl;
 		}
 	}
 }

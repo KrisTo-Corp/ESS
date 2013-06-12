@@ -13,7 +13,12 @@ MainWindow::MainWindow(QWidget *parent, std::string inputfile, std::string input
     ui(new Ui::MainWindow),
     city(inputfile, updatestream, inputfile_vehicles, false, true)
 {
-    ui->setupUi(this); 
+    ui->setupUi(this);
+    char* path_cstr = getcwd(NULL, 0);
+    std::string path(path_cstr);
+    free(path_cstr);
+    path += "/map.html";
+    ui->map->load(QUrl(path.c_str()));
     city.getMatrix()->printVehicles(city.o, city.getVehicles());
     ui->map->reload();
     updatestream.clear();
