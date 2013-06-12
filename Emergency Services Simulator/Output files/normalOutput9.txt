@@ -47,7 +47,7 @@ Store at location (8, 12) is still being robbed.
 House at location (17, 12) is still burning.
 	It has 19 hitpoints left.
 
-Firetruck Bw34 is on its way to House on location(16, 12).
+Firetruck Bw12 is on its way to House on location(16, 12).
 	The firetruck is at Cstraat-Javastraat on location (7, 10).
 
 Policecar Pw3 is on its way to Store on location (8, 10).
@@ -87,7 +87,7 @@ Store at location (8, 12) is still being robbed.
 House at location (17, 12) is still burning.
 	It has 18 hitpoints left.
 
-Firetruck Bw34 is on its way to House on location(16, 12).
+Firetruck Bw12 is on its way to House on location(16, 12).
 	The firetruck is at Cstraat on location (8, 10).
 
 Policecar Pw3 is on its way to Store on location (8, 10).
@@ -129,11 +129,11 @@ House at location (17, 12) is still burning.
 
 Fire has spread and a building on location (17, 13) has caught fire.
 
-Firetruck Bw12 is on its way to House on location(16, 14).
-	The firetruck is at Cstraat-Javastraat on location (7, 10).
-
-Firetruck Bw34 is on its way to House on location(16, 12).
+Firetruck Bw12 is on its way to House on location(16, 12).
 	The firetruck is at Cstraat on location (9, 10).
+
+Firetruck Bw34 is on its way to House on location(16, 14).
+	The firetruck is at Cstraat-Javastraat on location (7, 10).
 
 Policecar Pw3 is on its way to Store on location (8, 10).
 	The policecar is at Javastraat on location (7, 7).
@@ -175,11 +175,11 @@ House at location (17, 14) is still burning.
 House at location (17, 12) is still burning.
 	It has 16 hitpoints left.
 
-Firetruck Bw12 is on its way to House on location(16, 14).
-	The firetruck is at Cstraat on location (8, 10).
-
-Firetruck Bw34 is on its way to House on location(16, 12).
+Firetruck Bw12 is on its way to House on location(16, 12).
 	The firetruck is at Cstraat on location (10, 10).
+
+Firetruck Bw34 is on its way to House on location(16, 14).
+	The firetruck is at Cstraat on location (8, 10).
 
 Policecar Pw3 is on its way to Store on location (8, 10).
 	The policecar is at Javastraat on location (7, 8).
@@ -221,11 +221,11 @@ House at location (17, 14) is still burning.
 House at location (17, 12) is still burning.
 	It has 15 hitpoints left.
 
-Firetruck Bw12 is on its way to House on location(16, 14).
-	The firetruck is at Cstraat on location (9, 10).
-
-Firetruck Bw34 is on its way to House on location(16, 12).
+Firetruck Bw12 is on its way to House on location(16, 12).
 	The firetruck is at Cstraat on location (11, 10).
+
+Firetruck Bw34 is on its way to House on location(16, 14).
+	The firetruck is at Cstraat on location (9, 10).
 
 Policecar Pw3 is on its way to Store on location (8, 10).
 	The policecar is at Javastraat on location (7, 9).
@@ -283,11 +283,11 @@ House at location (19, 12) is still burning.
 House at location (19, 14) is still burning.
 	It has 19 hitpoints left.
 
-Firetruck Bw12 is on its way to House on location(16, 14).
-	The firetruck is at Cstraat on location (10, 10).
-
-Firetruck Bw34 is on its way to House on location(16, 12).
+Firetruck Bw12 is on its way to House on location(16, 12).
 	The firetruck is at Cstraat on location (12, 10).
+
+Firetruck Bw34 is on its way to House on location(16, 14).
+	The firetruck is at Cstraat on location (10, 10).
 
 Policecar Pw3 is on its way to Store on location (8, 10).
 	The policecar is at Cstraat-Javastraat on location (7, 10).
@@ -338,11 +338,11 @@ House at location (19, 12) is still burning.
 House at location (19, 14) is still burning.
 	It has 18 hitpoints left.
 
-Firetruck Bw12 is on its way to House on location(16, 14).
-	The firetruck is at Cstraat on location (11, 10).
-
-Firetruck Bw34 is on its way to House on location(16, 12).
+Firetruck Bw12 is on its way to House on location(16, 12).
 	The firetruck is at Cstraat on location (13, 10).
+
+Firetruck Bw34 is on its way to House on location(16, 14).
+	The firetruck is at Cstraat on location (11, 10).
 
 Policecar Pw3 has reached its destination at location (8, 10).
 	They stopped the robbery and caught the bad guys and are now returning to the base.
@@ -392,11 +392,11 @@ House at location (19, 12) is still burning.
 House at location (19, 14) is still burning.
 	It has 17 hitpoints left.
 
-Firetruck Bw12 is on its way to House on location(16, 14).
-	The firetruck is at Cstraat on location (12, 10).
-
-Firetruck Bw34 is on its way to House on location(16, 12).
+Firetruck Bw12 is on its way to House on location(16, 12).
 	The firetruck is at Cstraat on location (14, 10).
+
+Firetruck Bw34 is on its way to House on location(16, 14).
+	The firetruck is at Cstraat on location (12, 10).
 
 Policecar Pw3 is on its way to PB134 on location (8, 5).
 	The policecar is at Cstraat-Javastraat on location (7, 10).
@@ -447,11 +447,11 @@ House at location (19, 12) is still burning.
 House at location (19, 14) is still burning.
 	It has 16 hitpoints left.
 
-Firetruck Bw12 is on its way to House on location(16, 14).
-	The firetruck is at Cstraat on location (13, 10).
-
-Firetruck Bw34 is on its way to House on location(16, 12).
+Firetruck Bw12 is on its way to House on location(16, 12).
 	The firetruck is at Cstraat on location (15, 10).
+
+Firetruck Bw34 is on its way to House on location(16, 14).
+	The firetruck is at Cstraat on location (13, 10).
 
 Policecar Pw3 is on its way to PB134 on location (8, 5).
 	The policecar is at Javastraat on location (7, 9).
@@ -502,11 +502,11 @@ House at location (19, 12) is still burning.
 House at location (19, 14) is still burning.
 	It has 15 hitpoints left.
 
-Firetruck Bw12 is on its way to House on location(16, 14).
-	The firetruck is at Cstraat on location (14, 10).
-
-Firetruck Bw34 is on its way to House on location(16, 12).
+Firetruck Bw12 is on its way to House on location(16, 12).
 	The firetruck is at Cstraat-Eiffelstraat on location (16, 10).
+
+Firetruck Bw34 is on its way to House on location(16, 14).
+	The firetruck is at Cstraat on location (14, 10).
 
 Policecar Pw3 is on its way to PB134 on location (8, 5).
 	The policecar is at Javastraat on location (7, 8).
@@ -565,11 +565,11 @@ House at location (19, 14) is still burning.
 
 Casualty's hp has decreased, he has 9 hp left.
 
-Firetruck Bw12 is on its way to House on location(16, 14).
-	The firetruck is at Cstraat on location (15, 10).
-
-Firetruck Bw34 is on its way to House on location(16, 12).
+Firetruck Bw12 is on its way to House on location(16, 12).
 	The firetruck is at Eiffelstraat on location (16, 11).
+
+Firetruck Bw34 is on its way to House on location(16, 14).
+	The firetruck is at Cstraat on location (15, 10).
 
 Policecar Pw3 is on its way to PB134 on location (8, 5).
 	The policecar is at Javastraat on location (7, 7).
@@ -631,11 +631,11 @@ House at location (19, 14) is still burning.
 
 Casualty's hp has decreased, he has 8 hp left.
 
-Firetruck Bw12 is on its way to House on location(16, 14).
-	The firetruck is at Cstraat-Eiffelstraat on location (16, 10).
-
-Firetruck Bw34 has reached its destination at location (16, 12).
+Firetruck Bw12 has reached its destination at location (16, 12).
 	They have extinguished the fire and are returning to the base.
+
+Firetruck Bw34 is on its way to House on location(16, 14).
+	The firetruck is at Cstraat-Eiffelstraat on location (16, 10).
 
 Policecar Pw3 is on its way to PB134 on location (8, 5).
 	The policecar is at Javastraat on location (7, 6).
@@ -698,10 +698,10 @@ Casualty's hp has decreased, he has 7 hp left.
 
 Casualty's hp has decreased, he has 9 hp left.
 
-Firetruck Bw12 is on its way to House on location(16, 14).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Eiffelstraat on location (16, 11).
 
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw34 is on its way to House on location(16, 14).
 	The firetruck is at Eiffelstraat on location (16, 11).
 
 Policecar Pw3 is on its way to PB134 on location (8, 5).
@@ -770,11 +770,11 @@ Casualty's hp has decreased, he has 6 hp left.
 
 Casualty's hp has decreased, he has 8 hp left.
 
-Firetruck Bw12 is on its way to House on location(16, 14).
-	The firetruck is at Eiffelstraat on location (16, 12).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Cstraat-Eiffelstraat on location (16, 10).
+
+Firetruck Bw34 is on its way to House on location(16, 14).
+	The firetruck is at Eiffelstraat on location (16, 12).
 
 Policecar Pw3 has arrived at its base PB134.
 
@@ -840,11 +840,11 @@ Casualty's hp has decreased, he has 5 hp left.
 
 Casualty's hp has decreased, he has 7 hp left.
 
-Firetruck Bw12 is on its way to House on location(16, 14).
-	The firetruck is at Eiffelstraat on location (16, 13).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Eiffelstraat on location (16, 9).
+
+Firetruck Bw34 is on its way to House on location(16, 14).
+	The firetruck is at Eiffelstraat on location (16, 13).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Assemblystraat on location (0, 4).
@@ -923,11 +923,11 @@ Casualty's hp has decreased, he has 9 hp left.
 
 Casualty's hp has decreased, he has 9 hp left.
 
-Firetruck Bw12 has reached its destination at location (16, 14).
-	They have extinguished the fire and are returning to the base.
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Eiffelstraat on location (16, 8).
+
+Firetruck Bw34 has reached its destination at location (16, 14).
+	They have extinguished the fire and are returning to the base.
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Haskellstraat-Assemblystraat on location (0, 5).
@@ -997,11 +997,11 @@ Casualty's hp has decreased, he has 8 hp left.
 
 Casualty's hp has decreased, he has 8 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Pythonstraat-Eiffelstraat on location (16, 15).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Eiffelstraat on location (16, 7).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Pythonstraat-Eiffelstraat on location (16, 15).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Assemblystraat on location (0, 6).
@@ -1072,11 +1072,11 @@ Casualty's hp has decreased, he has 7 hp left.
 
 Casualty's hp has decreased, he has 9 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Eiffelstraat on location (16, 14).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Eiffelstraat on location (16, 6).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Eiffelstraat on location (16, 14).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Assemblystraat on location (0, 7).
@@ -1148,11 +1148,11 @@ Casualty's hp has decreased, he has 6 hp left.
 
 Casualty's hp has decreased, he has 8 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Eiffelstraat on location (16, 13).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Haskellstraat-Eiffelstraat on location (16, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Eiffelstraat on location (16, 13).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Assemblystraat on location (0, 8).
@@ -1221,11 +1221,11 @@ Casualty's hp has decreased, he has 5 hp left.
 
 Casualty's hp has decreased, he has 7 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Eiffelstraat on location (16, 12).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Haskellstraat on location (15, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Eiffelstraat on location (16, 12).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Assemblystraat on location (0, 9).
@@ -1297,11 +1297,11 @@ Casualty's hp has decreased, he has 4 hp left.
 
 Casualty's hp has decreased, he has 6 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Eiffelstraat on location (16, 11).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Haskellstraat on location (14, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Eiffelstraat on location (16, 11).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat-Assemblystraat on location (0, 10).
@@ -1376,11 +1376,11 @@ Casualty's hp has decreased, he has 9 hp left.
 
 Casualty's hp has decreased, he has 9 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Cstraat-Eiffelstraat on location (16, 10).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Haskellstraat on location (13, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Cstraat-Eiffelstraat on location (16, 10).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat on location (1, 10).
@@ -1451,11 +1451,11 @@ Casualty's hp has decreased, he has 8 hp left.
 
 Casualty's hp has decreased, he has 8 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Eiffelstraat on location (16, 9).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Haskellstraat on location (12, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Eiffelstraat on location (16, 9).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat on location (2, 10).
@@ -1524,11 +1524,11 @@ Casualty's hp has decreased, he has 7 hp left.
 
 Casualty's hp has decreased, he has 7 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Eiffelstraat on location (16, 8).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Haskellstraat on location (11, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Eiffelstraat on location (16, 8).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat on location (3, 10).
@@ -1605,11 +1605,11 @@ Casualty's hp has decreased, he has 9 hp left.
 
 Casualty's hp has decreased, he has 9 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Eiffelstraat on location (16, 7).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Haskellstraat on location (10, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Eiffelstraat on location (16, 7).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat on location (4, 10).
@@ -1673,11 +1673,11 @@ Casualty's hp has decreased, he has 8 hp left.
 
 Casualty's hp has decreased, he has 8 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Eiffelstraat on location (16, 6).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Haskellstraat on location (9, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Eiffelstraat on location (16, 6).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat on location (5, 10).
@@ -1735,11 +1735,11 @@ Casualty's hp has decreased, he has 7 hp left.
 
 Casualty's hp has decreased, he has 7 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Haskellstraat-Eiffelstraat on location (16, 5).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Haskellstraat on location (8, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Haskellstraat-Eiffelstraat on location (16, 5).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat on location (6, 10).
@@ -1797,11 +1797,11 @@ Casualty's hp has decreased, he has 6 hp left.
 
 Casualty's hp has decreased, he has 6 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Haskellstraat on location (15, 5).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Haskellstraat-Javastraat on location (7, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Haskellstraat on location (15, 5).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat-Javastraat on location (7, 10).
@@ -1854,11 +1854,11 @@ Casualty's hp has decreased, he has 5 hp left.
 
 Casualty's hp has decreased, he has 5 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Haskellstraat on location (14, 5).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Haskellstraat on location (6, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Haskellstraat on location (14, 5).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat on location (8, 10).
@@ -1911,11 +1911,11 @@ Casualty's hp has decreased, he has 4 hp left.
 
 Casualty's hp has decreased, he has 4 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Haskellstraat on location (13, 5).
-
-Firetruck Bw34 is on its way to House on location(4, 5).
+Firetruck Bw12 is on its way to House on location(4, 5).
 	The firetruck is at Haskellstraat on location (5, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Haskellstraat on location (13, 5).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat on location (9, 10).
@@ -1968,11 +1968,11 @@ Casualty's hp has decreased, he has 3 hp left.
 
 Casualty's hp has decreased, he has 3 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Haskellstraat on location (12, 5).
-
-Firetruck Bw34 has reached its destination at location (4, 5).
+Firetruck Bw12 has reached its destination at location (4, 5).
 	They saw that the structure was destroyed and are returning to the base.
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Haskellstraat on location (12, 5).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat on location (10, 10).
@@ -2019,11 +2019,11 @@ Casualty's hp has decreased, he has 2 hp left.
 
 Casualty's hp has decreased, he has 2 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Haskellstraat on location (11, 5).
-
-Firetruck Bw34 is on its way to House on location(1, 10).
+Firetruck Bw12 is on its way to House on location(1, 10).
 	The firetruck is at Haskellstraat on location (5, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Haskellstraat on location (11, 5).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat on location (11, 10).
@@ -2066,11 +2066,11 @@ Casualty's hp has decreased, he has 1 hp left.
 
 Casualty's hp has decreased, he has 1 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Haskellstraat on location (10, 5).
-
-Firetruck Bw34 is on its way to House on location(1, 10).
+Firetruck Bw12 is on its way to House on location(1, 10).
 	The firetruck is at Haskellstraat on location (6, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Haskellstraat on location (10, 5).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat on location (12, 10).
@@ -2113,11 +2113,11 @@ Casualty's hp has decreased, he has 0 hp left.
 
 Casualty's hp has decreased, he has 0 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Haskellstraat on location (9, 5).
-
-Firetruck Bw34 is on its way to House on location(1, 10).
+Firetruck Bw12 is on its way to House on location(1, 10).
 	The firetruck is at Haskellstraat-Javastraat on location (7, 5).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Haskellstraat on location (9, 5).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat on location (13, 10).
@@ -2154,11 +2154,11 @@ Casualty's hp has decreased, he has 0 hp left.
 
 Casualty's hp has decreased, he has 0 hp left.
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Haskellstraat on location (8, 5).
-
-Firetruck Bw34 is on its way to House on location(1, 10).
+Firetruck Bw12 is on its way to House on location(1, 10).
 	The firetruck is at Javastraat on location (7, 6).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Haskellstraat on location (8, 5).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat on location (14, 10).
@@ -2191,11 +2191,11 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Haskellstraat-Javastraat on location (7, 5).
-
-Firetruck Bw34 is on its way to House on location(1, 10).
+Firetruck Bw12 is on its way to House on location(1, 10).
 	The firetruck is at Javastraat on location (7, 7).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Haskellstraat-Javastraat on location (7, 5).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat on location (15, 10).
@@ -2228,11 +2228,11 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Haskellstraat on location (6, 5).
-
-Firetruck Bw34 is on its way to House on location(1, 10).
+Firetruck Bw12 is on its way to House on location(1, 10).
 	The firetruck is at Javastraat on location (7, 8).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Haskellstraat on location (6, 5).
 
 Ambulance Zw7 is on its way to House on location (17, 10).
 	The ambulance is at Cstraat-Eiffelstraat on location (16, 10).
@@ -2265,11 +2265,11 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Haskellstraat on location (5, 5).
-
-Firetruck Bw34 is on its way to House on location(1, 10).
+Firetruck Bw12 is on its way to House on location(1, 10).
 	The firetruck is at Javastraat on location (7, 9).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Haskellstraat on location (5, 5).
 
 Ambulance Zw7 has reached its destination at location (17, 10).
 	They were too late, the person died and was burried and they are now returning to the hospital.
@@ -2302,11 +2302,11 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Haskellstraat on location (4, 5).
-
-Firetruck Bw34 is on its way to House on location(1, 10).
+Firetruck Bw12 is on its way to House on location(1, 10).
 	The firetruck is at Cstraat-Javastraat on location (7, 10).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Haskellstraat on location (4, 5).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Cstraat-Eiffelstraat on location (16, 10).
@@ -2339,11 +2339,11 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 is on its way to House on location(2, 5).
-	The firetruck is at Haskellstraat on location (3, 5).
-
-Firetruck Bw34 is on its way to House on location(1, 10).
+Firetruck Bw12 is on its way to House on location(1, 10).
 	The firetruck is at Cstraat on location (6, 10).
+
+Firetruck Bw34 is on its way to House on location(2, 5).
+	The firetruck is at Haskellstraat on location (3, 5).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Eiffelstraat on location (16, 9).
@@ -2376,11 +2376,11 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 has reached its destination at location (2, 5).
-	They saw that the structure was destroyed and are returning to the base.
-
-Firetruck Bw34 is on its way to House on location(1, 10).
+Firetruck Bw12 is on its way to House on location(1, 10).
 	The firetruck is at Cstraat on location (5, 10).
+
+Firetruck Bw34 has reached its destination at location (2, 5).
+	They saw that the structure was destroyed and are returning to the base.
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Eiffelstraat on location (16, 8).
@@ -2413,11 +2413,11 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Haskellstraat on location (1, 5).
-
-Firetruck Bw34 is on its way to House on location(1, 10).
+Firetruck Bw12 is on its way to House on location(1, 10).
 	The firetruck is at Cstraat on location (4, 10).
+
+Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Haskellstraat on location (1, 5).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Eiffelstraat on location (16, 7).
@@ -2450,11 +2450,11 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Haskellstraat-Assemblystraat on location (0, 5).
-
-Firetruck Bw34 is on its way to House on location(1, 10).
+Firetruck Bw12 is on its way to House on location(1, 10).
 	The firetruck is at Cstraat on location (3, 10).
+
+Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Haskellstraat-Assemblystraat on location (0, 5).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Eiffelstraat on location (16, 6).
@@ -2487,11 +2487,11 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Assemblystraat on location (0, 6).
-
-Firetruck Bw34 is on its way to House on location(1, 10).
+Firetruck Bw12 is on its way to House on location(1, 10).
 	The firetruck is at Cstraat on location (2, 10).
+
+Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Assemblystraat on location (0, 6).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Haskellstraat-Eiffelstraat on location (16, 5).
@@ -2524,11 +2524,11 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Assemblystraat on location (0, 7).
-
-Firetruck Bw34 has reached its destination at location (1, 10).
+Firetruck Bw12 has reached its destination at location (1, 10).
 	They saw that the structure was destroyed and are returning to the base.
+
+Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Assemblystraat on location (0, 7).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Eiffelstraat on location (16, 4).
@@ -2562,10 +2562,10 @@ MAP:
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Assemblystraat on location (0, 8).
+	The firetruck is at Cstraat on location (2, 10).
 
 Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Cstraat on location (2, 10).
+	The firetruck is at Assemblystraat on location (0, 8).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Eiffelstraat on location (16, 3).
@@ -2599,10 +2599,10 @@ MAP:
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Assemblystraat on location (0, 9).
+	The firetruck is at Cstraat on location (3, 10).
 
 Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Cstraat on location (3, 10).
+	The firetruck is at Assemblystraat on location (0, 9).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Eiffelstraat on location (16, 2).
@@ -2636,10 +2636,10 @@ MAP:
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Cstraat-Assemblystraat on location (0, 10).
+	The firetruck is at Cstraat on location (4, 10).
 
 Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Cstraat on location (4, 10).
+	The firetruck is at Cstraat-Assemblystraat on location (0, 10).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Eiffelstraat on location (16, 1).
@@ -2673,10 +2673,10 @@ MAP:
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Cstraat on location (1, 10).
+	The firetruck is at Cstraat on location (5, 10).
 
 Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Cstraat on location (5, 10).
+	The firetruck is at Cstraat on location (1, 10).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Lispstraat-Eiffelstraat on location (16, 0).
@@ -2710,10 +2710,10 @@ MAP:
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Cstraat on location (2, 10).
+	The firetruck is at Cstraat on location (6, 10).
 
 Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Cstraat on location (6, 10).
+	The firetruck is at Cstraat on location (2, 10).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Lispstraat on location (15, 0).
@@ -2747,10 +2747,10 @@ MAP:
 --------------------------------------------------------------------------------------------------------------------------------
 
 Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Cstraat on location (3, 10).
+	The firetruck is at Cstraat-Javastraat on location (7, 10).
 
 Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Cstraat-Javastraat on location (7, 10).
+	The firetruck is at Cstraat on location (3, 10).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Lispstraat on location (14, 0).
@@ -2783,10 +2783,10 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
-	The firetruck is at Cstraat on location (4, 10).
+Firetruck Bw12 has arrived at its base BWK1337.
 
-Firetruck Bw34 has arrived at its base BWK1337.
+Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
+	The firetruck is at Cstraat on location (4, 10).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Lispstraat on location (13, 0).
@@ -2819,7 +2819,7 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
 	The firetruck is at Cstraat on location (5, 10).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
@@ -2853,7 +2853,7 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
 	The firetruck is at Cstraat on location (6, 10).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
@@ -2887,7 +2887,7 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 is on its way to BWK1337 on location(8, 10).
+Firetruck Bw34 is on its way to BWK1337 on location(8, 10).
 	The firetruck is at Cstraat-Javastraat on location (7, 10).
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
@@ -2921,7 +2921,7 @@ MAP:
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Firetruck Bw12 has arrived at its base BWK1337.
+Firetruck Bw34 has arrived at its base BWK1337.
 
 Ambulance Zw7 is on its way to Middelheim on location (1, 0).
 	The ambulance is at Lispstraat on location (9, 0).
